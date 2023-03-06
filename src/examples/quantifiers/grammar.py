@@ -19,3 +19,5 @@ if __name__ == '__main__':
     for model in test_models:
         print(f"Model: {model}")
         print(f"Output: {expression(model)}\n")
+    meaning = expression.to_meaning(models)
+    print(meaning.referents)

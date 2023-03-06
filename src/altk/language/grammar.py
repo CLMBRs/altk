@@ -2,7 +2,7 @@ import random
 from collections import defaultdict
 from typing import Any, Callable, Iterable
 
-from altk.language.semantics import Referent
+from altk.language.semantics import Meaning, Referent, Universe
 
 
 class Rule:
@@ -35,6 +35,10 @@ class GrammaticalExpression:
         self.name = name
         self.func = func
         self.children = children
+
+    def to_meaning(self, universe: Universe):
+        # TODO: this presupposes that the expression has type Referent -> bool.  Should we generalize?
+        return Meaning([referent for referent in universe.referents if self(referent)], universe)
 
     def __call__(self, referent: Referent):
         if len(self.children) == 0:

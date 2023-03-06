@@ -42,9 +42,9 @@ def all_models_up_to_size(max_size: int) -> Universe:
             objects = range(model_size)
             for M in permutations(objects):
                 for A, B in product(powerset(M), powerset(M)):
-                    yield QuantifierModel(M, set(A), set(B))
+                    yield QuantifierModel(M, frozenset(A), frozenset(B))
 
-    return Universe(all_referents(max_size))
+    return Universe(list(all_referents(max_size)))
 
 if __name__ == '__main__':
     print(all_models_up_to_size(3))
