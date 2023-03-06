@@ -6,7 +6,6 @@ from altk.language.semantics import Referent
 
 
 class Rule:
-    # TODO: add weight
     def __init__(
         self,
         lhs: Any,
@@ -54,7 +53,6 @@ class Grammar:
         # _rules: nonterminals -> list of rules
         self._rules = defaultdict(list)
         self._start = start
-        pass
 
     def add_rule(self, rule: Rule):
         self._rules[rule.lhs].append(rule)
