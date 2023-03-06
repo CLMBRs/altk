@@ -1,6 +1,7 @@
 import random
 from collections import defaultdict
-from typing import Any, Callable, Iterable
+from itertools import product
+from typing import Any, Callable, Generator, Iterable
 
 from altk.language.semantics import Meaning, Referent, Universe
 
@@ -109,6 +110,51 @@ class Grammar:
             the_rule.func,
             [self.generate(child_lhs) for child_lhs in the_rule.rhs],
         )
+
+    # TODO: add filtering to enumeration in order to only add GrammaticalExpressions with a unique Meaning? (or any other filter)
+    def enumerate(
+        self, depth: int = 8, lhs: Any = None
+    ) -> Generator[GrammaticalExpression, None, None]:
+        """Enumerate all expressions from the grammar up to a given depth from a given LHS.
+
+        Args:
+            depth: how deep the trees should be
+            lhs: left hand side to start from; defaults to the grammar's start symbol
+
+        Yields:
+            all GrammaticalExpressions up to depth
+        """
+        if lhs is None:
+            lhs = self._start
+        for num in range(depth):
+            for expr in self.enumerate_at_depth(num, lhs):
+                yield expr
+
+    def enumerate_at_depth(
+        self, depth: int, lhs: Any
+    ) -> Generator[GrammaticalExpression, None, None]:
+        """Enumerate GrammaticalExpressions for this Grammar _at_ a fixed depth."""
+        if depth == 0:
+            for rule in self._rules[lhs]:
+                if rule.is_terminal():
+                    yield GrammaticalExpression(rule.name, rule.func, [])
+
+        for rule in self._rules[lhs]:
+            # can't use terminal rules when depth > 0
+            if rule.is_terminal():
+                continue
+
+            for child_depths in product(range(depth), repeat=len(rule.rhs)):
+                if max(child_depths) < depth - 1:
+                    continue
+                children_iter = product(
+                    *[
+                        self.enumerate_at_depth(child_depth, child_lhs)
+                        for child_depth, child_lhs in zip(child_depths, rule.rhs)
+                    ]
+                )
+                for children in children_iter:
+                    yield GrammaticalExpression(rule.name, rule.func, children)
 
     def get_all_rules(self) -> list[Rule]:
         """Get all rules as a list."""

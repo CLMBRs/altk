@@ -21,3 +21,6 @@ if __name__ == '__main__':
         print(f"Output: {expression(model)}\n")
     meaning = expression.to_meaning(models)
     print(meaning.referents)
+
+    for expr in quantifier_grammar.enumerate(3):
+        print(expr)
