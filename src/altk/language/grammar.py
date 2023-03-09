@@ -124,8 +124,14 @@ class Grammar:
             the corresponding GrammaticalExpression
         """
         # see nltk.tree.Tree.fromstring for inspiration
-        open_re, close_re, delimit_re = re.escape(opener), re.escape(closer), re.escape(delimiter)
-        token_regex = re.compile(rf"[.]+{open_re}|[^{open_re}{close_re}{delimit_re}]+|{delimit_re}(\s)*|{close_re}")
+        open_re, close_re, delimit_re = (
+            re.escape(opener),
+            re.escape(closer),
+            re.escape(delimiter),
+        )
+        token_regex = re.compile(
+            f"[.]+{open_re}|[^{open_re}{close_re}{delimit_re}]+|{delimit_re}(\s)*|{close_re}"
+        )
 
         stack = []
 
@@ -143,7 +149,9 @@ class Grammar:
                 stack[-1].children.append(child)
             else:
                 # primitive, no children, just look up
-                stack.append(GrammaticalExpression(token, self._rules_by_name[token], []))
+                stack.append(
+                    GrammaticalExpression(token, self._rules_by_name[token], [])
+                )
         if len(stack) != 1:
             raise ValueError("Could not parse string {expression}")
         return stack[0]
