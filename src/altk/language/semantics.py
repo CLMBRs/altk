@@ -23,13 +23,14 @@ from typing import Iterable
 class Referent:
     """A referent is some object in the universe for a language."""
 
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str, properties: dict = {}, **kwargs) -> None:
         """Initialize a referent.
 
         Args:
             name: a string representing the name of the referent
         """
         self.name = name
+        self.__dict__.update(properties, **kwargs)
 
     def __str__(self) -> str:
         raise NotImplementedError

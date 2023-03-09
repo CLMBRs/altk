@@ -11,9 +11,9 @@ setuptools.setup(
     description="The Artificial Language ToolKit",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/nathimel/altk",
+    url="https://github.com/CLMBRs/altk",
     project_urls={
-        "Bug Tracker": "https://github.com/nathimel/altk/issues",
+        "Bug Tracker": "https://github.com/CLMBRs/altk/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -23,5 +23,5 @@ setuptools.setup(
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
     python_requires=">=3.6",
-    install_requires=["numpy","nltk","pyyaml","pandas","plotnine","pathos","embo"]
+    install_requires=["numpy","nltk","pyyaml","pandas","plotnine","pathos","embo","pytest"]
 )
