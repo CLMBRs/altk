@@ -1,4 +1,5 @@
 import random
+import re
 from collections import defaultdict
 from itertools import product
 from typing import Any, Callable, Generator, Iterable
@@ -24,10 +25,10 @@ class Rule:
 
     def __init__(
         self,
+        name: str,
         lhs: Any,
         rhs: Iterable[Any],
         func: Callable = lambda *args: None,
-        name: str = "",
         weight: float = 1.0,
     ):
         self.lhs = lhs
@@ -91,10 +92,61 @@ class Grammar:
     def __init__(self, start: Any):
         # _rules: nonterminals -> list of rules
         self._rules = defaultdict(list)
+        # name -> rule, for fast lookup in parsing
+        self._rules_by_name = {}
         self._start = start
 
     def add_rule(self, rule: Rule):
         self._rules[rule.lhs].append(rule)
+        if rule.name in self._rules_by_name:
+            raise ValueError(
+                f"Rules of a grammar must have unique names. This grammar already has a rule named {name}."
+            )
+        self._rules_by_name[rule.name] = rule
+
+    def parse(
+        self,
+        expression: str,
+        opener: str = "(",
+        closer: str = ")",
+        delimiter: str = ",",
+    ) -> GrammaticalExpression:
+        """Parse a string representation of an expression of a grammar.
+        Note that this is not a general-purpose parsing algorithm.  We assume that the strings are of the form
+            parent_name(child1_name, ..., childn_name)
+        where parent_name is the name of a rule of this grammar that has a length-n RHS, and that
+        childi_name is the name of a rule for each child i.
+
+        Args:
+            expression: string in the above format
+
+        Returns:
+            the corresponding GrammaticalExpression
+        """
+        # see nltk.tree.Tree.fromstring for inspiration
+        open_re, close_re, delimit_re = re.escape(opener), re.escape(closer), re.escape(delimiter)
+        token_regex = re.compile(rf"[.]+{open_re}|[^{open_re}{close_re}{delimit_re}]+|{delimit_re}(\s)*|{close_re}")
+
+        stack = []
+
+        for token in token_regex.finditer(expression):
+            token = token.group().strip()
+            # start a new expression
+            if token[-1] == opener:
+                name = token[:-1]
+                stack.append(GrammaticalExpression(name, self._rules_by_name[name], []))
+            # finish an expression
+            elif token == delimiter or token == closer:
+                # finished a child expression
+                # TODO: are there edge cases that distinguish delimiter from closer?
+                child = stack.pop()
+                stack[-1].children.append(child)
+            else:
+                # primitive, no children, just look up
+                stack.append(GrammaticalExpression(token, self._rules_by_name[token], []))
+        if len(stack) != 1:
+            raise ValueError("Could not parse string {expression}")
+        return stack[0]
 
     def generate(self, lhs: Any = None) -> GrammaticalExpression:
         """Generate an expression from a given lhs."""
@@ -144,9 +196,11 @@ class Grammar:
             if rule.is_terminal():
                 continue
 
+            # get lists of possible depths for each child
             for child_depths in product(range(depth), repeat=len(rule.rhs)):
                 if max(child_depths) < depth - 1:
                     continue
+                # get all possible children of the relevant depths
                 children_iter = product(
                     *[
                         self.enumerate_at_depth(child_depth, child_lhs)

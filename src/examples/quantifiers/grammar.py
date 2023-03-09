@@ -1,14 +1,15 @@
 import random
+import re
 from altk.language.grammar import Grammar, Rule
 
 from meaning import all_models_up_to_size
 
 if __name__ == '__main__':
     quantifier_grammar = Grammar(bool)
-    quantifier_grammar.add_rule(Rule(bool, (bool, bool), lambda b1, b2: b1 and b2, "and"))
-    quantifier_grammar.add_rule(Rule(bool, (set, set), lambda s1, s2: s1 <= s2, "subset"))
-    quantifier_grammar.add_rule(Rule(set, (), lambda model: model.A, "A"))
-    quantifier_grammar.add_rule(Rule(set, (), lambda model: model.B, "B"))
+    quantifier_grammar.add_rule(Rule("and", bool, (bool, bool), lambda b1, b2: b1 and b2))
+    quantifier_grammar.add_rule(Rule("subset", bool, (set, set), lambda s1, s2: s1 <= s2))
+    quantifier_grammar.add_rule(Rule("A", set, (), lambda model: model.A))
+    quantifier_grammar.add_rule(Rule("B", set, (), lambda model: model.B))
     print(quantifier_grammar)
 
     expression = quantifier_grammar.generate()
@@ -22,5 +23,17 @@ if __name__ == '__main__':
     meaning = expression.to_meaning(models)
     print(meaning.referents)
 
-    for expr in quantifier_grammar.enumerate(3):
+    for expr in quantifier_grammar.enumerate_at_depth(3, bool):
         print(expr)
+
+    expr1 = "subset(B, B)"
+    expr2 = "and(subset(A, B), subset(B, B))"
+
+    expr_re = re.compile("[a-z]+\(|[^\(\),]+|,(\s)*|\)")
+    for token in expr_re.finditer(expr1):
+        print(token.group())
+    for token in expr_re.finditer(expr2):
+        print(token.group())
+
+    print(quantifier_grammar.parse(expr1))
+    print(quantifier_grammar.parse(expr2))
