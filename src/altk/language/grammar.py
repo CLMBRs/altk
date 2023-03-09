@@ -143,7 +143,7 @@ class Grammar:
             # start a new expression
             if token[-1] == opener:
                 name = token[:-1]
-                stack.append(GrammaticalExpression(name, self._rules_by_name[name], []))
+                stack.append(GrammaticalExpression(name, self._rules_by_name[name].func, []))
             # finish an expression
             elif token == delimiter or token == closer:
                 # finished a child expression
@@ -153,7 +153,7 @@ class Grammar:
             else:
                 # primitive, no children, just look up
                 stack.append(
-                    GrammaticalExpression(token, self._rules_by_name[token], [])
+                    GrammaticalExpression(token, self._rules_by_name[token].func, [])
                 )
         if len(stack) != 1:
             raise ValueError("Could not parse string {expression}")

@@ -33,10 +33,7 @@ class Referent:
         self.__dict__.update(properties, **kwargs)
 
     def __str__(self) -> str:
-        raise NotImplementedError
-
-    def __hash__(self) -> int:
-        raise NotImplementedError
+        return str(self.__dict__)
 
 
 class Universe:
@@ -66,11 +63,11 @@ class Meaning:
     """
 
     def __init__(
-            self, 
-            referents: Iterable[Referent], 
-            universe: Universe, 
-            dist: dict[str, float] = None,
-            ) -> None:
+        self,
+        referents: Iterable[Referent],
+        universe: Universe,
+        dist: dict[str, float] = None,
+    ) -> None:
         """A meaning is the set of things it refers to.
 
         The objects of reference are a subset of the universe of discourse. Sometimes it is natural to construe the meaning as as a probability distribution over the universe, instead of just a binary predicate.
@@ -94,11 +91,20 @@ class Meaning:
         self.referents = referents
         self.universe = universe
 
-        zeros = {ref.name: 0.0 for ref in set(self.universe.referents) - set(self.referents)}
+        zeros = {
+            ref.name: 0.0 for ref in set(self.universe.referents) - set(self.referents)
+        }
         if dist is not None:
             # normalize weights to distribution
             total_weight = sum(dist.values())
-            self.dist = {ref.name: dist[ref.name] / total_weight for ref in self.referents} | zeros
+            self.dist = {
+                ref.name: dist[ref.name] / total_weight for ref in self.referents
+            } | zeros
 
         else:
-            self.dist = {ref.name: 1 / len(self.referents) for ref in self.referents} | zeros
+            self.dist = {
+                ref.name: 1 / len(self.referents) for ref in self.referents
+            } | zeros
+
+    def __eq__(self, other):
+        return (self.referents, self.universe) == (other.referents, other.universe)
