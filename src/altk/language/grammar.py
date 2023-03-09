@@ -124,6 +124,7 @@ class Grammar:
             the corresponding GrammaticalExpression
         """
         # see nltk.tree.Tree.fromstring for inspiration
+        # tokenize string roughly by splitting at open brackets, close brackets, and delimiters
         open_re, close_re, delimit_re = (
             re.escape(opener),
             re.escape(closer),
@@ -133,9 +134,11 @@ class Grammar:
             f"[.]+{open_re}|[^{open_re}{close_re}{delimit_re}]+|{delimit_re}(\s)*|{close_re}"
         )
 
+        # stack to store the tree being built
         stack = []
 
         for token in token_regex.finditer(expression):
+            # strip trailing whitespace if needed
             token = token.group().strip()
             # start a new expression
             if token[-1] == opener:
