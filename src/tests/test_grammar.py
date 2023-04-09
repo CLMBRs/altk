@@ -1,4 +1,4 @@
-from altk.language.grammar import Grammar, GrammaticalExpression, Rule
+from altk.language.grammar.grammar import Grammar, GrammaticalExpression, Rule
 from altk.language.semantics import Meaning, Referent, Universe
 
 
