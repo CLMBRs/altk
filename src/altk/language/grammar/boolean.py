@@ -1,8 +1,8 @@
-from types import SimpleNamspace
+from types import SimpleNamespace
 from typing import Callable
 from altk.language.grammar.grammar import Grammar, GrammaticalExpression, Rule
 
-rule_names = SimpleNamspace(AND="and", OR="or", NOT="not")
+rule_names = SimpleNamespace(AND="and", OR="or", NOT="not")
 
 
 class BooleanGrammar(Grammar):
