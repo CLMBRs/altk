@@ -1,5 +1,6 @@
 from altk.language.grammar.grammar import Grammar, GrammaticalExpression, Rule
 from altk.language.grammar.boolean import BooleanGrammar
+from altk.language.grammar.complexity import num_atoms
 from altk.language.semantics import Meaning, Referent, Universe
 
 
@@ -34,6 +35,10 @@ class TestGrammar:
     def test_length(self):
         parsed_expression = TestGrammar.grammar.parse(TestGrammar.geq2_expr_str)
         assert len(parsed_expression) == 5
+
+    def test_atoms(self):
+        parsed_expression = TestGrammar.grammar.parse(TestGrammar.geq2_expr_str)
+        assert num_atoms(parsed_expression) == 3
 
     def test_yield(self):
         parsed_expression = TestGrammar.grammar.parse(TestGrammar.geq2_expr_str)
