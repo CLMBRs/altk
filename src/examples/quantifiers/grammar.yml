@@ -1,0 +1,33 @@
+start: bool # should this be a bool or maybe an int; quant 'no' means -1, every means 1, etc
+rules:
+  - lhs: set
+    rhs:
+    name: "A"
+    function: |
+      lambda A : A
+  - lhs: set
+    rhs:
+    name: "B"
+    function: |
+      lambda B : B
+  - lhs: set
+    rhs:
+      - set
+      - set
+    name: "subset"
+    function: |
+      lambda A, B: A <= B
+  - lhs: set
+    rhs:
+      - set
+      - set
+    name: "every"
+    function: |
+      lambda A, B: A <= B
+  - lhs: set
+    rhs:
+      - set
+      - set
+    name: "most"
+    function: |
+      lambda A, B: A <= B
