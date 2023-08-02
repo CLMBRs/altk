@@ -97,6 +97,16 @@ class GrammaticalExpression(Expression):
         return "".join(child.yield_string() for child in self.children)
 
     def evaluate(self, universe: Universe) -> Meaning:
+        """Evaluate an expression in a Universe.
+        Both returns a `Meaning` and saves that meaning to `self.meaning`.
+        This presupposes that the expression's function has type Referent -> bool.
+
+        Args:
+            universe: the `Universe` on which to evaluate the present expression
+
+        Returns:
+            a `Meaning`, effectively the set of `Referent`s for which this expression evalutes to `True`
+        """
         # TODO: this presupposes that the expression has type Referent -> bool.  Should we generalize?
         # and that leaf nodes will take Referents as input...
         # NB: important to use `not self.meaning` and not `self.meaning is None` because of how
@@ -109,19 +119,26 @@ class GrammaticalExpression(Expression):
         return self.meaning
 
     def to_dict(self) -> dict:
+        """Get a dictionary representation of this expression; useful for writing.
+        Adds the tree string and length to `Expression.to_dict`.
+        """
         the_dict = super().to_dict()
         the_dict["grammatical_expression"] = str(self)
         the_dict["length"] = len(self)
         return the_dict
 
+    def is_atom(self) -> bool:
+        """Whether this is an atomic expression (one with no children)."""
+        return self.children is None
+
     def __call__(self, *args):
-        if self.children is None:
+        if self.is_atom():
             return self.func(*args)
         return self.func(*(child(*args) for child in self.children))
 
     def __len__(self):
         length = 1
-        if self.children is not None:
+        if not self.is_atom():
             length += sum(len(child) for child in self.children)
         return length
 
@@ -150,7 +167,7 @@ class GrammaticalExpression(Expression):
 
     def __str__(self):
         out_str = self.rule_name
-        if self.children is not None:
+        if not self.is_atom():
             out_str += f"({', '.join(str(child) for child in self.children)})"
         return out_str
 
