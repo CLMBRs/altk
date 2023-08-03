@@ -1,6 +1,6 @@
 from enum import StrEnum
 from typing import Callable
-from altk.language.grammar.grammar import Grammar, GrammaticalExpression, Rule
+from ultk.language.grammar.grammar import Grammar, GrammaticalExpression, Rule
 
 
 class RuleNames(StrEnum):
