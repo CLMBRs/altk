@@ -130,6 +130,16 @@ class GrammaticalExpression(Expression):
     def is_atom(self) -> bool:
         """Whether this is an atomic expression (one with no children)."""
         return self.children is None
+    
+    def contains_name(self, name) -> bool:
+        """Whether this expression contains a node with the specified name."""
+        if self.is_atom:
+            return self.rule_name == name
+        for child in self.children:
+            if child.contains_name(name):
+                return True
+        return False
+
 
     def __call__(self, *args):
         if self.is_atom():
