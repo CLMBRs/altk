@@ -20,3 +20,5 @@ class BooleanGrammar(Grammar):
 
     def add_atom(self, name: str, function: Callable) -> None:
         self.add_rule(Rule(name, bool, None, function))
+
+    
