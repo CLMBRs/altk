@@ -1,0 +1,1 @@
+A few of the modal expressions are able to combine with each other for emphasis in particular modal contexts. In cases where this happens, I mark both modals used as (1) in can_express, and show the optionality in the full form and with an extra note. 

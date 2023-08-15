@@ -1,0 +1,337 @@
+expression,force,flavor,can_express,polarity,register,syntactically_negated,full_form,notes
+Dong ca,strong,epistemic,1,positive,conversational,no,,
+Dong ca,weak necessity,epistemic,?,positive,conversational,no,,
+Dong ca,weak,epistemic,?,positive,conversational,no,,
+Dong ca,strong,deontic,1,positive,conversational,no,,
+Dong ca,weak necessity,deontic,?,positive,conversational,no,,
+Dong ca,weak,deontic,?,positive,conversational,no,,
+Dong ca,strong,teleological,1,positive,conversational,no,,
+Dong ca,weak necessity,teleological,?,positive,conversational,no,,
+Dong ca,weak,teleological,?,positive,conversational,no,,
+Dong ca,strong,circumstantial,1,positive,conversational,no,,"CA potentially just expressing future reading ""I will go wee"""
+Dong ca,weak,circumstantial,?,positive,conversational,no,,
+Dong ca,strong,bouletic,?,positive,conversational,no,,
+Dong,strong,epistemic,1,positive,conversational,no,,
+Dong,weak necessity,epistemic,?,positive,conversational,no,,
+Dong,weak,epistemic,?,positive,conversational,no,,
+Dong,strong,deontic,1,positive,conversational,no,,less strong than Jambpen dong
+Dong,weak necessity,deontic,?,positive,conversational,no,,
+Dong,weak,deontic,?,positive,conversational,no,,
+Dong,strong,teleological,1,positive,conversational,no,,
+Dong,weak necessity,teleological,?,positive,conversational,no,,
+Dong,weak,teleological,?,positive,conversational,no,,
+Dong,strong,circumstantial,1,positive,conversational,no,,
+Dong,weak,circumstantial,?,positive,conversational,no,,
+Dong,strong,bouletic,1,positive,conversational,no,,
+Jambpen dong ca,strong,epistemic,1,positive,formal,no,,
+Jambpen dong ca,weak necessity,epistemic,?,positive,formal,no,,
+Jambpen dong ca,weak,epistemic,?,positive,formal,no,,
+Jambpen dong ca,strong,deontic,1,positive,formal,no,,
+Jambpen dong ca,weak necessity,deontic,?,positive,formal,no,,
+Jambpen dong ca,weak,deontic,?,positive,formal,no,,
+Jambpen dong ca,strong,teleological,?,positive,formal,no,,
+Jambpen dong ca,weak necessity,teleological,?,positive,formal,no,,
+Jambpen dong ca,weak,teleological,?,positive,formal,no,,
+Jambpen dong ca,strong,circumstantial,1,positive,formal,no,,"CA possibly used as a future prediction marker, or discourse marker "
+Jambpen dong ca,weak,circumstantial,?,positive,formal,no,,
+Jambpen dong ca,strong,bouletic,?,positive,formal,no,,
+Jambpen dong ,strong,epistemic,1,positive,formal,no,,
+Jambpen dong,weak necessity,epistemic,?,positive,formal,no,,
+Jambpen dong,weak,epistemic,?,positive,formal,no,,
+Jambpen dong,strong,deontic,1,positive,formal,no,,
+Jambpen dong,weak necessity,deontic,?,positive,formal,no,,
+Jambpen dong,weak,deontic,?,positive,formal,no,,
+Jambpen dong,strong,teleological,1,positive,formal,no,,"strong emphasis. Consultant comments ""If you had a gun to your head"""
+Jambpen dong,weak necessity,teleological,?,positive,formal,no,,
+Jambpen dong,weak,teleological,?,positive,formal,no,,
+Jambpen dong,strong,circumstantial,1,positive,formal,no,,
+Jambpen dong,weak,circumstantial,?,positive,formal,no,,
+Jambpen dong,strong,bouletic,?,positive,formal,no,,
+Naa ca,strong,epistemic,?,positive,conversational,no,,
+Naa ca,weak necessity,epistemic,1,positive,conversational,no,,
+Naa ca,weak,epistemic,?,positive,conversational,no,,
+Naa ca,strong,deontic,?,positive,conversational,no,,
+Naa ca,weak necessity,deontic,1,positive,conversational,no,,
+Naa ca,weak,deontic,?,positive,conversational,no,,
+Naa ca,strong,teleological,?,positive,conversational,no,,
+Naa ca,weak necessity,teleological,?,positive,conversational,no,,
+Naa ca,weak,teleological,?,positive,conversational,no,,
+Naa ca,strong,circumstantial,?,positive,conversational,no,,
+Naa ca,weak,circumstantial,?,positive,conversational,no,,
+Naa ca,strong,bouletic,?,positive,conversational,no,,
+Naa,strong,epistemic,?,positive,conversational,no,,
+Naa,weak necessity,epistemic,0,positive,conversational,no,,"consultant commented that without ""CA"" this could mean ""it looks rainable"""
+Naa,weak,epistemic,?,positive,conversational,no,,
+Naa,strong,deontic,?,positive,conversational,no,,
+Naa,weak necessity,deontic,1,positive,conversational,no,,
+Naa,weak,deontic,?,positive,conversational,no,,
+Naa,strong,teleological,?,positive,conversational,no,,
+Naa,weak necessity,teleological,?,positive,conversational,no,,
+Naa,weak,teleological,?,positive,conversational,no,,
+Naa,strong,circumstantial,?,positive,conversational,no,,
+Naa,weak,circumstantial,?,positive,conversational,no,,
+Naa,strong,bouletic,?,positive,conversational,no,,
+Sonkuan,strong,epistemic,?,positive,formal,no,,
+Sonkuan,weak necessity,epistemic,?,positive,formal,no,,
+Sonkuan,weak,epistemic,?,positive,formal,no,,
+Sonkuan,strong,deontic,?,positive,formal,no,,
+Sonkuan,weak necessity,deontic,1,positive,formal,no,,
+Sonkuan,weak,deontic,?,positive,formal,no,,
+Sonkuan,strong,teleological,?,positive,formal,no,,
+Sonkuan,weak necessity,teleological,1,positive,formal,no,,
+Sonkuan,weak,teleological,?,positive,formal,no,,
+Sonkuan,strong,circumstantial,?,positive,formal,no,,
+Sonkuan,weak,circumstantial,?,positive,formal,no,,
+Sonkuan,strong,bouletic,?,positive,formal,no,,
+Kuan ca,strong,epistemic,?,positive,formal,no,,
+Kuan ca,weak necessity,epistemic,1,positive,formal,no,,
+Kuan ca,weak,epistemic,?,positive,formal,no,,
+Kuan ca,strong,deontic,?,positive,formal,no,,
+Kuan ca,weak necessity,deontic,1,positive,formal,no,,
+Kuan ca,weak,deontic,?,positive,formal,no,,
+Kuan ca,strong,teleological,?,positive,formal,no,,
+Kuan ca,weak necessity,teleological,1,positive,formal,no,,ca can make it more casual
+Kuan ca,weak,teleological,?,positive,formal,no,,
+Kuan ca,strong,circumstantial,?,positive,formal,no,,
+Kuan ca,weak,circumstantial,?,positive,formal,no,,
+Kuan ca,strong,bouletic,?,positive,formal,no,,
+Kuan ,strong,epistemic,?,positive,formal,no,,
+Kuan ,weak necessity,epistemic,0,positive,formal,no,,"consultant commented that without ""CA"" this could mean ""it looks rainable"""
+Kuan ,weak,epistemic,?,positive,formal,no,,
+Kuan ,strong,deontic,?,positive,formal,no,,
+Kuan ,weak necessity,deontic,1,positive,formal,no,,
+Kuan ,weak,deontic,?,positive,formal,no,,
+Kuan ,strong,teleological,?,positive,formal,no,,
+Kuan ,weak necessity,teleological,1,positive,formal,no,,
+Kuan ,weak,teleological,?,positive,formal,no,,
+Kuan ,strong,circumstantial,?,positive,formal,no,,
+Kuan ,weak,circumstantial,?,positive,formal,no,,
+Kuan ,strong,bouletic,?,positive,formal,no,,
+Aat ca,strong,epistemic,?,positive,conversational,no,,
+Aat ca,weak necessity,epistemic,?,positive,conversational,no,,
+Aat ca,weak,epistemic,1,positive,conversational,no,,
+Aat ca,strong,deontic,?,positive,conversational,no,,
+Aat ca,weak necessity,deontic,?,positive,conversational,no,,
+Aat ca,weak,deontic,0,positive,conversational,no,,
+Aat ca,strong,teleological,?,positive,conversational,no,,
+Aat ca,weak necessity,teleological,?,positive,conversational,no,,
+Aat ca,weak,teleological,?,positive,conversational,no,,
+Aat ca,strong,circumstantial,?,positive,conversational,no,,
+Aat ca,weak,circumstantial,?,positive,conversational,no,,
+Aat ca,strong,bouletic,?,positive,conversational,no,,
+Aat ,strong,epistemic,?,positive,conversational,no,,
+Aat ,weak necessity,epistemic,?,positive,conversational,no,,
+Aat ,weak,epistemic,0,positive,conversational,no,,required CA
+Aat ,strong,deontic,?,positive,conversational,no,,
+Aat ,weak necessity,deontic,?,positive,conversational,no,,
+Aat ,weak,deontic,0,positive,conversational,no,,
+Aat ,strong,teleological,?,positive,conversational,no,,
+Aat ,weak necessity,teleological,0,positive,conversational,no,,
+Aat ,weak,teleological,?,positive,conversational,no,,
+Aat ,strong,circumstantial,?,positive,conversational,no,,
+Aat ,weak,circumstantial,?,positive,conversational,no,,
+Aat ,strong,bouletic,?,positive,conversational,no,,
+Anuyard,strong,epistemic,?,positive,formal,no,,
+Anuyard,weak necessity,epistemic,?,positive,formal,no,,
+Anuyard,weak,epistemic,?,positive,formal,no,,
+Anuyard,strong,deontic,?,positive,formal,no,,
+Anuyard,weak necessity,deontic,?,positive,formal,no,,
+Anuyard,weak,deontic,1,positive,formal,no,,
+Anuyard,strong,teleological,?,positive,formal,no,,
+Anuyard,weak necessity,teleological,?,positive,formal,no,,
+Anuyard,weak,teleological,0,positive,formal,no,,
+Anuyard,strong,circumstantial,?,positive,formal,no,,
+Anuyard,weak,circumstantial,?,positive,formal,no,,
+Anuyard,strong,bouletic,?,positive,formal,no,,
+... dai,strong,epistemic,?,positive,conversational,no,,sentence final particle
+... dai,weak necessity,epistemic,?,positive,conversational,no,,sentence final particle
+... dai,weak,epistemic,?,positive,conversational,no,,sentence final particle
+... dai,strong,deontic,?,positive,conversational,no,,sentence final particle
+... dai,weak necessity,deontic,?,positive,conversational,no,,sentence final particle
+... dai,weak,deontic,1,positive,conversational,no,,sentence final particle
+... dai,strong,teleological,?,positive,conversational,no,,sentence final particle
+... dai,weak necessity,teleological,?,positive,conversational,no,,sentence final particle
+... dai,weak,teleological,1,positive,conversational,no,,sentence final particle
+... dai,strong,circumstantial,?,positive,conversational,no,,sentence final particle
+... dai,weak,circumstantial,1,positive,conversational,no,,sentence final particle
+... dai,strong,bouletic,?,positive,conversational,no,,sentence final particle
+saamaat,strong,epistemic,?,positive,formal,no,,
+saamaat,weak necessity,epistemic,?,positive,formal,no,,
+saamaat,weak,epistemic,?,positive,formal,no,,
+saamaat,strong,deontic,?,positive,formal,no,,
+saamaat,weak necessity,deontic,?,positive,formal,no,,
+saamaat,weak,deontic,?,positive,formal,no,,
+saamaat,strong,teleological,?,positive,formal,no,,
+saamaat,weak necessity,teleological,?,positive,formal,no,,
+saamaat,weak,teleological,1,positive,formal,no,,
+saamaat,strong,circumstantial,?,positive,formal,no,,
+saamaat,weak,circumstantial,1,positive,formal,no,,
+saamaat,strong,bouletic,?,positive,formal,no,,
+Kong ca,strong,epistemic,?,positive,formal,no,,
+Kong ca,weak necessity,epistemic,?,positive,formal,no,,
+Kong ca,weak,epistemic,1,positive,formal,no,,
+Kong ca,strong,deontic,?,positive,formal,no,,
+Kong ca,weak necessity,deontic,?,positive,formal,no,,
+Kong ca,weak,deontic,0,positive,formal,no,,
+Kong ca,strong,teleological,?,positive,formal,no,,
+Kong ca,weak necessity,teleological,0,positive,formal,no,,
+Kong ca,weak,teleological,?,positive,formal,no,,
+Kong ca,strong,circumstantial,?,positive,formal,no,,
+Kong ca,weak,circumstantial,?,positive,formal,no,,
+Kong ca,strong,bouletic,?,positive,formal,no,,
+Kong ,strong,epistemic,?,positive,formal,no,,
+Kong ,weak necessity,epistemic,?,positive,formal,no,,
+Kong ,weak,epistemic,0,positive,formal,no,,
+Kong ,strong,deontic,?,positive,formal,no,,
+Kong ,weak necessity,deontic,?,positive,formal,no,,
+Kong ,weak,deontic,?,positive,formal,no,,
+Kong ,strong,teleological,?,positive,formal,no,,
+Kong ,weak necessity,teleological,?,positive,formal,no,,
+Kong ,weak,teleological,?,positive,formal,no,,
+Kong ,strong,circumstantial,?,positive,formal,no,,
+Kong ,weak,circumstantial,?,positive,formal,no,,
+Kong ,strong,bouletic,?,positive,formal,no,,
+saamaat... dai,strong,epistemic,?,positive,?,no,,
+saamaat... dai,weak necessity,epistemic,?,positive,?,no,,
+saamaat... dai,weak,epistemic,?,positive,?,no,,
+saamaat... dai,strong,deontic,?,positive,?,no,,
+saamaat... dai,weak necessity,deontic,?,positive,?,no,,
+saamaat... dai,weak,deontic,?,positive,?,no,,
+saamaat... dai,strong,teleological,?,positive,?,no,,
+saamaat... dai,weak necessity,teleological,?,positive,?,no,,
+saamaat... dai,weak,teleological,1,positive,?,no,,
+saamaat... dai,strong,circumstantial,?,positive,?,no,,
+saamaat... dai,weak,circumstantial,1,positive,?,no,,
+saamaat... dai,strong,bouletic,?,positive,?,no,,
+Yark,strong,epistemic,?,positive,-,no,,
+Yark,weak necessity,epistemic,?,positive,-,no,,
+Yark,weak,epistemic,?,positive,-,no,,
+Yark,strong,deontic,?,positive,-,no,,
+Yark,weak necessity,deontic,?,positive,-,no,,
+Yark,weak,deontic,?,positive,-,no,,
+Yark,strong,teleological,?,positive,-,no,,
+Yark,weak necessity,teleological,?,positive,-,no,,
+Yark,weak,teleological,?,positive,-,no,,
+Yark,strong,circumstantial,?,positive,-,no,,
+Yark,weak,circumstantial,?,positive,-,no,,
+Yark,strong,bouletic,1,positive,-,no,,
+... dai,strong,epistemic,?,negative,conversational,yes,... mai dai,
+... dai,weak necessity,epistemic,?,negative,conversational,yes,... mai dai,
+... dai,weak,epistemic,1,negative,conversational,yes,... mai dai,
+... dai,strong,deontic,?,negative,conversational,yes,... mai dai,
+... dai,weak necessity,deontic,?,negative,conversational,yes,... mai dai,
+... dai,weak,deontic,1,negative,conversational,yes,... mai dai,
+... dai,strong,teleological,?,negative,conversational,yes,... mai dai,
+... dai,weak necessity,teleological,?,negative,conversational,yes,... mai dai,
+... dai,weak,teleological,1,negative,conversational,yes,... mai dai,
+... dai,strong,circumstantial,?,negative,conversational,yes,... mai dai,
+... dai,weak,circumstantial,1,negative,conversational,yes,... mai dai,
+... dai,strong,bouletic,?,negative,conversational,yes,... mai dai,
+saamaat... dai,strong,epistemic,?,negative,formal,yes,saamaat... mai dai,negation on sentence final particle
+saamaat... dai,weak necessity,epistemic,?,negative,formal,yes,saamaat... mai dai,negation on sentence final particle
+saamaat... dai,weak,epistemic,?,negative,formal,yes,saamaat... mai dai,negation on sentence final particle
+saamaat... dai,strong,deontic,?,negative,formal,yes,saamaat... mai dai,negation on sentence final particle
+saamaat... dai,weak necessity,deontic,?,negative,formal,yes,saamaat... mai dai,negation on sentence final particle
+saamaat... dai,weak,deontic,?,negative,formal,yes,saamaat... mai dai,negation on sentence final particle
+saamaat... dai,strong,teleological,?,negative,formal,yes,saamaat... mai dai,negation on sentence final particle
+saamaat... dai,weak necessity,teleological,?,negative,formal,yes,saamaat... mai dai,negation on sentence final particle
+saamaat... dai,weak,teleological,1,negative,formal,yes,saamaat... mai dai,negation on sentence final particle
+saamaat... dai,strong,circumstantial,?,negative,formal,yes,saamaat... mai dai,negation on sentence final particle
+saamaat... dai,weak,circumstantial,?,negative,formal,yes,saamaat... mai dai,negation on sentence final particle
+saamaat... dai,strong,bouletic,?,negative,formal,yes,saamaat... mai dai,negation on sentence final particle
+saamaat... dai,strong,epistemic,?,negative,formal,yes,mai saamaat... dai,negation on modal verb
+saamaat... dai,weak necessity,epistemic,?,negative,formal,yes,mai saamaat... dai,negation on modal verb
+saamaat... dai,weak,epistemic,?,negative,formal,yes,mai saamaat... dai,negation on modal verb
+saamaat... dai,strong,deontic,?,negative,formal,yes,mai saamaat... dai,negation on modal verb
+saamaat... dai,weak necessity,deontic,?,negative,formal,yes,mai saamaat... dai,negation on modal verb
+saamaat... dai,weak,deontic,?,negative,formal,yes,mai saamaat... dai,negation on modal verb
+saamaat... dai,strong,teleological,?,negative,formal,yes,mai saamaat... dai,negation on modal verb
+saamaat... dai,weak necessity,teleological,?,negative,formal,yes,mai saamaat... dai,negation on modal verb
+saamaat... dai,weak,teleological,?,negative,formal,yes,mai saamaat... dai,negation on modal verb
+saamaat... dai,strong,circumstantial,?,negative,formal,yes,mai saamaat... dai,negation on modal verb
+saamaat... dai,weak,circumstantial,1,negative,formal,yes,mai saamaat... dai,negation on modal verb
+saamaat... dai,strong,bouletic,?,negative,formal,yes,mai saamaat... dai,negation on modal verb
+Harm,strong,epistemic,0,negative,formal,no (?),harm,
+Harm,weak necessity,epistemic,?,negative,formal,no,harm,
+Harm,weak,epistemic,?,negative,formal,no,harm,
+Harm,strong,deontic,?,negative,formal,no,harm,
+Harm,weak necessity,deontic,?,negative,formal,no,harm,
+Harm,weak,deontic,1,negative,formal,no,harm,
+Harm,strong,teleological,?,negative,formal,no,harm,
+Harm,weak necessity,teleological,?,negative,formal,no,harm,
+Harm,weak,teleological,1,negative,formal,no,harm,
+Harm,strong,circumstantial,?,negative,formal,no,harm,
+Harm,weak,circumstantial,0,negative,formal,no,harm,
+Harm,strong,bouletic,?,negative,formal,no,harm,
+Aat ca,strong,epistemic,1,negative,conversational,yes,aat ca mai+v,negation on main verb
+Aat ca,weak necessity,epistemic,?,negative,conversational,yes,aat ca mai+v,negation on main verb
+Aat ca,weak,epistemic,?,negative,conversational,yes,aat ca mai+v,negation on main verb
+Aat ca,strong,deontic,?,negative,conversational,yes,aat ca mai+v,negation on main verb
+Aat ca,weak necessity,deontic,?,negative,conversational,yes,aat ca mai+v,negation on main verb
+Aat ca,weak,deontic,?,negative,conversational,yes,aat ca mai+v,negation on main verb
+Aat ca,strong,teleological,?,negative,conversational,yes,aat ca mai+v,negation on main verb
+Aat ca,weak necessity,teleological,?,negative,conversational,yes,aat ca mai+v,negation on main verb
+Aat ca,weak,teleological,?,negative,conversational,yes,aat ca mai+v,negation on main verb
+Aat ca,strong,circumstantial,?,negative,conversational,yes,aat ca mai+v,negation on main verb
+Aat ca,weak,circumstantial,?,negative,conversational,yes,aat ca mai+v,negation on main verb
+Aat ca,strong,bouletic,?,negative,conversational,yes,aat ca mai+v,negation on main verb
+Aat ,strong,epistemic,?,negative,conversational,yes,aat mai+V,negation on main verb
+Aat ,weak necessity,epistemic,?,negative,conversational,yes,aat mai+V,negation on main verb
+Aat ,weak,epistemic,?,negative,conversational,yes,aat mai+V,negation on main verb
+Aat ,strong,deontic,?,negative,conversational,yes,aat mai+V,negation on main verb
+Aat ,weak necessity,deontic,?,negative,conversational,yes,aat mai+V,negation on main verb
+Aat ,weak,deontic,?,negative,conversational,yes,aat mai+V,negation on main verb
+Aat ,strong,teleological,?,negative,conversational,yes,aat mai+V,negation on main verb
+Aat ,weak necessity,teleological,?,negative,conversational,yes,aat mai+V,negation on main verb
+Aat ,weak,teleological,?,negative,conversational,yes,aat mai+V,negation on main verb
+Aat ,strong,circumstantial,?,negative,conversational,yes,aat mai+V,negation on main verb
+Aat ,weak,circumstantial,?,negative,conversational,yes,aat mai+V,negation on main verb
+Aat ,strong,bouletic,?,negative,conversational,yes,aat mai+V,negation on main verb
+Jambpen,strong,epistemic,?,negative,-,yes,Mai jambpen,
+Jambpen,weak necessity,epistemic,?,negative,-,yes,Mai jambpen,
+Jambpen,weak,epistemic,?,negative,-,yes,Mai jambpen,
+Jambpen,strong,deontic,1,negative,-,yes,Mai jambpen,
+Jambpen,weak necessity,deontic,?,negative,-,yes,Mai jambpen,
+Jambpen,weak,deontic,?,negative,-,yes,Mai jambpen,
+Jambpen,strong,teleological,1,negative,-,yes,Mai jambpen,
+Jambpen,weak necessity,teleological,?,negative,-,yes,Mai jambpen,
+Jambpen,weak,teleological,?,negative,-,yes,Mai jambpen,
+Jambpen,strong,circumstantial,?,negative,-,yes,Mai jambpen,
+Jambpen,weak,circumstantial,?,negative,-,yes,Mai jambpen,
+Jambpen,strong,bouletic,?,negative,-,yes,Mai jambpen,
+Jambpen dong,strong,epistemic,?,negative,-,yes,Mai jambpen dong,
+Jambpen dong,weak necessity,epistemic,?,negative,-,yes,Mai jambpen dong,
+Jambpen dong,weak,epistemic,?,negative,-,yes,Mai jambpen dong,
+Jambpen dong,strong,deontic,1,negative,-,yes,Mai jambpen dong,
+Jambpen dong,weak necessity,deontic,?,negative,-,yes,Mai jambpen dong,
+Jambpen dong,weak,deontic,0,negative,-,yes,Mai jambpen dong,
+Jambpen dong,strong,teleological,?,negative,-,yes,Mai jambpen dong,
+Jambpen dong,weak necessity,teleological,?,negative,-,yes,Mai jambpen dong,
+Jambpen dong,weak,teleological,?,negative,-,yes,Mai jambpen dong,
+Jambpen dong,strong,circumstantial,?,negative,-,yes,Mai jambpen dong,
+Jambpen dong,weak,circumstantial,?,negative,-,yes,Mai jambpen dong,
+Jambpen dong,strong,bouletic,?,negative,-,yes,Mai jambpen dong,
+Dong,strong,epistemic,?,negative,-,yes,Mai dong ,
+Dong,weak necessity,epistemic,?,negative,-,yes,Mai dong ,
+Dong,weak,epistemic,?,negative,-,yes,Mai dong ,
+Dong,strong,deontic,?,negative,-,yes,Mai dong ,
+Dong,weak necessity,deontic,?,negative,-,yes,Mai dong ,
+Dong,weak,deontic,?,negative,-,yes,Mai dong ,
+Dong,strong,teleological,1,negative,-,yes,Mai dong ,
+Dong,weak necessity,teleological,?,negative,-,yes,Mai dong ,
+Dong,weak,teleological,?,negative,-,yes,Mai dong ,
+Dong,strong,circumstantial,1,negative,-,yes,Mai dong ,
+Dong,weak,circumstantial,?,negative,-,yes,Mai dong ,
+Dong,strong,bouletic,?,negative,-,yes,Mai dong ,
+Dong jambpen,strong,epistemic,?,negative,-,yes,Mai dong jambpen,
+Dong jambpen,weak necessity,epistemic,?,negative,-,yes,Mai dong jambpen,
+Dong jambpen,weak,epistemic,?,negative,-,yes,Mai dong jambpen,
+Dong jambpen,strong,deontic,?,negative,-,yes,Mai dong jambpen,
+Dong jambpen,weak necessity,deontic,?,negative,-,yes,Mai dong jambpen,
+Dong jambpen,weak,deontic,?,negative,-,yes,Mai dong jambpen,
+Dong jambpen,strong,teleological,1,negative,-,yes,Mai dong jambpen,
+Dong jambpen,weak necessity,teleological,?,negative,-,yes,Mai dong jambpen,
+Dong jambpen,weak,teleological,?,negative,-,yes,Mai dong jambpen,
+Dong jambpen,strong,circumstantial,?,negative,-,yes,Mai dong jambpen,
+Dong jambpen,weak,circumstantial,?,negative,-,yes,Mai dong jambpen,
+Dong jambpen,strong,bouletic,?,negative,-,yes,Mai dong jambpen,

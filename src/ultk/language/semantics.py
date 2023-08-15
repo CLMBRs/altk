@@ -17,6 +17,7 @@
         >>> a_few = NumeralExpression(form="a few", meaning=a_few_meaning)
 """
 
+from itertools import product
 from typing import Iterable, Union
 import numpy as np
 import pandas as pd
@@ -67,7 +68,52 @@ class Universe:
 
     def prior_numpy(self) -> np.ndarray:
         return np.array([self._prior[referent.name] for referent in self.referents])
+    
+    def axes_from_referents(self) -> dict:
+        """Generates the feature axes, and their covering values from the set of all Referents in the Universe. 
+        This may omit unspecified feature values that are possible but don't exist in the dataset. """
+        axes = dict()
+        for ref in self.referents:
+            for feature, value in ref.properties:
+                if feature not in axes:
+                    axes[feature] = set()
+                axes[feature].add(value)
+        return axes
+    
+    def array_to_points(self, a: np.ndarray) -> set:
+        """Converts a numpy array to a set of points.
 
+        Args:
+            a: numpy array representing a modal meaning.
+
+        Raises:
+            ValueError: if the meaning space doesn't match the array shape.axis 0 (rows) are forces, axis 1 (columns) are flavors.
+        """
+        if a.shape != tuple([len(features) for axis, features in self.axes_from_referents()]):
+            raise ValueError(
+                f"The size of the numpy array must match the size of the modal meaning space. a.shape={a.shape}, self.axes={self.axes_from_referents()}"
+            )
+
+        # return {
+        #     ModalMeaningPoint(name=f"{self.forces[pair[0]]}+{self.flavors[pair[1]]}")
+        #     for pair in np.argwhere(a)
+        # }
+        return {
+            Referent(force=self.forces[pair[0]], flavor=self.flavors[pair[1]])
+            for pair in np.argwhere(a)
+        }
+    
+    def generate_meanings(self) -> list:
+        """Generates all possible subsets of the meaning space, based on the pre-existing axes."""
+        shape = tuple([len(features) for axis, features in self.axes_from_referents()])
+        arrs = [
+            np.array(i).reshape(shape)
+            for i in product([0, 1], repeat=len(self.referents))
+        ]
+        arrs = arrs[1:]  # remove the empty array meaning to prevent div by 0
+        meanings = [ModalMeaning(self.array_to_points(arr), self) for arr in arrs]
+        return meanings
+    
     def __getitem__(self, key: Union[str, int]) -> Referent:
         if type(key) is str:
             return self._referents_by_name[key]

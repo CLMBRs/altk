@@ -1,0 +1,245 @@
+expression,force,flavor,can_express,polarity,syntactically_negated,full_form,notes
+hazu,strong,epistemic,1,positive,no,hazu,"hazu(da), ""must + copula"""
+hazu,strong,deontic,?,positive,no,hazu,"hazu(da), ""must + copula"""
+hazu,strong,teleological,?,positive,no,hazu,"hazu(da), ""must + copula"""
+hazu,strong,circumstantial,1,positive,no,hazu,hazu with non-first person subjects
+hazu,strong,bouletic,?,positive,no,hazu,"hazu(da), ""must + copula"""
+hazu,weak necessity,epistemic,?,positive,no,hazu,"hazu(da), ""must + copula"""
+hazu,weak necessity,deontic,?,positive,no,hazu,"hazu(da), ""must + copula"""
+hazu,weak necessity,teleological,?,positive,no,hazu,"hazu(da), ""must + copula"""
+hazu,weak,epistemic,?,positive,no,hazu,"hazu(da), ""must + copula"""
+hazu,weak,deontic,?,positive,no,hazu,"hazu(da), ""must + copula"""
+hazu,weak,teleological,?,positive,no,hazu,"hazu(da), ""must + copula"""
+hazu,weak,circumstantial,1,positive,no,hazu,hazu with pure circumstantial possibility readings
+hazu,strong,epistemic,?,negative,yes,hazu-(ga) + negation,
+hazu,strong,deontic,?,negative,yes,hazu-(ga) + negation,
+hazu,strong,teleological,?,negative,yes,hazu-(ga) + negation,
+hazu,strong,circumstantial,?,negative,yes,hazu-(ga) + negation,
+hazu,weak,epistemic,1,negative,yes,hazu-(ga) + negation,
+hazu,weak,deontic,?,negative,yes,hazu-(ga) + negation,
+hazu,weak,teleological,?,negative,yes,hazu-(ga) + negation,
+hazu,weak,circumstantial,1,negative,yes,hazu-(ga) + negation,
+ni chigai nai,strong,epistemic,1,positive,no,ni chigai nai,slightly stronger than hazu(da)
+ni chigai nai,strong,deontic,?,positive,no,ni chigai nai,slightly stronger than hazu(da)
+ni chigai nai,strong,teleological,?,positive,no,ni chigai nai,slightly stronger than hazu(da)
+ni chigai nai,strong,circumstantial,?,positive,no,ni chigai nai,slightly stronger than hazu(da)
+ni chigai nai,strong,bouletic,?,positive,no,ni chigai nai,slightly stronger than hazu(da)
+ni chigai nai,weak necessity,epistemic,?,positive,no,ni chigai nai,slightly stronger than hazu(da)
+ni chigai nai,weak necessity,deontic,?,positive,no,ni chigai nai,slightly stronger than hazu(da)
+ni chigai nai,weak necessity,teleological,?,positive,no,ni chigai nai,slightly stronger than hazu(da)
+ni chigai nai,weak,epistemic,?,positive,no,ni chigai nai,slightly stronger than hazu(da)
+ni chigai nai,weak,deontic,?,positive,no,ni chigai nai,slightly stronger than hazu(da)
+ni chigai nai,weak,teleological,?,positive,no,ni chigai nai,slightly stronger than hazu(da)
+ni chigai nai,weak,circumstantial,?,positive,no,ni chigai nai,slightly stronger than hazu(da)
+ni chigai nai,strong,epistemic,1,negative,yes,nichigainai + negation,slightly less natural
+ni chigai nai,strong,deontic,?,negative,yes,nichigainai + negation,slightly less natural
+ni chigai nai,strong,teleological,?,negative,yes,nichigainai + negation,slightly less natural
+ni chigai nai,strong,circumstantial,?,negative,yes,nichigainai + negation,slightly less natural
+ni chigai nai,weak,epistemic,?,negative,yes,nichigainai + negation,slightly less natural
+ni chigai nai,weak,deontic,?,negative,yes,nichigainai + negation,slightly less natural
+ni chigai nai,weak,teleological,?,negative,yes,nichigainai + negation,slightly less natural
+ni chigai nai,weak,circumstantial,?,negative,yes,nichigainai + negation,slightly less natural
+(a)nakerebanaranai,strong,epistemic,?,positive,no,(a)nakerebanaranai,this is double negation that means similarly 'not possible if not happening'
+(a)nakerebanaranai,strong,deontic,1,positive,no,(a)nakerebanaranai,
+(a)nakerebanaranai,strong,teleological,1,positive,no,(a)nakerebanaranai,
+(a)nakerebanaranai,strong,circumstantial,?,positive,no,(a)nakerebanaranai,
+(a)nakerebanaranai,strong,bouletic,1,positive,no,(a)nakerebanaranai,seemingly only with first person subjects
+(a)nakerebanaranai,weak necessity,epistemic,?,positive,no,(a)nakerebanaranai,
+(a)nakerebanaranai,weak necessity,deontic,?,positive,no,(a)nakerebanaranai,
+(a)nakerebanaranai,weak necessity,teleological,?,positive,no,(a)nakerebanaranai,
+(a)nakerebanaranai,weak,epistemic,?,positive,no,(a)nakerebanaranai,
+(a)nakerebanaranai,weak,deontic,?,positive,no,(a)nakerebanaranai,
+(a)nakerebanaranai,weak,teleological,?,positive,no,(a)nakerebanaranai,
+(a)nakerebanaranai,weak,circumstantial,?,positive,no,(a)nakerebanaranai,
+daroo,strong,epistemic,?,positive,no,daroo,
+daroo,strong,deontic,?,positive,no,daroo,
+daroo,strong,teleological,?,positive,no,daroo,
+daroo,strong,circumstantial,?,positive,no,daroo,
+daroo,strong,bouletic,?,positive,no,daroo,
+daroo,weak necessity,epistemic,1,positive,no,daroo,
+daroo,weak necessity,deontic,?,positive,no,daroo,
+daroo,weak necessity,teleological,?,positive,no,daroo,
+daroo,weak,epistemic,?,positive,no,daroo,
+daroo,weak,deontic,?,positive,no,daroo,
+daroo,weak,teleological,?,positive,no,daroo,
+daroo,weak,circumstantial,?,positive,no,daroo,
+daroo,strong,epistemic,?,negative,,,
+daroo,strong,deontic,?,negative,,,
+daroo,strong,teleological,?,negative,,,
+daroo,strong,circumstantial,?,negative,,,
+daroo,weak,epistemic,?,negative,,,
+daroo,weak,deontic,?,negative,,,
+daroo,weak,teleological,?,negative,,,
+daroo,weak,circumstantial,?,negative,,,
+hou-ga ii,strong,epistemic,?,positive,no,hou-ga ii,
+hou-ga ii,strong,deontic,?,positive,no,hou-ga ii,
+hou-ga ii,strong,teleological,?,positive,no,hou-ga ii,
+hou-ga ii,strong,circumstantial,?,positive,no,hou-ga ii,
+hou-ga ii,strong,bouletic,?,positive,no,hou-ga ii,
+hou-ga ii,weak necessity,epistemic,?,positive,no,hou-ga ii,
+hou-ga ii,weak necessity,deontic,1,positive,no,hou-ga ii,
+hou-ga ii,weak necessity,teleological,1,positive,no,hou-ga ii,
+hou-ga ii,weak,epistemic,?,positive,no,hou-ga ii,
+hou-ga ii,weak,deontic,?,positive,no,hou-ga ii,
+hou-ga ii,weak,teleological,?,positive,no,hou-ga ii,
+hou-ga ii,weak,circumstantial,?,positive,no,hou-ga ii,
+hou-ga ii,strong,epistemic,?,negative,,,
+hou-ga ii,strong,deontic,?,negative,,,
+hou-ga ii,strong,teleological,?,negative,,,
+hou-ga ii,strong,circumstantial,?,negative,,,
+hou-ga ii,weak,epistemic,?,negative,,,
+hou-ga ii,weak,deontic,?,negative,,,
+hou-ga ii,weak,teleological,?,negative,,,
+hou-ga ii,weak,circumstantial,?,negative,,,
+beki,strong,epistemic,?,positive,no,beki,
+beki,strong,deontic,?,positive,no,beki,
+beki,strong,teleological,?,positive,no,beki,
+beki,strong,circumstantial,?,positive,no,beki,
+beki,strong,bouletic,?,positive,no,beki,
+beki,weak necessity,epistemic,?,positive,no,beki,
+beki,weak necessity,deontic,1,positive,no,beki,
+beki,weak necessity,teleological,1,positive,no,beki,
+beki,weak,epistemic,?,positive,no,beki,
+beki,weak,deontic,?,positive,no,beki,
+beki,weak,teleological,?,positive,no,beki,
+beki,weak,circumstantial,?,positive,no,beki,
+beki,strong,epistemic,?,negative,yes,beki + negation,
+beki,strong,deontic,?,negative,yes,beki + negation,
+beki,strong,teleological,?,negative,yes,beki + negation,
+beki,strong,circumstantial,?,negative,yes,beki + negation,
+beki,weak,epistemic,?,negative,yes,beki + negation,
+beki,weak,deontic,1,negative,yes,beki + negation,
+beki,weak,teleological,?,negative,yes,beki + negation,
+beki,weak,circumstantial,?,negative,yes,beki + negation,
+kamoshirenai,strong,epistemic,?,positive,no,kamoshirenai,
+kamoshirenai,strong,deontic,?,positive,no,kamoshirenai,
+kamoshirenai,strong,teleological,?,positive,no,kamoshirenai,
+kamoshirenai,strong,circumstantial,?,positive,no,kamoshirenai,
+kamoshirenai,strong,bouletic,?,positive,no,kamoshirenai,
+kamoshirenai,weak necessity,epistemic,?,positive,no,kamoshirenai,
+kamoshirenai,weak necessity,deontic,?,positive,no,kamoshirenai,
+kamoshirenai,weak necessity,teleological,?,positive,no,kamoshirenai,
+kamoshirenai,weak,epistemic,1,positive,no,kamoshirenai,
+kamoshirenai,weak,deontic,?,positive,no,kamoshirenai,
+kamoshirenai,weak,teleological,?,positive,no,kamoshirenai,
+kamoshirenai,weak,circumstantial,?,positive,no,kamoshirenai,
+kamoshirenai,strong,epistemic,?,negative,,,
+kamoshirenai,strong,deontic,?,negative,,,
+kamoshirenai,strong,teleological,?,negative,,,
+kamoshirenai,strong,circumstantial,?,negative,,,
+kamoshirenai,weak,epistemic,?,negative,,,
+kamoshirenai,weak,deontic,?,negative,,,
+kamoshirenai,weak,teleological,?,negative,,,
+kamoshirenai,weak,circumstantial,?,negative,,,
+temo ii,strong,epistemic,?,positive,no,temo ii,
+temo ii,strong,deontic,?,positive,no,temo ii,
+temo ii,strong,teleological,?,positive,no,temo ii,
+temo ii,strong,circumstantial,?,positive,no,temo ii,
+temo ii,strong,bouletic,?,positive,no,temo ii,
+temo ii,weak necessity,epistemic,?,positive,no,temo ii,
+temo ii,weak necessity,deontic,?,positive,no,temo ii,
+temo ii,weak necessity,teleological,?,positive,no,temo ii,
+temo ii,weak,epistemic,?,positive,no,temo ii,
+temo ii,weak,deontic,1,positive,no,temo ii,
+temo ii,weak,teleological,1,positive,no,temo ii,
+temo ii,weak,circumstantial,?,positive,no,temo ii,
+temo ii,strong,epistemic,?,negative,yes,[p negation] + temo ii,
+temo ii,strong,deontic,1,negative,yes,[p negation] + temo ii,
+temo ii,strong,teleological,1,negative,yes,[p negation] + temo ii,
+temo ii,strong,circumstantial,?,negative,yes,[p negation] + temo ii,
+temo ii,weak,epistemic,?,negative,yes,[p negation] + temo ii,
+temo ii,weak,deontic,?,negative,yes,[p negation] + temo ii,
+temo ii,weak,teleological,?,negative,yes,[p negation] + temo ii,
+temo ii,weak,circumstantial,?,negative,yes,[p negation] + temo ii,
+koto-ga deki,strong,epistemic,?,positive,no,koto-ga deki,
+koto-ga deki,strong,deontic,?,positive,no,koto-ga deki,
+koto-ga deki,strong,teleological,?,positive,no,koto-ga deki,
+koto-ga deki,strong,circumstantial,?,positive,no,koto-ga deki,
+koto-ga deki,strong,bouletic,?,positive,no,koto-ga deki,
+koto-ga deki,weak necessity,epistemic,?,positive,no,koto-ga deki,
+koto-ga deki,weak necessity,deontic,?,positive,no,koto-ga deki,
+koto-ga deki,weak necessity,teleological,?,positive,no,koto-ga deki,
+koto-ga deki,weak,epistemic,?,positive,no,koto-ga deki,
+koto-ga deki,weak,deontic,1,positive,no,koto-ga deki,
+koto-ga deki,weak,teleological,1,positive,no,koto-ga deki,
+koto-ga deki,weak,circumstantial,?,positive,no,koto-ga deki,
+koto-ga deki,strong,epistemic,?,negative,yes,koto-ga deki + negation,
+koto-ga deki,strong,deontic,?,negative,yes,koto-ga deki + negation,
+koto-ga deki,strong,teleological,?,negative,yes,koto-ga deki + negation,
+koto-ga deki,strong,circumstantial,?,negative,yes,koto-ga deki + negation,
+koto-ga deki,weak,epistemic,?,negative,yes,koto-ga deki + negation,
+koto-ga deki,weak,deontic,1,negative,yes,koto-ga deki + negation,
+koto-ga deki,weak,teleological,?,negative,yes,koto-ga deki + negation,
+koto-ga deki,weak,circumstantial,?,negative,yes,koto-ga deki + negation,
+e,strong,epistemic,?,positive,no,(ar)e with ability readings,
+e,strong,deontic,?,positive,no,(ar)e with ability readings,
+e,strong,teleological,?,positive,no,(ar)e with ability readings,
+e,strong,circumstantial,?,positive,no,(ar)e with ability readings,
+e,strong,bouletic,?,positive,no,(ar)e with ability readings,
+e,weak necessity,epistemic,?,positive,no,(ar)e with ability readings,
+e,weak necessity,deontic,?,positive,no,(ar)e with ability readings,
+e,weak necessity,teleological,?,positive,no,(ar)e with ability readings,
+e,weak,epistemic,?,positive,no,(ar)e with ability readings,
+e,weak,deontic,?,positive,no,(ar)e with ability readings,
+e,weak,teleological,?,positive,no,(ar)e with ability readings,
+e,weak,circumstantial,1,positive,no,(ar)e with ability readings,
+e,strong,epistemic,?,negative,yes,(ar)e + negation,
+e,strong,deontic,?,negative,yes,(ar)e + negation,
+e,strong,teleological,?,negative,yes,(ar)e + negation,
+e,strong,circumstantial,?,negative,yes,(ar)e + negation,
+e,weak,epistemic,?,negative,yes,(ar)e + negation,
+e,weak,deontic,?,negative,yes,(ar)e + negation,
+e,weak,teleological,1,negative,yes,(ar)e + negation,
+e,weak,circumstantial,1,negative,yes,(ar)e + negation,
+koto-ga dekiru,strong,epistemic,?,positive,no,koto-ga dekiru,in principle okay with agentive verbs
+koto-ga dekiru,strong,deontic,?,positive,no,koto-ga dekiru,in principle okay with agentive verbs
+koto-ga dekiru,strong,teleological,?,positive,no,koto-ga dekiru,in principle okay with agentive verbs
+koto-ga dekiru,strong,circumstantial,?,positive,no,koto-ga dekiru,in principle okay with agentive verbs
+koto-ga dekiru,strong,bouletic,?,positive,no,koto-ga dekiru,in principle okay with agentive verbs
+koto-ga dekiru,weak necessity,epistemic,?,positive,no,koto-ga dekiru,in principle okay with agentive verbs
+koto-ga dekiru,weak necessity,deontic,?,positive,no,koto-ga dekiru,in principle okay with agentive verbs
+koto-ga dekiru,weak necessity,teleological,?,positive,no,koto-ga dekiru,in principle okay with agentive verbs
+koto-ga dekiru,weak,epistemic,?,positive,no,koto-ga dekiru,in principle okay with agentive verbs
+koto-ga dekiru,weak,deontic,?,positive,no,koto-ga dekiru,in principle okay with agentive verbs
+koto-ga dekiru,weak,teleological,?,positive,no,koto-ga dekiru,in principle okay with agentive verbs
+koto-ga dekiru,weak,circumstantial,1,positive,no,koto-ga dekiru,in principle okay with agentive verbs
+koto-ga dekiru,strong,epistemic,?,negative,yes,koto-ga dekiru + negation,
+koto-ga dekiru,strong,deontic,?,negative,yes,koto-ga dekiru + negation,
+koto-ga dekiru,strong,teleological,?,negative,yes,koto-ga dekiru + negation,
+koto-ga dekiru,strong,circumstantial,?,negative,yes,koto-ga dekiru + negation,
+koto-ga dekiru,weak,epistemic,?,negative,yes,koto-ga dekiru + negation,
+koto-ga dekiru,weak,deontic,?,negative,yes,koto-ga dekiru + negation,
+koto-ga dekiru,weak,teleological,1,negative,yes,koto-ga dekiru + negation,
+koto-ga dekiru,weak,circumstantial,1,negative,yes,koto-ga dekiru + negation,
+tashika,strong,epistemic,1,negative,yes,tashika + negation,tashika(certain)
+tashika,strong,deontic,?,negative,yes,tashika + negation,tashika(certain)
+tashika,strong,teleological,?,negative,yes,tashika + negation,tashika(certain)
+tashika,strong,circumstantial,?,negative,yes,tashika + negation,tashika(certain)
+tashika,weak,epistemic,?,negative,yes,tashika + negation,tashika(certain)
+tashika,weak,deontic,?,negative,yes,tashika + negation,tashika(certain)
+tashika,weak,teleological,?,negative,yes,tashika + negation,tashika(certain)
+tashika,weak,circumstantial,?,negative,yes,tashika + negation,tashika(certain)
+kagira-nai,strong,epistemic,?,negative,no,kagira-nai,limit-neg
+kagira-nai,strong,deontic,?,negative,no,kagira-nai,limit-neg
+kagira-nai,strong,teleological,?,negative,no,kagira-nai,limit-neg
+kagira-nai,strong,circumstantial,1,negative,no,kagira-nai,limit-neg
+kagira-nai,weak,epistemic,?,negative,no,kagira-nai,limit-neg
+kagira-nai,weak,deontic,?,negative,no,kagira-nai,limit-neg
+kagira-nai,weak,teleological,?,negative,no,kagira-nai,limit-neg
+kagira-nai,weak,circumstantial,?,negative,no,kagira-nai,limit-neg
+wake,strong,epistemic,?,negative,yes,wake-(ga) + negation,"wake-(ga) + negation, reason and nominaliser"
+wake,strong,deontic,?,negative,yes,wake-(ga) + negation,"wake-(ga) + negation, reason and nominaliser"
+wake,strong,teleological,?,negative,yes,wake-(ga) + negation,"wake-(ga) + negation, reason and nominaliser"
+wake,strong,circumstantial,?,negative,yes,wake-(ga) + negation,"wake-(ga) + negation, reason and nominaliser"
+wake,weak,epistemic,1,negative,yes,wake-(ga) + negation,"wake-(ga) + negation, reason and nominaliser"
+wake,weak,deontic,?,negative,yes,wake-(ga) + negation,"wake-(ga) + negation, reason and nominaliser"
+wake,weak,teleological,?,negative,yes,wake-(ga) + negation,"wake-(ga) + negation, reason and nominaliser"
+wake,weak,circumstantial,?,negative,yes,wake-(ga) + negation,"wake-(ga) + negation, reason and nominaliser"
+naranai,strong,epistemic,?,negative,yes,naranai,nai itself is a negation word
+naranai,strong,deontic,?,negative,yes,naranai,
+naranai,strong,teleological,?,negative,yes,naranai,
+naranai,strong,circumstantial,?,negative,yes,naranai,
+naranai,weak,epistemic,?,negative,yes,naranai,
+naranai,weak,deontic,1,negative,yes,naranai,
+naranai,weak,teleological,?,negative,yes,naranai,
+naranai,weak,circumstantial,?,negative,yes,naranai,

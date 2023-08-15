@@ -1,0 +1,38 @@
+expression,force,flavor,can_express,notes
+k'a,strong,epistemic,1,
+k'a,weak,epistemic,1,
+k'a,strong,deontic,0,"321 says that k'a can only take epistemic conversation background, 5b has counter example"
+k'a,weak,deontic,0,
+k'a,strong,circumstantial,0,5b is a counter example
+k'a,weak,circumstantial,0,
+k'a,strong,irrealis,0,"321 says k'a can only have epistemic flaovr, so other flavors are impossible"
+k'a,weak,irrealis,0,
+k'a,strong,future,0,
+k'a,weak,future,0,
+ka-...-a,strong,circumstantial,1,322 points to Davis et al (to appear) and says that the circumfix is circumstantial
+ka-...-a,weak,circumstantial,1,
+ka,strong,deontic,1,
+ka,weak,deontic,1,
+ka,strong,irrealis,1,
+ka,weak,irrealis,1,
+ka,strong,epistemic,0,332 says deontic and irrealis are the only possible flavors and provides a counterexample of epistemic
+ka,weak,epistemic,0,
+ka,strong,circumstantial,0,"since 322 says deontic and irrealis are the only options, other flavors are impossible"
+ka,weak,circumstantial,0,
+ka,strong,future,0,
+ka,weak,future,0,
+kelh,strong,future,1,
+kelh,weak,future,1,
+kelh,strong,epistemic,0,325 says that kelh does not allow dispositional and epistemic reading and provides a counterexample for epistemic
+kelh,weak,epistemic,0,
+kelh,strong,deontic,0,325 says kelh does not allow any non-future reading
+kelh,weak,deontic,0,
+kelh,strong,circumstantial,0,
+kelh,weak,circumstantial,0,
+kelh,strong,irrealis,0,
+kelh,weak,irrealis,0,
+-an',strong,epistemic,1,"described as evidential (346)  that denotes epistemic-perceived evidence, and 'is usually rejected in cases where it is 
+made explicit that only an existential claim' (348)"
+-an',weak,epistemic,0,
+-ku7,strong,epistemic,1,described as evidential (346) that denotes epistemic-reportative
+-ku7,weak,epistemic,?,"when asked about existential interpretation, speakers vary on judgments(349), some speakers accept such interpretation"

@@ -1,0 +1,82 @@
+expression,force,flavor,can_express,notes
+kunyala,weak,epistemic,1,
+kunyala,weak,circumstantial,1,
+kunyala,weak,deontic,1,
+kunyala,weak,teleological,1,
+kunyala,strong,epistemic,0,
+kunyala,strong,circumstantial,0,
+kunyala,strong,deontic,0,
+kunyala,strong,teleological,0,
+kunyala,weak necessity,epistemic,0,
+kunyala,weak necessity,circumstantial,0,
+kunyala,weak necessity,deontic,0,
+kunyala,weak necessity,teleological,0,
+haondi,weak,epistemic,1,adverb
+haondi,weak,circumstantial,0,adverb
+haondi,weak,deontic,0,adverb
+haondi,weak,teleological,0,adverb
+haondi,strong,epistemic,0,adverb
+haondi,strong,circumstantial,0,adverb
+haondi,strong,deontic,0,adverb
+haondi,strong,teleological,0,adverb
+haondi,weak necessity,epistemic,0,adverb
+haondi,weak necessity,circumstantial,0,adverb
+haondi,weak necessity,deontic,0,adverb
+haondi,weak necessity,teleological,0,adverb
+fwana,weak,epistemic,1,adverb
+fwana,weak,circumstantial,0,adverb
+fwana,weak,deontic,0,adverb
+fwana,weak,teleological,0,adverb
+fwana,strong,epistemic,0,adverb
+fwana,strong,circumstantial,0,adverb
+fwana,strong,deontic,0,adverb
+fwana,strong,teleological,0,adverb
+fwana,weak necessity,epistemic,0,adverb
+fwana,weak necessity,circumstantial,0,adverb
+fwana,weak necessity,deontic,0,adverb
+fwana,weak necessity,teleological,0,adverb
+kudoka,strong,circumstantial,1,
+kudoka,strong,bouletic,0,
+kudoka,strong,deontic,1,
+kudoka,strong,teleological,1,
+kudoka,strong,epistemic,1,
+kudoka,weak,circumstantial,0,
+kudoka,weak,bouletic,0,
+kudoka,weak,deontic,0,
+kudoka,weak,teleological,0,
+kudoka,weak,epistemic,0,
+kudoka,weak necessity,circumstantial,0,
+kudoka,weak necessity,bouletic,0,
+kudoka,weak necessity,deontic,0,
+kudoka,weak necessity,teleological,0,
+kudoka,weak necessity,epistemic,0,
+kwenya,strong,bouletic,1,plain form: only strong
+kwenya,strong,circumstantial,0,plain form: only strong
+kwenya,strong,epistemic,0,plain form: only strong
+kwenya,strong,deontic,0,plain form: only strong
+kwenya,strong,teleological,0,plain form: only strong
+kwenya,weak,bouletic,0,plain form: only strong
+kwenya,weak,circumstantial,0,plain form: only strong
+kwenya,weak,epistemic,0,plain form: only strong
+kwenya,weak,deontic,0,plain form: only strong
+kwenya,weak,teleological,0,plain form: only strong
+kwenya,weak necessity,bouletic,0,plain form: only strong
+kwenya,weak necessity,circumstantial,0,plain form: only strong
+kwenya,weak necessity,epistemic,0,plain form: only strong
+kwenya,weak necessity,deontic,0,plain form: only strong
+kwenya,weak necessity,teleological,0,plain form: only strong
+kwenya-Vk,weak necessity,bouletic,1,impersonal form (kwenya + anticausative): only weak necessity
+kwenya-Vk,weak necessity,circumstantial,1,impersonal form (kwenya + anticausative): only weak necessity
+kwenya-Vk,weak necessity,deontic,1,impersonal form (kwenya + anticausative): only weak necessity
+kwenya-Vk,weak necessity,teleological,1,impersonal form (kwenya + anticausative): only weak necessity
+kwenya-Vk,weak necessity,epistemic,1,impersonal form (kwenya + anticausative): only weak necessity
+kwenya-Vk,strong,bouletic,0,
+kwenya-Vk,strong,circumstantial,0,
+kwenya-Vk,strong,deontic,0,
+kwenya-Vk,strong,teleological,0,
+kwenya-Vk,strong,epistemic,0,
+kwenya-Vk,weak,bouletic,0,
+kwenya-Vk,weak,circumstantial,0,
+kwenya-Vk,weak,deontic,0,
+kwenya-Vk,weak,teleological,0,
+kwenya-Vk,weak,epistemic,0,

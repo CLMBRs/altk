@@ -1,9 +1,9 @@
-from ultk.language.grammar import Grammar, GrammaticalExpression, Rule
 from ultk.language.semantics import Meaning, Referent, Universe
 
 from ultk.language.grammar.grammar import Grammar, GrammaticalExpression, Rule
-from ultk.language.grammar.boolean import BooleanGrammar
+from ultk.language.grammar.boolean import BooleanGrammar, RuleNames
 from ultk.language.grammar.complexity import num_atoms
+import ultk.language.grammar.complexity as complexity
 from ultk.language.semantics import Meaning, Referent, Universe
 
 
@@ -56,6 +56,42 @@ class TestGrammar:
         for rule in enumed_grammar:
             print(rule)
 
+class TestComplexity:
+    ge_x = GrammaticalExpression(rule_name="x",children=None)
+    ge_y = GrammaticalExpression(rule_name="y",children=None)
+    ge_z = GrammaticalExpression(rule_name="z",children=None)
+
+    ge_0 = GrammaticalExpression(rule_name="0",children=None)
+    ge_1 = GrammaticalExpression(rule_name="1",children=None)
+
+    ge_xy = GrammaticalExpression(rule_name=RuleNames.AND, children=[ge_x, ge_y])
+    ge_xz = GrammaticalExpression(rule_name=RuleNames.AND, children=[ge_x, ge_z])
+
+    undistr_expr = GrammaticalExpression(RuleNames.OR, children=[ge_xy, ge_xz] )
+    distr_expr = GrammaticalExpression(RuleNames.AND, children=[ge_x, GrammaticalExpression(RuleNames.OR, children=[ge_y, ge_z])])
+    
+    def test_distribute_and_over_or(self):
+        result = complexity.distribute_and_over_or(self.undistr_expr)
+        assert result == self.distr_expr
+
+    def test_negation(self):
+        result = complexity.negation(self.ge_x)
+        assert result == GrammaticalExpression(RuleNames.NOT, children=[self.ge_x])
+
+    def test_coverage(self):
+        return NotImplementedError
+    
+    def test_complement(self):
+        return NotImplementedError
+    
+    def test_or_identity(self):
+        return NotImplementedError
+    
+    def test_and_identity(self):
+        assert complexity.identity_and(GrammaticalExpression(RuleNames.AND, children=[self.ge_x, self.ge_y, self.ge_0, self.ge_z])) == GrammaticalExpression(RuleNames.AND, children=[self.ge_x, self.ge_y, self.ge_z])
+        assert complexity.identity_and(GrammaticalExpression(RuleNames.AND, children=[self.ge_x, self.ge_0])) == self.ge_x
+        assert complexity.identity_and(GrammaticalExpression(RuleNames.AND, children=[self.ge_0])) == self.ge_0
+
 class TestBoolean:
     referents = [
         Referent(f"p1-{p1}_p2-{p2}", {"p1": p1, "p2": p2})
@@ -80,3 +116,5 @@ class TestBoolean:
             TestBoolean.universe,
         )
         assert expr_meaning == goal_meaning
+
+    

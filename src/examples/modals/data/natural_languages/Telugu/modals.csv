@@ -1,0 +1,121 @@
+expression,force,flavor,can_express,polarity,syntactically_negated,full_form,notes
+tappakuNdaa,strong,epistemic,1,positive,no,,Adverbial element
+tappakuNdaa,weak necessity,epistemic,1,positive,no,,Adverbial element
+tappakuNdaa,weak,epistemic,?,positive,no,,Adverbial element
+tappakuNdaa,strong,deontic,?,positive,no,,Adverbial element
+tappakuNdaa,weak necessity,deontic,?,positive,no,,Adverbial element
+tappakuNdaa,weak,deontic,?,positive,no,,Adverbial element
+tappakuNdaa,strong,teleological,0,positive,no,,Adverbial element
+tappakuNdaa,weak necessity,teleological,?,positive,no,,Adverbial element
+tappakuNdaa,weak,teleological,?,positive,no,,Adverbial element
+tappakuNdaa,strong ,circumstantial,?,positive,no,,Adverbial element
+tappakuNdaa,weak,circumstantial,?,positive,no,,Adverbial element
+tappakuNdaa,strong,bouletic,?,positive,no,,Adverbial element
+V-ccu,strong,epistemic,?,positive,no,,verbal suffix
+V-ccu,weak necessity,epistemic,?,positive,no,,verbal suffix
+V-ccu,weak,epistemic,1,positive,no,,verbal suffix
+V-ccu,strong,deontic,?,positive,no,,verbal suffix
+V-ccu,weak necessity,deontic,?,positive,no,,verbal suffix
+V-ccu,weak,deontic,1,positive,no,,verbal suffix
+V-ccu,strong,teleological,?,positive,no,,verbal suffix
+V-ccu,weak necessity,teleological,?,positive,no,,verbal suffix
+V-ccu,weak,teleological,1,positive,no,,verbal suffix
+V-ccu,strong ,circumstantial,?,positive,no,,verbal suffix
+V-ccu,weak,circumstantial,1,positive,no,,verbal suffix
+V-ccu,strong,bouletic,?,positive,no,,verbal suffix
+v-anakuntaa,strong,epistemic,?,positive,no,,verbal suffix
+v-anakuntaa,weak necessity,epistemic,?,positive,no,,verbal suffix
+v-anakuntaa,weak,epistemic,1,positive,no,,verbal suffix
+v-anakuntaa,strong,deontic,?,positive,no,,verbal suffix
+v-anakuntaa,weak necessity,deontic,?,positive,no,,verbal suffix
+v-anakuntaa,weak,deontic,?,positive,no,,verbal suffix
+v-anakuntaa,strong,teleological,?,positive,no,,verbal suffix
+v-anakuntaa,weak necessity,teleological,?,positive,no,,verbal suffix
+v-anakuntaa,weak,teleological,?,positive,no,,verbal suffix
+v-anakuntaa,strong ,circumstantial,?,positive,no,,verbal suffix
+v-anakuntaa,weak,circumstantial,?,positive,no,,verbal suffix
+v-anakuntaa,strong,bouletic,?,positive,no,,verbal suffix
+v-aali,strong,epistemic,?,positive,no,,verbal suffix
+v-aali,weak necessity,epistemic,?,positive,no,,verbal suffix
+v-aali,weak,epistemic,0,positive,no,,verbal suffix
+v-aali,strong,deontic,1,positive,no,,verbal suffix
+v-aali,weak necessity,deontic,1,positive,no,,verbal suffix
+v-aali,weak,deontic,0,positive,no,,verbal suffix
+v-aali,strong,teleological,1,positive,no,,verbal suffix
+v-aali,weak necessity,teleological,1,positive,no,,verbal suffix
+v-aali,weak,teleological,0,positive,no,,verbal suffix
+v-aali,strong ,circumstantial,1,positive,no,,verbal suffix
+v-aali,weak,circumstantial,0,positive,no,,verbal suffix
+v-aali,strong,bouletic,1,positive,no,,verbal suffix
+v-gala,strong,epistemic,?,positive,no,,verbal suffix
+v-gala,weak necessity,epistemic,?,positive,no,,verbal suffix
+v-gala,weak,epistemic,?,positive,no,,verbal suffix
+v-gala,strong,deontic,?,positive,no,,verbal suffix
+v-gala,weak necessity,deontic,?,positive,no,,verbal suffix
+v-gala,weak,deontic,?,positive,no,,verbal suffix
+v-gala,strong,teleological,?,positive,no,,verbal suffix
+v-gala,weak necessity,teleological,?,positive,no,,verbal suffix
+v-gala,weak,teleological,?,positive,no,,verbal suffix
+v-gala,strong ,circumstantial,?,positive,no,,verbal suffix
+v-gala,weak,circumstantial,1,positive,no,,verbal suffix
+v-gala,strong,bouletic,?,positive,no,,verbal suffix
+V-ccu,strong,epistemic,1,negative,yes,V-NEG-ccu,
+V-ccu,weak necessity,epistemic,?,negative,yes,V-NEG-ccu,
+V-ccu,weak,epistemic,?,negative,yes,V-NEG-ccu,
+V-ccu,strong,deontic,?,negative,yes,V-NEG-ccu,
+V-ccu,weak necessity,deontic,?,negative,yes,V-NEG-ccu,
+V-ccu,weak,deontic,?,negative,yes,V-NEG-ccu,
+V-ccu,strong,teleological,?,negative,yes,V-NEG-ccu,
+V-ccu,weak necessity,teleological,?,negative,yes,V-NEG-ccu,
+V-ccu,weak,teleological,?,negative,yes,V-NEG-ccu,
+V-ccu,strong ,circumstantial,?,negative,yes,V-NEG-ccu,
+V-ccu,weak,circumstantial,?,negative,yes,V-NEG-ccu,
+V-ccu,strong,bouletic,?,negative,yes,V-NEG-ccu,
+v-anakuntaa,strong,epistemic,?,negative,yes,V-NEG-anakuntaa,
+v-anakuntaa,weak necessity,epistemic,?,negative,yes,V-NEG-anakuntaa,
+v-anakuntaa,weak,epistemic,1,negative,yes,V-NEG-anakuntaa,
+v-anakuntaa,strong,deontic,?,negative,yes,V-NEG-anakuntaa,
+v-anakuntaa,weak necessity,deontic,?,negative,yes,V-NEG-anakuntaa,
+v-anakuntaa,weak,deontic,?,negative,yes,V-NEG-anakuntaa,
+v-anakuntaa,strong,teleological,?,negative,yes,V-NEG-anakuntaa,
+v-anakuntaa,weak necessity,teleological,?,negative,yes,V-NEG-anakuntaa,
+v-anakuntaa,weak,teleological,?,negative,yes,V-NEG-anakuntaa,
+v-anakuntaa,strong ,circumstantial,?,negative,yes,V-NEG-anakuntaa,
+v-anakuntaa,weak,circumstantial,?,negative,yes,V-NEG-anakuntaa,
+v-anakuntaa,strong,bouletic,?,negative,yes,V-NEG-anakuntaa,
+avasaram ,strong,epistemic,?,negative,yes,[clause] + avasaram le+AGR,avasaram (need) + le (impossibility) + AGR - see Pelletier (1994) for notes on the nature of Le 
+avasaram ,weak necessity,epistemic,?,negative,yes,[clause] + avasaram le+AGR,avasaram (need) + le (impossibility) + AGR - see Pelletier (1994) for notes on the nature of Le 
+avasaram ,weak,epistemic,?,negative,yes,[clause] + avasaram le+AGR,avasaram (need) + le (impossibility) + AGR - see Pelletier (1994) for notes on the nature of Le 
+avasaram ,strong,deontic,1,negative,yes,[clause] + avasaram le+AGR,avasaram (need) + le (impossibility) + AGR - see Pelletier (1994) for notes on the nature of Le 
+avasaram ,weak necessity,deontic,?,negative,yes,[clause] + avasaram le+AGR,avasaram (need) + le (impossibility) + AGR - see Pelletier (1994) for notes on the nature of Le 
+avasaram ,weak,deontic,?,negative,yes,[clause] + avasaram le+AGR,avasaram (need) + le (impossibility) + AGR - see Pelletier (1994) for notes on the nature of Le 
+avasaram ,strong,teleological,1,negative,yes,[clause] + avasaram le+AGR,avasaram (need) + le (impossibility) + AGR - see Pelletier (1994) for notes on the nature of Le 
+avasaram ,weak necessity,teleological,?,negative,yes,[clause] + avasaram le+AGR,avasaram (need) + le (impossibility) + AGR - see Pelletier (1994) for notes on the nature of Le 
+avasaram ,weak,teleological,?,negative,yes,[clause] + avasaram le+AGR,avasaram (need) + le (impossibility) + AGR - see Pelletier (1994) for notes on the nature of Le 
+avasaram ,strong ,circumstantial,?,negative,yes,[clause] + avasaram le+AGR,avasaram (need) + le (impossibility) + AGR - see Pelletier (1994) for notes on the nature of Le 
+avasaram ,weak,circumstantial,?,negative,yes,[clause] + avasaram le+AGR,avasaram (need) + le (impossibility) + AGR - see Pelletier (1994) for notes on the nature of Le 
+avasaram ,strong,bouletic,?,negative,yes,[clause] + avasaram le+AGR,avasaram (need) + le (impossibility) + AGR - see Pelletier (1994) for notes on the nature of Le 
+kuuda,strong,epistemic,?,negative,yes,[clause] + kuuda + AGR,Negate a non-modal clause with negator kuuda
+kuuda,weak necessity,epistemic,?,negative,yes,[clause] + kuuda + AGR,Negate a non-modal clause with negator kuuda
+kuuda,weak,epistemic,?,negative,yes,[clause] + kuuda + AGR,Negate a non-modal clause with negator kuuda
+kuuda,strong,deontic,?,negative,yes,[clause] + kuuda + AGR,Negate a non-modal clause with negator kuuda
+kuuda,weak necessity,deontic,?,negative,yes,[clause] + kuuda + AGR,Negate a non-modal clause with negator kuuda
+kuuda,weak,deontic,1,negative,yes,[clause] + kuuda + AGR,Negate a non-modal clause with negator kuuda
+kuuda,strong,teleological,?,negative,yes,[clause] + kuuda + AGR,Negate a non-modal clause with negator kuuda
+kuuda,weak necessity,teleological,?,negative,yes,[clause] + kuuda + AGR,Negate a non-modal clause with negator kuuda
+kuuda,weak,teleological,1,negative,yes,[clause] + kuuda + AGR,Negate a non-modal clause with negator kuuda
+kuuda,strong ,circumstantial,?,negative,yes,[clause] + kuuda + AGR,Negate a non-modal clause with negator kuuda
+kuuda,weak,circumstantial,?,negative,yes,[clause] + kuuda + AGR,Negate a non-modal clause with negator kuuda
+kuuda,strong,bouletic,?,negative,yes,[clause] + kuuda + AGR,Negate a non-modal clause with negator kuuda
+le,strong,epistemic,?,negative,yes,[clause] + le+AGR,le (impossibility) + AGR
+le,weak necessity,epistemic,?,negative,yes,[clause] + le+AGR,le (impossibility) + AGR
+le,weak,epistemic,?,negative,yes,[clause] + le+AGR,le (impossibility) + AGR
+le,strong,deontic,?,negative,yes,[clause] + le+AGR,le (impossibility) + AGR
+le,weak necessity,deontic,?,negative,yes,[clause] + le+AGR,le (impossibility) + AGR
+le,weak,deontic,1,negative,yes,[clause] + le+AGR,le (impossibility) + AGR
+le,strong,teleological,?,negative,yes,[clause] + le+AGR,le (impossibility) + AGR
+le,weak necessity,teleological,?,negative,yes,[clause] + le+AGR,le (impossibility) + AGR
+le,weak,teleological,1,negative,yes,[clause] + le+AGR,le (impossibility) + AGR
+le,strong ,circumstantial,?,negative,yes,[clause] + le+AGR,le (impossibility) + AGR
+le,weak,circumstantial,1,negative,yes,[clause] + le+AGR,le (impossibility) + AGR
+le,strong,bouletic,?,negative,yes,[clause] + le+AGR,le (impossibility) + AGR

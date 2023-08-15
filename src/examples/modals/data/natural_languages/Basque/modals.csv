@@ -1,0 +1,98 @@
+expression,force,flavor,can_express,polarity,syntactically_negated,full_form,notes
+behar,strong,epistemic,1,positive,no,behar,"this is categorized as a modal in the note, and modal will be followed by auxilary verb in Basque"
+behar,weak necessity,epistemic,?,positive,no,behar,the expression can occur under some contexts and is not allowed under some other contexts
+behar,weak,epistemic,?,positive,no,behar,
+behar,strong,deontic,1,positive,no,behar,
+behar,weak necessity,deontic,1,positive,no,behar,
+behar,weak,deontic,?,positive,no,behar,
+behar,strong,teleological,1,positive,no,behar,
+behar,weak necessity,teleological,1,positive,no,behar(ko) zenuke,zenuke is be.2sg.erg.pot
+behar,weak,teleological,?,positive,no,behar,
+behar,strong,circumstantial,1,positive,no,behar,
+behar,weak,circumstantial,?,positive,no,behar,
+behar,strong,bouletic,1,positive,no,behar,
+behar,strong,epistemic,?,negative,yes,NEG + behar ,
+behar,weak necessity,epistemic,?,negative,yes,NEG + behar ,
+behar,weak,epistemic,?,negative,yes,NEG + behar ,
+behar,strong,deontic,1,negative,yes,NEG + behar ,
+behar,weak necessity,deontic,?,negative,yes,NEG + behar ,
+behar,weak,deontic,?,negative,yes,NEG + behar ,
+behar,strong,teleological,1,negative,yes,NEG + behar (+ rik),can be followed by -rik or some NPI optionally under teleological context
+behar,weak necessity,teleological,?,negative,yes,NEG + behar ,
+behar,weak,teleological,?,negative,yes,NEG + behar ,
+behar,strong,circumstantial,?,negative,yes,NEG + behar ,
+behar,weak,circumstantial,?,negative,yes,NEG + behar ,
+behar,strong,bouletic,?,negative,yes,NEG + behar ,
+ezin,strong,epistemic,?,negative,no,ezin,"this is categorized as a negative modal in the note, and modal will be followed by auxilary verb in Basque"
+ezin,weak necessity,epistemic,?,negative,no,ezin,
+ezin,weak,epistemic,1,negative,no,ezin,
+ezin,strong,deontic,?,negative,no,ezin,
+ezin,weak necessity,deontic,?,negative,no,ezin,
+ezin,weak,deontic,1,negative,no,ezin,
+ezin,strong,teleological,?,negative,no,ezin,
+ezin,weak necessity,teleological,?,negative,no,ezin,
+ezin,weak,teleological,1,negative,no,ezin,
+ezin,strong,circumstantial,?,negative,no,ezin,
+ezin,weak,circumstantial,1,negative,no,ezin,
+ezin,strong,bouletic,?,negative,no,ezin,
+nahi,strong,epistemic,?,positive,no,nahi,"this is categorized as a modal in the note, and modal will be followed by auxilary verb in Basque"
+nahi,weak necessity,epistemic,?,positive,no,nahi,
+nahi,weak,epistemic,?,positive,no,nahi,
+nahi,strong,deontic,?,positive,no,nahi,
+nahi,weak necessity,deontic,?,positive,no,nahi,
+nahi,weak,deontic,?,positive,no,nahi,
+nahi,strong,teleological,?,positive,no,nahi,
+nahi,weak necessity,teleological,?,positive,no,nahi,
+nahi,weak,teleological,?,positive,no,nahi,
+nahi,strong,circumstantial,?,positive,no,nahi,
+nahi,weak,circumstantial,?,positive,no,nahi,
+nahi,strong,bouletic,1,positive,no,nahi,
+ahal,strong,epistemic,?,positive,no,ahal,"this is categorized as a modal in the note, and modal will be followed by auxilary verb in Basque"
+ahal,weak necessity,epistemic,?,positive,no,ahal,
+ahal,weak,epistemic,?,positive,no,ahal,
+ahal,strong,deontic,?,positive,no,ahal,
+ahal,weak necessity,deontic,?,positive,no,ahal,
+ahal,weak,deontic,1,positive,no,ahal,
+ahal,strong,teleological,?,positive,no,ahal,
+ahal,weak necessity,teleological,?,positive,no,ahal,
+ahal,weak,teleological,1,positive,no,ahal,the expression is allowed but dezakezu is preferred
+ahal,strong,circumstantial,1,positive,no,ahal,the expression is allowed under the context but least preferred
+ahal,weak,circumstantial,?,positive,no,ahal,
+ahal,strong,bouletic,?,positive,no,ahal,
+egitekotan egon....behar,strong,epistemic,?,positive,no,egitekotan egon....behar,"egitekotan egon is a paraphrase of 'it is nearly', when combined with behar, it could express weak necessity"
+egitekotan egon....behar,weak necessity,epistemic,1,positive,no,egitekotan egon....behar,
+egitekotan egon....behar,weak,epistemic,?,positive,no,egitekotan egon....behar,
+egitekotan egon....behar,strong,deontic,?,positive,no,egitekotan egon....behar,
+egitekotan egon....behar,weak necessity,deontic,?,positive,no,egitekotan egon....behar,
+egitekotan egon....behar,weak,deontic,?,positive,no,egitekotan egon....behar,
+egitekotan egon....behar,strong,teleological,?,positive,no,egitekotan egon....behar,
+egitekotan egon....behar,weak necessity,teleological,?,positive,no,egitekotan egon....behar,
+egitekotan egon....behar,weak,teleological,?,positive,no,egitekotan egon....behar,
+egitekotan egon....behar,strong,circumstantial,?,positive,no,egitekotan egon....behar,
+egitekotan egon....behar,weak,circumstantial,?,positive,no,egitekotan egon....behar,
+egitekotan egon....behar,strong,bouletic,?,positive,no,egitekotan egon....behar,
+daiteke,strong,epistemic,?,positive,no,daiteke,"the notes categorized the expression as [V....izan] with different inflections of copula verb izan, but the inflections of izan contribute to complementary distribution of allowed contexts, so I divide the expression into [daiteke/liteke]"
+daiteke,weak necessity,epistemic,?,positive,no,daiteke,daiteke is prs.subj.pot.3sg of izan
+daiteke,weak,epistemic,0,positive,no,daiteke,
+daiteke,strong,deontic,?,positive,no,daiteke,
+daiteke,weak necessity,deontic,1,positive,no,ditzakete,"this is the pot.3pl of izan, it is noted that this is the same as daiteke, only personal inflection is different"
+daiteke,weak,deontic,1,positive,no,daiteke/zaitezke/dezake,"zaitezke is the prs.pot.2sg of izan, and dazake is prs.pot.3sg.erg I put them under the same since it seems the only difference is the personal and case marker"
+daiteke,strong,teleological,?,positive,no,daiteke,
+daiteke,weak necessity,teleological,?,positive,no,daiteke,
+daiteke,weak,teleological,1,positive,no,dezakezu,this is glossed as be.potential.2sg
+daiteke,strong,circumstantial,?,positive,no,daiteke,
+daiteke,weak,circumstantial,1,positive,no,daitezeke,this is glossed as prs.subj.pot.3pl
+daiteke,strong,bouletic,?,positive,no,daiteke,
+liteke,strong,epistemic,?,positive,no,liteke,liteke is 3sg irealis hypothetical inflection of izan
+liteke,weak necessity,epistemic,?,positive,no,liteke,
+liteke,weak,epistemic,1,positive,no,(ba)liteke,(ba) is an optional hypothetical marker
+liteke,strong,deontic,?,positive,no,liteke,
+liteke,weak necessity,deontic,?,positive,no,liteke,
+liteke,weak,deontic,?,positive,no,liteke,
+liteke,strong,teleological,?,positive,no,liteke,
+liteke,weak necessity,teleological,?,positive,no,liteke,
+liteke,weak,teleological,?,positive,no,liteke,
+liteke,strong,circumstantial,?,positive,no,liteke,
+liteke,weak,circumstantial,1,positive,no,litezke,litezke is the plural form of liteke
+liteke,strong,bouletic,?,positive,no,liteke,
+liteke,strong,epistemic,1,negative,yes,liteke ..... ez,ez is a negation word
