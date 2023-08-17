@@ -57,18 +57,18 @@ class TestGrammar:
             print(rule)
 
 class TestComplexity:
-    ge_x = GrammaticalExpression(rule_name="x",children=None)
-    ge_y = GrammaticalExpression(rule_name="y",children=None)
-    ge_z = GrammaticalExpression(rule_name="z",children=None)
+    ge_x = GrammaticalExpression(rule_name="x", func= lambda *args: "x", children=None)
+    ge_y = GrammaticalExpression(rule_name="y", func= lambda *args: "y", children=None)
+    ge_z = GrammaticalExpression(rule_name="z", func= lambda *args: "z", children=None)
 
-    ge_0 = GrammaticalExpression(rule_name="0",children=None)
-    ge_1 = GrammaticalExpression(rule_name="1",children=None)
+    ge_0 = GrammaticalExpression(rule_name="0", func= lambda *args: False, children=None)
+    ge_1 = GrammaticalExpression(rule_name="1", func= lambda *args: True, children=None)
 
-    ge_xy = GrammaticalExpression(rule_name=RuleNames.AND, children=[ge_x, ge_y])
-    ge_xz = GrammaticalExpression(rule_name=RuleNames.AND, children=[ge_x, ge_z])
+    ge_xy = GrammaticalExpression(rule_name=RuleNames.AND, func = lambda *args: all(args), children=[ge_x, ge_y])
+    ge_xz = GrammaticalExpression(rule_name=RuleNames.AND, func = lambda *args: all(args), children=[ge_x, ge_z])
 
-    undistr_expr = GrammaticalExpression(RuleNames.OR, children=[ge_xy, ge_xz] )
-    distr_expr = GrammaticalExpression(RuleNames.AND, children=[ge_x, GrammaticalExpression(RuleNames.OR, children=[ge_y, ge_z])])
+    undistr_expr = GrammaticalExpression(RuleNames.OR, func = lambda *args: any(args), children=[ge_xy, ge_xz] )
+    distr_expr = GrammaticalExpression(RuleNames.AND, func = lambda *args: all(args), children=[ge_x, GrammaticalExpression(RuleNames.OR, lambda x, y: x or y, children=[ge_y, ge_z])])
     
     def test_distribute_and_over_or(self):
         result = complexity.distribute_and_over_or(self.undistr_expr)
@@ -76,21 +76,21 @@ class TestComplexity:
 
     def test_negation(self):
         result = complexity.negation(self.ge_x)
-        assert result == GrammaticalExpression(RuleNames.NOT, children=[self.ge_x])
+        assert result == GrammaticalExpression(RuleNames.NOT, lambda x: not x, children=[self.ge_x])
 
     def test_coverage(self):
-        return NotImplementedError
+        assert NotImplementedError
     
     def test_complement(self):
-        return NotImplementedError
+        assert NotImplementedError
     
     def test_or_identity(self):
-        return NotImplementedError
+        assert NotImplementedError
     
     def test_and_identity(self):
-        assert complexity.identity_and(GrammaticalExpression(RuleNames.AND, children=[self.ge_x, self.ge_y, self.ge_0, self.ge_z])) == GrammaticalExpression(RuleNames.AND, children=[self.ge_x, self.ge_y, self.ge_z])
-        assert complexity.identity_and(GrammaticalExpression(RuleNames.AND, children=[self.ge_x, self.ge_0])) == self.ge_x
-        assert complexity.identity_and(GrammaticalExpression(RuleNames.AND, children=[self.ge_0])) == self.ge_0
+        assert complexity.identity_and(GrammaticalExpression(RuleNames.AND, func = lambda *args: all(args), children=[self.ge_x, self.ge_y, self.ge_0, self.ge_z])) == GrammaticalExpression(RuleNames.AND, children=[self.ge_x, self.ge_y, self.ge_z])
+        assert complexity.identity_and(GrammaticalExpression(RuleNames.AND, func = lambda *args: all(args), children=[self.ge_x, self.ge_0])) == self.ge_x
+        assert complexity.identity_and(GrammaticalExpression(RuleNames.AND, func = lambda *args: all(args), children=[self.ge_0])) == self.ge_0
 
 class TestBoolean:
     referents = [
