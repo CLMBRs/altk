@@ -74,10 +74,10 @@ class Universe:
         This may omit unspecified feature values that are possible but don't exist in the dataset. """
         axes = dict()
         for ref in self.referents:
-            for feature, value in ref.properties:
+            for feature in ref.__dict__:
                 if feature not in axes:
                     axes[feature] = set()
-                axes[feature].add(value)
+                axes[feature].add(ref.__dict__[feature])
         return axes
     
     def array_to_points(self, a: np.ndarray) -> set:

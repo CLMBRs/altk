@@ -133,7 +133,7 @@ class GrammaticalExpression(Expression):
     
     def contains_name(self, name) -> bool:
         """Whether this expression contains a node with the specified name."""
-        if self.is_atom:
+        if self.is_atom():
             return self.rule_name == name
         for child in self.children:
             if child.contains_name(name):

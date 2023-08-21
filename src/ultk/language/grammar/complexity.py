@@ -4,7 +4,7 @@ from ultk.language.grammar.boolean import RuleNames
 from ultk.language.semantics import Universe
 import numpy as np
 
-HARD_HEURISTIC_CEILLING = 2500  # Best solutions are likely before 1000 iterations
+HARD_HEURISTIC_CEILING = 2500  # Best solutions are likely before 1000 iterations
 
 def expression_length(expr: GrammaticalExpression) -> int:
     """Get the expression length (number of nodes in a tree).
@@ -38,11 +38,11 @@ def num_atoms(expr: GrammaticalExpression) -> int:
 ################################################################
 
 def is_product_or_singleton(expr: GrammaticalExpression) -> bool:
-    """Helper function. Returns true if the GrammaticalExpression represents an atom, or has an AND as root."""
+    """Helper function. Returns true if the GrammaticalExpression represents an atom, or has AND as the root."""
     
-    return expr.is_atom or (expr.rule_name == RuleNames.AND and len(expr.children) > 0) #Not sure if we want that secondary check here
+    return expr.is_atom or (expr.rule_name == RuleNames.AND and len(expr.children) > 0) # Not sure if we want that secondary check here
 
-def boolean_cover(expr: GrammaticalExpression) -> GrammaticalExpression:
+def boolean_cover(expr: GrammaticalExpression, axis_values:list) -> GrammaticalExpression:
     """
     Replace the sum of all atoms with multiplicative identity.
     If $n=$ num_flavors, and $f_i$ is the $i$-th flavor,
@@ -50,16 +50,28 @@ def boolean_cover(expr: GrammaticalExpression) -> GrammaticalExpression:
         $\sum_{i=1}^{n}(f_i) = 1$
     """
 
-def distribute_and(expr: GrammaticalExpression) -> GrammaticalExpression:
-    """(p and q) or (p and s) -> p and (q or s)"""
-    if expr.rule_name != RuleNames.OR:
-         return expr
-    
-    factored_terms = []
-    remaining_terms = []
-    for child in expr.children:
-         if is_product_or_singleton(child):
-              factored_terms += [gc for gc in child if gc != ]
+    # Unwrap atoms and check for array cover.
+    if expr.rule_name == RuleNames.OR and set(axis_values) == set(
+        [
+            child.rule_name
+            for child in expr.children
+            if child.is_atom()
+        ]
+    ):
+        return GrammaticalExpression("1", func=lambda *args:True, children=None)
+
+    # Recursive
+    elif [child for child in expr.children]:
+        children = [
+            child
+            if child.is_atom()
+            else boolean_cover(child)
+            for child in expr.children
+        ]
+        return GrammaticalExpression(rule_name=expr.rule_name, func=expr.func, children=children)
+
+    return expr
+
 
 ##########################################################################
 # Addition
@@ -67,26 +79,28 @@ def distribute_and(expr: GrammaticalExpression) -> GrammaticalExpression:
 # At least binary branching. Will have at most the number of terms in
 # the DNF of the array representation.
 ##########################################################################
-def identity_and(expr: GrammaticalExpression) -> GrammaticalExpression:
+def identity_or(expr: GrammaticalExpression) -> GrammaticalExpression:
     """
     Applies additive identity law.
         (+ a b ... 0 ... c) => (+ a b c)
         (+ a 0) => (a)
         (+ 0) => (0)
     """
-    if expr.rule_name == RuleNames.AND and expr.contains_name("0"):
-        children = [child for child in expr.children if not child.full_name=="1"]
+    if expr.rule_name == RuleNames.OR and expr.contains_name("0"):
+        children = [child for child in expr.children if not child.rule_name=="0"]
         if children == []:
-            return GrammaticalExpression("0", func = lambda *args: False)
+            return GrammaticalExpression("0", func = lambda *args: False, children=None)
+        elif len(children) == 1:
+            return children[0]
         else:
             return GrammaticalExpression(expr.rule_name, expr.func, children=children)
-    if [child for child in expr.children]:
+    if expr.children:
         return GrammaticalExpression(
             expr.rule_name,
             expr.func,
             children=[
                 # child if isinstance(child, str)
-                identity_and(child)
+                identity_or(child)
                 for child in expr.children
             ],
         )
@@ -102,25 +116,31 @@ def identity_and(expr: GrammaticalExpression) -> GrammaticalExpression:
     #     xxy = xy
     ##########################################################################
 
-def identity_or(expr: GrammaticalExpression) -> GrammaticalExpression:
-    if expr.rule_name == RuleNames.OR and expr.contains_name("1"):
-        children = [child for child in expr.children if not child.full_name=="1"]
+def identity_and(expr: GrammaticalExpression) -> GrammaticalExpression:
+    """
+    Applies multiplicative identity.
+        (* a b ... 1 ... c) => (* a b c)
+        (* a 1) => (a)
+    """
+    if expr.rule_name == RuleNames.AND and expr.contains_name("1"):
+        children = [child for child in expr.children if not child.rule_name=="1"]
         if children == []:
-                return GrammaticalExpression("1", func = lambda *args: True)
+            return GrammaticalExpression("1", func = lambda *args: True, children=None)
         elif len(children) == 1:
-                return children[0]
+            return children[0]
         else:
-                return GrammaticalExpression(expr.rule_name, expr.func, children=children)
+            return GrammaticalExpression(expr.rule_name, expr.func, children=children)
         
-    # Recursively iterate through all children and find the additive identity of all of them
-    if [child for child in expr.children()]:
+    # Recursively iterate through all children and find the multiplicative identity of all of them
+    #if [child for child in expr.children]:
+    if expr.children:
         return GrammaticalExpression(
             expr.rule_name,
             expr.func,
             children=[
                 # child if isinstance(child, str)
-                identity_or(child)
-                for child in expr.children()
+                identity_and(child)
+                for child in expr.children
             ],
         )
     return expr
@@ -129,7 +149,7 @@ def identity_or(expr: GrammaticalExpression) -> GrammaticalExpression:
 # Distributivity
 #################################################################
 
-def distr_m_over_a(expr: GrammaticalExpression, factor: GrammaticalExpression) -> GrammaticalExpression:
+def distr_or_over_and(expr: GrammaticalExpression, factor: GrammaticalExpression) -> GrammaticalExpression:
     """
     Factor out a term from a SOP.
     Reverses distributivity of multiplication over addition.
@@ -153,9 +173,9 @@ def distr_m_over_a(expr: GrammaticalExpression, factor: GrammaticalExpression) -
     factored_terms = []  # list of atoms
     remaining_terms = []  # list of trees
     for child in expr.children:
-        if child.is_product_or_singleton():
+        if is_product_or_singleton(child):
             if factor in child.children:
-                factored_terms += [gc for gc in child if gc != factor]
+                factored_terms += [gc for gc in child.children if gc != factor]
                 continue
         remaining_terms.append(child)
 
@@ -216,8 +236,8 @@ def shorten_expression(
                 for atom in atoms_c
             ]
             comp = GrammaticalExpression(
-                full_name=RuleNames.NOT, func = lambda *args: all(args),
-                children=[GrammaticalExpression(full_name=RuleNames.OR, func = lambda *args: any(args), children=atoms)],
+                rule_name=RuleNames.NOT, func = lambda x: not x,
+                children=[GrammaticalExpression(rule_name=RuleNames.OR, func = lambda *args: any(args), children=atoms)],
             )
             new_children = [comp] + others
 
@@ -225,7 +245,7 @@ def shorten_expression(
         
         return expr
 
-def sum_complement(expr: GrammaticalExpression) -> GrammaticalExpression:
+def sum_complement(expr: GrammaticalExpression, uni:Universe) -> GrammaticalExpression:
         """
         Reduces a sum to its complement if the complement is shorter, e.g.
         flavors= e, d, c
@@ -248,16 +268,17 @@ def sum_complement(expr: GrammaticalExpression) -> GrammaticalExpression:
                 else:
                     others.append(sum_complement(child))
 
-            if atoms and (set(atoms) <= set(self.flavors)):
-                atoms_c = list(set(self.flavors) - set(atoms))
-                return shorten_expression(expr, atoms, others, atoms_c)
-            
-            if atoms and (set(atoms) <= set(self.forces)):
-                atoms_c = list(set(self.forces) - set(atoms))
-                return self.__shorten_expression(ET, atoms, others, atoms_c)
+            axes = uni.axes_from_referents()
 
-            new_children = [GrammaticalExpression(atom) for atom in atoms] + others
-            return GrammaticalExpression(rule_name=expr.rule_name, children=new_children)
+            for axis, axis_values in axes:
+
+                if atoms and (set(atoms) <= set(axis_values)):
+                    atoms_c = list(set(axis_values) - set(atoms))
+                    return shorten_expression(expr, atoms, others, atoms_c)
+
+
+            new_children = [GrammaticalExpression(atom, func=lambda *args: atom) for atom in atoms] + others
+            return GrammaticalExpression(expr.rule_name, expr.func, children=new_children)
 
         # Recurse
         if (expr.rule_name != RuleNames.OR) or (
@@ -266,15 +287,15 @@ def sum_complement(expr: GrammaticalExpression) -> GrammaticalExpression:
             return GrammaticalExpression(
                 node=expr.rule_name,
                 children=[
-                    sum_complement(GrammaticalExpression(child)) for child in children
+                    sum_complement(GrammaticalExpression(child), uni) for child in children
                 ],
             )
         
-def array_to_dnf(arr: np.ndarray, complement=False) -> GrammaticalExpression:
+def array_to_dnf(arr: np.ndarray, uni:Universe, complement=False) -> GrammaticalExpression:
     """
     Creates a Disjunctive Normal Form (Sum of Products) GrammaticalExpression of nonzero array entries.
 
-    The followin is an illustration
+    The following is an illustration
         [[1,1,1],
         [1,1,1]]
         =>
@@ -287,20 +308,25 @@ def array_to_dnf(arr: np.ndarray, complement=False) -> GrammaticalExpression:
             (* Q_2 f_3)
             )
     """
+    axes = uni.axes_from_referents().keys()
+    axes_values = uni.axes_from_referents().values()
+    
     # Special case: 0
     if np.count_nonzero(arr) == 0:
-        return GrammaticalExpression("0")
-    if np.count_nonzero(arr) == (len(self.forces) * len(self.flavors)):
-        return GrammaticalExpression("1")
+        return GrammaticalExpression("0", lambda *args: False)
+    if np.count_nonzero(arr) == (np.prod(axes_values)):
+        return GrammaticalExpression("1", lambda *args: True)
 
     if not complement:
         argw = np.argwhere(arr)
         products = [
             GrammaticalExpression(
-                full_name = RuleNames.AND,
+                rule_name = RuleNames.AND,
+                func = lambda *args: all(args),
                 children=[
-                    ExpressionTree(self.forces[pair[0]]),
-                    ExpressionTree(self.flavors[pair[1]]),
+
+                    GrammaticalExpression(axes_values[axis_value_index][axis_value], lambda *args: axes_values[axis_value_index][axis_value])
+                    for axis_value_index, axis_value in enumerate(pair)
                 ],
             )
             for pair in argw
@@ -311,24 +337,26 @@ def array_to_dnf(arr: np.ndarray, complement=False) -> GrammaticalExpression:
         argw = np.argwhere(arr == 0)
         products = [
             GrammaticalExpression(
-                full_name=RuleNames.AND,
+                rule_name=RuleNames.AND,
+                func = lambda *args: all(args),
                 children=[
-                    ExpressionTree(self.forces[pair[0]]),
-                    ExpressionTree(self.flavors[pair[1]]),
+                    GrammaticalExpression(axes_values[axis_value_index][axis_value], lambda *args: axes_values[axis_value_index][axis_value])
+                    for axis_value_index, axis_value in enumerate(pair)
                 ],
             )
             for pair in argw
         ]
         negated_products = [
             GrammaticalExpression(
-                node=RuleNames.NOT,
+                RuleNames.NOT,
+                lambda x: not x,
                 children=[product],
             )
             for product in products
         ]
-        return GrammaticalExpression(rule_name=RuleNames.OR, children=products)
+        return GrammaticalExpression(RuleNames.OR, lambda *args:any(args), children=products)
 
-def minimum_lot_description(meaning: Meaning, minimization_funcs) -> list:
+def minimum_lot_description(meaning: Meaning, minimization_funcs, uni:Universe) -> list:
     """Runs a heuristic to estimate the shortest length description of modal meanings in a language of thought.
 
     This is useful for measuring the complexity of modals, and the langauges containing them.
@@ -343,7 +371,7 @@ def minimum_lot_description(meaning: Meaning, minimization_funcs) -> list:
     # arrs = [meaning.to_array() for meaning in meanings]
     # r = [str(self.__joint_heuristic(arr)) for arr in tqdm(arrs)]
     arr = meaning.to_array()
-    r = str(joint_heuristic(arr, minimization_funcs, contains_negation=True))
+    r = str(joint_heuristic(arr, minimization_funcs, True, uni))
     return r
 
 def heuristic(expr: GrammaticalExpression, simple_operations:list, relative_operations:list, uni:Universe) -> GrammaticalExpression:
@@ -365,13 +393,13 @@ def heuristic(expr: GrammaticalExpression, simple_operations:list, relative_oper
         it = 0
 
         atoms = (
-            [GrammaticalExpression("0"), GrammaticalExpression("1")]
-            + [GrammaticalExpression(x) for x in uni.referents]
-            + [GrammaticalExpression(x) for x in uni.flavors]
+            [GrammaticalExpression("0", lambda *args: False), GrammaticalExpression("1" , lambda *args: False)]
+            + [GrammaticalExpression(x, lambda *args: x) for x in uni.referents]
+            + [GrammaticalExpression(x, lambda *args: x) for x in uni.flavors]
         )
 
         while to_visit:
-            if it == HARD_HEURISTIC_CEILLING:
+            if it == HARD_HEURISTIC_CEILING:
                  break
             next = to_visit.pop(0) #Pop the first element off the list, FIFO 
 
@@ -387,7 +415,7 @@ def heuristic(expr: GrammaticalExpression, simple_operations:list, relative_oper
 
         return shortest
 
-def joint_heuristic(arr: np.ndarray, minimization_funcs, contains_negation:bool) -> GrammaticalExpression:
+def joint_heuristic(arr: np.ndarray, minimization_funcs, contains_negation:bool, uni:Universe) -> GrammaticalExpression:
         """
         Calls the boolean expression minimization heuristic twice, once
         to count 0s and once to count 1s. Returns the shorter result.
@@ -396,7 +424,7 @@ def joint_heuristic(arr: np.ndarray, minimization_funcs, contains_negation:bool)
             arr: a numpy array representing the meaning points a modal can express.
             minimization
         Returns:
-            result: the ExpressionTree representing the shortest lot description
+            result: the GrammaticalExpression representing the shortest lot description
         """
         e = array_to_dnf(arr)
         simple_operations = [
@@ -408,11 +436,11 @@ def joint_heuristic(arr: np.ndarray, minimization_funcs, contains_negation:bool)
         for func in minimization_funcs:
             simple_operations.append(func)
         
-        relative_operations = [distr_m_over_a]
+        relative_operations = [distr_or_over_and]
 
         if contains_negation:
             e_c = array_to_dnf(arr, complement=True)
-            simple_operations.append(sum_complement)
+            simple_operations.append(lambda x: sum_complement(x, uni))
             results = [
                 heuristic(e, simple_operations, relative_operations),
                 heuristic(
