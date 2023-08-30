@@ -33,6 +33,7 @@ def num_atoms(expr: GrammaticalExpression) -> int:
     return sum(num_atoms(child) for child in expr.children)
 
 
+
 ################################################################
 # Boolean Operations
 ################################################################
@@ -230,7 +231,7 @@ def shorten_expression(
         if len(atoms_c) < len(atoms):
             # if shortens expression, use new sum of wrapped atoms.
             atoms = [
-                GrammaticalExpression(atom, func = return_atom_fn(atom)
+                GrammaticalExpression(atom, func = return_atom_fn(atom), children=None
                                       ) 
                                       if not isinstance(atom, GrammaticalExpression) else atom
                 for atom in atoms_c
@@ -264,14 +265,15 @@ def sum_complement(expr: GrammaticalExpression, uni:Universe) -> GrammaticalExpr
             others = []
             for child in children:
                 if child.is_atom():
-                    atoms.append(child.ruleName)
+                    atoms.append(child.rule_name)
                 else:
-                    others.append(sum_complement(child))
+                    others.append(sum_complement(child, uni))
 
             axes = uni.axes_from_referents()
+            
 
-            for axis, axis_values in axes:
-
+            for axis_values in axes.values():
+                #print("Axes: " + str(axis_values))
                 if atoms and (set(atoms) <= set(axis_values)):
                     atoms_c = list(set(axis_values) - set(atoms))
                     return shorten_expression(expr, atoms, others, atoms_c)
@@ -285,9 +287,10 @@ def sum_complement(expr: GrammaticalExpression, uni:Universe) -> GrammaticalExpr
             not [child for child in children if child.is_atom()]
         ):
             return GrammaticalExpression(
-                node=expr.rule_name,
+                rule_name=expr.rule_name,
+                func=expr.func,
                 children=[
-                    sum_complement(GrammaticalExpression(child), uni) for child in children
+                    sum_complement(child, uni) for child in children
                 ],
             )
         
@@ -354,7 +357,7 @@ def array_to_dnf(arr: np.ndarray, uni:Universe, complement=False) -> Grammatical
             )
             for product in products
         ]
-        return GrammaticalExpression(RuleNames.OR, lambda *args:any(args), children=products)
+        return GrammaticalExpression(RuleNames.OR, lambda *args:any(args), children=negated_products)
 
 def minimum_lot_description(meaning: Meaning, minimization_funcs, uni:Universe) -> list:
     """Runs a heuristic to estimate the shortest length description of modal meanings in a language of thought.
@@ -367,7 +370,6 @@ def minimum_lot_description(meaning: Meaning, minimization_funcs, uni:Universe) 
     Returns:
         descriptions: a list of descriptions of each meaning in the lot
     """
-    # TODO: figure out how to use Pool() to play nice with Python objects
     # arrs = [meaning.to_array() for meaning in meanings]
     # r = [str(self.__joint_heuristic(arr)) for arr in tqdm(arrs)]
     arr = meaning.to_array()
@@ -433,6 +435,10 @@ def joint_heuristic(arr: np.ndarray, minimization_funcs, contains_negation:bool,
             #self.__flavor_cover,
             #self.__force_cover,
         ]
+        axes = uni.axes_from_referents()
+        for axis_name in axes:
+            simple_operations += lambda expr: boolean_cover(expr, axes[axis_name]) #Append the cover checkfunctions of all relevant axes in the dataset
+
         for func in minimization_funcs:
             simple_operations.append(func)
         

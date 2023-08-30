@@ -21,4 +21,14 @@ class BooleanGrammar(Grammar):
     def add_atom(self, name: str, function: Callable) -> None:
         self.add_rule(Rule(name, bool, None, function))
 
+    def __func_from_name(rule_name: RuleNames):
+        """
+        Utility function for generating the matching function from a RuleName. 
+        """
+        if rule_name == RuleNames.AND:
+            return lambda *args: all(args)
+        if rule_name == RuleNames.OR:
+            return lambda *args: any(args)
+        if rule_name == RuleNames.NOT:
+            return lambda arg: not arg #This, unlike the other two functions, assumes an atomic input, rather than a list
     

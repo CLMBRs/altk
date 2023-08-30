@@ -57,12 +57,14 @@ class TestGrammar:
             print(rule)
 
 class TestComplexity:
-    
     referents = [Referent(str(val), {"a1": val}) for val in ["x","y","z"]]
     referents.extend([Referent(str(val), {"a2": val}) for val in ["a","b","c"]])
     referents.append(Referent("0"))
     referents.append(Referent("1"))
+
     universe = Universe(referents)
+
+    true_meaning = Meaning(referents=referents[0:1], universe=universe)
 
 
     ge_x = GrammaticalExpression(rule_name="x", func= lambda *args: "x", children=None)
@@ -109,10 +111,42 @@ class TestComplexity:
         axes = self.universe.axes_from_referents()
         #Axes do not cover 
         assert str(complexity.boolean_cover(self.ge_a2, axes["a1"])) != str(self.ge_1)
-    
+
+    def test_evaluation(self):
+        assert self.ge_1.evaluate(self.universe)
+        assert not self.ge_0.evaluate(self.universe)
+
+        assert GrammaticalExpression(RuleNames.OR, func=lambda *args: any(args), 
+                                     children=[
+                                         GrammaticalExpression(RuleNames.AND, func=lambda *args: all(args), children=[self.ge_0, self.ge_1]),
+                                         GrammaticalExpression(RuleNames.OR, func=lambda *args: any(args), children=[self.ge_0, self.ge_1])
+                                         ]).evaluate(self.universe)
+        
+        assert not GrammaticalExpression(RuleNames.OR, func=lambda *args: any(args), 
+                                children=[
+                                    GrammaticalExpression(RuleNames.AND, func=lambda *args: all(args), children=[self.ge_0, self.ge_1]),
+                                    GrammaticalExpression(RuleNames.OR, func=lambda *args: any(args), children=[self.ge_0, self.ge_0])
+                                    ]).evaluate(self.universe)
+        
+
 
     def test_complement(self):
-        assert NotImplementedError
+        # y or z or (x and z) => ((not x) and (x and z))
+        #(+ y z (* a b )) => (+ (- x) (* a b))
+        #assert GrammaticalExpression(rule_name=RuleNames.AND, func)
+        expr = GrammaticalExpression(rule_name=RuleNames.OR, 
+                                        func=lambda *args: any(args),
+                                        children=[self.ge_y, self.ge_z, 
+                                                  GrammaticalExpression(rule_name=RuleNames.AND, func=lambda *args:all(args), children=[self.ge_a, self.ge_b])])
+        intended_expr_result = GrammaticalExpression(rule_name=RuleNames.OR, 
+                                        func=lambda *args: any(args),
+                                        children=[GrammaticalExpression(rule_name=RuleNames.NOT, func=lambda x: not x, children=[self.ge_x]),
+                                                  GrammaticalExpression(rule_name=RuleNames.AND, func=lambda *args:all(args), children=[self.ge_a, self.ge_b])])
+        complement = complexity.sum_complement(expr, uni=self.universe)
+        #print("Original expr:{}".format(expr))
+        #print("Complement expr:{}".format(complement))
+        assert str(complement) < str(intended_expr_result)
+        
 
     def test_x_contains_x(self):
         assert self.ge_x.contains_name("x") == True
@@ -169,6 +203,10 @@ class TestComplexity:
         print(str(identity_result))
         print(str(standard))
         assert str(identity_result) == str(standard)
+
+    def test_simplify(self):
+        pass
+        #simplify_result = complexity.minimum_lot_description()
         
 
 
