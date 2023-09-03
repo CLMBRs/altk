@@ -6,6 +6,7 @@ from ultk.language.grammar.complexity import num_atoms
 import ultk.language.grammar.complexity as complexity
 from ultk.language.semantics import Meaning, Referent, Universe
 
+import numpy as np
 
 class TestGrammar:
     referents = [Referent(str(num), {"num": num}) for num in range(4)]
@@ -147,6 +148,12 @@ class TestComplexity:
         #print("Complement expr:{}".format(complement))
         assert str(complement) < str(intended_expr_result)
         
+    def test_array_to_dnf(self):
+        arr = np.array([[0, 1, 0],[1,0,0],[0,1,1]])
+        print(self.universe.axes_from_referents())
+        generated_dnf = complexity.array_to_dnf(arr, self.universe, complement=False)
+        print(str(generated_dnf))
+
 
     def test_x_contains_x(self):
         assert self.ge_x.contains_name("x") == True
@@ -230,6 +237,8 @@ class TestBoolean:
         parsed_expression = TestBoolean.grammar.parse(TestBoolean.test_expr)
         expr_meaning = parsed_expression.evaluate(TestBoolean.universe)
         goal_meaning = Meaning(
+
+            
             [ref for ref in TestBoolean.referents if ref.p1 == 0 and ref.p2 == 1],
             TestBoolean.universe,
         )
