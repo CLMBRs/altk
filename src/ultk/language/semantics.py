@@ -17,7 +17,6 @@
         >>> a_few = NumeralExpression(form="a few", meaning=a_few_meaning)
 """
 
-from itertools import product
 from typing import Iterable, Union
 import numpy as np
 import pandas as pd
@@ -75,43 +74,15 @@ class Universe:
         axes = dict()
         for ref in self.referents:
             for feature in ref.__dict__:
-                if feature != "name": #Axes does not include the name
+                if feature != "name": #Axes should not include the name
                     if feature not in axes:
                         axes[feature] = set()
                     axes[feature].add(ref.__dict__[feature])
-        return axes
+        for key in axes:
+            axes[key] = sorted(list(axes[key]))
+        return dict(sorted(axes.items()))
     
-    def array_to_points(self, a: np.ndarray) -> set:
-        """Converts a numpy array to a set of points.
 
-        Args:
-            a: numpy array representing a modal meaning.
-
-        Raises:
-            ValueError: if the meaning space doesn't match the array shape.axis 0 (rows) are forces, axis 1 (columns) are flavors.
-        """
-        axes = self.axes_from_referents()
-        '''
-        if a.shape != tuple([len(features) for axis, features in axes]):
-            raise ValueError(
-                f"The size of the numpy array must match the size of the modal meaning space. a.shape={a.shape}, self.axes={self.axes_from_referents()}"
-            )
-        '''
-        return {
-            Referent(force=self.forces[pair[0]], flavor=self.flavors[pair[1]])
-            for pair in np.argwhere(a)
-        }
-    
-    def generate_meanings(self) -> list:
-        """Generates all possible subsets of the meaning space, based on the pre-existing axes."""
-        shape = tuple([len(features) for axis, features in self.axes_from_referents()])
-        arrs = [
-            np.array(i).reshape(shape)
-            for i in product([0, 1], repeat=len(self.referents))
-        ]
-        arrs = arrs[1:]  # remove the empty array meaning to prevent div by 0
-        meanings = [Meaning(self.array_to_points(arr), self) for arr in arrs]
-        return meanings
     
     def __getitem__(self, key: Union[str, int]) -> Referent:
         if type(key) is str:
@@ -214,23 +185,37 @@ class Meaning:
             } | zeros
 
     def to_dict(self) -> dict:
+        """
+        Returns the set of referents that compose the Meaning as a dict. 
+        """
         return {"referents": [referent.to_dict() for referent in self.referents]}
     
     def to_array(self) -> np.ndarray:
-        #Converts the meaning to an axis-indexed numpy array based off the properties implicit in the set of all referents
+        """Converts the meaning to an feature axis-indexed numpy array.
+        
+        The first dimension of the numpy array corresponds to the first feature, the second dimension corresponds to the second feature, and so on. """
         axes = self.universe.axes_from_referents()
-        axis_keys = axes.keys()
-        axis_values = axes.values()
-        a = np.array(tuple([len(property_set) for property_set in axis_values]))
+        axis_keys = list(axes.keys())
+        axis_values = list(axes.values())
+        len_array = tuple(len(property_set) for property_set in axis_values)
+        a = np.zeros(len_array)
 
         for referent in self.referents:
             properties = referent.__dict__
             prop_count = 0
-            indices = [0] * len(axes) #This doesn't cover underspecified cases, as it will default to the "first" property
-            for property in properties:
-                indices[axis_keys.indexOf(property)] = axes[property].indexOf(properties[property])
-            a[indices] = 1
+            indices = [0] * len(axes) 
+            for property in properties.keys():
+                if property != "name": #Disregard name property
+                    if(property not in axis_keys):
+                        raise KeyError("Property of the Meaning does not exist in the Universe.")
+                    property_index = axis_keys.index(property)
+                    indices[property_index] = axis_values[property_index].index(properties[property])
+                    print("Property: {} Referent: {} Index:{}".format(property, referent, indices))
+            print("array: " + str(a))
+            a[tuple(indices)] = 1 
         return a
+    
+
 
     def __bool__(self):
         return bool(self.referents) and bool(self.universe)

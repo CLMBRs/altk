@@ -1,8 +1,9 @@
 from ultk.language.grammar.grammar import GrammaticalExpression
 from ultk.language.grammar.grammar import Meaning
 from ultk.language.grammar.boolean import RuleNames
-from ultk.language.semantics import Universe
+from ultk.language.semantics import Referent, Universe
 import numpy as np
+from itertools import product
 
 HARD_HEURISTIC_CEILING = 2500  # Best solutions are likely before 1000 iterations
 
@@ -66,7 +67,7 @@ def boolean_cover(expr: GrammaticalExpression, axis_values:list) -> GrammaticalE
         children = [
             child
             if child.is_atom()
-            else boolean_cover(child)
+            else boolean_cover(child, axis_values=axis_values)
             for child in expr.children
         ]
         return GrammaticalExpression(rule_name=expr.rule_name, func=expr.func, children=children)
@@ -279,7 +280,7 @@ def sum_complement(expr: GrammaticalExpression, uni:Universe) -> GrammaticalExpr
                     return shorten_expression(expr, atoms, others, atoms_c)
 
 
-            new_children = [GrammaticalExpression(atom, func=lambda *args: atom) for atom in atoms] + others
+            new_children = [GrammaticalExpression(atom, func=lambda *args: atom, children=None) for atom in atoms] + others
             return GrammaticalExpression(expr.rule_name, expr.func, children=new_children)
 
         # Recurse
@@ -294,7 +295,7 @@ def sum_complement(expr: GrammaticalExpression, uni:Universe) -> GrammaticalExpr
                 ],
             )
         
-def array_to_dnf(arr: np.ndarray, uni:Universe, complement=False) -> GrammaticalExpression:
+def array_to_dnf(arr: np.ndarray, universe:Universe, complement=False) -> GrammaticalExpression:
     """
     Creates a Disjunctive Normal Form (Sum of Products) GrammaticalExpression of nonzero array entries.
 
@@ -311,14 +312,14 @@ def array_to_dnf(arr: np.ndarray, uni:Universe, complement=False) -> Grammatical
             (* Q_2 f_3)
             )
     """
-    axes = uni.axes_from_referents().keys()
-    axes_values = uni.axes_from_referents().values()
+    axes = universe.axes_from_referents().keys()
+    axes_values = list(universe.axes_from_referents().values())
     
     # Special case: 0
     if np.count_nonzero(arr) == 0:
-        return GrammaticalExpression("0", lambda *args: False)
-    if np.count_nonzero(arr) == (np.prod(axes_values)):
-        return GrammaticalExpression("1", lambda *args: True)
+        return GrammaticalExpression("0", lambda *args: False, children=None)
+    if np.count_nonzero(arr) == (np.prod(len(axes_values) * len(axes_values[0]))):
+        return GrammaticalExpression("1", lambda *args: True, children=None)
 
     if not complement:
         argw = np.argwhere(arr)
@@ -328,13 +329,13 @@ def array_to_dnf(arr: np.ndarray, uni:Universe, complement=False) -> Grammatical
                 func = lambda *args: all(args),
                 children=[
 
-                    GrammaticalExpression(axes_values[axis_value_index][axis_value], lambda *args: axes_values[axis_value_index][axis_value])
+                    GrammaticalExpression(axes_values[axis_value_index][axis_value], lambda *args: axes_values[axis_value_index][axis_value], children=None)
                     for axis_value_index, axis_value in enumerate(pair)
                 ],
             )
             for pair in argw
         ]
-        return GrammaticalExpression(rule_name=RuleNames.OR, children=products)
+        return GrammaticalExpression(RuleNames.OR, lambda *args:any(args), children=products)
 
     else:
         argw = np.argwhere(arr == 0)
@@ -343,7 +344,7 @@ def array_to_dnf(arr: np.ndarray, uni:Universe, complement=False) -> Grammatical
                 rule_name=RuleNames.AND,
                 func = lambda *args: all(args),
                 children=[
-                    GrammaticalExpression(axes_values[axis_value_index][axis_value], lambda *args: axes_values[axis_value_index][axis_value])
+                    GrammaticalExpression(axes_values[axis_value_index][axis_value], lambda *args: axes_values[axis_value_index][axis_value], children=None)
                     for axis_value_index, axis_value in enumerate(pair)
                 ],
             )
@@ -359,13 +360,15 @@ def array_to_dnf(arr: np.ndarray, uni:Universe, complement=False) -> Grammatical
         ]
         return GrammaticalExpression(RuleNames.OR, lambda *args:any(args), children=negated_products)
 
-def minimum_lot_description(meaning: Meaning, minimization_funcs, uni:Universe) -> list:
+def minimum_lot_description(meaning: Meaning, universe:Universe, minimization_funcs:list = []) -> list:
     """Runs a heuristic to estimate the shortest length description of modal meanings in a language of thought.
 
     This is useful for measuring the complexity of modals, and the langauges containing them.
 
     Args:
         meanings: a list of the ModalMeanings
+        universe: the Universe in which we want to minimize the LOT. 
+        minimization_funcs: an optional list of additional minimization function
 
     Returns:
         descriptions: a list of descriptions of each meaning in the lot
@@ -373,10 +376,10 @@ def minimum_lot_description(meaning: Meaning, minimization_funcs, uni:Universe) 
     # arrs = [meaning.to_array() for meaning in meanings]
     # r = [str(self.__joint_heuristic(arr)) for arr in tqdm(arrs)]
     arr = meaning.to_array()
-    r = str(joint_heuristic(arr, minimization_funcs, True, uni))
-    return r
+    descriptions = str(joint_heuristic(arr, universe, minimization_funcs, True))
+    return descriptions
 
-def heuristic(expr: GrammaticalExpression, simple_operations:list, relative_operations:list, uni:Universe) -> GrammaticalExpression:
+def heuristic(expr: GrammaticalExpression, simple_operations:list, relative_operations:list, universe:Universe, complement=False) -> GrammaticalExpression:
         """A breadth first tree search of possible boolean formula reductions.
 
         Args:
@@ -394,50 +397,56 @@ def heuristic(expr: GrammaticalExpression, simple_operations:list, relative_oper
         shortest = expr
         it = 0
 
+        axes_values = [axis_value for axis in list(universe.axes_from_referents().values()) for axis_value in axis] 
+
         atoms = (
-            [GrammaticalExpression("0", lambda *args: False), GrammaticalExpression("1" , lambda *args: False)]
-            + [GrammaticalExpression(x, lambda *args: x) for x in uni.referents]
-            + [GrammaticalExpression(x, lambda *args: x) for x in uni.flavors]
+            [GrammaticalExpression("0", lambda *args: False, children=None), GrammaticalExpression("1" , lambda *args: False, children=None)]
+            + [GrammaticalExpression(x, lambda *args: x, children=None) for x in axes_values]
         )
 
         while to_visit:
             if it == HARD_HEURISTIC_CEILING:
                  break
-            next = to_visit.pop(0) #Pop the first element off the list, FIFO 
+            next_expr = to_visit.pop(0) #Pop the first element off the list, FIFO 
 
-            children = [operation(next) for operation in simple_operations]
+            children = [operation(next_expr) for operation in simple_operations]
             children.extend(
-                operation(next, atom)
+                operation(next_expr, atom)
                 for operation in relative_operations
                 for atom in atoms
             )
 
-            to_visit.extend([child for child in children if child != next])
+            to_visit.extend([child for child in children if child != next_expr])
             it += 1
+
+            if num_atoms(next_expr) < num_atoms(shortest):
+                shortest = next_expr
+
+            if complement and num_atoms(shortest) != 1:
+                return negation(shortest)
 
         return shortest
 
-def joint_heuristic(arr: np.ndarray, minimization_funcs, contains_negation:bool, uni:Universe) -> GrammaticalExpression:
+def joint_heuristic(arr: np.ndarray, universe:Universe, minimization_funcs, contains_negation:bool) -> GrammaticalExpression:
         """
         Calls the boolean expression minimization heuristic twice, once
         to count 0s and once to count 1s. Returns the shorter result.
 
         Args:
             arr: a numpy array representing the meaning points a modal can express.
-            minimization
+            minimization_funcs: a list of functions representing any additional functions that we want to BFS through in order to find the minimum LOT description.
+            contains_negation: Whether the simplific
         Returns:
             result: the GrammaticalExpression representing the shortest lot description
         """
-        e = array_to_dnf(arr)
+        expr = array_to_dnf(arr, universe)
         simple_operations = [
             identity_and,
             identity_or,
-            #self.__flavor_cover,
-            #self.__force_cover,
         ]
-        axes = uni.axes_from_referents()
+        axes = universe.axes_from_referents()
         for axis_name in axes:
-            simple_operations += lambda expr: boolean_cover(expr, axes[axis_name]) #Append the cover checkfunctions of all relevant axes in the dataset
+            simple_operations.append(lambda expr: boolean_cover(expr, axes[axis_name])) #Append the cover check functions of all relevant axes in the dataset
 
         for func in minimization_funcs:
             simple_operations.append(func)
@@ -445,12 +454,12 @@ def joint_heuristic(arr: np.ndarray, minimization_funcs, contains_negation:bool,
         relative_operations = [distr_or_over_and]
 
         if contains_negation:
-            e_c = array_to_dnf(arr, complement=True)
-            simple_operations.append(lambda x: sum_complement(x, uni))
+            e_c = array_to_dnf(arr, universe, complement=True)
+            simple_operations.append(lambda x: sum_complement(x, universe))
             results = [
-                heuristic(e, simple_operations, relative_operations),
+                heuristic(expr, simple_operations, relative_operations, universe),
                 heuristic(
-                    e_c, simple_operations, relative_operations, complement=True
+                    e_c, simple_operations, relative_operations, universe, complement=True
                 ),
             ]
             complexities = [expression_length(r) for r in results]
@@ -458,6 +467,40 @@ def joint_heuristic(arr: np.ndarray, minimization_funcs, contains_negation:bool,
             result = results[np.argmin(complexities)]
 
         else:
-            result = heuristic(e, simple_operations, relative_operations)
+            result = heuristic(expr, simple_operations, relative_operations, universe)
 
         return result
+
+def generate_meanings(universe:Universe) -> list:
+    """Generates all possible subsets of the meaning space, based on the pre-existing axes."""
+    shape = tuple([len(features) for axis, features in universe.axes_from_referents()])
+    arrs = [
+        np.array(i).reshape(shape)
+        for i in product([0, 1], repeat=len(universe.referents))
+    ]
+    arrs = arrs[1:]  # remove the empty array meaning to prevent div by 0
+    meanings = [Meaning(universe.array_to_points(arr), universe) for arr in arrs]
+    return meanings
+
+def array_to_points(universe:Universe, np_array: np.ndarray) -> Meaning:
+    """Converts a numpy array to a set of points, absed off the axes inherent in the Universe. 
+
+    Args:
+        a: numpy array representing a modal meaning.
+
+    Raises:
+        ValueError: if the meaning space doesn't match the array shape.axis 0 (rows) are forces, axis 1 (columns) are flavors.
+    """
+    axes = universe.axes_from_referents()
+    
+    if np_array.shape != tuple([len(features) for features in axes.values()]):
+        raise ValueError(
+            f"The size of the numpy array must match the size of the modal meaning space. a.shape={np_array.shape}, self.axes={self.axes_from_referents()}"
+        )
+    
+    properties = {}
+    for pair in np.argwhere(np_array):
+        for axis_index in range(len(pair)):
+            properties[axes.keys()[axis_index]] = list(axes.values())
+
+    return Meaning(referents=[Referent(name=("+".join(properties.values())), properties=properties)], universe=universe)       

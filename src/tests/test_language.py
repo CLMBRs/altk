@@ -60,7 +60,7 @@ class TestLanguage:
     def test_exp_subset(self):
         assert TestLanguage.exp.can_express(Referent("dog", {"phylum": "animal"}))
 
-    def test_exp_subset(self):
+    def test_exp_not_subset(self):
         assert not TestLanguage.exp.can_express(Referent("cat", {"phylum": "animal"}))
 
     def test_language_has_expressions(self):
