@@ -51,7 +51,7 @@ def boolean_cover(expr: GrammaticalExpression, axis_values:list) -> GrammaticalE
 
         $\sum_{i=1}^{n}(f_i) = 1$
     """
-
+    print("checking boolean cover of {} with axis values {}".format(expr, axis_values))
     # Unwrap atoms and check for array cover.
     if expr.rule_name == RuleNames.OR and set(axis_values) == set(
         [
@@ -63,7 +63,7 @@ def boolean_cover(expr: GrammaticalExpression, axis_values:list) -> GrammaticalE
         return GrammaticalExpression("1", func=lambda *args:True, children=None)
 
     # Recursive
-    elif [child for child in expr.children]:
+    elif expr.children != None and [child for child in expr.children]:
         children = [
             child
             if child.is_atom()
@@ -88,6 +88,7 @@ def identity_or(expr: GrammaticalExpression) -> GrammaticalExpression:
         (+ a 0) => (a)
         (+ 0) => (0)
     """
+    print("Taking or identity of {}".format(expr))
     if expr.rule_name == RuleNames.OR and expr.contains_name("0"):
         children = [child for child in expr.children if not child.rule_name=="0"]
         if children == []:
@@ -96,6 +97,11 @@ def identity_or(expr: GrammaticalExpression) -> GrammaticalExpression:
             return children[0]
         else:
             return GrammaticalExpression(expr.rule_name, expr.func, children=children)
+    
+    if expr.rule_name == RuleNames.OR and len(expr.children) == 1:
+        print("Removing or from {}".format(expr))
+        return expr.children[0]
+    
     if expr.children:
         return GrammaticalExpression(
             expr.rule_name,
@@ -124,6 +130,7 @@ def identity_and(expr: GrammaticalExpression) -> GrammaticalExpression:
         (* a b ... 1 ... c) => (* a b c)
         (* a 1) => (a)
     """
+    print("Taking and identity of {}".format(expr))
     if expr.rule_name == RuleNames.AND and expr.contains_name("1"):
         children = [child for child in expr.children if not child.rule_name=="1"]
         if children == []:
@@ -225,6 +232,8 @@ def shorten_expression(
         the list of the expression tree's children that are not atoms.
         - atoms_c is a set of atoms: 1 - atoms. Replaces atoms if is shorter.
         """
+        print("Shortening atoms {} with others {} and atoms_c {}".format(atoms, others, atoms_c))
+
         if not atoms_c:
             # Allow flavor cover to handle
             return expr
@@ -253,6 +262,7 @@ def sum_complement(expr: GrammaticalExpression, uni:Universe) -> GrammaticalExpr
         flavors= e, d, c
             (+ (e ) (d ) (* (E ) (c ))) => (+ (- (c )) (* (E )(c )))
         """
+        print("taking sum complement of {}".format(expr))
         children = expr.children
 
         # Base case
@@ -274,10 +284,10 @@ def sum_complement(expr: GrammaticalExpression, uni:Universe) -> GrammaticalExpr
             
 
             for axis_values in axes.values():
-                #print("Axes: " + str(axis_values))
                 if atoms and (set(atoms) <= set(axis_values)):
                     atoms_c = list(set(axis_values) - set(atoms))
                     return shorten_expression(expr, atoms, others, atoms_c)
+
 
 
             new_children = [GrammaticalExpression(atom, func=lambda *args: atom, children=None) for atom in atoms] + others
@@ -317,9 +327,9 @@ def array_to_dnf(arr: np.ndarray, universe:Universe, complement=False) -> Gramma
     
     # Special case: 0
     if np.count_nonzero(arr) == 0:
-        return GrammaticalExpression("0", lambda *args: False, children=None)
-    if np.count_nonzero(arr) == (np.prod(len(axes_values) * len(axes_values[0]))):
-        return GrammaticalExpression("1", lambda *args: True, children=None)
+        return GrammaticalExpression("0", lambda *args: False, children=[])
+    if np.count_nonzero(arr) == (arr.size):
+        return GrammaticalExpression("1", lambda *args: True, children=[])
 
     if not complement:
         argw = np.argwhere(arr)
@@ -335,7 +345,9 @@ def array_to_dnf(arr: np.ndarray, universe:Universe, complement=False) -> Gramma
             )
             for pair in argw
         ]
-        return GrammaticalExpression(RuleNames.OR, lambda *args:any(args), children=products)
+        output = GrammaticalExpression(RuleNames.OR, lambda *args:any(args), children=products)
+        print("Returning non-complement:{}".format(output))
+        return output
 
     else:
         argw = np.argwhere(arr == 0)
@@ -358,7 +370,9 @@ def array_to_dnf(arr: np.ndarray, universe:Universe, complement=False) -> Gramma
             )
             for product in products
         ]
-        return GrammaticalExpression(RuleNames.OR, lambda *args:any(args), children=negated_products)
+        output = GrammaticalExpression(RuleNames.OR, lambda *args:any(args), children=negated_products)
+        print("Returning complement:{}".format(output))
+        return output
 
 def minimum_lot_description(meaning: Meaning, universe:Universe, minimization_funcs:list = []) -> list:
     """Runs a heuristic to estimate the shortest length description of modal meanings in a language of thought.
@@ -395,7 +409,7 @@ def heuristic(expr: GrammaticalExpression, simple_operations:list, relative_oper
 
         to_visit = [expr]
         shortest = expr
-        it = 0
+        iterations = 0
 
         axes_values = [axis_value for axis in list(universe.axes_from_referents().values()) for axis_value in axis] 
 
@@ -405,19 +419,23 @@ def heuristic(expr: GrammaticalExpression, simple_operations:list, relative_oper
         )
 
         while to_visit:
-            if it == HARD_HEURISTIC_CEILING:
+            if iterations == HARD_HEURISTIC_CEILING:
                  break
             next_expr = to_visit.pop(0) #Pop the first element off the list, FIFO 
 
-            children = [operation(next_expr) for operation in simple_operations]
-            children.extend(
+            results = [operation(next_expr) for operation in simple_operations]
+            results.extend(
                 operation(next_expr, atom)
                 for operation in relative_operations
                 for atom in atoms
             )
 
-            to_visit.extend([child for child in children if child != next_expr])
-            it += 1
+            print("Iteration: {}, Adding results: [{}]".format(iterations, ":".join([str(r) for r in results])))
+
+            to_visit.extend([result for result in results if result != next_expr])
+            iterations += 1
+
+            print("remaining to visit: [{}]".format(":".join([str(r) for r in to_visit])))
 
             if num_atoms(next_expr) < num_atoms(shortest):
                 shortest = next_expr
@@ -456,8 +474,11 @@ def joint_heuristic(arr: np.ndarray, universe:Universe, minimization_funcs, cont
         if contains_negation:
             e_c = array_to_dnf(arr, universe, complement=True)
             simple_operations.append(lambda x: sum_complement(x, universe))
+
+            print("Simple operations:{}".format(simple_operations))
+
             results = [
-                heuristic(expr, simple_operations, relative_operations, universe),
+                heuristic(expr, simple_operations, relative_operations, universe, complement=False),
                 heuristic(
                     e_c, simple_operations, relative_operations, universe, complement=True
                 ),
@@ -495,7 +516,7 @@ def array_to_points(universe:Universe, np_array: np.ndarray) -> Meaning:
     
     if np_array.shape != tuple([len(features) for features in axes.values()]):
         raise ValueError(
-            f"The size of the numpy array must match the size of the modal meaning space. a.shape={np_array.shape}, self.axes={self.axes_from_referents()}"
+            f"The size of the numpy array must match the size of the modal meaning space. a.shape={np_array.shape}, self.axes={universe.axes_from_referents()}"
         )
     
     properties = {}

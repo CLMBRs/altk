@@ -210,8 +210,8 @@ class Meaning:
                         raise KeyError("Property of the Meaning does not exist in the Universe.")
                     property_index = axis_keys.index(property)
                     indices[property_index] = axis_values[property_index].index(properties[property])
-                    print("Property: {} Referent: {} Index:{}".format(property, referent, indices))
-            print("array: " + str(a))
+                    #print("Property: {} Referent: {} Index:{}".format(property, referent, indices))
+            #print("array: " + str(a))
             a[tuple(indices)] = 1 
         return a
     

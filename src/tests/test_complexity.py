@@ -80,10 +80,23 @@ class TestComplexity:
                                     ]).evaluate(self.universe)
         
     def test_simplify(self):
-        meaning = Meaning(referents=[Referent("x", properties={"a1":"x", "a2":"a"})], universe=self.universe)
+        referents = []
+        for val in ["x","y","z"]:
+            for val2 in ["a","b","c"]:
+                referents.append(Referent("{}+{}".format(val, val2), {"a1": val, "a2": val2}))
+        total_universe = Universe(referents)
+        meaning = Meaning(referents=referents, universe=total_universe)
         minimum_lot =  complexity.minimum_lot_description(meaning,  universe=self.universe, minimization_funcs=[])
         print("Minimum LOT:{}".format(minimum_lot))
         assert minimum_lot
+
+        meaning = Meaning(referents=referents[1:], universe=total_universe)
+        minimum_lot =  complexity.minimum_lot_description(meaning,  universe=self.universe, minimization_funcs=[])
+        print("Minimum LOT:{}".format(minimum_lot))
+
+        meaning = Meaning(referents=referents[2:], universe=total_universe)
+        minimum_lot =  complexity.minimum_lot_description(meaning,  universe=self.universe, minimization_funcs=[])
+        print("Minimum LOT:{}".format(minimum_lot))
 
     def test_complement(self):
         # y or z or (x and z) => ((not x) and (x and z))
