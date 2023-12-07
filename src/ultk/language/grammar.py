@@ -128,7 +128,8 @@ class GrammaticalExpression(Expression):
     def __call__(self, *args):
         if self.children is None:
             return self.func(*args)
-        return self.func(*(child(*args) for child in self.children), *args)
+        # TODO: should *args also be a final arg below?
+        return self.func(*(child(*args) for child in self.children))
 
     def __len__(self):
         length = 1
