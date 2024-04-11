@@ -1,0 +1,59 @@
+# Notes:
+
+# Semantics.py
+
+from ultk.language.semantics import Referent, Meaning, Universe
+from ultk.language.language import Expression
+
+# construct the meaning space for numerals
+numerals_universe = Universe(referents=[Referent(str(i)) for i in range(1, 100)])
+[str(x) for x in numerals_universe.referents]
+
+
+# construct a list of referents for the expression 'a few'
+
+# Chris: this seems like it would apply to an ordered enumeration of the referents. Is that the intent?
+a_few_refs = [Referent(name=str(i)) for i in range(2, 6)]
+a_few_meaning = Meaning(referents=a_few_refs, universe=numerals_universe)
+
+# Chris: Don't get an error when referents refers to exact objects in the Universe
+
+# Chris: However, this still refers to order and probably doesn't capture the correct meaning
+a_few_meaning = Meaning(referents=[i for i in numerals_universe.referents[2: 6]], universe=numerals_universe)
+print(a_few_meaning)
+
+# define the expression
+a_few = NumeralExpression(form="a few", meaning=a_few_meaning)
+
+# Language.py
+
+from ultk.language.language import Expression, Language
+
+# assuming the meaning `a_few_meaning` has already been constructed
+# define the expression
+a_few = Expression(form="a few", meaning=a_few_meaning)
+a_few.to_dict()
+
+# Chris: Expressions seem to only be able to be assigned meanings of particular referents instead of functions
+# Do we want to change it so that meanings can be a) Iterable[Meaning], or such that expressions can be assigned functions that are applied to the expression's Universe
+
+help(set())
+
+str(a_few.meaning.universe)
+
+# define a very small language
+lang_1 = Language([a_few])
+
+# Chris: What is happening such that it is returning a hash of a list?
+
+# or a slightly larger one with synonymy
+lang_2 = Language([a_few] * 3)
+
+# Chris: What is happening such that it is return a hash of a list?
+
+## meaning.py
+
+# Chris: The meaning space would simply be referents with string names as numbers ? 
+
+
+
