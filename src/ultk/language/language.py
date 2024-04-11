@@ -61,7 +61,7 @@ class Language:
         # Check that all expressions have the same universe
         if len(set([e.meaning.universe for e in expressions])) != 1:
             raise ValueError(
-                f"All expressions must have the same meaning universe. Received{len(set([e.meaning.universe for e in expressions]))} distinct universes."
+                f"All expressions must have the same meaning universe. Received {len(set([e.meaning.universe for e in expressions]))} distinct universes."
             )
 
         self.expressions = tuple(sorted(expressions))

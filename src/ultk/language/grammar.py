@@ -4,7 +4,8 @@ from collections import defaultdict
 from collections.abc import Sequence
 from itertools import product
 from typing import Any, Callable, Generator, TypedDict
-from dataclasses import dataclass
+from functools import cached_property
+from dataclasses import dataclass, field
 from yaml import load
 
 try:
@@ -105,6 +106,20 @@ class GrammaticalExpression(Expression):
         else:
             self.children = self.children + (child,)
 
+    @cached_property
+    def antimeaning(self) -> Meaning:
+        """Get the antimeaning of this expression, i.e. the set of all referents for which
+        the expression evaluates to False."""
+
+        return Meaning(set(self.meaning.universe.referents) - set(self.meaning.referents),
+                       self.meaning.universe)
+
+    def draw_referent(self, antimeaning=False):
+        """Get a random referent from the meaning's referents."""
+        if antimeaning:
+            return random.choice(list(self.antimeaning.referents))
+        return random.choice(list(self.meaning.referents)) 
+
     def to_dict(self) -> dict:
         the_dict = super().to_dict()
         the_dict["grammatical_expression"] = str(self)
@@ -164,6 +179,15 @@ class Grammar:
         # name -> rule, for fast lookup in parsing
         self._rules_by_name: dict[str, Rule] = {}
         self._start = start
+
+    def __iter__(self):
+        # Return an iterator object
+        return iter(self._rules_by_name.items())
+
+    def __next__(self):
+        # Return the next rule in the iterator
+        # Raise StopIteration if there are no more rules
+        raise StopIteration
 
     def add_rule(self, rule: Rule):
         self._rules[rule.lhs].append(rule)
