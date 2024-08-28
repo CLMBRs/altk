@@ -24,3 +24,17 @@ if __name__ == "__main__":
 
     print(f"Generated {len(expressions_by_meaning)} unique expressions.")
     write_expressions(expressions_by_meaning.values(), "generated_expressions.yml")
+
+    random_expression = list(expressions_by_meaning.values())[4]
+    print(random_expression.term_expression)
+
+    # call on Unvirse, return Meaning = dictionary Referent -> truth value
+    print(random_expression.evaluate(number_universe))
+
+    # call on a single referent:
+    random_referent = number_universe.referents[4]
+    print(random_referent)
+    print(random_expression(random_referent))
+
+    # length of an expression
+    print(len(random_expression))
