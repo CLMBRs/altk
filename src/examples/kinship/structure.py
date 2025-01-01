@@ -1,4 +1,4 @@
-from ultk.language.semantics import Referent, Universe
+from typing import Callable
 
 ##############################################################################
 # Structure class
@@ -7,25 +7,25 @@ from ultk.language.semantics import Referent, Universe
 class Structure:
     """A general structure for representing a domain and interpretation."""
 
-    def __init__(self, domain, interpretation):
+    def __init__(self, domain: set[str], interpretation: dict[str, Callable]):
         """
         Initialize the structure.
         
         Args:
             domain (set): The set of Referents.
-            interpretation (dict): A mapping of predicates to their interpretations.
+            interpretation (dict): A mapping of terms to their interpretations.
         """
         self.domain = domain
         self.interpretation = interpretation
 
-    def evaluate(self, predicate, *args):
-        """Evaluate a predicate on the given arguments."""
-        return self.interpretation[predicate](*args)
+    def evaluate(self, term, *args):
+        """Evaluate a term on the given arguments."""
+        return self.interpretation[term](*args)
 
 ##############################################################################
 # Define the features of the semantic domain
 ##############################################################################
-domain = {name: Referent(name) for name in [
+domain = {name for name in [
     "Paternal_Grandfather", "Paternal_Grandmother",
     "Maternal_Grandfather", "Maternal_Grandmother",
     "Father", "Mother",
@@ -43,9 +43,11 @@ domain = {name: Referent(name) for name in [
         f"Ego_{'Older' if i < 2 else 'Younger'}_{'Brother' if i % 2 == 0 else 'Sister'}"
         for i in range(4)
     ],
-    "Son", "Daughter",  # Replaced "Child_Son" and "Child_Daughter" with "Son" and "Daughter"
+    "Son", "Daughter", 
     *[f"Grandchild_{'Son_of_Son' if i == 0 else 'Daughter_of_Son' if i == 1 else 'Son_of_Daughter' if i == 2 else 'Daughter_of_Daughter'}" for i in range(4)],  # Added four grandchildren
-    *[f"Niece_or_Nephew_{'Son_of_' + ('Ego_Older_Brother' if i == 0 else 'Ego_Older_Sister' if i == 1 else 'Ego_Younger_Brother' if i == 2 else 'Ego_Younger_Sister')}" for i in range(8)],  # Added 8 nieces/nephews
+    # Add niblings
+    *[f"{'Son_of_' + ('Ego_Older_Brother' if i == 0 else 'Ego_Older_Sister' if i == 1 else 'Ego_Younger_Brother' if i == 2 else 'Ego_Younger_Sister')}" for i in range(4)],
+    *[f"{'Daughter_of_' + ('Ego_Older_Brother' if i == 0 else 'Ego_Older_Sister' if i == 1 else 'Ego_Younger_Brother' if i == 2 else 'Ego_Younger_Sister')}" for i in range(4)]
 ]}
 
 # Update auxiliary data structures
@@ -104,11 +106,26 @@ parent_child_data = {
 
 
 # Interpretation
+
+def is_male(r: str) -> bool:
+    return sex_data[r]
+
+def is_parent(p, c) -> bool:
+    return c in parent_child_data.get(p, [])
+
+def is_older(r1, r2) -> bool:
+    return r2 in age_hierarchy.get(r1, [])
+
 interpretation = {
-    "is_male": lambda r: sex_data[r.name],
-    "parent_of": lambda p, c: c.name in parent_child_data.get(p.name, []),
-    "is_older": lambda r1, r2: r2.name in age_hierarchy.get(r1.name, []),
-}
+    "is_male": is_male,
+    "is_parent": is_parent,
+    "is_older": is_older,
+} 
+interpretation.update({
+    individual: lambda x, individual=individual: individual == x
+    for individual in domain
+})
+
 
 ##############################################################################
 # Testing
@@ -125,28 +142,28 @@ def test_structure(kinship_structure, domain, parent_child_data, sex_data):
         sex_data (dict): The gender data.
     """
 
-    print("=== Testing `is_male` Predicate ===")
-    for referent in domain.values():
-        expected = sex_data[referent.name]
+    # print("=== Testing `is_male` Predicate ===")
+    for referent in domain:
+        expected = sex_data[referent]
         actual = kinship_structure.evaluate("is_male", referent)
-        assert actual == expected, f"Failed `is_male` for {referent.name}: expected {expected}, got {actual}"
-        print(f"PASS: {referent.name} -> is_male = {actual}")
+        assert actual == expected, f"Failed `is_male` for {referent}: expected {expected}, got {actual}"
+        # print(f"PASS: {referent} -> is_male = {actual}")
 
-    print("\n=== Testing `parent_of` Predicate ===")
-    for parent in domain.values():
-        for child in domain.values():
-            expected = child.name in parent_child_data.get(parent.name, [])
-            actual = kinship_structure.evaluate("parent_of", parent, child)
-            assert actual == expected, f"Failed `parent_of` for {parent.name}, {child.name}: expected {expected}, got {actual}"
-            print(f"PASS: {parent.name} -> parent_of({child.name}) = {actual}")
+    # print("\n=== Testing `parent_of` Predicate ===")
+    for parent in domain:
+        for child in domain:
+            expected = child in parent_child_data.get(parent, [])
+            actual = kinship_structure.evaluate("is_parent", parent, child)
+            assert actual == expected, f"Failed `is_parent` for {parent}, {child.name}: expected {expected}, got {actual}"
+            # print(f"PASS: {parent} -> parent_of({child}) = {actual}")
 
-    print("\n=== Testing `is_older` Predicate ===")
-    for r1 in domain.values():
-        for r2 in domain.values():
-            expected = r2.name in age_hierarchy.get(r1.name, [])
+    # print("\n=== Testing `is_older` Predicate ===")
+    for r1 in domain:
+        for r2 in domain:
+            expected = r2 in age_hierarchy.get(r1, [])
             actual = kinship_structure.evaluate("is_older", r1, r2)
-            assert actual == expected, f"Failed `is_older` for {r1.name}, {r2.name}: expected {expected}, got {actual}"
-            print(f"PASS: {r1.name} -> is_older({r2.name}) = {actual}")
+            assert actual == expected, f"Failed `is_older` for {r1}, {r2}: expected {expected}, got {actual}"
+            # print(f"PASS: {r1} -> is_older({r2}) = {actual}")
 
 
     print("\nAll tests passed!")
@@ -158,11 +175,11 @@ def test_structure(kinship_structure, domain, parent_child_data, sex_data):
 
 # Create the structure
 kinship_structure = Structure(
-    domain=set(domain.values()), 
+    domain=domain,
     interpretation=interpretation,
 )
 
 # Run the updated test suite
 test_structure(kinship_structure, domain, parent_child_data, sex_data)
 
-universe = Universe(tuple(kinship_structure.domain))
+
