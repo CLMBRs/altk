@@ -190,7 +190,9 @@ kinship_structure = Structure(
     interpretation=interpretation,
 )
 
-# Run the updated test suite
-test_structure(kinship_structure, domain, parent_child_data, sex_data)
+if __name__ == "__main__":
+
+    # Run a minimal test 'suite'
+    test_structure(kinship_structure, domain, parent_child_data, sex_data)
 
 
