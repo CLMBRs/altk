@@ -127,9 +127,9 @@ def axy_or_bxy(a: eet, b: eet) -> eet:
     return lambda x: lambda y: a(x)(y) or b(x)(y)
 
 
-# # et -> eet
-# def flip_xy(a: eet, name="flip") -> eet:
-#     return lambda x: lambda y: a(y)(x)
+# et -> eet
+def flip_xy(a: eet, name="flip") -> eet:
+    return lambda x: lambda y: a(y)(x)
 
 
 # eet -> eet
