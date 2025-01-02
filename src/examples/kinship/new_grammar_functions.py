@@ -1,57 +1,73 @@
 from ultk.language.semantics import Referent
 from kinship.structure import kinship_structure
-from kinship.meaning import Ego
+from kinship.meaning import Ego, universe
 
 from typing import Callable
 
 
+t = bool
+e = Referent
+et = Callable[[e], t]
+eet = Callable[[e], et]
+arg = tuple[e]
 
-S = bool
-a = Referent
-
-P1 = Callable[[a], S]
-P2 = Callable[[a, a], S]
-
-B1 = tuple[a]
-B2 = tuple[a, a]
-
-start = S
+start = t
 
 
-
-# P1 -> a a
-def _parent(*_: a) -> P2:
-    return lambda x, y: kinship_structure.evaluate("is_parent", x.name, y.name)
-
-# P1 -> a
-def _male(*_: a) -> P1:
+# have to hack a dummy arg because rules aren't considered terminal unless they take Referents
+# et -> e
+def male(*_: e) -> et: 
     return lambda y: kinship_structure.evaluate("is_male", y.name)
 
-# P1 -> P2
-def _my(a: P2, ) -> P1:
-    return lambda x: a(x, Ego)
+def female(*_: e) -> et: 
+    return lambda y: not kinship_structure.evaluate("is_male", y.name)
+
+# need to bind args for intermediate node
+# arg -> e ...
+def bind(*a: e, name=".") -> arg:
+    return a
+
+# t -> et arg
+def apply_et(p: et, a: arg, name="*") -> t:
+    return p(*a)
+
+# eet -> e
+def parent(*_: e) -> eet:
+    return lambda x: lambda y: kinship_structure.evaluate("is_parent", x.name, y.name)
+
+# eet -> e
+def child(*_: e) -> eet:
+    return lambda x: lambda y: kinship_structure.evaluate("is_parent", y.name, x.name)
+
+# et -> eet arg
+def apply_eet(p: eet, a: arg, name="**") -> et:
+    return p(*a)
+
+# et -> eet
+# def _my(a: eet, ) -> et:
+    # return lambda _: a(_)(Ego)
+
+def _my_exclusive(a: eet, name="my_x") -> et:
+    return lambda x: a(x)(Ego) and x != Ego
+
+# et -> eet
+def _flip_xy(a: eet, name="flip") -> eet:
+    return lambda x: lambda y: a(y)(x)
 
 
-# P2 -> P2 P1
-def _axy_and_by(
-    a: P2, b: P1, name="_and1",) -> P2:
-    return lambda x, y: a(x, y) and b(y)
+# et -> eet et
+def axy_and_by(a: eet, b: et,) -> eet:
+    return lambda x: lambda y: a(x)(y) and b(y)
 
+# et -> eet e
+def axy_and_bx(a: eet, b: et) -> eet:
+    return lambda x: lambda y: a(x)(y) and b(x)
 
+# eet -> eet eet
+def axy_and_bxy(a: eet, b: eet) -> eet:
+    return lambda x: lambda y: a(x)(y) and b(x)(y)
 
-# B1 -> a
-def bind_unary_terminal(arg: a, name=".") -> B1:
-    return (arg,)
-
-# B2 -> a a
-def bind_binary_terminal(arg1: a, arg2: a, name="..") -> B2:
-    return (arg1, arg2)
-
-# S -> B1 P1
-def evaluate_bound_unary(arg: B1, p: P1, name="*") -> S:
-    return p(*arg)
-
-
-# S -> B2 P2
-def evaluate_bound_binary(args: B2, p: P2, name="**") -> S:
-    return p(*args)
+# ∃z( A(x,z) ^ B(z, y) )
+# eet -> eet eet
+def exists_z_and(a: eet, b: eet) -> eet:
+    return lambda x: lambda y: any( z for z in universe if a(x)(z) and b(z)(y) )

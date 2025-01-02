@@ -44,17 +44,27 @@ domain = {name for name in [
         for i in range(4)
     ],
     "Son", "Daughter", 
-    *[f"Grandchild_{'Son_of_Son' if i == 0 else 'Daughter_of_Son' if i == 1 else 'Son_of_Daughter' if i == 2 else 'Daughter_of_Daughter'}" for i in range(4)],  # Added four grandchildren
+    *[f"{'Son_of_Son' if i == 0 else 'Daughter_of_Son' if i == 1 else 'Son_of_Daughter' if i == 2 else 'Daughter_of_Daughter'}" for i in range(4)],
     # Add niblings
     *[f"{'Son_of_' + ('Ego_Older_Brother' if i == 0 else 'Ego_Older_Sister' if i == 1 else 'Ego_Younger_Brother' if i == 2 else 'Ego_Younger_Sister')}" for i in range(4)],
     *[f"{'Daughter_of_' + ('Ego_Older_Brother' if i == 0 else 'Ego_Older_Sister' if i == 1 else 'Ego_Younger_Brother' if i == 2 else 'Ego_Younger_Sister')}" for i in range(4)]
 ]}
 
 # Update auxiliary data structures
+# Update auxiliary data structures
 sex_data = {
-    name: "Brother" in name or "Father" in name or "Son" in name or "Grandfather" in name or name == "Ego"
+    name: (
+        "Grandfather" in name or
+        "Father" in name or
+        "Brother" in name or
+        "Son" in name or
+        name == "Ego"
+    ) and not (
+        "Daughter" in name
+    )
     for name in domain
 }
+
 
 # Age hierarchy: lists of individuals younger or older than each other
 age_hierarchy = {
@@ -67,12 +77,12 @@ age_hierarchy = {
     # Parents' siblings
     "Father": ["Paternal_Younger_Brother", "Paternal_Younger_Sister"],
     "Mother": ["Maternal_Younger_Brother", "Maternal_Younger_Sister"],
-    "Paternal_Older_Brother": ["Father"],
-    "Paternal_Older_Sister": ["Father"],
+    "Paternal_Older_Brother": ["Father", "Paternal_Younger_Brother", "Paternal_Younger_Sister"],
+    "Paternal_Older_Sister": ["Father", "Paternal_Younger_Brother", "Paternal_Younger_Sister"],
     "Paternal_Younger_Brother": [],
     "Paternal_Younger_Sister": [],
-    "Maternal_Older_Brother": ["Mother"],
-    "Maternal_Older_Sister": ["Mother"],
+    "Maternal_Older_Brother": ["Mother", "Maternal_Younger_Brother", "Maternal_Younger_Sister"],
+    "Maternal_Older_Sister": ["Mother", "Maternal_Younger_Brother", "Maternal_Younger_Sister"],
     "Maternal_Younger_Brother": [],
     "Maternal_Younger_Sister": [],
 }
@@ -83,30 +93,31 @@ parent_child_data = {
     "Maternal_Grandfather": ["Mother"],
     "Maternal_Grandmother": ["Mother"],
     "Father": [
-        "Ego", "Ego_Older_Brother", "Ego_Older_Sister", "Ego_Younger_Brother", "Ego_Younger_Sister",
-        "Son", "Daughter",  # Replaced "Child_Son" and "Child_Daughter" with "Son" and "Daughter"
+        "Ego", 
+        "Ego_Older_Brother", "Ego_Older_Sister", "Ego_Younger_Brother", "Ego_Younger_Sister",
     ],
     "Mother": [
-        "Ego", "Ego_Older_Brother", "Ego_Older_Sister", "Ego_Younger_Brother", "Ego_Younger_Sister",
-        "Son", "Daughter",  # Replaced "Child_Son" and "Child_Daughter" with "Son" and "Daughter"
+        "Ego", 
+        "Ego_Older_Brother", "Ego_Older_Sister", "Ego_Younger_Brother", "Ego_Younger_Sister",
+    
     ],
-    "Ego": ["Son", "Daughter"],  # Replaced "Child_Son" and "Child_Daughter" with "Son" and "Daughter"
-    "Son": ["Grandchild_Son_of_Son"],  # Added corresponding grandchild
-    "Daughter": ["Grandchild_Daughter_of_Daughter"],  # Added corresponding grandchild
+    "Ego": ["Son", "Daughter"],  
+    "Son": ["Grandchild_Son_of_Son", "Grandchild_Daughter_of_Son"],
+    "Daughter": ["Grandchild_Daughter_of_Daughter", "Grandchild_Son_of_Daughter"],
     "Grandchild_Son_of_Son": [],
     "Grandchild_Daughter_of_Son": [],
     "Grandchild_Son_of_Daughter": [],
     "Grandchild_Daughter_of_Daughter": [],
     # Parent-child relationships for nieces/nephews
-    "Ego_Older_Brother": ["Niece_or_Nephew_Son_of_Ego_Older_Brother", "Niece_or_Nephew_Daughter_of_Ego_Older_Brother"],
-    "Ego_Older_Sister": ["Niece_or_Nephew_Son_of_Ego_Older_Sister", "Niece_or_Nephew_Daughter_of_Ego_Older_Sister"],
-    "Ego_Younger_Brother": ["Niece_or_Nephew_Son_of_Ego_Younger_Brother", "Niece_or_Nephew_Daughter_of_Ego_Younger_Brother"],
-    "Ego_Younger_Sister": ["Niece_or_Nephew_Son_of_Ego_Younger_Sister", "Niece_or_Nephew_Daughter_of_Ego_Younger_Sister"],
+    "Ego_Older_Brother": ["Son_of_Ego_Older_Brother", "Daughter_of_Ego_Older_Brother"],
+    "Ego_Older_Sister": ["Son_of_Ego_Older_Sister", "Daughter_of_Ego_Older_Sister"],
+    "Ego_Younger_Brother": ["Son_of_Ego_Younger_Brother", "Daughter_of_Ego_Younger_Brother"],
+    "Ego_Younger_Sister": ["Son_of_Ego_Younger_Sister", "Daughter_of_Ego_Younger_Sister"],
 }
 
 
 # Interpretation
-
+# just in case lambdas cause issues
 def is_male(r: str) -> bool:
     return sex_data[r]
 
