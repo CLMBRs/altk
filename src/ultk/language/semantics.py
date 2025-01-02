@@ -109,6 +109,9 @@ class Universe:
     def __len__(self) -> int:
         return len(self.referents)
 
+    def pprint(self) -> list[str]:
+        return [ref.name for ref in self.referents]
+
     @classmethod
     def from_dataframe(cls, df: pd.DataFrame):
         """Build a Universe from a DataFrame.

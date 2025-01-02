@@ -1,8 +1,8 @@
 import pickle
-from ultk.language.language import Expression
+from ultk.language.language import Expression, Language
 from ultk.language.semantics import Meaning, Universe
 from ultk.language.grammar import Grammar, GrammaticalExpression
-from typing import Iterable
+from typing import Iterable, Callable, Any
 from yaml import dump, Dumper, load, Loader
 
 
@@ -20,6 +20,45 @@ def write_expressions(expressions: Iterable[Expression], filename: str) -> None:
 
 
 def read_grammatical_expressions(
+    filename: str,
+    grammar: Grammar,
+    re_parse: bool = False,
+    universe: Universe | None = None,
+    return_by_meaning=True,
+) -> tuple[list[GrammaticalExpression], dict[Meaning, GrammaticalExpression]]:
+    """Read grammatical expressions from a file, inferring the format from the extension.
+
+    Args:
+        filename: the file to read (.yaml or .txt)
+        grammar: the grammar to use for parsing
+        re_parse: whether to re-parse the expressions (for YAML files)
+        universe: the universe to use for evaluation
+        return_by_meaning: whether to return a dictionary mapping meanings to expressions or not
+
+    Returns:
+        a list of GrammaticalExpressions and a dictionary mapping meanings to expressions
+        (empty if `return_by_meaning` is False)
+    """
+    if filename.endswith(".yaml"):
+        return read_grammatical_expressions_from_yaml(
+            filename,
+            grammar,
+            re_parse=re_parse,
+            universe=universe,
+            return_by_meaning=return_by_meaning,
+        )
+    elif filename.endswith(".txt"):
+        return read_grammatical_expressions_from_txt(
+            filename,
+            grammar,
+            universe=universe,
+            return_by_meaning=return_by_meaning,
+        )
+    else:
+        raise ValueError(f"Unsupported file format: {filename}. Must be .yaml or .txt.")
+
+
+def read_grammatical_expressions_from_yaml(
     filename: str,
     grammar: Grammar,
     re_parse: bool = False,
@@ -66,6 +105,62 @@ def read_grammatical_expressions(
     if return_by_meaning:
         by_meaning = {expr.meaning: expr for expr in final_exprs}
     return final_exprs, by_meaning
+
+
+def read_grammatical_expressions_from_txt(
+    filename: str,
+    grammar: Grammar,
+    universe: Universe | None = None,
+    return_by_meaning=True,
+) -> tuple[list[GrammaticalExpression], dict[Meaning, GrammaticalExpression]]:
+    """Read grammatical expressions from a text file and re-parse them.
+
+    Args:
+        filename: the text file to read (one term_expression per line)
+        grammar: the grammar to use for parsing
+        universe: the universe to use for evaluation
+        return_by_meaning: whether to return a dictionary mapping meanings to expressions or not
+
+    Returns:
+        a list of GrammaticalExpressions and a dictionary mapping meanings to expressions (empty if `return_by_meaning` is False)
+    """
+    if grammar is None:
+        raise ValueError("A grammar must be provided to parse the expressions.")
+
+    with open(filename, "r") as f:
+        term_expressions = [line.strip() for line in f if line.strip()]
+
+    # Re-parse the expressions using the grammar
+    final_exprs = [
+        grammar.parse(term_expression) for term_expression in term_expressions
+    ]
+
+    # Optionally evaluate the expressions in the given universe
+    if universe is not None:
+        for expr in final_exprs:
+            expr.evaluate(universe)
+
+    # Optionally create a mapping by meaning
+    by_meaning = {}
+    if return_by_meaning:
+        by_meaning = {expr.meaning: expr for expr in final_exprs}
+
+    return final_exprs, by_meaning
+
+
+def write_languages(
+    languages: list[Language],
+    filename: str,
+    properties_to_add: dict[str, Callable[[int, Language], Any]] = {},
+) -> None:
+    lang_dicts = [
+        language.as_dict_with_properties(
+            **{key: properties_to_add[key](idx, language) for key in properties_to_add}
+        )
+        for idx, language in enumerate(languages)
+    ]
+    with open(filename, "w+") as f:
+        dump(lang_dicts, f, Dumper=Dumper)
 
 
 def write_pickle(fn: str, data):

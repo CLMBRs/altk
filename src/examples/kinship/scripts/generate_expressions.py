@@ -10,7 +10,10 @@ def write_data(expressions_by_meaning: dict[Meaning, GrammaticalExpression]) -> 
 
     # For inspecting
     fn = "kinship/outputs/expressions_and_extensions.txt"
-    results = {e.term_expression: set(x for x in e.meaning if e.meaning[x]) for e in expressions_by_meaning.values()}
+    results = {
+        e.term_expression: set(x for x in e.meaning if e.meaning[x])
+        for e in expressions_by_meaning.values()
+    }
     with open(fn, "w") as f:
         for k, v in results.items():
             f.write(k + "\n")
@@ -21,7 +24,6 @@ def write_data(expressions_by_meaning: dict[Meaning, GrammaticalExpression]) -> 
 
     print(f"Wrote {len(expressions_by_meaning)} expressions to {fn}.")
 
-
     # For loading
     fn = "kinship/outputs/generated_expressions.txt"
     results: list[str] = [e.term_expression for e in expressions_by_meaning.values()]
@@ -29,12 +31,11 @@ def write_data(expressions_by_meaning: dict[Meaning, GrammaticalExpression]) -> 
         f.writelines(line + "\n" for line in results)
 
 
-
 if __name__ == "__main__":
 
     expressions_by_meaning: dict[Meaning, GrammaticalExpression] = (
         kinship_grammar.get_unique_expressions(
-            4, # I found 6 is too high
+            5,  # I found 6 is too high
             max_size=2 ** len(kinship_universe),
             # max_size=100,
             unique_key=lambda expr: expr.evaluate(kinship_universe),

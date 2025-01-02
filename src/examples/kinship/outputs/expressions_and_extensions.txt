@@ -1,41 +1,41 @@
 *(female, .)
 -------------------------------------------
-Paternal_Grandmother
-Ego_Older_Sister
-Maternal_Younger_Sister
-Daughter
-Son_of_Daughter
-Daughter_of_Ego_Older_Sister
-Ego_Younger_Sister
-Mother
-Maternal_Older_Sister
-Daughter_of_Son
 Daughter_of_Ego_Older_Brother
+Maternal_Older_Sister
+Paternal_Grandmother
 Paternal_Younger_Sister
-Daughter_of_Daughter
-Paternal_Older_Sister
-Daughter_of_Ego_Younger_Sister
+Son_of_Daughter
+Mother
+Ego_Younger_Sister
+Daughter_of_Ego_Older_Sister
+Daughter
+Daughter_of_Son
+Ego_Older_Sister
 Daughter_of_Ego_Younger_Brother
+Daughter_of_Ego_Younger_Sister
+Daughter_of_Daughter
+Maternal_Younger_Sister
+Paternal_Older_Sister
 Maternal_Grandmother
 -------------------------------------------
 *(male, .)
 -------------------------------------------
-Ego_Older_Brother
-Maternal_Younger_Brother
-Son
 Son_of_Ego_Younger_Brother
-Son_of_Son
 Son_of_Ego_Younger_Sister
-Paternal_Younger_Brother
-Maternal_Grandfather
 Son_of_Ego_Older_Brother
-Ego
-Paternal_Grandfather
-Father
 Paternal_Older_Brother
-Maternal_Older_Brother
+Maternal_Younger_Brother
+Son_of_Son
 Ego_Younger_Brother
 Son_of_Ego_Older_Sister
+Maternal_Grandfather
+Son
+Paternal_Younger_Brother
+Ego
+Ego_Older_Brother
+Maternal_Older_Brother
+Paternal_Grandfather
+Father
 -------------------------------------------
 *(my_x(child), .)
 -------------------------------------------
@@ -44,42 +44,42 @@ Daughter
 -------------------------------------------
 *(my_x(parent), .)
 -------------------------------------------
-Mother
 Father
+Mother
 -------------------------------------------
 *(**(exists_z_and(child, parent), .), .)
 -------------------------------------------
-Ego_Older_Brother
-Ego_Older_Sister
-Son_of_Ego_Younger_Brother
-Daughter
-Son
-Daughter_of_Ego_Older_Sister
-Ego_Younger_Sister
-Son_of_Ego_Younger_Sister
-Mother
 Daughter_of_Ego_Older_Brother
-Daughter_of_Ego_Younger_Sister
+Son_of_Ego_Younger_Brother
+Son_of_Ego_Younger_Sister
 Son_of_Ego_Older_Brother
-Ego
-Father
-Daughter_of_Ego_Younger_Brother
 Ego_Younger_Brother
 Son_of_Ego_Older_Sister
+Ego_Younger_Sister
+Son
+Daughter_of_Ego_Older_Sister
+Ego
+Ego_Older_Brother
+Daughter
+Ego_Older_Sister
+Daughter_of_Ego_Younger_Brother
+Daughter_of_Ego_Younger_Sister
+Father
+Mother
 -------------------------------------------
 *(**(exists_z_and(parent, child), .), .)
 -------------------------------------------
-Ego_Older_Brother
+Maternal_Grandmother
 Paternal_Grandmother
-Ego_Older_Sister
-Ego_Younger_Sister
+Ego_Younger_Brother
 Mother
 Maternal_Grandfather
+Ego_Younger_Sister
 Ego
-Father
 Paternal_Grandfather
-Ego_Younger_Brother
-Maternal_Grandmother
+Ego_Older_Sister
+Father
+Ego_Older_Brother
 -------------------------------------------
 *(my_x(axy_and_bx(child, female)), .)
 -------------------------------------------
@@ -99,15 +99,303 @@ Father
 -------------------------------------------
 *(my_x(exists_z_and(child, parent)), .)
 -------------------------------------------
-Ego_Younger_Sister
-Ego_Older_Brother
 Ego_Older_Sister
 Ego_Younger_Brother
+Ego_Younger_Sister
+Ego_Older_Brother
 -------------------------------------------
 *(my_x(exists_z_and(parent, parent)), .)
 -------------------------------------------
 Paternal_Grandmother
 Paternal_Grandfather
-Maternal_Grandmother
 Maternal_Grandfather
+Maternal_Grandmother
+-------------------------------------------
+*(**(axy_and_bx(exists_z_and(child, parent), female), .), .)
+-------------------------------------------
+Daughter_of_Ego_Older_Brother
+Ego_Younger_Sister
+Daughter_of_Ego_Older_Sister
+Daughter
+Ego_Older_Sister
+Daughter_of_Ego_Younger_Brother
+Daughter_of_Ego_Younger_Sister
+Mother
+-------------------------------------------
+*(**(axy_and_bx(exists_z_and(child, parent), male), .), .)
+-------------------------------------------
+Son_of_Ego_Younger_Brother
+Son_of_Ego_Younger_Sister
+Son_of_Ego_Older_Brother
+Ego_Younger_Brother
+Son_of_Ego_Older_Sister
+Son
+Ego
+Ego_Older_Brother
+Father
+-------------------------------------------
+*(**(axy_and_bx(exists_z_and(parent, child), female), .), .)
+-------------------------------------------
+Maternal_Grandmother
+Paternal_Grandmother
+Ego_Younger_Sister
+Ego_Older_Sister
+Mother
+-------------------------------------------
+*(**(axy_and_bx(exists_z_and(parent, child), male), .), .)
+-------------------------------------------
+Ego_Younger_Brother
+Maternal_Grandfather
+Ego
+Ego_Older_Brother
+Paternal_Grandfather
+Father
+-------------------------------------------
+*(**(axy_and_bxy(exists_z_and(child, parent), exists_z_and(parent, child)), .), .)
+-------------------------------------------
+Ego_Younger_Brother
+Ego_Younger_Sister
+Ego
+Ego_Older_Brother
+Ego_Older_Sister
+Father
+Mother
+-------------------------------------------
+*(**(exists_z_and(child, axy_and_bx(parent, female)), .), .)
+-------------------------------------------
+Son_of_Ego_Younger_Sister
+Ego_Younger_Brother
+Son_of_Ego_Older_Sister
+Ego_Younger_Sister
+Daughter_of_Ego_Older_Sister
+Ego
+Ego_Older_Brother
+Ego_Older_Sister
+Daughter_of_Ego_Younger_Sister
+Father
+Mother
+-------------------------------------------
+*(**(exists_z_and(child, axy_and_bx(parent, male)), .), .)
+-------------------------------------------
+Daughter_of_Ego_Older_Brother
+Son_of_Ego_Younger_Brother
+Son_of_Ego_Older_Brother
+Ego_Younger_Brother
+Ego_Younger_Sister
+Son
+Ego
+Ego_Older_Brother
+Daughter
+Ego_Older_Sister
+Daughter_of_Ego_Younger_Brother
+Father
+Mother
+-------------------------------------------
+*(**(exists_z_and(parent, axy_and_bx(child, female)), .), .)
+-------------------------------------------
+Maternal_Grandmother
+Ego_Younger_Brother
+Maternal_Grandfather
+Ego_Younger_Sister
+Ego
+Ego_Older_Brother
+Ego_Older_Sister
+Father
+Mother
+-------------------------------------------
+*(**(exists_z_and(parent, axy_and_bx(child, male)), .), .)
+-------------------------------------------
+Paternal_Grandmother
+Ego_Younger_Brother
+Ego_Younger_Sister
+Ego
+Ego_Older_Brother
+Ego_Older_Sister
+Paternal_Grandfather
+Father
+Mother
+-------------------------------------------
+*(**(exists_z_and(axy_and_bx(child, female), axy_and_bx(parent, female)), .), .)
+-------------------------------------------
+Ego_Younger_Sister
+Daughter_of_Ego_Older_Sister
+Ego_Older_Sister
+Daughter_of_Ego_Younger_Sister
+Mother
+-------------------------------------------
+*(**(exists_z_and(axy_and_bx(child, female), axy_and_bx(parent, male)), .), .)
+-------------------------------------------
+Daughter_of_Ego_Older_Brother
+Ego_Younger_Sister
+Daughter
+Ego_Older_Sister
+Daughter_of_Ego_Younger_Brother
+Mother
+-------------------------------------------
+*(**(exists_z_and(axy_and_bx(child, male), axy_and_bx(parent, female)), .), .)
+-------------------------------------------
+Son_of_Ego_Younger_Sister
+Ego_Younger_Brother
+Son_of_Ego_Older_Sister
+Ego
+Ego_Older_Brother
+Father
+-------------------------------------------
+*(**(exists_z_and(axy_and_bx(child, male), axy_and_bx(parent, male)), .), .)
+-------------------------------------------
+Son_of_Ego_Younger_Brother
+Son_of_Ego_Older_Brother
+Ego_Younger_Brother
+Son
+Ego
+Ego_Older_Brother
+Father
+-------------------------------------------
+*(**(exists_z_and(axy_and_bx(parent, female), axy_and_bx(child, female)), .), .)
+-------------------------------------------
+Ego_Older_Sister
+Ego_Younger_Sister
+Mother
+Maternal_Grandmother
+-------------------------------------------
+*(**(exists_z_and(axy_and_bx(parent, female), axy_and_bx(child, male)), .), .)
+-------------------------------------------
+Paternal_Grandmother
+Ego_Older_Sister
+Ego_Younger_Sister
+Mother
+-------------------------------------------
+*(**(exists_z_and(axy_and_bx(parent, male), axy_and_bx(child, female)), .), .)
+-------------------------------------------
+Ego_Younger_Brother
+Maternal_Grandfather
+Ego
+Ego_Older_Brother
+Father
+-------------------------------------------
+*(**(exists_z_and(axy_and_bx(parent, male), axy_and_bx(child, male)), .), .)
+-------------------------------------------
+Ego_Younger_Brother
+Ego
+Ego_Older_Brother
+Paternal_Grandfather
+Father
+-------------------------------------------
+*(**(exists_z_and(exists_z_and(child, child), exists_z_and(parent, parent)), .), .)
+-------------------------------------------
+Daughter_of_Ego_Older_Brother
+Son_of_Ego_Younger_Brother
+Son_of_Ego_Younger_Sister
+Son_of_Ego_Older_Brother
+Ego_Younger_Brother
+Son_of_Ego_Older_Sister
+Ego_Younger_Sister
+Son
+Daughter_of_Ego_Older_Sister
+Ego
+Ego_Older_Brother
+Daughter
+Ego_Older_Sister
+Daughter_of_Ego_Younger_Brother
+Daughter_of_Ego_Younger_Sister
+-------------------------------------------
+*(**(exists_z_and(exists_z_and(parent, parent), exists_z_and(child, child)), .), .)
+-------------------------------------------
+Maternal_Grandmother
+Paternal_Grandmother
+Maternal_Grandfather
+Paternal_Grandfather
+Father
+Mother
+-------------------------------------------
+*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)
+-------------------------------------------
+Ego_Older_Sister
+Ego_Younger_Sister
+-------------------------------------------
+*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)
+-------------------------------------------
+Ego_Younger_Brother
+Ego_Older_Brother
+-------------------------------------------
+*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)
+-------------------------------------------
+Paternal_Grandmother
+Maternal_Grandmother
+-------------------------------------------
+*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)
+-------------------------------------------
+Maternal_Grandfather
+Paternal_Grandfather
+-------------------------------------------
+*(my_x(exists_z_and(child, exists_z_and(child, parent))), .)
+-------------------------------------------
+Daughter_of_Ego_Older_Brother
+Son_of_Ego_Younger_Brother
+Son_of_Ego_Younger_Sister
+Son_of_Ego_Older_Brother
+Son_of_Ego_Older_Sister
+Son
+Daughter_of_Ego_Older_Sister
+Daughter
+Daughter_of_Ego_Younger_Brother
+Daughter_of_Ego_Younger_Sister
+-------------------------------------------
+*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)
+-------------------------------------------
+Maternal_Grandfather
+Maternal_Grandmother
+-------------------------------------------
+*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)
+-------------------------------------------
+Paternal_Grandmother
+Paternal_Grandfather
+-------------------------------------------
+*(my_x(exists_z_and(axy_and_bx(child, female), exists_z_and(child, parent))), .)
+-------------------------------------------
+Daughter_of_Ego_Older_Brother
+Daughter_of_Ego_Older_Sister
+Daughter
+Daughter_of_Ego_Younger_Brother
+Daughter_of_Ego_Younger_Sister
+-------------------------------------------
+*(my_x(exists_z_and(axy_and_bx(child, male), exists_z_and(child, parent))), .)
+-------------------------------------------
+Son_of_Ego_Younger_Brother
+Son_of_Ego_Younger_Sister
+Son_of_Ego_Older_Brother
+Son_of_Ego_Older_Sister
+Son
+-------------------------------------------
+*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, female))), .)
+-------------------------------------------
+Maternal_Grandmother
+-------------------------------------------
+*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, male))), .)
+-------------------------------------------
+Paternal_Grandmother
+-------------------------------------------
+*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, female))), .)
+-------------------------------------------
+Maternal_Grandfather
+-------------------------------------------
+*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, male))), .)
+-------------------------------------------
+Paternal_Grandfather
+-------------------------------------------
+*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))), .)
+-------------------------------------------
+Daughter_of_Ego_Older_Sister
+Daughter_of_Ego_Younger_Sister
+Son_of_Ego_Younger_Sister
+Son_of_Ego_Older_Sister
+-------------------------------------------
+*(my_x(exists_z_and(axy_and_by(child, male), exists_z_and(child, parent))), .)
+-------------------------------------------
+Daughter_of_Ego_Older_Brother
+Son_of_Ego_Younger_Brother
+Son_of_Ego_Older_Brother
+Son
+Daughter
+Daughter_of_Ego_Younger_Brother
 -------------------------------------------

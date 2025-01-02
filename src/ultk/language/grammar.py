@@ -421,7 +421,6 @@ class Grammar:
                     # can't use terminal rules when depth > 0
                     if rule.rhs is None:
                         continue
-
                     # get lists of possible depths for each child
                     for child_depths in product(range(depth), repeat=len(rule.rhs)):
                         if max(child_depths) < depth - 1:

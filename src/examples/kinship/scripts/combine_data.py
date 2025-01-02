@@ -29,9 +29,10 @@ if __name__ == "__main__":
     # )
     all_data = pd.concat(
         [
-            explored_languages, dominating_languages, 
+            explored_languages,
+            dominating_languages,
             # natural_languages
-        ], 
-        ignore_index=True
+        ],
+        ignore_index=True,
     )
     all_data.to_csv("kinship/outputs/combined_data.csv", index=False)

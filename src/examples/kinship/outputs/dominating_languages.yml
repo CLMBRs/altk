@@ -1,183 +1,1004 @@
-- comm_cost: 0.8966131907308378
-  complexity: 19
+- comm_cost: 0.8106060606060606
+  complexity: 44
   expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
   - '*(my_x(exists_z_and(child, parent)), .)'
-  - '*(my_x(parent), .)'
-  - '*(female, .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
   - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
   name: dominating-0
-  type: dominant
-- comm_cost: 0.9251336898395722
-  complexity: 12
-  expressions:
-  - '*(male, .)'
-  - '*(my_x(axy_and_bx(child, female)), .)'
-  - '*(female, .)'
-  name: dominating-1
-  type: dominant
-- comm_cost: 0.8966131907308378
-  complexity: 19
-  expressions:
-  - '*(my_x(exists_z_and(parent, parent)), .)'
-  - '*(my_x(parent), .)'
-  - '*(female, .)'
-  - '*(my_x(axy_and_bx(child, male)), .)'
-  name: dominating-2
   type: dominant
 - comm_cost: 0.9050802139037433
   complexity: 17
   expressions:
-  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(female, .)'
   - '*(my_x(child), .)'
   - '*(my_x(parent), .)'
-  - '*(female, .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  name: dominating-1
+  type: dominant
+- comm_cost: 0.8106060606060606
+  complexity: 44
+  expressions:
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  name: dominating-2
+  type: dominant
+- comm_cost: 0.75
+  complexity: 64
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
   name: dominating-3
+  type: dominant
+- comm_cost: 0.9251336898395722
+  complexity: 12
+  expressions:
+  - '*(female, .)'
+  - '*(male, .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  name: dominating-4
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  name: dominating-5
+  type: dominant
+- comm_cost: 0.8957219251336899
+  complexity: 19
+  expressions:
+  - '*(my_x(parent), .)'
+  - '*(female, .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  name: dominating-6
+  type: dominant
+- comm_cost: 0.75
+  complexity: 64
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-7
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  name: dominating-8
+  type: dominant
+- comm_cost: 0.7575757575757576
+  complexity: 56
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  name: dominating-9
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-10
+  type: dominant
+- comm_cost: 0.8106060606060606
+  complexity: 44
+  expressions:
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(parent), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-11
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(parent), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-12
+  type: dominant
+- comm_cost: 0.696969696969697
+  complexity: 78
+  expressions:
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, female))),
+    .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, male))), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-13
+  type: dominant
+- comm_cost: 0.8409090909090909
+  complexity: 34
+  expressions:
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(parent), .)'
+  name: dominating-14
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-15
+  type: dominant
+- comm_cost: 0.8106060606060606
+  complexity: 44
+  expressions:
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(parent), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-16
+  type: dominant
+- comm_cost: 0.8106060606060606
+  complexity: 44
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(parent), .)'
+  name: dominating-17
+  type: dominant
+- comm_cost: 0.75
+  complexity: 64
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-18
+  type: dominant
+- comm_cost: 0.7878787878787878
+  complexity: 46
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  name: dominating-19
+  type: dominant
+- comm_cost: 0.7272727272727273
+  complexity: 66
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-20
+  type: dominant
+- comm_cost: 0.9260249554367201
+  complexity: 11
+  expressions:
+  - '*(female, .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(parent), .)'
+  name: dominating-21
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(parent), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-22
+  type: dominant
+- comm_cost: 0.8106060606060606
+  complexity: 44
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  name: dominating-23
+  type: dominant
+- comm_cost: 0.9251336898395722
+  complexity: 12
+  expressions:
+  - '*(female, .)'
+  - '*(male, .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  name: dominating-24
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  name: dominating-25
+  type: dominant
+- comm_cost: 0.8106060606060606
+  complexity: 44
+  expressions:
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  name: dominating-26
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-27
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  name: dominating-28
+  type: dominant
+- comm_cost: 0.7121212121212122
+  complexity: 76
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-29
+  type: dominant
+- comm_cost: 0.8712121212121212
+  complexity: 26
+  expressions:
+  - '*(my_x(child), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(parent), .)'
+  name: dominating-30
+  type: dominant
+- comm_cost: 0.75
+  complexity: 64
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-31
+  type: dominant
+- comm_cost: 0.75
+  complexity: 64
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-32
+  type: dominant
+- comm_cost: 0.7878787878787878
+  complexity: 46
+  expressions:
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-33
+  type: dominant
+- comm_cost: 0.8957219251336899
+  complexity: 19
+  expressions:
+  - '*(female, .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(parent), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  name: dominating-34
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  name: dominating-35
+  type: dominant
+- comm_cost: 0.6969696969696969
+  complexity: 82
+  expressions:
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, female))),
+    .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, male))), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, male))), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-36
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  name: dominating-37
+  type: dominant
+- comm_cost: 0.7121212121212122
+  complexity: 76
+  expressions:
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, female))),
+    .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-38
+  type: dominant
+- comm_cost: 0.7878787878787878
+  complexity: 46
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  name: dominating-39
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-40
+  type: dominant
+- comm_cost: 0.8654188948306596
+  complexity: 27
+  expressions:
+  - '*(female, .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(parent), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  name: dominating-41
+  type: dominant
+- comm_cost: 0.9260806595365418
+  complexity: 10
+  expressions:
+  - '*(female, .)'
+  - '*(male, .)'
+  - '*(my_x(parent), .)'
+  name: dominating-42
+  type: dominant
+- comm_cost: 0.9175579322638145
+  complexity: 13
+  expressions:
+  - '*(female, .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  name: dominating-43
+  type: dominant
+- comm_cost: 0.7575757575757576
+  complexity: 56
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-44
+  type: dominant
+- comm_cost: 0.8106060606060606
+  complexity: 44
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(parent), .)'
+  name: dominating-45
+  type: dominant
+- comm_cost: 0.9090909090909091
+  complexity: 14
+  expressions:
+  - '*(my_x(child), .)'
+  - '*(my_x(parent), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  name: dominating-46
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  name: dominating-47
+  type: dominant
+- comm_cost: 0.6893939393939393
+  complexity: 88
+  expressions:
+  - '*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, male))), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, male))), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-48
+  type: dominant
+- comm_cost: 0.6893939393939393
+  complexity: 88
+  expressions:
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, female))),
+    .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, male))), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, male))), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-49
+  type: dominant
+- comm_cost: 0.9260806595365418
+  complexity: 10
+  expressions:
+  - '*(female, .)'
+  - '*(male, .)'
+  - '*(my_x(child), .)'
+  name: dominating-50
+  type: dominant
+- comm_cost: 0.7878787878787878
+  complexity: 46
+  expressions:
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  name: dominating-51
+  type: dominant
+- comm_cost: 0.874777183600713
+  complexity: 25
+  expressions:
+  - '*(female, .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(parent), .)'
+  name: dominating-52
+  type: dominant
+- comm_cost: 0.8106060606060606
+  complexity: 44
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  name: dominating-53
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(child), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-54
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  name: dominating-55
+  type: dominant
+- comm_cost: 0.6893939393939393
+  complexity: 88
+  expressions:
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, female))),
+    .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, male))), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, male))), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-56
+  type: dominant
+- comm_cost: 0.9090909090909091
+  complexity: 14
+  expressions:
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(parent), .)'
+  name: dominating-57
+  type: dominant
+- comm_cost: 0.8106060606060606
+  complexity: 44
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  name: dominating-58
+  type: dominant
+- comm_cost: 0.7575757575757576
+  complexity: 56
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-59
+  type: dominant
+- comm_cost: 0.8484848484848485
+  complexity: 28
+  expressions:
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  name: dominating-60
+  type: dominant
+- comm_cost: 0.8712121212121212
+  complexity: 26
+  expressions:
+  - '*(my_x(child), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(parent), .)'
+  name: dominating-61
+  type: dominant
+- comm_cost: 0.8409090909090909
+  complexity: 34
+  expressions:
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  name: dominating-62
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-63
+  type: dominant
+- comm_cost: 0.75
+  complexity: 64
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-64
+  type: dominant
+- comm_cost: 0.75
+  complexity: 64
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-65
+  type: dominant
+- comm_cost: 0.8106060606060606
+  complexity: 44
+  expressions:
+  - '*(my_x(child), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  name: dominating-66
   type: dominant
 - comm_cost: 0.9696969696969697
   complexity: 3
   expressions:
   - '*(male, .)'
-  name: dominating-4
+  name: dominating-67
   type: dominant
-- comm_cost: 0.8966131907308378
-  complexity: 19
+- comm_cost: 0.7803030303030303
+  complexity: 54
   expressions:
-  - '*(my_x(axy_and_bx(parent, male)), .)'
-  - '*(my_x(exists_z_and(parent, parent)), .)'
-  - '*(my_x(child), .)'
-  - '*(female, .)'
-  name: dominating-5
-  type: dominant
-- comm_cost: 0.8756684491978609
-  complexity: 25
-  expressions:
-  - '*(my_x(axy_and_bx(parent, male)), .)'
-  - '*(my_x(exists_z_and(parent, parent)), .)'
-  - '*(my_x(child), .)'
-  - '*(my_x(exists_z_and(child, parent)), .)'
-  - '*(female, .)'
-  name: dominating-6
-  type: dominant
-- comm_cost: 0.9260249554367201
-  complexity: 11
-  expressions:
-  - '*(my_x(child), .)'
-  - '*(my_x(parent), .)'
-  - '*(female, .)'
-  name: dominating-7
-  type: dominant
-- comm_cost: 0.8712121212121212
-  complexity: 26
-  expressions:
-  - '*(my_x(exists_z_and(parent, parent)), .)'
-  - '*(my_x(child), .)'
-  - '*(my_x(exists_z_and(child, parent)), .)'
-  - '*(my_x(axy_and_bx(parent, female)), .)'
-  - '*(my_x(parent), .)'
-  name: dominating-8
-  type: dominant
-- comm_cost: 0.9175579322638145
-  complexity: 13
-  expressions:
-  - '*(my_x(axy_and_bx(parent, male)), .)'
-  - '*(my_x(child), .)'
-  - '*(female, .)'
-  name: dominating-9
-  type: dominant
-- comm_cost: 0.8484848484848485
-  complexity: 28
-  expressions:
-  - '*(my_x(axy_and_bx(parent, male)), .)'
-  - '*(my_x(exists_z_and(parent, parent)), .)'
-  - '*(my_x(child), .)'
-  - '*(my_x(exists_z_and(child, parent)), .)'
-  - '*(my_x(axy_and_bx(parent, female)), .)'
-  name: dominating-10
-  type: dominant
-- comm_cost: 0.8409090909090909
-  complexity: 34
-  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
   - '*(my_x(axy_and_bx(parent, male)), .)'
   - '*(my_x(exists_z_and(parent, parent)), .)'
   - '*(my_x(exists_z_and(child, parent)), .)'
   - '*(my_x(axy_and_bx(child, female)), .)'
   - '*(my_x(axy_and_bx(child, male)), .)'
-  - '*(my_x(parent), .)'
-  name: dominating-11
-  type: dominant
-- comm_cost: 0.8409090909090909
-  complexity: 34
-  expressions:
-  - '*(my_x(exists_z_and(parent, parent)), .)'
-  - '*(my_x(exists_z_and(child, parent)), .)'
   - '*(my_x(axy_and_bx(parent, female)), .)'
-  - '*(my_x(axy_and_bx(child, female)), .)'
-  - '*(my_x(axy_and_bx(child, male)), .)'
-  - '*(my_x(parent), .)'
-  name: dominating-12
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-68
   type: dominant
-- comm_cost: 0.9260806595365418
-  complexity: 10
+- comm_cost: 0.7121212121212122
+  complexity: 76
   expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, male))), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-69
+  type: dominant
+- comm_cost: 0.6893939393939393
+  complexity: 88
+  expressions:
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, female))),
+    .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, male))), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-70
+  type: dominant
+- comm_cost: 0.9393939393939394
+  complexity: 6
+  expressions:
+  - '*(female, .)'
   - '*(male, .)'
+  name: dominating-71
+  type: dominant
+- comm_cost: 0.7272727272727273
+  complexity: 66
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-72
+  type: dominant
+- comm_cost: 0.75
+  complexity: 64
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
   - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-73
+  type: dominant
+- comm_cost: 0.75
+  complexity: 64
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-74
+  type: dominant
+- comm_cost: 0.9696969696969697
+  complexity: 3
+  expressions:
   - '*(female, .)'
-  name: dominating-13
+  name: dominating-75
   type: dominant
 - comm_cost: 0.8712121212121212
   complexity: 26
   expressions:
-  - '*(my_x(exists_z_and(parent, parent)), .)'
   - '*(my_x(child), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
   - '*(my_x(exists_z_and(child, parent)), .)'
   - '*(my_x(axy_and_bx(child, female)), .)'
   - '*(my_x(parent), .)'
-  name: dominating-14
+  name: dominating-76
   type: dominant
-- comm_cost: 0.9090909090909091
-  complexity: 14
+- comm_cost: 0.6893939393939393
+  complexity: 88
   expressions:
-  - '*(my_x(exists_z_and(parent, parent)), .)'
-  - '*(my_x(child), .)'
-  - '*(my_x(parent), .)'
-  name: dominating-15
-  type: dominant
-- comm_cost: 0.9260806595365418
-  complexity: 10
-  expressions:
-  - '*(male, .)'
-  - '*(my_x(parent), .)'
-  - '*(female, .)'
-  name: dominating-16
-  type: dominant
-- comm_cost: 0.8672014260249554
-  complexity: 27
-  expressions:
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, female))),
+    .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
   - '*(my_x(axy_and_bx(parent, male)), .)'
-  - '*(my_x(exists_z_and(parent, parent)), .)'
-  - '*(my_x(exists_z_and(child, parent)), .)'
-  - '*(female, .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, male))), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
   - '*(my_x(axy_and_bx(child, male)), .)'
-  name: dominating-17
-  type: dominant
-- comm_cost: 0.8787878787878788
-  complexity: 20
-  expressions:
-  - '*(my_x(exists_z_and(child, parent)), .)'
-  - '*(my_x(exists_z_and(parent, parent)), .)'
-  - '*(my_x(child), .)'
-  - '*(my_x(parent), .)'
-  name: dominating-18
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-77
   type: dominant
 - comm_cost: 0.8712121212121212
   complexity: 26
   expressions:
+  - '*(my_x(child), .)'
   - '*(my_x(axy_and_bx(parent, male)), .)'
   - '*(my_x(exists_z_and(parent, parent)), .)'
-  - '*(my_x(child), .)'
   - '*(my_x(exists_z_and(child, parent)), .)'
   - '*(my_x(parent), .)'
-  name: dominating-19
+  name: dominating-78
+  type: dominant
+- comm_cost: 0.9050802139037433
+  complexity: 17
+  expressions:
+  - '*(female, .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(parent), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  name: dominating-79
   type: dominant
 - comm_cost: 0.8181818181818181
   complexity: 36
@@ -185,78 +1006,138 @@
   - '*(my_x(axy_and_bx(parent, male)), .)'
   - '*(my_x(exists_z_and(parent, parent)), .)'
   - '*(my_x(exists_z_and(child, parent)), .)'
-  - '*(my_x(axy_and_bx(parent, female)), .)'
   - '*(my_x(axy_and_bx(child, female)), .)'
   - '*(my_x(axy_and_bx(child, male)), .)'
-  name: dominating-20
-  type: dominant
-- comm_cost: 0.8712121212121212
-  complexity: 26
-  expressions:
-  - '*(my_x(exists_z_and(parent, parent)), .)'
-  - '*(my_x(child), .)'
-  - '*(my_x(exists_z_and(child, parent)), .)'
-  - '*(my_x(axy_and_bx(child, male)), .)'
-  - '*(my_x(parent), .)'
-  name: dominating-21
-  type: dominant
-- comm_cost: 0.9090909090909091
-  complexity: 14
-  expressions:
-  - '*(my_x(exists_z_and(child, parent)), .)'
-  - '*(my_x(child), .)'
-  - '*(my_x(parent), .)'
-  name: dominating-22
-  type: dominant
-- comm_cost: 0.9251336898395722
-  complexity: 12
-  expressions:
-  - '*(male, .)'
   - '*(my_x(axy_and_bx(parent, female)), .)'
-  - '*(female, .)'
-  name: dominating-23
+  name: dominating-80
   type: dominant
-- comm_cost: 0.8966131907308378
-  complexity: 19
+- comm_cost: 0.7575757575757576
+  complexity: 56
   expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
   - '*(my_x(axy_and_bx(parent, male)), .)'
-  - '*(my_x(child), .)'
-  - '*(female, .)'
-  - '*(my_x(exists_z_and(child, parent)), .)'
-  name: dominating-24
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  name: dominating-81
   type: dominant
 - comm_cost: 0.8409090909090909
   complexity: 34
   expressions:
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(parent), .)'
+  name: dominating-82
+  type: dominant
+- comm_cost: 0.8106060606060606
+  complexity: 44
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
   - '*(my_x(axy_and_bx(parent, male)), .)'
   - '*(my_x(exists_z_and(parent, parent)), .)'
-  - '*(my_x(child), .)'
   - '*(my_x(exists_z_and(child, parent)), .)'
-  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
   - '*(my_x(axy_and_bx(child, male)), .)'
-  name: dominating-25
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  name: dominating-83
   type: dominant
-- comm_cost: 0.9050802139037433
-  complexity: 17
+- comm_cost: 0.874777183600713
+  complexity: 25
   expressions:
-  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(female, .)'
   - '*(my_x(child), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
   - '*(my_x(parent), .)'
-  - '*(female, .)'
-  name: dominating-26
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  name: dominating-84
   type: dominant
-- comm_cost: 0.9393939393939394
-  complexity: 6
+- comm_cost: 0.8106060606060606
+  complexity: 44
   expressions:
-  - '*(male, .)'
-  - '*(female, .)'
-  name: dominating-27
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  name: dominating-85
   type: dominant
-- comm_cost: 0.9696969696969697
-  complexity: 3
+- comm_cost: 0.7803030303030303
+  complexity: 54
   expressions:
-  - '*(female, .)'
-  name: dominating-28
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-86
+  type: dominant
+- comm_cost: 0.8106060606060606
+  complexity: 44
+  expressions:
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-87
+  type: dominant
+- comm_cost: 0.8409090909090909
+  complexity: 34
+  expressions:
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  name: dominating-88
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-89
+  type: dominant
+- comm_cost: 0.6666666666666666
+  complexity: 90
+  expressions:
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, female))),
+    .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, male))), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, male))), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-90
   type: dominant
 - comm_cost: 0.8484848484848485
   complexity: 28
@@ -266,16 +1147,98 @@
   - '*(my_x(axy_and_bx(child, female)), .)'
   - '*(my_x(axy_and_bx(child, male)), .)'
   - '*(my_x(parent), .)'
-  name: dominating-29
+  name: dominating-91
   type: dominant
-- comm_cost: 0.8409090909090909
-  complexity: 34
+- comm_cost: 0.8787878787878788
+  complexity: 20
+  expressions:
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(parent), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  name: dominating-92
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  name: dominating-93
+  type: dominant
+- comm_cost: 0.7575757575757576
+  complexity: 56
+  expressions:
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-94
+  type: dominant
+- comm_cost: 0.8106060606060606
+  complexity: 44
   expressions:
   - '*(my_x(axy_and_bx(parent, male)), .)'
   - '*(my_x(exists_z_and(parent, parent)), .)'
-  - '*(my_x(child), .)'
   - '*(my_x(exists_z_and(child, parent)), .)'
-  - '*(my_x(axy_and_bx(parent, female)), .)'
   - '*(my_x(axy_and_bx(child, female)), .)'
-  name: dominating-30
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  name: dominating-95
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(parent, parent)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-96
+  type: dominant
+- comm_cost: 0.696969696969697
+  complexity: 78
+  expressions:
+  - '*(my_x(exists_z_and(axy_and_bx(parent, female), axy_and_bx(parent, female))),
+    .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), female)), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_bx(parent, male), axy_and_bx(parent, female))), .)'
+  - '*(my_x(axy_and_bx(child, male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(child, parent), male)), .)'
+  - '*(my_x(exists_z_and(parent, axy_and_bx(parent, male))), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-97
+  type: dominant
+- comm_cost: 0.7803030303030303
+  complexity: 54
+  expressions:
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), female)), .)'
+  - '*(my_x(child), .)'
+  - '*(my_x(axy_and_bx(parent, male)), .)'
+  - '*(my_x(exists_z_and(child, parent)), .)'
+  - '*(my_x(axy_and_bx(child, female)), .)'
+  - '*(my_x(axy_and_bx(exists_z_and(parent, parent), male)), .)'
+  - '*(my_x(axy_and_bx(parent, female)), .)'
+  - '*(my_x(exists_z_and(axy_and_by(child, female), exists_z_and(child, parent))),
+    .)'
+  name: dominating-98
   type: dominant

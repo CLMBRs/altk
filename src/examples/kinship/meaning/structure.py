@@ -1,3 +1,9 @@
+"""Module containing individuals and relations of the kinship domain.
+
+Rather than encoding all the features recursively into Referents, we'll just take advantage of the fact that grammars can be loaded from arbitrary python modules, and reference the data structures here, and keep Referents minimally to contain names.
+
+"""
+
 from typing import Callable
 
 ##############################################################################
@@ -10,7 +16,7 @@ class Structure:
     def __init__(self, domain: set[str], interpretation: dict[str, Callable]):
         """
         Initialize the structure.
-        
+
         Args:
             domain (set): The set of Referents.
             interpretation (dict): A mapping of terms to their interpretations.
@@ -25,43 +31,58 @@ class Structure:
 ##############################################################################
 # Define the features of the semantic domain
 ##############################################################################
-domain = {name for name in [
-    "Paternal_Grandfather", "Paternal_Grandmother",
-    "Maternal_Grandfather", "Maternal_Grandmother",
-    "Father", "Mother",
-    *[
-        f"Paternal_{'Older' if i < 2 else 'Younger'}_{'Brother' if i % 2 == 0 else 'Sister'}"
-        for i in range(4)
-    ],
-    *[
-        f"Maternal_{'Older' if i < 2 else 'Younger'}_{'Brother' if i % 2 == 0 else 'Sister'}"
-        for i in range(4)
-    ],
-    # Ego and their four siblings
-    "Ego",  # Explicitly include Ego
-    *[
-        f"Ego_{'Older' if i < 2 else 'Younger'}_{'Brother' if i % 2 == 0 else 'Sister'}"
-        for i in range(4)
-    ],
-    "Son", "Daughter", 
-    *[f"{'Son_of_Son' if i == 0 else 'Daughter_of_Son' if i == 1 else 'Son_of_Daughter' if i == 2 else 'Daughter_of_Daughter'}" for i in range(4)],
-    # Add niblings
-    *[f"{'Son_of_' + ('Ego_Older_Brother' if i == 0 else 'Ego_Older_Sister' if i == 1 else 'Ego_Younger_Brother' if i == 2 else 'Ego_Younger_Sister')}" for i in range(4)],
-    *[f"{'Daughter_of_' + ('Ego_Older_Brother' if i == 0 else 'Ego_Older_Sister' if i == 1 else 'Ego_Younger_Brother' if i == 2 else 'Ego_Younger_Sister')}" for i in range(4)]
-]}
+domain = {
+    name
+    for name in [
+        "Paternal_Grandfather",
+        "Paternal_Grandmother",
+        "Maternal_Grandfather",
+        "Maternal_Grandmother",
+        "Father",
+        "Mother",
+        *[
+            f"Paternal_{'Older' if i < 2 else 'Younger'}_{'Brother' if i % 2 == 0 else 'Sister'}"
+            for i in range(4)
+        ],
+        *[
+            f"Maternal_{'Older' if i < 2 else 'Younger'}_{'Brother' if i % 2 == 0 else 'Sister'}"
+            for i in range(4)
+        ],
+        # Ego and their four siblings
+        "Ego",  # Explicitly include Ego
+        *[
+            f"Ego_{'Older' if i < 2 else 'Younger'}_{'Brother' if i % 2 == 0 else 'Sister'}"
+            for i in range(4)
+        ],
+        "Son",
+        "Daughter",
+        *[
+            f"{'Son_of_Son' if i == 0 else 'Daughter_of_Son' if i == 1 else 'Son_of_Daughter' if i == 2 else 'Daughter_of_Daughter'}"
+            for i in range(4)
+        ],
+        # Add niblings
+        *[
+            f"{'Son_of_' + ('Ego_Older_Brother' if i == 0 else 'Ego_Older_Sister' if i == 1 else 'Ego_Younger_Brother' if i == 2 else 'Ego_Younger_Sister')}"
+            for i in range(4)
+        ],
+        *[
+            f"{'Daughter_of_' + ('Ego_Older_Brother' if i == 0 else 'Ego_Older_Sister' if i == 1 else 'Ego_Younger_Brother' if i == 2 else 'Ego_Younger_Sister')}"
+            for i in range(4)
+        ],
+    ]
+}
 
 # Update auxiliary data structures
 # Update auxiliary data structures
 sex_data = {
     name: (
-        "Grandfather" in name or
-        "Father" in name or
-        "Brother" in name or
-        "Son" in name or
-        name == "Ego"
-    ) and not (
-        "Daughter" in name
+        "Grandfather" in name
+        or "Father" in name
+        or "Brother" in name
+        or "Son" in name
+        or name == "Ego"
     )
+    and not ("Daughter" in name)
     for name in domain
 }
 
@@ -77,12 +98,28 @@ age_hierarchy = {
     # Parents' siblings
     "Father": ["Paternal_Younger_Brother", "Paternal_Younger_Sister"],
     "Mother": ["Maternal_Younger_Brother", "Maternal_Younger_Sister"],
-    "Paternal_Older_Brother": ["Father", "Paternal_Younger_Brother", "Paternal_Younger_Sister"],
-    "Paternal_Older_Sister": ["Father", "Paternal_Younger_Brother", "Paternal_Younger_Sister"],
+    "Paternal_Older_Brother": [
+        "Father",
+        "Paternal_Younger_Brother",
+        "Paternal_Younger_Sister",
+    ],
+    "Paternal_Older_Sister": [
+        "Father",
+        "Paternal_Younger_Brother",
+        "Paternal_Younger_Sister",
+    ],
     "Paternal_Younger_Brother": [],
     "Paternal_Younger_Sister": [],
-    "Maternal_Older_Brother": ["Mother", "Maternal_Younger_Brother", "Maternal_Younger_Sister"],
-    "Maternal_Older_Sister": ["Mother", "Maternal_Younger_Brother", "Maternal_Younger_Sister"],
+    "Maternal_Older_Brother": [
+        "Mother",
+        "Maternal_Younger_Brother",
+        "Maternal_Younger_Sister",
+    ],
+    "Maternal_Older_Sister": [
+        "Mother",
+        "Maternal_Younger_Brother",
+        "Maternal_Younger_Sister",
+    ],
     "Maternal_Younger_Brother": [],
     "Maternal_Younger_Sister": [],
 }
@@ -93,15 +130,20 @@ parent_child_data = {
     "Maternal_Grandfather": ["Mother"],
     "Maternal_Grandmother": ["Mother"],
     "Father": [
-        "Ego", 
-        "Ego_Older_Brother", "Ego_Older_Sister", "Ego_Younger_Brother", "Ego_Younger_Sister",
+        "Ego",
+        "Ego_Older_Brother",
+        "Ego_Older_Sister",
+        "Ego_Younger_Brother",
+        "Ego_Younger_Sister",
     ],
     "Mother": [
-        "Ego", 
-        "Ego_Older_Brother", "Ego_Older_Sister", "Ego_Younger_Brother", "Ego_Younger_Sister",
-    
+        "Ego",
+        "Ego_Older_Brother",
+        "Ego_Older_Sister",
+        "Ego_Younger_Brother",
+        "Ego_Younger_Sister",
     ],
-    "Ego": ["Son", "Daughter"],  
+    "Ego": ["Son", "Daughter"],
     "Son": ["Grandchild_Son_of_Son", "Grandchild_Daughter_of_Son"],
     "Daughter": ["Grandchild_Daughter_of_Daughter", "Grandchild_Son_of_Daughter"],
     "Grandchild_Son_of_Son": [],
@@ -111,8 +153,14 @@ parent_child_data = {
     # Parent-child relationships for nieces/nephews
     "Ego_Older_Brother": ["Son_of_Ego_Older_Brother", "Daughter_of_Ego_Older_Brother"],
     "Ego_Older_Sister": ["Son_of_Ego_Older_Sister", "Daughter_of_Ego_Older_Sister"],
-    "Ego_Younger_Brother": ["Son_of_Ego_Younger_Brother", "Daughter_of_Ego_Younger_Brother"],
-    "Ego_Younger_Sister": ["Son_of_Ego_Younger_Sister", "Daughter_of_Ego_Younger_Sister"],
+    "Ego_Younger_Brother": [
+        "Son_of_Ego_Younger_Brother",
+        "Daughter_of_Ego_Younger_Brother",
+    ],
+    "Ego_Younger_Sister": [
+        "Son_of_Ego_Younger_Sister",
+        "Daughter_of_Ego_Younger_Sister",
+    ],
 }
 
 
@@ -121,21 +169,26 @@ parent_child_data = {
 def is_male(r: str) -> bool:
     return sex_data[r]
 
+
 def is_parent(p, c) -> bool:
     return c in parent_child_data.get(p, [])
 
+
 def is_older(r1, r2) -> bool:
     return r2 in age_hierarchy.get(r1, [])
+
 
 interpretation = {
     "is_male": is_male,
     "is_parent": is_parent,
     "is_older": is_older,
-} 
-interpretation.update({
-    individual: lambda x, individual=individual: individual == x
-    for individual in domain
-})
+}
+interpretation.update(
+    {
+        individual: lambda x, individual=individual: individual == x
+        for individual in domain
+    }
+)
 
 
 ##############################################################################
@@ -157,7 +210,9 @@ def test_structure(kinship_structure, domain, parent_child_data, sex_data):
     for referent in domain:
         expected = sex_data[referent]
         actual = kinship_structure.evaluate("is_male", referent)
-        assert actual == expected, f"Failed `is_male` for {referent}: expected {expected}, got {actual}"
+        assert (
+            actual == expected
+        ), f"Failed `is_male` for {referent}: expected {expected}, got {actual}"
         # print(f"PASS: {referent} -> is_male = {actual}")
 
     # print("\n=== Testing `parent_of` Predicate ===")
@@ -165,7 +220,9 @@ def test_structure(kinship_structure, domain, parent_child_data, sex_data):
         for child in domain:
             expected = child in parent_child_data.get(parent, [])
             actual = kinship_structure.evaluate("is_parent", parent, child)
-            assert actual == expected, f"Failed `is_parent` for {parent}, {child.name}: expected {expected}, got {actual}"
+            assert (
+                actual == expected
+            ), f"Failed `is_parent` for {parent}, {child.name}: expected {expected}, got {actual}"
             # print(f"PASS: {parent} -> parent_of({child}) = {actual}")
 
     # print("\n=== Testing `is_older` Predicate ===")
@@ -173,9 +230,10 @@ def test_structure(kinship_structure, domain, parent_child_data, sex_data):
         for r2 in domain:
             expected = r2 in age_hierarchy.get(r1, [])
             actual = kinship_structure.evaluate("is_older", r1, r2)
-            assert actual == expected, f"Failed `is_older` for {r1}, {r2}: expected {expected}, got {actual}"
+            assert (
+                actual == expected
+            ), f"Failed `is_older` for {r1}, {r2}: expected {expected}, got {actual}"
             # print(f"PASS: {r1} -> is_older({r2}) = {actual}")
-
 
     print("\nAll tests passed!")
 
@@ -194,5 +252,3 @@ if __name__ == "__main__":
 
     # Run a minimal test 'suite'
     test_structure(kinship_structure, domain, parent_child_data, sex_data)
-
-
