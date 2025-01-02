@@ -10,6 +10,7 @@ from typing import Callable
 # Structure class
 ##############################################################################
 
+
 class Structure:
     """A general structure for representing a domain and interpretation."""
 
@@ -27,6 +28,7 @@ class Structure:
     def evaluate(self, term, *args):
         """Evaluate a term on the given arguments."""
         return self.interpretation[term](*args)
+
 
 ##############################################################################
 # Define the features of the semantic domain

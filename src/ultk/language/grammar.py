@@ -98,7 +98,13 @@ class Rule:
         rhs: tuple[Any, ...] | None = tuple(arg.annotation for arg in args.values())
         # if one type annotation, a type of Referent, treat this as a terminal, no children = None RHS
         # TODO: make this more general?
-        if rhs and len(rhs) == 1 and issubclass(rhs[0], Referent):
+        # NOTE: rhs[0] might be Callable, not a type, which would break issubclass
+        if (
+            rhs
+            and len(rhs) == 1
+            and isinstance(rhs[0], type)
+            and issubclass(rhs[0], Referent)
+        ):
             rhs = None
         return cls(
             name=rule_name,
