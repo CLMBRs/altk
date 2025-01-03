@@ -49,6 +49,6 @@ if __name__ == "__main__":
         if meaning.is_uniformly_false():
             del expressions_by_meaning[meaning]
 
-    # breakpoint()
+    breakpoint()
 
     write_data(expressions_by_meaning)

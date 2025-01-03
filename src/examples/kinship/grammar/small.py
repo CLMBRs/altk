@@ -20,22 +20,23 @@ start = t
 ##############################################################################
 
 
-# Need to bind args for intermediate node
-# arg -> e ...
-def bind(*a: e, name=".") -> arg:
-    return a
-
-
-# Then unwrap args and apply predicate
+# Unwrap args and apply predicate
 # t -> et arg
 def apply_et(p: et, a: arg, name="*") -> t:
     return p(*a)
 
 
-# et -> eet arg
-def apply_eet(p: eet, a: arg, name="**") -> et:
-    return p(*a)
+# Bind args for intermediate node
+# arg -> e ...
+def bind(*a: e, name=".") -> arg:
+    return a
 
+
+# By excluding this, we only include terms like 'my sister' and not 'sister'
+# # et -> eet arg
+# def apply_eet(p: eet, a: arg, name="**") -> et:
+    # return p(*a)
+# (Pdb) meaning = kinship_grammar.parse( "**(Ez_axz_and_bzy(child, child), .)" ).evaluate(kinship_universe)
 
 ##############################################################################
 # Terminal rules
@@ -71,7 +72,7 @@ def child(*_: e) -> eet:
 # To get inclusive, in case you want things like 'parent of my child',
 # use lambda _: a(_)(Ego)
 # et -> eet
-def my_exclusive(a: eet, name="my_x") -> et:
+def my_exclusive(a: eet, name="my_") -> et:
     return lambda x: a(x)(Ego) and x != Ego
 
 
@@ -95,5 +96,52 @@ def axy_and_bxy(a: eet, b: eet) -> eet:
 
 # ∃z( A(x,z) ^ B(z, y) )
 # eet -> eet eet
-def exists_z_and(a: eet, b: eet) -> eet:
+def Ez_axz_and_bzy(a: eet, b: eet) -> eet:
     return lambda x: lambda y: any(z for z in universe if a(x)(z) and b(z)(y))
+
+# eet -> eet
+def inv(a: eet, name="inv") -> eet:
+    return lambda x: lambda y: a(y)(x)
+
+
+# eet -> eet
+def sym(a: eet, name="<->") -> eet:
+    return lambda x: lambda y: a(x)(y) or a(y)(x)
+
+
+# transitive closure, e.g. 'ancestor-of'
+# eet -> eet
+def tr_cl(a: eet) -> eet:
+    def closure(x, y, visited=None):
+        # Track visited nodes to avoid infinite loops
+        if visited is None:
+            visited = set()
+        if (x, y) in visited:
+            return False
+        visited.add((x, y))
+
+        # Base case: direct relationship exists
+        if a(x)(y):
+            return True
+
+        # Recursive case: check for intermediary z
+        return any(a(x)(z) and closure(z, y, visited) for z in universe if z != x)
+
+    return lambda x: lambda y: closure(x, y)
+
+
+# Technically the KR2012 definition of aunt/uncle includes Mother and Father...
+# eet -> e
+def exclusive_sibling(*_: e, name="sibling") -> eet:
+    def sibling_predicate(x, y):
+        # x and y must share at least one parent
+        shared_parent = any(
+            kinship_structure.evaluate("is_parent", z.name, x.name) and
+            kinship_structure.evaluate("is_parent", z.name, y.name)
+            for z in universe
+        )
+        # Exclude self
+        return shared_parent and x != y
+
+    return lambda x: lambda y: sibling_predicate(x, y)
+

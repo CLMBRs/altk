@@ -24,14 +24,14 @@ if __name__ == "__main__":
     explored_languages = yaml_to_dataframe(
         "kinship/outputs/explored_languages.yml", keys
     )
-    # natural_languages = yaml_to_dataframe(
-    #     "kinship/outputs/natural_languages.yml", keys
-    # )
+    natural_languages = yaml_to_dataframe(
+        "kinship/outputs/natural_languages.yml", keys
+    )
     all_data = pd.concat(
         [
             explored_languages,
             dominating_languages,
-            # natural_languages
+            natural_languages
         ],
         ignore_index=True,
     )

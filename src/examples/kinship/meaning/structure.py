@@ -84,7 +84,7 @@ sex_data = {
         or "Son" in name
         or name == "Ego"
     )
-    and not ("Daughter" in name)
+    and not ("Daughter_of" in name)
     for name in domain
 }
 
@@ -127,10 +127,10 @@ age_hierarchy = {
 }
 
 parent_child_data = {
-    "Paternal_Grandfather": ["Father"],
-    "Paternal_Grandmother": ["Father"],
-    "Maternal_Grandfather": ["Mother"],
-    "Maternal_Grandmother": ["Mother"],
+    "Paternal_Grandfather": ["Father", "Paternal_Older_Brother", "Paternal_Younger_Brother", "Paternal_Older_Sister", "Paternal_Younger_Sister"],
+    "Paternal_Grandmother": ["Father", "Paternal_Older_Brother", "Paternal_Younger_Brother", "Paternal_Older_Sister", "Paternal_Younger_Sister"],
+    "Maternal_Grandfather": ["Mother", "Maternal_Older_Brother", "Maternal_Younger_Brother", "Maternal_Older_Sister", "Maternal_Younger_Sister"],
+    "Maternal_Grandmother": ["Mother", "Maternal_Older_Brother", "Maternal_Younger_Brother", "Maternal_Older_Sister", "Maternal_Younger_Sister"],
     "Father": [
         "Ego",
         "Ego_Older_Brother",
@@ -146,8 +146,8 @@ parent_child_data = {
         "Ego_Younger_Sister",
     ],
     "Ego": ["Son", "Daughter"],
-    "Son": ["Grandchild_Son_of_Son", "Grandchild_Daughter_of_Son"],
-    "Daughter": ["Grandchild_Daughter_of_Daughter", "Grandchild_Son_of_Daughter"],
+    "Son": ["Son_of_Son", "Daughter_of_Son"],
+    "Daughter": ["Daughter_of_Daughter", "Son_of_Daughter"],
     "Grandchild_Son_of_Son": [],
     "Grandchild_Daughter_of_Son": [],
     "Grandchild_Son_of_Daughter": [],
