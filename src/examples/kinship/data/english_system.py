@@ -11,8 +11,12 @@ english_system = {
         "Ego_Older_Brother",
         "Ego_Younger_Brother",
     },
-    "daughter": {"Daughter",},
-    "son": {"Son",},
+    "daughter": {
+        "Daughter",
+    },
+    "son": {
+        "Son",
+    },
     "grandson": {"Son_of_Son", "Son_of_Daughter"},
     "granddaughter": {"Daughter_of_Son", "Daughter_of_Daughter"},
     "niece": {"Daughter_of_Ego_Older_Brother", "Daughter_of_Ego_Younger_Brother"},

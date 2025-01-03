@@ -127,10 +127,34 @@ age_hierarchy = {
 }
 
 parent_child_data = {
-    "Paternal_Grandfather": ["Father", "Paternal_Older_Brother", "Paternal_Younger_Brother", "Paternal_Older_Sister", "Paternal_Younger_Sister"],
-    "Paternal_Grandmother": ["Father", "Paternal_Older_Brother", "Paternal_Younger_Brother", "Paternal_Older_Sister", "Paternal_Younger_Sister"],
-    "Maternal_Grandfather": ["Mother", "Maternal_Older_Brother", "Maternal_Younger_Brother", "Maternal_Older_Sister", "Maternal_Younger_Sister"],
-    "Maternal_Grandmother": ["Mother", "Maternal_Older_Brother", "Maternal_Younger_Brother", "Maternal_Older_Sister", "Maternal_Younger_Sister"],
+    "Paternal_Grandfather": [
+        "Father",
+        "Paternal_Older_Brother",
+        "Paternal_Younger_Brother",
+        "Paternal_Older_Sister",
+        "Paternal_Younger_Sister",
+    ],
+    "Paternal_Grandmother": [
+        "Father",
+        "Paternal_Older_Brother",
+        "Paternal_Younger_Brother",
+        "Paternal_Older_Sister",
+        "Paternal_Younger_Sister",
+    ],
+    "Maternal_Grandfather": [
+        "Mother",
+        "Maternal_Older_Brother",
+        "Maternal_Younger_Brother",
+        "Maternal_Older_Sister",
+        "Maternal_Younger_Sister",
+    ],
+    "Maternal_Grandmother": [
+        "Mother",
+        "Maternal_Older_Brother",
+        "Maternal_Younger_Brother",
+        "Maternal_Older_Sister",
+        "Maternal_Younger_Sister",
+    ],
     "Father": [
         "Ego",
         "Ego_Older_Brother",

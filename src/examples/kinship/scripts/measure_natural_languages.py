@@ -65,18 +65,6 @@ if __name__ == "__main__":
         for expression in language.expressions
     ), breakpoint()
 
-    missing = {
-            expression.form: tuple(
-                m.name for m in expression.meaning if expression.meaning[m]
-            )
-            for language in natural_languages
-            for expression in language.expressions
-            if expression.meaning not in expressions_by_meaning
-    }
-    if missing:
-        breakpoint()
-
-
     write_languages(
         natural_languages,
         "kinship/outputs/natural_languages.yml",
