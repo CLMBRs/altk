@@ -1,0 +1,105 @@
+- comm_cost: 0.75
+  commutative: false
+  complexity: 1
+  expressions:
+  - Q
+  name: dominating-0
+  type: dominant
+- comm_cost: 0.625
+  commutative: false
+  complexity: 2
+  expressions:
+  - Q
+  - P
+  name: dominating-1
+  type: dominant
+- comm_cost: 0.5
+  commutative: false
+  complexity: 3
+  expressions:
+  - _not(Q)
+  - Q
+  name: dominating-2
+  type: dominant
+- comm_cost: 0.5
+  commutative: false
+  complexity: 3
+  expressions:
+  - _not(P)
+  - P
+  name: dominating-3
+  type: dominant
+- comm_cost: 0.75
+  commutative: false
+  complexity: 1
+  expressions:
+  - P
+  name: dominating-4
+  type: dominant
+- comm_cost: 0.0
+  commutative: false
+  complexity: 15
+  expressions:
+  - _and(P, Q)
+  - _not(_or(P, Q))
+  - _and(P, _not(Q))
+  - _and(Q, _not(P))
+  name: dominating-5
+  type: dominant
+- comm_cost: 0.45833333333333337
+  commutative: false
+  complexity: 4
+  expressions:
+  - _not(P)
+  - Q
+  - P
+  name: dominating-6
+  type: dominant
+- comm_cost: 0.125
+  commutative: false
+  complexity: 12
+  expressions:
+  - _and(Q, _not(P))
+  - P
+  - _not(_or(P, Q))
+  - _and(P, Q)
+  name: dominating-7
+  type: dominant
+- comm_cost: 0.33333333333333337
+  commutative: false
+  complexity: 6
+  expressions:
+  - Q
+  - P
+  - _not(_or(P, Q))
+  name: dominating-8
+  type: dominant
+- comm_cost: 0.125
+  commutative: false
+  complexity: 12
+  expressions:
+  - Q
+  - _and(P, Q)
+  - _not(_or(P, Q))
+  - _and(P, _not(Q))
+  name: dominating-9
+  type: dominant
+- comm_cost: 0.19999999999999996
+  commutative: false
+  complexity: 9
+  expressions:
+  - Q
+  - P
+  - _not(_or(P, Q))
+  - _and(P, Q)
+  name: dominating-10
+  type: dominant
+- comm_cost: 0.45833333333333337
+  commutative: false
+  complexity: 4
+  expressions:
+  - _not(Q)
+  - Q
+  - P
+  name: dominating-11
+  type: dominant

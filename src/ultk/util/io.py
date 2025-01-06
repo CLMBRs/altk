@@ -39,7 +39,7 @@ def read_grammatical_expressions(
         a list of GrammaticalExpressions and a dictionary mapping meanings to expressions
         (empty if `return_by_meaning` is False)
     """
-    if filename.endswith(".yaml"):
+    if filename.endswith(".yaml") or filename.endswith(".yml"):
         return read_grammatical_expressions_from_yaml(
             filename,
             grammar,

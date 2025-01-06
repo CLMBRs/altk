@@ -216,8 +216,9 @@ class Listener(CommunicativeAgent):
 
     def normalized_weights(self) -> np.ndarray:
         """Normalize the weights of a Listener so that each row vector for the heard expression e represents a conditional probability distribution over referents P(m | e)."""
-        # The sum of p(m | heard e) must be 1. We can safely divide each row by its sum because every expression has at least one meaning.
-        return self.R / self.R.sum(axis=1, keepdims=True)
+        # The sum of p(m | heard e) must be 1.
+        np.seterr(divide="ignore", invalid="ignore")
+        return np.nan_to_num(self.R / self.R.sum(axis=1, keepdims=True))
 
 
 ##############################################################################
@@ -294,9 +295,6 @@ class PragmaticListener(Listener):
             prior: a diagonal matrix of size |M|-by-|M| representing the communicative need probabilities for meanings.
         """
         super().__init__(language, **kwargs)
-        # Row vector \propto column vector of pragmatic S
-
-        self.R = np.zeros_like(speaker.S.T)
-        for i in range(len(self.R)):
-            col = speaker.S[:, i]
-            self.R[i] = col @ prior / np.sum(col @ prior)
+        # R(m | w) \propto sum_m p(m) S(w | m)
+        col_prior_dot = speaker.S.T @ prior
+        self.R = col_prior_dot / np.sum(col_prior_dot, axis=1, keepdims=True)

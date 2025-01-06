@@ -1,0 +1,446 @@
+- form: ''
+  length: 1
+  meaning: &id006 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      ? &id001 !!python/object:ultk.language.semantics.Referent
+        _frozen: true
+        name: w1
+      : true
+      ? &id002 !!python/object:ultk.language.semantics.Referent
+        _frozen: true
+        name: w2
+      : true
+      ? &id003 !!python/object:ultk.language.semantics.Referent
+        _frozen: true
+        name: w3
+      : false
+      ? &id004 !!python/object:ultk.language.semantics.Referent
+        _frozen: true
+        name: w4
+      : false
+    universe: &id005 !!python/object:ultk.language.semantics.Universe
+      prior: !!python/tuple
+      - 0.25
+      - 0.25
+      - 0.25
+      - 0.25
+      referents: !!python/tuple
+      - *id001
+      - *id002
+      - *id003
+      - *id004
+  rule_name: P
+  term_expression: P
+- form: ''
+  length: 1
+  meaning: &id007 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: true
+      *id002: false
+      *id003: true
+      *id004: false
+    universe: *id005
+  rule_name: Q
+  term_expression: Q
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id006
+    rule_name: P
+    term_expression: P
+  - form: ''
+    length: 1
+    meaning: *id007
+    rule_name: Q
+    term_expression: Q
+  form: ''
+  length: 3
+  meaning: &id011 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: true
+      *id002: false
+      *id003: false
+      *id004: false
+    universe: *id005
+  rule_name: _and
+  term_expression: _and(P, Q)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id006
+    rule_name: P
+    term_expression: P
+  form: ''
+  length: 2
+  meaning: &id008 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: false
+      *id002: false
+      *id003: true
+      *id004: true
+    universe: *id005
+  rule_name: _not
+  term_expression: _not(P)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id007
+    rule_name: Q
+    term_expression: Q
+  form: ''
+  length: 2
+  meaning: &id009 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: false
+      *id002: true
+      *id003: false
+      *id004: true
+    universe: *id005
+  rule_name: _not
+  term_expression: _not(Q)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id006
+    rule_name: P
+    term_expression: P
+  - form: ''
+    length: 1
+    meaning: *id007
+    rule_name: Q
+    term_expression: Q
+  form: ''
+  length: 3
+  meaning: &id010 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: true
+      *id002: true
+      *id003: true
+      *id004: false
+    universe: *id005
+  rule_name: _or
+  term_expression: _or(P, Q)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id006
+    rule_name: P
+    term_expression: P
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id006
+      rule_name: P
+      term_expression: P
+    form: ''
+    length: 2
+    meaning: *id008
+    rule_name: _not
+    term_expression: _not(P)
+  form: ''
+  length: 4
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: false
+      *id002: false
+      *id003: false
+      *id004: false
+    universe: *id005
+  rule_name: _and
+  term_expression: _and(P, _not(P))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id006
+    rule_name: P
+    term_expression: P
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id007
+      rule_name: Q
+      term_expression: Q
+    form: ''
+    length: 2
+    meaning: *id009
+    rule_name: _not
+    term_expression: _not(Q)
+  form: ''
+  length: 4
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: false
+      *id002: true
+      *id003: false
+      *id004: false
+    universe: *id005
+  rule_name: _and
+  term_expression: _and(P, _not(Q))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id007
+    rule_name: Q
+    term_expression: Q
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id006
+      rule_name: P
+      term_expression: P
+    form: ''
+    length: 2
+    meaning: *id008
+    rule_name: _not
+    term_expression: _not(P)
+  form: ''
+  length: 4
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: false
+      *id002: false
+      *id003: true
+      *id004: false
+    universe: *id005
+  rule_name: _and
+  term_expression: _and(Q, _not(P))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id006
+      rule_name: P
+      term_expression: P
+    - form: ''
+      length: 1
+      meaning: *id007
+      rule_name: Q
+      term_expression: Q
+    form: ''
+    length: 3
+    meaning: *id010
+    rule_name: _or
+    term_expression: _or(P, Q)
+  form: ''
+  length: 4
+  meaning: &id013 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: false
+      *id002: false
+      *id003: false
+      *id004: true
+    universe: *id005
+  rule_name: _not
+  term_expression: _not(_or(P, Q))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id006
+      rule_name: P
+      term_expression: P
+    - form: ''
+      length: 1
+      meaning: *id007
+      rule_name: Q
+      term_expression: Q
+    form: ''
+    length: 3
+    meaning: *id011
+    rule_name: _and
+    term_expression: _and(P, Q)
+  form: ''
+  length: 4
+  meaning: &id012 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: false
+      *id002: true
+      *id003: true
+      *id004: true
+    universe: *id005
+  rule_name: _not
+  term_expression: _not(_and(P, Q))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id006
+    rule_name: P
+    term_expression: P
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id006
+      rule_name: P
+      term_expression: P
+    form: ''
+    length: 2
+    meaning: *id008
+    rule_name: _not
+    term_expression: _not(P)
+  form: ''
+  length: 4
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: true
+      *id002: true
+      *id003: true
+      *id004: true
+    universe: *id005
+  rule_name: _or
+  term_expression: _or(P, _not(P))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id006
+    rule_name: P
+    term_expression: P
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id007
+      rule_name: Q
+      term_expression: Q
+    form: ''
+    length: 2
+    meaning: *id009
+    rule_name: _not
+    term_expression: _not(Q)
+  form: ''
+  length: 4
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: true
+      *id002: true
+      *id003: false
+      *id004: true
+    universe: *id005
+  rule_name: _or
+  term_expression: _or(P, _not(Q))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id007
+    rule_name: Q
+    term_expression: Q
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id006
+      rule_name: P
+      term_expression: P
+    form: ''
+    length: 2
+    meaning: *id008
+    rule_name: _not
+    term_expression: _not(P)
+  form: ''
+  length: 4
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: true
+      *id002: false
+      *id003: true
+      *id004: true
+    universe: *id005
+  rule_name: _or
+  term_expression: _or(Q, _not(P))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id006
+      rule_name: P
+      term_expression: P
+    - form: ''
+      length: 1
+      meaning: *id007
+      rule_name: Q
+      term_expression: Q
+    form: ''
+    length: 3
+    meaning: *id010
+    rule_name: _or
+    term_expression: _or(P, Q)
+  - children: !!python/tuple
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id006
+        rule_name: P
+        term_expression: P
+      - form: ''
+        length: 1
+        meaning: *id007
+        rule_name: Q
+        term_expression: Q
+      form: ''
+      length: 3
+      meaning: *id011
+      rule_name: _and
+      term_expression: _and(P, Q)
+    form: ''
+    length: 4
+    meaning: *id012
+    rule_name: _not
+    term_expression: _not(_and(P, Q))
+  form: ''
+  length: 8
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: false
+      *id002: true
+      *id003: true
+      *id004: false
+    universe: *id005
+  rule_name: _and
+  term_expression: _and(_or(P, Q), _not(_and(P, Q)))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id006
+      rule_name: P
+      term_expression: P
+    - form: ''
+      length: 1
+      meaning: *id007
+      rule_name: Q
+      term_expression: Q
+    form: ''
+    length: 3
+    meaning: *id011
+    rule_name: _and
+    term_expression: _and(P, Q)
+  - children: !!python/tuple
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id006
+        rule_name: P
+        term_expression: P
+      - form: ''
+        length: 1
+        meaning: *id007
+        rule_name: Q
+        term_expression: Q
+      form: ''
+      length: 3
+      meaning: *id010
+      rule_name: _or
+      term_expression: _or(P, Q)
+    form: ''
+    length: 4
+    meaning: *id013
+    rule_name: _not
+    term_expression: _not(_or(P, Q))
+  form: ''
+  length: 8
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: true
+      *id002: false
+      *id003: false
+      *id004: true
+    universe: *id005
+  rule_name: _or
+  term_expression: _or(_and(P, Q), _not(_or(P, Q)))

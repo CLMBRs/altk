@@ -20,10 +20,7 @@ def build_pairwise_matrix(
 ) -> np.ndarray:
     """Construct the square matrix specifying the utility/cost function defined for pairs of meanings, used for computing communicative success."""
     return np.array(
-        [
-            [func(ref, ref_) for ref_ in universe.referents]
-            for ref in universe.referents
-        ]
+        [[func(ref, ref_) for ref_ in universe.referents] for ref in universe.referents]
     )
 
 
@@ -73,8 +70,8 @@ def informativity(
 
         prior: a probability distribution representing communicative need (frequency) for Referents.
 
-        score: a 2D matrix representing the usefulness of listener guesses about speaker Referents, 
-        where utility[i][j] specifies the utility of guessing Referent j when the true Referent is i. 
+        score: a 2D matrix representing the usefulness of listener guesses about speaker Referents,
+        where utility[i][j] specifies the utility of guessing Referent j when the true Referent is i.
         To reward only exact recovery of meanings, use an identity matrix as the utility matrix (default).
 
         kind: {"literal, pragmatic"} Whether to measure informativity using literal or pragmatic agents, as canonically described in the Rational Speech Act framework. The default is "literal".
@@ -99,7 +96,7 @@ def informativity(
     listener = LiteralListener(language)
 
     if score is None:
-        score = np.eye(len(language.universe))
+        score = np.eye(len(language.universe), dtype=float)
 
     if agent_type == "literal":
         pass

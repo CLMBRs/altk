@@ -66,13 +66,13 @@ class EvolutionaryOptimizer:
         self,
         objectives: list[Callable[[Language], Any]],
         expressions: list[Expression],
-        sample_size: int,
-        max_mutations: int,
-        generations: int,
+        sample_size: int = 0,
+        max_mutations: int = 0,
+        generations: int = 0,
         lang_size: int | None = None,
         mutations: tuple[Type[Mutation], ...] = (AddExpression, RemoveExpression),
     ):
-        """Initialize the evolutionary algorithm configurations.
+        """Initialize the evolutionary algorithm configurations. By default, `generations` is 0, so `self.fit(seed_languages)` just estimates the frontier of the passed list of languages.
 
         The measures of complexity and informativity, the expressions, and the mutations are all specific to the particular semantic domain.
 
@@ -110,7 +110,10 @@ class EvolutionaryOptimizer:
         self.explored_languages = None
 
     def fit(
-        self, seed_population: list[Language], explore: float = 0.0
+        self,
+        seed_population: list[Language],
+        explore: float = 0.0,
+        front_pbar: bool = False,
     ) -> dict[str, list[Language]]:
         """Computes the Pareto frontier, a set languages which cannot be both more simple and more informative.
 
@@ -121,6 +124,8 @@ class EvolutionaryOptimizer:
 
             explore: a float in [0,1] representing how much to optimize for fitness
                 (optimality wrt pareto front of complexity and comm_cost), and how much to randomly explore.
+
+            front_pbar: a bool (default False) indicating whether to display progress every time `pareto_dominant_languages` is called. Useful when the population is large.
 
         Returns:
             a dict of the estimated optimization solutions, as well as points explored along the way; of the form
@@ -153,7 +158,10 @@ class EvolutionaryOptimizer:
         # update with final generation
         explored_languages.extend(copy.copy(languages))
         dominating_languages = pareto_optimal_languages(
-            languages, self.objectives, unique=True
+            languages,
+            self.objectives,
+            unique=True,
+            front_pbar=front_pbar,
         )
 
         return {

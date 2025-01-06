@@ -35,7 +35,9 @@ def dominates(p1: tuple[float, ...], p2: tuple[float, ...]) -> bool:
     )
 
 
-def non_dominated_2d(points: Sequence[tuple[float, float]]) -> list[int]:
+def non_dominated_2d(
+    points: Sequence[tuple[float, float]], front_pbar: bool = False
+) -> list[int]:
     """Return the non-dominated (Pareto) front of a list of 2-D points, using Kung's algorithm.
 
     Args:
@@ -56,7 +58,11 @@ def non_dominated_2d(points: Sequence[tuple[float, float]]) -> list[int]:
     indices.sort(key=lambda x: points[x])
 
     front: list[int] = []
-    for idx in indices:
+
+    # Conditionally wrap `indices` with `tqdm`
+    iterator = tqdm(indices, desc="finding dominant") if front_pbar else indices
+
+    for idx in iterator:
         dominated = False
         for bot_idx in front:
             if dominates(points[bot_idx], points[idx]):
@@ -72,6 +78,7 @@ def pareto_optimal_languages(
     languages: list[Language],
     objectives: list[Callable[[Language], Any]],
     unique: bool = False,
+    front_pbar: bool = False,
 ) -> list[Language]:
     """Use non_dominated_2d to compute the Pareto languages."""
     assert len(objectives) == 2, "Can only do pareto optimization in two dimensions."
@@ -81,7 +88,8 @@ def pareto_optimal_languages(
                 (objectives[0](lang) for lang in languages),
                 (objectives[1](lang) for lang in languages),
             )
-        )
+        ),
+        front_pbar=front_pbar,
     )
     dominating_languages = [languages[idx] for idx in dominating_indices]
     return list(set(dominating_languages)) if unique else dominating_languages
