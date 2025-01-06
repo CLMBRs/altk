@@ -203,22 +203,11 @@ def is_parent(p, c) -> bool:
 def is_older(r1, r2) -> bool:
     return r2 in age_hierarchy.get(r1, [])
 
-def is_sibling_excl(x, y) -> bool:
-    # x and y must share at least one parent
-    shared_parent = any(
-        kinship_structure.evaluate("is_parent", z, x)
-        and kinship_structure.evaluate("is_parent", z, y)
-        for z in domain
-    )
-    # Exclude self
-    return shared_parent and x != y
-
 
 interpretation = {
     "is_male": is_male,
     "is_parent": is_parent,
     "is_older": is_older,
-    "is_sibling_excl": is_sibling_excl,
 }
 interpretation.update(
     {

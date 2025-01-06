@@ -5,7 +5,7 @@ from ultk.language.language import Language, FrozenDict, Meaning, Expression
 
 from ..grammar import kinship_grammar
 from ..meaning import universe as kinship_universe
-from ..measures import comm_cost, complexity, degree_connected
+from ..measures import comm_cost, complexity
 
 
 def read_natural_languages(filename: str) -> set[Language]:
@@ -76,7 +76,5 @@ if __name__ == "__main__":
             ],
             "complexity": lambda _, lang: complexity(lang, expressions_by_meaning),
             "comm_cost": lambda _, lang: comm_cost(lang),
-            "degree_conn": lambda _, lang: degree_connected(lang), 
         },
     )
-    breakpoint()

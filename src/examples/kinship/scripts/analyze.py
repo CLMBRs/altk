@@ -5,13 +5,7 @@ if __name__ == "__main__":
     combined_data = pd.read_csv("kinship/outputs/combined_data.csv")
     plot = (
         pn.ggplot(pn.aes(x="complexity", y="comm_cost"))
-        + pn.geom_point(
-            combined_data, 
-            pn.aes(
-                # color="type",
-                fill="degree_conn",
-            ),
-        )
+        + pn.geom_point(combined_data, pn.aes(color="type"))
         + pn.geom_text(
             combined_data[combined_data["type"] == "natural"],
             pn.aes(label="name"),
