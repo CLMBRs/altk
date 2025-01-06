@@ -27,6 +27,8 @@ prior = kinship_universe.prior_numpy
 
 
 # TODO: KR use surprisal (bits) as comm_cost. We're just using int(speaker ref == listener ref)
+# NOTE: KR use average of costs for each of Alice and Bob. This is because kinship systems differ based on the gender of Ego.
+# NOTE: It also seems that KR2012 assumed that each individual belonged to at most one category (word), but this is not the general case!
 def comm_cost(language: Language) -> float:
     """Get C(L) := 1 - informativity(L).
     Passes in the prior from `kinship_universe` to ultk's informativity calculator.
