@@ -4,7 +4,7 @@ from ultk.util.io import read_grammatical_expressions
 
 from kinship.grammar import kinship_grammar
 from kinship.meaning import universe as kinship_universe
-from kinship.measures import comm_cost, complexity
+from kinship.measures import comm_cost, complexity, degree_connected
 from ultk.util.io import write_languages
 
 
@@ -40,15 +40,19 @@ if __name__ == "__main__":
             "type": lambda _1, _2: "dominant",
             "complexity": lambda _, lang: lang_complexity(lang),
             "comm_cost": lambda _, lang: comm_cost(lang),
+            "degree_conn": lambda _, lang: degree_connected(lang), 
         },
     )
     write_languages(
-        result["explored_languages"],
+        # result["explored_languages"],
+        seed_languages,
         "kinship/outputs/explored_languages.yml",
         {
             "name": lambda idx, _: f"explored-{idx}",
             "type": lambda _1, _2: "explored",
             "complexity": lambda _, lang: lang_complexity(lang),
             "comm_cost": lambda _, lang: comm_cost(lang),
+            "degree_conn": lambda _, lang: degree_connected(lang), 
         },
     )
+

@@ -1,35 +1,36 @@
 - comm_cost: 0.11895353590407409
   complexity: 104
+  degree_conn: 0.8571428571428571
   expressions:
+  - brother
+  - granddaughter
+  - niece
+  - nephew
   - grandson
   - aunt
-  - uncle
-  - grandmother
-  - niece
-  - grandfather
-  - nephew
-  - sister
-  - father
   - mother
-  - daughter
-  - granddaughter
-  - brother
+  - uncle
+  - father
+  - grandfather
+  - grandmother
   - son
+  - sister
+  - daughter
   lot_expressions:
-  - '*(my_(Ez_axz_and_bzy(axy_and_bx(child, male), child)), .)'
-  - '*(my_(Ez_axz_and_bzy(axy_and_bx(sibling, female), parent)), .)'
-  - '*(my_(Ez_axz_and_bzy(axy_and_bx(sibling, male), parent)), .)'
-  - '*(my_(Ez_axz_and_bzy(axy_and_bx(parent, female), parent)), .)'
+  - '*(my_(axy_and_bx(sibling, male)), .)'
+  - '*(my_(Ez_axz_and_bzy(axy_and_bx(child, female), child)), .)'
   - '*(my_(Ez_axz_and_bzy(axy_and_bx(child, female), axy_and_bx(sibling, male))),
     .)'
-  - '*(my_(Ez_axz_and_bzy(axy_and_bx(parent, male), parent)), .)'
   - '*(my_(Ez_axz_and_bzy(axy_and_bx(child, male), axy_and_bx(sibling, male))), .)'
-  - '*(my_(axy_and_bx(sibling, female)), .)'
-  - '*(my_(axy_and_bx(parent, male)), .)'
+  - '*(my_(Ez_axz_and_bzy(axy_and_bx(child, male), child)), .)'
+  - '*(my_(Ez_axz_and_bzy(axy_and_bx(sibling, female), parent)), .)'
   - '*(my_(axy_and_bx(parent, female)), .)'
-  - '*(my_(axy_and_bx(child, female)), .)'
-  - '*(my_(Ez_axz_and_bzy(axy_and_bx(child, female), child)), .)'
-  - '*(my_(axy_and_bx(sibling, male)), .)'
+  - '*(my_(Ez_axz_and_bzy(axy_and_bx(sibling, male), parent)), .)'
+  - '*(my_(axy_and_bx(parent, male)), .)'
+  - '*(my_(Ez_axz_and_bzy(axy_and_bx(parent, male), parent)), .)'
+  - '*(my_(Ez_axz_and_bzy(axy_and_bx(parent, female), parent)), .)'
   - '*(my_(axy_and_bx(child, male)), .)'
+  - '*(my_(axy_and_bx(sibling, female)), .)'
+  - '*(my_(axy_and_bx(child, female)), .)'
   name: English
   type: natural

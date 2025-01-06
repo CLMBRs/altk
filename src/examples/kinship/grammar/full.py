@@ -64,6 +64,14 @@ def child(*_: e) -> eet:
     return lambda x: lambda y: kinship_structure.evaluate("is_parent", y.name, x.name)
 
 
+# eet -> e
+def older(*_: e) -> eet:
+    return lambda x: lambda y: kinship_structure.evaluate("is_older", x.name, y.name)
+
+# eet -> e
+def younger(*_: e) -> eet:
+    return lambda x: lambda y: kinship_structure.evaluate("is_older", y.name, x.name)
+
 ##############################################################################
 # Nonterminal rules
 ##############################################################################
@@ -150,14 +158,4 @@ def tr_cl(a: eet) -> eet:
 # Technically the KR2012 definition of aunt/uncle includes Mother and Father...
 # eet -> e
 def exclusive_sibling(*_: e, name="sibling") -> eet:
-    def sibling_predicate(x, y):
-        # x and y must share at least one parent
-        shared_parent = any(
-            kinship_structure.evaluate("is_parent", z.name, x.name)
-            and kinship_structure.evaluate("is_parent", z.name, y.name)
-            for z in universe
-        )
-        # Exclude self
-        return shared_parent and x != y
-
-    return lambda x: lambda y: sibling_predicate(x, y)
+    return lambda x: lambda y: kinship_structure.evaluate("is_sibling_excl", x.name, y.name)
