@@ -98,8 +98,8 @@ def all_models_up_to_size(max_size: int) -> Universe:
 
 
 
-universe = all_models_up_to_size(3)
+universe = all_models_up_to_size(7)
 
 
 if __name__ == '__main__':
-    print(all_models_up_to_size(3))
+    print(len(all_models_up_to_size(7))) # 8 was too many
