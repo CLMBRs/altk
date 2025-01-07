@@ -1,0 +1,161 @@
+start: bool
+rules:
+# Boolean operations
+- lhs: bool
+  rhs:
+    - bool
+    - bool
+  name: "and"
+  func: |
+    lambda p1, p2 : p1 and p2
+
+- lhs: bool
+  rhs:
+    - bool
+    - bool
+  name: "or"
+  func: |
+    lambda p1, p2 : p1 or p2
+  
+- lhs: bool
+  rhs:
+    - bool
+  name: "not"
+  func: |
+    lambda p : not p
+
+
+# Set operations
+- lhs: frozenset
+  rhs:
+    - frozenset
+    - frozenset
+  name: "union"
+  func: |
+    lambda s1, s2 : s1 | s2
+  
+- lhs: frozenset
+  rhs:
+    - frozenset
+    - frozenset
+  name: "intersection"
+  func: |
+    lambda s1, s2 : s1 & s2
+  
+- lhs: int
+  rhs:
+    - frozenset
+  name: "cardinality"
+  func: |
+    lambda s: len(s)
+  
+- lhs: bool
+  rhs:
+    - frozenset
+    - frozenset
+  name: "subset_eq"
+  func: |
+    lambda s1, s2: s1 <= s2
+
+- lhs: bool
+  rhs:
+    - frozenset
+    - frozenset
+  name: "diff"
+  func: |
+    lambda s1, s2: s1 - s2
+
+# some additional set operations
+- lhs: bool
+  rhs: 
+    - frozenset
+  name: "empty"
+  func: |
+    lambda s: len(s) == 0
+
+- lhs: bool
+  rhs: 
+    - frozenset
+  name: "nonempty"
+  func: |
+    lambda s: len(s) > 0
+
+- lhs: bool
+  rhs: 
+    - frozenset
+    - frozenset
+    - float # when we implement in module we can check isclose
+  name: "proportion"
+  func: |
+    lambda s1, s2, q: len(s1) / len(s2) > q if len(s2) > 0 else 0
+
+# Numeric operations on cardinalities
+# We'll exclude float eq until we implement the python grammar functions
+- lhs: bool
+  rhs:
+    - int
+    - int
+  name: "="
+  func: |
+    lambda i1, i2: i1 == i2
+  
+- lhs: bool
+  rhs:
+    - int
+    - int
+  name: ">"
+  func: |
+    lambda i1, i2: i1 > i2
+  
+- lhs: int
+  rhs:
+    - int
+    - int
+  name: "-"
+  func: | 
+    lambda i1, i2: i1 - i2
+- lhs: int
+  rhs:
+    - int
+    - int
+  name: "+"
+  func: | 
+    lambda i1, i2: i1 + i2
+- lhs: int
+  rhs: 
+    - int
+    - int
+  name: "%"
+  func: |
+    lambda x, y: x % y if y > 0 else 0
+
+# float operations
+- lhs: bool
+  rhs: 
+    - float
+    - float
+  name: ">f"
+  func: |
+    lambda x, y: x > y
+
+- lhs: float
+  rhs: 
+    - int
+    - int
+  name: "/"
+  func: |
+    lambda x, y: x / y if y > 0 else 0
+
+# Terminal rules
+- lhs: frozenset
+  rhs: 
+  name: "A"
+  func: |
+    lambda q: q.A
+  
+- lhs: frozenset
+  rhs: 
+  name: "B"
+  func: |
+    lambda q: q.B
+  

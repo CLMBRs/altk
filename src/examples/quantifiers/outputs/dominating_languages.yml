@@ -1,244 +1,237 @@
-- comm_cost: 0.19259259259259265
-  complexity: 59
+- comm_cost: 0.26314814814814813
+  complexity: 19
   expressions:
-  - not(or(subset_eq(A, B), subset_eq(B, A)))
-  - not(or(subset_eq(B, A), subset_eq(A, difference(A, B))))
-  - subset_eq(union(A, B), difference(A, A))
-  - greater_than(cardinality(A), cardinality(B))
-  - greater_than(cardinality(difference(B, A)), cardinality(A))
-  - and(not(subset_eq(B, A)), subset_eq(B, index(cardinality(A), B)))
-  - and(subset_eq(A, B), greater_than(cardinality(A), cardinality(difference(B, A))))
+  - not(subset_eq(B, A))
+  - empty(union(A, B))
+  - and(subset_eq(B, A), nonempty(B))
+  - and(empty(B), nonempty(A))
   name: dominating-0
+  naturalness: 0.75
   type: dominant
-- comm_cost: 0.17314814814814827
-  complexity: 63
+- comm_cost: 0.26148148148148154
+  complexity: 25
   expressions:
-  - not(or(subset_eq(A, B), subset_eq(B, A)))
-  - not(or(subset_eq(B, A), subset_eq(A, difference(A, B))))
-  - not(subset_eq(difference(B, A), index(cardinality(A), union(A, B))))
-  - subset_eq(union(A, B), difference(A, A))
-  - greater_than(cardinality(A), cardinality(B))
-  - and(not(subset_eq(B, A)), subset_eq(B, index(cardinality(A), B)))
-  - and(subset_eq(A, B), greater_than(cardinality(A), cardinality(difference(B, A))))
+  - and(empty(B), nonempty(A))
+  - not(subset_eq(B, A))
+  - empty(union(A, B))
+  - and(subset_eq(B, A), nonempty(B))
+  - and(subset_eq(A, B), nonempty(A))
   name: dominating-1
+  naturalness: 0.6
   type: dominant
-- comm_cost: 0.16620370370370385
-  complexity: 70
+- comm_cost: 0.6617283950617285
+  complexity: 2
   expressions:
-  - and(subset_eq(A, B), greater_than(cardinality(A), cardinality(difference(B, A))))
-  - not(or(subset_eq(A, B), subset_eq(B, A)))
-  - not(or(subset_eq(B, A), subset_eq(A, difference(A, B))))
-  - not(subset_eq(difference(B, A), index(cardinality(A), union(A, B))))
-  - subset_eq(union(A, B), difference(A, A))
-  - greater_than(cardinality(A), cardinality(B))
-  - and(not(subset_eq(B, A)), subset_eq(B, index(cardinality(A), B)))
-  - greater_than(cardinality(difference(A, B)), cardinality(B))
+  - nonempty(B)
   name: dominating-2
+  naturalness: 1.0
   type: dominant
-- comm_cost: 0.19120370370370376
-  complexity: 62
+- comm_cost: 0.3725308641975309
+  complexity: 6
   expressions:
-  - not(or(subset_eq(A, B), subset_eq(B, A)))
-  - greater_than(cardinality(intersection(A, B)), cardinality(difference(A, B)))
-  - subset_eq(union(A, B), difference(A, A))
-  - greater_than(cardinality(A), cardinality(B))
-  - and(not(subset_eq(A, B)), subset_eq(A, index(cardinality(B), A)))
-  - and(not(subset_eq(B, A)), subset_eq(B, index(cardinality(A), B)))
-  - not(subset_eq(difference(B, A), index(cardinality(A), union(A, B))))
+  - empty(B)
+  - nonempty(A)
+  - empty(A)
   name: dominating-3
-  type: dominant
-- comm_cost: 0.3766666666666665
-  complexity: 7
-  expressions:
-  - not(subset_eq(B, A))
-  - subset_eq(B, A)
-  name: dominating-4
-  type: dominant
-- comm_cost: 0.4353703703703703
-  complexity: 6
-  expressions:
-  - subset_eq(B, A)
-  - subset_eq(A, A)
-  name: dominating-5
-  type: dominant
-- comm_cost: 0.3705555555555555
-  complexity: 11
-  expressions:
-  - not(subset_eq(B, A))
-  - not(subset_eq(A, B))
-  - subset_eq(A, B)
-  name: dominating-6
-  type: dominant
-- comm_cost: 0.4353703703703703
-  complexity: 6
-  expressions:
-  - subset_eq(A, A)
-  - subset_eq(A, B)
-  name: dominating-7
-  type: dominant
-- comm_cost: 0.2148148148148148
-  complexity: 46
-  expressions:
-  - not(or(subset_eq(A, B), subset_eq(B, A)))
-  - not(or(subset_eq(B, A), subset_eq(A, difference(A, B))))
-  - subset_eq(union(A, B), difference(A, A))
-  - greater_than(cardinality(A), cardinality(B))
-  - greater_than(cardinality(difference(B, A)), cardinality(A))
-  - greater_than(cardinality(intersection(A, B)), cardinality(difference(B, A)))
-  name: dominating-8
-  type: dominant
-- comm_cost: 0.1425925925925926
-  complexity: 75
-  expressions:
-  - not(or(subset_eq(A, B), subset_eq(A, difference(A, B))))
-  - and(subset_eq(A, B), greater_than(cardinality(A), cardinality(difference(B, A))))
-  - not(or(subset_eq(A, B), subset_eq(B, A)))
-  - not(or(subset_eq(B, A), subset_eq(A, difference(A, B))))
-  - not(subset_eq(difference(B, A), index(cardinality(A), union(A, B))))
-  - subset_eq(union(A, B), difference(A, A))
-  - and(not(subset_eq(B, A)), subset_eq(B, index(cardinality(A), B)))
-  - greater_than(cardinality(difference(A, B)), cardinality(B))
-  name: dominating-9
-  type: dominant
-- comm_cost: 0.355925925925926
-  complexity: 12
-  expressions:
-  - subset_eq(B, difference(A, A))
-  - not(subset_eq(B, A))
-  - subset_eq(B, A)
-  name: dominating-10
-  type: dominant
-- comm_cost: 0.16481481481481497
-  complexity: 73
-  expressions:
-  - not(or(subset_eq(A, B), subset_eq(A, difference(A, B))))
-  - not(or(subset_eq(A, B), subset_eq(B, A)))
-  - not(or(subset_eq(B, A), subset_eq(A, difference(A, B))))
-  - not(subset_eq(difference(B, A), index(cardinality(A), union(A, B))))
-  - subset_eq(union(A, B), difference(A, A))
-  - greater_than(cardinality(A), cardinality(B))
-  - and(not(subset_eq(B, A)), subset_eq(B, index(cardinality(A), B)))
-  - and(subset_eq(A, B), greater_than(cardinality(A), cardinality(difference(B, A))))
-  name: dominating-11
+  naturalness: 1.0
   type: dominant
 - comm_cost: 0.2314814814814815
   complexity: 36
   expressions:
-  - not(or(subset_eq(A, B), subset_eq(B, A)))
-  - greater_than(cardinality(intersection(A, B)), cardinality(difference(A, B)))
-  - subset_eq(union(A, B), difference(A, A))
-  - greater_than(cardinality(A), cardinality(B))
-  - greater_than(cardinality(difference(B, A)), cardinality(A))
-  name: dominating-12
+  - and(and(subset_eq(B, A), nonempty(A)), or(empty(B), diff(A, B)))
+  - and(empty(A), nonempty(B))
+  - and(not(subset_eq(B, A)), diff(A, B))
+  - empty(union(A, B))
+  - and(subset_eq(A, B), nonempty(A))
+  name: dominating-4
+  naturalness: 0.4
   type: dominant
-- comm_cost: 0.3229629629629629
-  complexity: 15
+- comm_cost: 0.22259259259259256
+  complexity: 40
   expressions:
-  - subset_eq(B, difference(A, A))
+  - nonempty(intersection(A, B))
+  - and(empty(A), nonempty(B))
+  - and(nonempty(A), and(diff(B, A), subset_eq(A, B)))
+  - and(not(subset_eq(B, A)), diff(A, B))
+  - empty(union(A, B))
+  - and(or(empty(B), diff(A, A)), nonempty(A))
+  name: dominating-5
+  naturalness: 0.5
+  type: dominant
+- comm_cost: 0.23259259259259257
+  complexity: 30
+  expressions:
+  - and(not(subset_eq(A, B)), diff(B, A))
+  - and(empty(A), nonempty(B))
+  - empty(union(A, B))
+  - nonempty(intersection(A, B))
+  - and(or(empty(B), diff(A, A)), nonempty(A))
+  name: dominating-6
+  naturalness: 0.6
+  type: dominant
+- comm_cost: 0.39135802469135805
+  complexity: 4
+  expressions:
+  - empty(B)
+  - nonempty(B)
+  name: dominating-7
+  naturalness: 1.0
+  type: dominant
+- comm_cost: 0.2918518518518518
+  complexity: 16
+  expressions:
+  - empty(B)
   - not(subset_eq(B, A))
-  - not(subset_eq(A, difference(A, B)))
-  name: dominating-13
-  type: dominant
-- comm_cost: 0.20092592592592595
-  complexity: 48
-  expressions:
-  - not(or(subset_eq(A, B), subset_eq(B, A)))
-  - not(or(subset_eq(B, A), subset_eq(A, difference(A, B))))
-  - subset_eq(union(A, B), difference(A, A))
-  - greater_than(cardinality(A), cardinality(B))
-  - greater_than(cardinality(difference(B, A)), cardinality(A))
-  - and(subset_eq(A, B), greater_than(cardinality(A), cardinality(difference(B, A))))
-  name: dominating-14
-  type: dominant
-- comm_cost: 0.269537037037037
-  complexity: 29
-  expressions:
-  - not(subset_eq(A, difference(A, B)))
-  - subset_eq(union(A, B), difference(A, A))
-  - greater_than(cardinality(A), cardinality(B))
-  - greater_than(cardinality(difference(B, A)), cardinality(A))
-  - not(subset_eq(A, B))
-  name: dominating-15
-  type: dominant
-- comm_cost: 0.27481481481481485
-  complexity: 24
-  expressions:
-  - subset_eq(union(A, B), difference(A, A))
-  - not(subset_eq(A, difference(A, B)))
-  - not(subset_eq(A, B))
-  - greater_than(cardinality(difference(B, A)), cardinality(A))
-  name: dominating-16
-  type: dominant
-- comm_cost: 0.22453703703703698
-  complexity: 43
-  expressions:
-  - not(or(subset_eq(A, B), subset_eq(B, A)))
-  - greater_than(cardinality(intersection(A, B)), cardinality(difference(A, B)))
-  - subset_eq(union(A, B), difference(A, A))
-  - greater_than(cardinality(A), cardinality(B))
-  - greater_than(cardinality(difference(B, A)), cardinality(A))
-  - greater_than(cardinality(difference(A, B)), cardinality(B))
-  name: dominating-17
-  type: dominant
-- comm_cost: 0.2970370370370371
-  complexity: 21
-  expressions:
-  - not(subset_eq(B, A))
-  - not(subset_eq(A, difference(A, B)))
-  - not(subset_eq(A, B))
-  - subset_eq(union(A, B), difference(A, A))
-  name: dominating-18
-  type: dominant
-- comm_cost: 0.34539682539682537
-  complexity: 13
-  expressions:
-  - not(subset_eq(B, A))
-  - not(subset_eq(A, B))
-  - equals(cardinality(A), cardinality(B))
-  name: dominating-19
+  - empty(union(A, B))
+  - and(subset_eq(B, A), nonempty(B))
+  name: dominating-8
+  naturalness: 0.75
   type: dominant
 - comm_cost: 0.24481481481481482
-  complexity: 33
+  complexity: 28
   expressions:
-  - not(subset_eq(A, difference(A, B)))
-  - not(or(subset_eq(A, B), subset_eq(B, A)))
-  - subset_eq(union(A, B), difference(A, A))
-  - greater_than(cardinality(A), cardinality(B))
-  - greater_than(cardinality(difference(B, A)), cardinality(A))
-  name: dominating-20
+  - and(subset_eq(B, A), diff(A, B))
+  - and(not(subset_eq(A, B)), diff(B, A))
+  - nonempty(intersection(A, B))
+  - and(empty(A), nonempty(B))
+  - empty(union(A, B))
+  name: dominating-9
+  naturalness: 0.8
+  type: dominant
+- comm_cost: 0.337037037037037
+  complexity: 9
+  expressions:
+  - empty(B)
+  - empty(A)
+  - and(nonempty(A), nonempty(B))
+  name: dominating-10
+  naturalness: 0.6666666666666666
+  type: dominant
+- comm_cost: 0.6617283950617285
+  complexity: 2
+  expressions:
+  - nonempty(A)
+  name: dominating-11
+  naturalness: 1.0
+  type: dominant
+- comm_cost: 0.2314814814814815
+  complexity: 36
+  expressions:
+  - and(empty(A), nonempty(B))
+  - and(or(subset_eq(B, A), diff(A, B)), >(cardinality(A), cardinality(B)))
+  - and(not(subset_eq(B, A)), diff(A, B))
+  - empty(union(A, B))
+  - and(subset_eq(A, B), nonempty(A))
+  name: dominating-12
+  naturalness: 0.4
+  type: dominant
+- comm_cost: 0.19398148148148164
+  complexity: 51
+  expressions:
+  - and(and(subset_eq(B, A), nonempty(A)), and(diff(A, B), nonempty(B)))
+  - '>(cardinality(B), cardinality(A))'
+  - and(empty(A), nonempty(B))
+  - and(diff(A, B), empty(B))
+  - and(not(subset_eq(B, A)), diff(A, B))
+  - and(subset_eq(A, B), and(subset_eq(B, A), nonempty(A)))
+  - empty(union(A, B))
+  name: dominating-13
+  naturalness: 0.5714285714285714
+  type: dominant
+- comm_cost: 0.22259259259259256
+  complexity: 40
+  expressions:
+  - and(subset_eq(A, B), and(nonempty(A), diff(B, A)))
+  - nonempty(intersection(A, B))
+  - and(empty(A), nonempty(B))
+  - and(not(subset_eq(B, A)), diff(A, B))
+  - empty(union(A, B))
+  - and(or(empty(B), diff(A, A)), nonempty(A))
+  name: dominating-14
+  naturalness: 0.5
   type: dominant
 - comm_cost: 0.4562962962962962
   complexity: 3
   expressions:
   - subset_eq(A, A)
-  name: dominating-21
+  name: dominating-15
+  naturalness: 1.0
   type: dominant
-- comm_cost: 0.1606481481481482
-  complexity: 74
+- comm_cost: 0.22259259259259256
+  complexity: 40
   expressions:
-  - not(or(subset_eq(A, B), subset_eq(B, A)))
-  - not(or(subset_eq(B, A), subset_eq(A, difference(A, B))))
-  - not(subset_eq(difference(B, A), index(cardinality(A), union(A, B))))
-  - subset_eq(union(A, B), difference(A, A))
-  - greater_than(cardinality(A), cardinality(B))
-  - and(not(subset_eq(A, B)), subset_eq(A, index(cardinality(B), A)))
-  - and(not(subset_eq(B, A)), subset_eq(B, index(cardinality(A), B)))
-  - and(subset_eq(A, B), greater_than(cardinality(A), cardinality(difference(B, A))))
-  name: dominating-22
+  - and(subset_eq(A, B), and(nonempty(A), diff(B, A)))
+  - and(not(subset_eq(A, B)), diff(B, A))
+  - nonempty(intersection(A, B))
+  - and(empty(A), nonempty(B))
+  - empty(union(A, B))
+  - and(or(empty(B), diff(A, A)), nonempty(A))
+  name: dominating-16
+  naturalness: 0.5
   type: dominant
-- comm_cost: 0.3705555555555555
-  complexity: 11
+- comm_cost: 0.287037037037037
+  complexity: 18
   expressions:
   - not(subset_eq(B, A))
-  - subset_eq(B, A)
+  - empty(union(A, B))
+  - and(subset_eq(B, A), nonempty(B))
   - not(subset_eq(A, B))
-  name: dominating-23
+  name: dominating-17
+  naturalness: 0.75
   type: dominant
-- comm_cost: 0.3351587301587302
-  complexity: 14
+- comm_cost: 0.23259259259259257
+  complexity: 30
   expressions:
-  - not(subset_eq(A, B))
-  - greater_than(cardinality(B), cardinality(A))
-  - equals(cardinality(A), cardinality(B))
-  name: dominating-24
+  - nonempty(intersection(A, B))
+  - and(empty(A), nonempty(B))
+  - and(not(subset_eq(B, A)), diff(A, B))
+  - empty(union(A, B))
+  - and(or(empty(B), diff(A, A)), nonempty(A))
+  name: dominating-18
+  naturalness: 0.6
+  type: dominant
+- comm_cost: 0.25314814814814823
+  complexity: 26
+  expressions:
+  - diff(A, B)
+  - and(empty(A), nonempty(B))
+  - and(not(subset_eq(B, A)), diff(A, B))
+  - empty(union(A, B))
+  - and(subset_eq(A, B), nonempty(A))
+  name: dominating-19
+  naturalness: 0.6
+  type: dominant
+- comm_cost: 0.3112962962962964
+  complexity: 12
+  expressions:
+  - empty(B)
+  - not(subset_eq(B, A))
+  - and(subset_eq(B, A), nonempty(B))
+  name: dominating-20
+  naturalness: 0.6666666666666666
+  type: dominant
+- comm_cost: 0.20092592592592595
+  complexity: 42
+  expressions:
+  - and(empty(A), nonempty(B))
+  - and(or(subset_eq(B, A), empty(A)), and(nonempty(B), diff(A, B)))
+  - and(diff(A, B), empty(B))
+  - and(not(subset_eq(B, A)), diff(A, B))
+  - empty(union(A, B))
+  - and(subset_eq(A, B), nonempty(A))
+  name: dominating-21
+  naturalness: 0.5
+  type: dominant
+- comm_cost: 0.1703703703703705
+  complexity: 56
+  expressions:
+  - and(subset_eq(A, B), and(nonempty(A), diff(B, A)))
+  - and(and(subset_eq(B, A), nonempty(A)), and(diff(A, B), nonempty(B)))
+  - and(empty(A), nonempty(B))
+  - and(diff(A, B), empty(B))
+  - and(not(subset_eq(B, A)), diff(A, B))
+  - and(subset_eq(A, B), and(subset_eq(B, A), nonempty(A)))
+  - empty(union(A, B))
+  name: dominating-22
+  naturalness: 0.42857142857142855
   type: dominant

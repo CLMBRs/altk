@@ -1,0 +1,17 @@
+Rules:
+	frozenset -> A
+	frozenset -> B
+	bool -> and(bool, bool)
+	bool -> not(bool)
+	bool -> or(bool, bool)
+	bool -> diff(frozenset, frozenset)
+	bool -> =(int, int)
+	bool -> =f(float, float)
+	bool -> >(int, int)
+	bool -> >f(float, float)
+	bool -> intersection(frozenset, frozenset)
+	bool -> %(int, int)
+	int -> cardinality(frozenset)
+	int -> -(int, int)
+	int -> +(int, int)
+	float -> /(int, int)
