@@ -1,0 +1,2164 @@
+- form: ''
+  length: 1
+  meaning: &id008 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      ? &id006 !!python/object:ultk.language.semantics.Referent
+        _frozen: true
+        flavor: circumstantial
+        force: strong
+        name: strong+circumstantial
+        probability: 0.3180242634315424
+      : false
+      ? &id005 !!python/object:ultk.language.semantics.Referent
+        _frozen: true
+        flavor: deontic
+        force: strong
+        name: strong+deontic
+        probability: 0.2537550548815713
+      : false
+      ? &id004 !!python/object:ultk.language.semantics.Referent
+        _frozen: true
+        flavor: epistemic
+        force: strong
+        name: strong+epistemic
+        probability: 0.1042749855574812
+      : false
+      ? &id003 !!python/object:ultk.language.semantics.Referent
+        _frozen: true
+        flavor: circumstantial
+        force: weak
+        name: weak+circumstantial
+        probability: 0.1429809358752166
+      : true
+      ? &id002 !!python/object:ultk.language.semantics.Referent
+        _frozen: true
+        flavor: deontic
+        force: weak
+        name: weak+deontic
+        probability: 0.0420277296360485
+      : true
+      ? &id001 !!python/object:ultk.language.semantics.Referent
+        _frozen: true
+        flavor: epistemic
+        force: weak
+        name: weak+epistemic
+        probability: 0.1389370306181398
+      : true
+    universe: &id007 !!python/object:ultk.language.semantics.Universe
+      prior: !!python/tuple
+      - 0.1389370306181398
+      - 0.0420277296360485
+      - 0.1429809358752166
+      - 0.1042749855574812
+      - 0.2537550548815713
+      - 0.3180242634315424
+      referents: !!python/tuple
+      - *id001
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+  rule_name: weak
+  term_expression: weak
+- form: ''
+  length: 1
+  meaning: &id012 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: true
+      *id003: false
+      *id002: false
+      *id001: false
+    universe: *id007
+  rule_name: strong
+  term_expression: strong
+- form: ''
+  length: 1
+  meaning: &id009 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: false
+      *id004: true
+      *id003: false
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: epistemic
+  term_expression: epistemic
+- form: ''
+  length: 1
+  meaning: &id010 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: false
+      *id003: false
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: deontic
+  term_expression: deontic
+- form: ''
+  length: 1
+  meaning: &id011 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: false
+      *id003: true
+      *id002: false
+      *id001: false
+    universe: *id007
+  rule_name: circumstantial
+  term_expression: circumstantial
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id008
+    rule_name: weak
+    term_expression: weak
+  - form: ''
+    length: 1
+    meaning: *id009
+    rule_name: epistemic
+    term_expression: epistemic
+  form: ''
+  length: 3
+  meaning: &id023 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: false
+      *id004: false
+      *id003: false
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: and
+  term_expression: and(weak, epistemic)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id008
+    rule_name: weak
+    term_expression: weak
+  - form: ''
+    length: 1
+    meaning: *id010
+    rule_name: deontic
+    term_expression: deontic
+  form: ''
+  length: 3
+  meaning: &id019 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: false
+      *id004: false
+      *id003: false
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(weak, deontic)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id008
+    rule_name: weak
+    term_expression: weak
+  - form: ''
+    length: 1
+    meaning: *id011
+    rule_name: circumstantial
+    term_expression: circumstantial
+  form: ''
+  length: 3
+  meaning: &id020 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: false
+      *id004: false
+      *id003: true
+      *id002: false
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(weak, circumstantial)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: strong
+    term_expression: strong
+  - form: ''
+    length: 1
+    meaning: *id009
+    rule_name: epistemic
+    term_expression: epistemic
+  form: ''
+  length: 3
+  meaning: &id027 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: false
+      *id004: true
+      *id003: false
+      *id002: false
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(strong, epistemic)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: strong
+    term_expression: strong
+  - form: ''
+    length: 1
+    meaning: *id010
+    rule_name: deontic
+    term_expression: deontic
+  form: ''
+  length: 3
+  meaning: &id025 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: false
+      *id003: false
+      *id002: false
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(strong, deontic)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: strong
+    term_expression: strong
+  - form: ''
+    length: 1
+    meaning: *id011
+    rule_name: circumstantial
+    term_expression: circumstantial
+  form: ''
+  length: 3
+  meaning: &id026 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: false
+      *id003: false
+      *id002: false
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(strong, circumstantial)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id008
+    rule_name: weak
+    term_expression: weak
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: strong
+    term_expression: strong
+  form: ''
+  length: 3
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: true
+      *id003: true
+      *id002: true
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(weak, strong)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id008
+    rule_name: weak
+    term_expression: weak
+  - form: ''
+    length: 1
+    meaning: *id009
+    rule_name: epistemic
+    term_expression: epistemic
+  form: ''
+  length: 3
+  meaning: &id016 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: false
+      *id004: true
+      *id003: true
+      *id002: true
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(weak, epistemic)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id008
+    rule_name: weak
+    term_expression: weak
+  - form: ''
+    length: 1
+    meaning: *id010
+    rule_name: deontic
+    term_expression: deontic
+  form: ''
+  length: 3
+  meaning: &id021 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: false
+      *id003: true
+      *id002: true
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(weak, deontic)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id008
+    rule_name: weak
+    term_expression: weak
+  - form: ''
+    length: 1
+    meaning: *id011
+    rule_name: circumstantial
+    term_expression: circumstantial
+  form: ''
+  length: 3
+  meaning: &id024 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: false
+      *id003: true
+      *id002: true
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(weak, circumstantial)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: strong
+    term_expression: strong
+  - form: ''
+    length: 1
+    meaning: *id009
+    rule_name: epistemic
+    term_expression: epistemic
+  form: ''
+  length: 3
+  meaning: &id022 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: true
+      *id003: false
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(strong, epistemic)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: strong
+    term_expression: strong
+  - form: ''
+    length: 1
+    meaning: *id010
+    rule_name: deontic
+    term_expression: deontic
+  form: ''
+  length: 3
+  meaning: &id017 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: true
+      *id003: false
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: or
+  term_expression: or(strong, deontic)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: strong
+    term_expression: strong
+  - form: ''
+    length: 1
+    meaning: *id011
+    rule_name: circumstantial
+    term_expression: circumstantial
+  form: ''
+  length: 3
+  meaning: &id018 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: true
+      *id003: true
+      *id002: false
+      *id001: false
+    universe: *id007
+  rule_name: or
+  term_expression: or(strong, circumstantial)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id011
+    rule_name: circumstantial
+    term_expression: circumstantial
+  form: ''
+  length: 2
+  meaning: &id013 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: true
+      *id003: false
+      *id002: true
+      *id001: true
+    universe: *id007
+  rule_name: not
+  term_expression: not(circumstantial)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id010
+    rule_name: deontic
+    term_expression: deontic
+  form: ''
+  length: 2
+  meaning: &id014 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: true
+      *id003: true
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: not
+  term_expression: not(deontic)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id009
+    rule_name: epistemic
+    term_expression: epistemic
+  form: ''
+  length: 2
+  meaning: &id015 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: false
+      *id003: true
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: not
+  term_expression: not(epistemic)
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id008
+    rule_name: weak
+    term_expression: weak
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id011
+      rule_name: circumstantial
+      term_expression: circumstantial
+    form: ''
+    length: 2
+    meaning: *id013
+    rule_name: not
+    term_expression: not(circumstantial)
+  form: ''
+  length: 4
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: false
+      *id004: false
+      *id003: false
+      *id002: true
+      *id001: true
+    universe: *id007
+  rule_name: and
+  term_expression: and(weak, not(circumstantial))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id008
+    rule_name: weak
+    term_expression: weak
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id010
+      rule_name: deontic
+      term_expression: deontic
+    form: ''
+    length: 2
+    meaning: *id014
+    rule_name: not
+    term_expression: not(deontic)
+  form: ''
+  length: 4
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: false
+      *id004: false
+      *id003: true
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: and
+  term_expression: and(weak, not(deontic))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id008
+    rule_name: weak
+    term_expression: weak
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id009
+      rule_name: epistemic
+      term_expression: epistemic
+    form: ''
+    length: 2
+    meaning: *id015
+    rule_name: not
+    term_expression: not(epistemic)
+  form: ''
+  length: 4
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: false
+      *id004: false
+      *id003: true
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(weak, not(epistemic))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: strong
+    term_expression: strong
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id011
+      rule_name: circumstantial
+      term_expression: circumstantial
+    form: ''
+    length: 2
+    meaning: *id013
+    rule_name: not
+    term_expression: not(circumstantial)
+  form: ''
+  length: 4
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: true
+      *id003: false
+      *id002: false
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(strong, not(circumstantial))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: strong
+    term_expression: strong
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id010
+      rule_name: deontic
+      term_expression: deontic
+    form: ''
+    length: 2
+    meaning: *id014
+    rule_name: not
+    term_expression: not(deontic)
+  form: ''
+  length: 4
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: true
+      *id003: false
+      *id002: false
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(strong, not(deontic))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: strong
+    term_expression: strong
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id009
+      rule_name: epistemic
+      term_expression: epistemic
+    form: ''
+    length: 2
+    meaning: *id015
+    rule_name: not
+    term_expression: not(epistemic)
+  form: ''
+  length: 4
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: false
+      *id003: false
+      *id002: false
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(strong, not(epistemic))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - form: ''
+      length: 1
+      meaning: *id009
+      rule_name: epistemic
+      term_expression: epistemic
+    form: ''
+    length: 3
+    meaning: *id016
+    rule_name: or
+    term_expression: or(weak, epistemic)
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - form: ''
+      length: 1
+      meaning: *id010
+      rule_name: deontic
+      term_expression: deontic
+    form: ''
+    length: 3
+    meaning: *id017
+    rule_name: or
+    term_expression: or(strong, deontic)
+  form: ''
+  length: 7
+  meaning: &id039 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: false
+      *id004: true
+      *id003: false
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(or(weak, epistemic), or(strong, deontic))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - form: ''
+      length: 1
+      meaning: *id009
+      rule_name: epistemic
+      term_expression: epistemic
+    form: ''
+    length: 3
+    meaning: *id016
+    rule_name: or
+    term_expression: or(weak, epistemic)
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - form: ''
+      length: 1
+      meaning: *id011
+      rule_name: circumstantial
+      term_expression: circumstantial
+    form: ''
+    length: 3
+    meaning: *id018
+    rule_name: or
+    term_expression: or(strong, circumstantial)
+  form: ''
+  length: 7
+  meaning: &id038 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: false
+      *id004: true
+      *id003: true
+      *id002: false
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(or(weak, epistemic), or(strong, circumstantial))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id009
+    rule_name: epistemic
+    term_expression: epistemic
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - form: ''
+      length: 1
+      meaning: *id010
+      rule_name: deontic
+      term_expression: deontic
+    form: ''
+    length: 3
+    meaning: *id019
+    rule_name: and
+    term_expression: and(weak, deontic)
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: false
+      *id004: true
+      *id003: false
+      *id002: true
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(epistemic, and(weak, deontic))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id009
+    rule_name: epistemic
+    term_expression: epistemic
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - form: ''
+      length: 1
+      meaning: *id011
+      rule_name: circumstantial
+      term_expression: circumstantial
+    form: ''
+    length: 3
+    meaning: *id020
+    rule_name: and
+    term_expression: and(weak, circumstantial)
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: false
+      *id004: true
+      *id003: true
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(epistemic, and(weak, circumstantial))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - form: ''
+      length: 1
+      meaning: *id010
+      rule_name: deontic
+      term_expression: deontic
+    form: ''
+    length: 3
+    meaning: *id021
+    rule_name: or
+    term_expression: or(weak, deontic)
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - form: ''
+      length: 1
+      meaning: *id009
+      rule_name: epistemic
+      term_expression: epistemic
+    form: ''
+    length: 3
+    meaning: *id022
+    rule_name: or
+    term_expression: or(strong, epistemic)
+  form: ''
+  length: 7
+  meaning: &id037 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: false
+      *id003: false
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: and
+  term_expression: and(or(weak, deontic), or(strong, epistemic))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - form: ''
+      length: 1
+      meaning: *id010
+      rule_name: deontic
+      term_expression: deontic
+    form: ''
+    length: 3
+    meaning: *id021
+    rule_name: or
+    term_expression: or(weak, deontic)
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - form: ''
+      length: 1
+      meaning: *id011
+      rule_name: circumstantial
+      term_expression: circumstantial
+    form: ''
+    length: 3
+    meaning: *id018
+    rule_name: or
+    term_expression: or(strong, circumstantial)
+  form: ''
+  length: 7
+  meaning: &id036 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: false
+      *id003: true
+      *id002: false
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(or(weak, deontic), or(strong, circumstantial))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id010
+    rule_name: deontic
+    term_expression: deontic
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - form: ''
+      length: 1
+      meaning: *id009
+      rule_name: epistemic
+      term_expression: epistemic
+    form: ''
+    length: 3
+    meaning: *id023
+    rule_name: and
+    term_expression: and(weak, epistemic)
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: false
+      *id003: false
+      *id002: true
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(deontic, and(weak, epistemic))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id010
+    rule_name: deontic
+    term_expression: deontic
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - form: ''
+      length: 1
+      meaning: *id011
+      rule_name: circumstantial
+      term_expression: circumstantial
+    form: ''
+    length: 3
+    meaning: *id020
+    rule_name: and
+    term_expression: and(weak, circumstantial)
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: false
+      *id003: true
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: or
+  term_expression: or(deontic, and(weak, circumstantial))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - form: ''
+      length: 1
+      meaning: *id011
+      rule_name: circumstantial
+      term_expression: circumstantial
+    form: ''
+    length: 3
+    meaning: *id024
+    rule_name: or
+    term_expression: or(weak, circumstantial)
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - form: ''
+      length: 1
+      meaning: *id009
+      rule_name: epistemic
+      term_expression: epistemic
+    form: ''
+    length: 3
+    meaning: *id022
+    rule_name: or
+    term_expression: or(strong, epistemic)
+  form: ''
+  length: 7
+  meaning: &id035 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: false
+      *id003: false
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: and
+  term_expression: and(or(weak, circumstantial), or(strong, epistemic))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - form: ''
+      length: 1
+      meaning: *id011
+      rule_name: circumstantial
+      term_expression: circumstantial
+    form: ''
+    length: 3
+    meaning: *id024
+    rule_name: or
+    term_expression: or(weak, circumstantial)
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - form: ''
+      length: 1
+      meaning: *id010
+      rule_name: deontic
+      term_expression: deontic
+    form: ''
+    length: 3
+    meaning: *id017
+    rule_name: or
+    term_expression: or(strong, deontic)
+  form: ''
+  length: 7
+  meaning: &id034 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: false
+      *id003: false
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(or(weak, circumstantial), or(strong, deontic))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id011
+    rule_name: circumstantial
+    term_expression: circumstantial
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - form: ''
+      length: 1
+      meaning: *id009
+      rule_name: epistemic
+      term_expression: epistemic
+    form: ''
+    length: 3
+    meaning: *id023
+    rule_name: and
+    term_expression: and(weak, epistemic)
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: false
+      *id003: true
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(circumstantial, and(weak, epistemic))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id011
+    rule_name: circumstantial
+    term_expression: circumstantial
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - form: ''
+      length: 1
+      meaning: *id010
+      rule_name: deontic
+      term_expression: deontic
+    form: ''
+    length: 3
+    meaning: *id019
+    rule_name: and
+    term_expression: and(weak, deontic)
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: false
+      *id003: true
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: or
+  term_expression: or(circumstantial, and(weak, deontic))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id009
+    rule_name: epistemic
+    term_expression: epistemic
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - form: ''
+      length: 1
+      meaning: *id010
+      rule_name: deontic
+      term_expression: deontic
+    form: ''
+    length: 3
+    meaning: *id025
+    rule_name: and
+    term_expression: and(strong, deontic)
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: true
+      *id003: false
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(epistemic, and(strong, deontic))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id009
+    rule_name: epistemic
+    term_expression: epistemic
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - form: ''
+      length: 1
+      meaning: *id011
+      rule_name: circumstantial
+      term_expression: circumstantial
+    form: ''
+    length: 3
+    meaning: *id026
+    rule_name: and
+    term_expression: and(strong, circumstantial)
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: true
+      *id003: false
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(epistemic, and(strong, circumstantial))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id010
+    rule_name: deontic
+    term_expression: deontic
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - form: ''
+      length: 1
+      meaning: *id009
+      rule_name: epistemic
+      term_expression: epistemic
+    form: ''
+    length: 3
+    meaning: *id027
+    rule_name: and
+    term_expression: and(strong, epistemic)
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: true
+      *id003: false
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: or
+  term_expression: or(deontic, and(strong, epistemic))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id010
+    rule_name: deontic
+    term_expression: deontic
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - form: ''
+      length: 1
+      meaning: *id011
+      rule_name: circumstantial
+      term_expression: circumstantial
+    form: ''
+    length: 3
+    meaning: *id026
+    rule_name: and
+    term_expression: and(strong, circumstantial)
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: false
+      *id003: false
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: or
+  term_expression: or(deontic, and(strong, circumstantial))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id011
+    rule_name: circumstantial
+    term_expression: circumstantial
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - form: ''
+      length: 1
+      meaning: *id009
+      rule_name: epistemic
+      term_expression: epistemic
+    form: ''
+    length: 3
+    meaning: *id027
+    rule_name: and
+    term_expression: and(strong, epistemic)
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: true
+      *id003: true
+      *id002: false
+      *id001: false
+    universe: *id007
+  rule_name: or
+  term_expression: or(circumstantial, and(strong, epistemic))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id011
+    rule_name: circumstantial
+    term_expression: circumstantial
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - form: ''
+      length: 1
+      meaning: *id010
+      rule_name: deontic
+      term_expression: deontic
+    form: ''
+    length: 3
+    meaning: *id025
+    rule_name: and
+    term_expression: and(strong, deontic)
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: false
+      *id003: true
+      *id002: false
+      *id001: false
+    universe: *id007
+  rule_name: or
+  term_expression: or(circumstantial, and(strong, deontic))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id008
+    rule_name: weak
+    term_expression: weak
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id011
+      rule_name: circumstantial
+      term_expression: circumstantial
+    form: ''
+    length: 2
+    meaning: *id013
+    rule_name: not
+    term_expression: not(circumstantial)
+  form: ''
+  length: 4
+  meaning: &id033 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: true
+      *id003: true
+      *id002: true
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(weak, not(circumstantial))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id008
+    rule_name: weak
+    term_expression: weak
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id010
+      rule_name: deontic
+      term_expression: deontic
+    form: ''
+    length: 2
+    meaning: *id014
+    rule_name: not
+    term_expression: not(deontic)
+  form: ''
+  length: 4
+  meaning: &id032 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: true
+      *id003: true
+      *id002: true
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(weak, not(deontic))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id008
+    rule_name: weak
+    term_expression: weak
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id009
+      rule_name: epistemic
+      term_expression: epistemic
+    form: ''
+    length: 2
+    meaning: *id015
+    rule_name: not
+    term_expression: not(epistemic)
+  form: ''
+  length: 4
+  meaning: &id031 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: false
+      *id003: true
+      *id002: true
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(weak, not(epistemic))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: strong
+    term_expression: strong
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id011
+      rule_name: circumstantial
+      term_expression: circumstantial
+    form: ''
+    length: 2
+    meaning: *id013
+    rule_name: not
+    term_expression: not(circumstantial)
+  form: ''
+  length: 4
+  meaning: &id030 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: true
+      *id003: false
+      *id002: true
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(strong, not(circumstantial))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: strong
+    term_expression: strong
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id010
+      rule_name: deontic
+      term_expression: deontic
+    form: ''
+    length: 2
+    meaning: *id014
+    rule_name: not
+    term_expression: not(deontic)
+  form: ''
+  length: 4
+  meaning: &id029 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: true
+      *id003: true
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: or
+  term_expression: or(strong, not(deontic))
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: strong
+    term_expression: strong
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id009
+      rule_name: epistemic
+      term_expression: epistemic
+    form: ''
+    length: 2
+    meaning: *id015
+    rule_name: not
+    term_expression: not(epistemic)
+  form: ''
+  length: 4
+  meaning: &id028 !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: true
+      *id003: true
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: or
+  term_expression: or(strong, not(epistemic))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - form: ''
+      length: 1
+      meaning: *id009
+      rule_name: epistemic
+      term_expression: epistemic
+    form: ''
+    length: 3
+    meaning: *id016
+    rule_name: or
+    term_expression: or(weak, epistemic)
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id009
+        rule_name: epistemic
+        term_expression: epistemic
+      form: ''
+      length: 2
+      meaning: *id015
+      rule_name: not
+      term_expression: not(epistemic)
+    form: ''
+    length: 4
+    meaning: *id028
+    rule_name: or
+    term_expression: or(strong, not(epistemic))
+  form: ''
+  length: 8
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: false
+      *id004: true
+      *id003: true
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(or(weak, epistemic), or(strong, not(epistemic)))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - form: ''
+      length: 1
+      meaning: *id010
+      rule_name: deontic
+      term_expression: deontic
+    form: ''
+    length: 3
+    meaning: *id021
+    rule_name: or
+    term_expression: or(weak, deontic)
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id010
+        rule_name: deontic
+        term_expression: deontic
+      form: ''
+      length: 2
+      meaning: *id014
+      rule_name: not
+      term_expression: not(deontic)
+    form: ''
+    length: 4
+    meaning: *id029
+    rule_name: or
+    term_expression: or(strong, not(deontic))
+  form: ''
+  length: 8
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: false
+      *id003: true
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: and
+  term_expression: and(or(weak, deontic), or(strong, not(deontic)))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - form: ''
+      length: 1
+      meaning: *id011
+      rule_name: circumstantial
+      term_expression: circumstantial
+    form: ''
+    length: 3
+    meaning: *id024
+    rule_name: or
+    term_expression: or(weak, circumstantial)
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id011
+        rule_name: circumstantial
+        term_expression: circumstantial
+      form: ''
+      length: 2
+      meaning: *id013
+      rule_name: not
+      term_expression: not(circumstantial)
+    form: ''
+    length: 4
+    meaning: *id030
+    rule_name: or
+    term_expression: or(strong, not(circumstantial))
+  form: ''
+  length: 8
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: false
+      *id003: false
+      *id002: true
+      *id001: true
+    universe: *id007
+  rule_name: and
+  term_expression: and(or(weak, circumstantial), or(strong, not(circumstantial)))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - form: ''
+      length: 1
+      meaning: *id009
+      rule_name: epistemic
+      term_expression: epistemic
+    form: ''
+    length: 3
+    meaning: *id022
+    rule_name: or
+    term_expression: or(strong, epistemic)
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id009
+        rule_name: epistemic
+        term_expression: epistemic
+      form: ''
+      length: 2
+      meaning: *id015
+      rule_name: not
+      term_expression: not(epistemic)
+    form: ''
+    length: 4
+    meaning: *id031
+    rule_name: or
+    term_expression: or(weak, not(epistemic))
+  form: ''
+  length: 8
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: false
+      *id003: false
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: and
+  term_expression: and(or(strong, epistemic), or(weak, not(epistemic)))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - form: ''
+      length: 1
+      meaning: *id010
+      rule_name: deontic
+      term_expression: deontic
+    form: ''
+    length: 3
+    meaning: *id017
+    rule_name: or
+    term_expression: or(strong, deontic)
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id010
+        rule_name: deontic
+        term_expression: deontic
+      form: ''
+      length: 2
+      meaning: *id014
+      rule_name: not
+      term_expression: not(deontic)
+    form: ''
+    length: 4
+    meaning: *id032
+    rule_name: or
+    term_expression: or(weak, not(deontic))
+  form: ''
+  length: 8
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: true
+      *id003: false
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(or(strong, deontic), or(weak, not(deontic)))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id012
+      rule_name: strong
+      term_expression: strong
+    - form: ''
+      length: 1
+      meaning: *id011
+      rule_name: circumstantial
+      term_expression: circumstantial
+    form: ''
+    length: 3
+    meaning: *id018
+    rule_name: or
+    term_expression: or(strong, circumstantial)
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id008
+      rule_name: weak
+      term_expression: weak
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id011
+        rule_name: circumstantial
+        term_expression: circumstantial
+      form: ''
+      length: 2
+      meaning: *id013
+      rule_name: not
+      term_expression: not(circumstantial)
+    form: ''
+    length: 4
+    meaning: *id033
+    rule_name: or
+    term_expression: or(weak, not(circumstantial))
+  form: ''
+  length: 8
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: true
+      *id003: true
+      *id002: false
+      *id001: false
+    universe: *id007
+  rule_name: and
+  term_expression: and(or(strong, circumstantial), or(weak, not(circumstantial)))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id008
+        rule_name: weak
+        term_expression: weak
+      - form: ''
+        length: 1
+        meaning: *id011
+        rule_name: circumstantial
+        term_expression: circumstantial
+      form: ''
+      length: 3
+      meaning: *id024
+      rule_name: or
+      term_expression: or(weak, circumstantial)
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id012
+        rule_name: strong
+        term_expression: strong
+      - form: ''
+        length: 1
+        meaning: *id010
+        rule_name: deontic
+        term_expression: deontic
+      form: ''
+      length: 3
+      meaning: *id017
+      rule_name: or
+      term_expression: or(strong, deontic)
+    form: ''
+    length: 7
+    meaning: *id034
+    rule_name: and
+    term_expression: and(or(weak, circumstantial), or(strong, deontic))
+  form: ''
+  length: 8
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: true
+      *id003: true
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: not
+  term_expression: not(and(or(weak, circumstantial), or(strong, deontic)))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id008
+        rule_name: weak
+        term_expression: weak
+      - form: ''
+        length: 1
+        meaning: *id011
+        rule_name: circumstantial
+        term_expression: circumstantial
+      form: ''
+      length: 3
+      meaning: *id024
+      rule_name: or
+      term_expression: or(weak, circumstantial)
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id012
+        rule_name: strong
+        term_expression: strong
+      - form: ''
+        length: 1
+        meaning: *id009
+        rule_name: epistemic
+        term_expression: epistemic
+      form: ''
+      length: 3
+      meaning: *id022
+      rule_name: or
+      term_expression: or(strong, epistemic)
+    form: ''
+    length: 7
+    meaning: *id035
+    rule_name: and
+    term_expression: and(or(weak, circumstantial), or(strong, epistemic))
+  form: ''
+  length: 8
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: false
+      *id005: true
+      *id004: true
+      *id003: true
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: not
+  term_expression: not(and(or(weak, circumstantial), or(strong, epistemic)))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id008
+        rule_name: weak
+        term_expression: weak
+      - form: ''
+        length: 1
+        meaning: *id010
+        rule_name: deontic
+        term_expression: deontic
+      form: ''
+      length: 3
+      meaning: *id021
+      rule_name: or
+      term_expression: or(weak, deontic)
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id012
+        rule_name: strong
+        term_expression: strong
+      - form: ''
+        length: 1
+        meaning: *id011
+        rule_name: circumstantial
+        term_expression: circumstantial
+      form: ''
+      length: 3
+      meaning: *id018
+      rule_name: or
+      term_expression: or(strong, circumstantial)
+    form: ''
+    length: 7
+    meaning: *id036
+    rule_name: and
+    term_expression: and(or(weak, deontic), or(strong, circumstantial))
+  form: ''
+  length: 8
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: true
+      *id003: false
+      *id002: true
+      *id001: true
+    universe: *id007
+  rule_name: not
+  term_expression: not(and(or(weak, deontic), or(strong, circumstantial)))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id008
+        rule_name: weak
+        term_expression: weak
+      - form: ''
+        length: 1
+        meaning: *id010
+        rule_name: deontic
+        term_expression: deontic
+      form: ''
+      length: 3
+      meaning: *id021
+      rule_name: or
+      term_expression: or(weak, deontic)
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id012
+        rule_name: strong
+        term_expression: strong
+      - form: ''
+        length: 1
+        meaning: *id009
+        rule_name: epistemic
+        term_expression: epistemic
+      form: ''
+      length: 3
+      meaning: *id022
+      rule_name: or
+      term_expression: or(strong, epistemic)
+    form: ''
+    length: 7
+    meaning: *id037
+    rule_name: and
+    term_expression: and(or(weak, deontic), or(strong, epistemic))
+  form: ''
+  length: 8
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: false
+      *id004: true
+      *id003: true
+      *id002: true
+      *id001: false
+    universe: *id007
+  rule_name: not
+  term_expression: not(and(or(weak, deontic), or(strong, epistemic)))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id008
+        rule_name: weak
+        term_expression: weak
+      - form: ''
+        length: 1
+        meaning: *id009
+        rule_name: epistemic
+        term_expression: epistemic
+      form: ''
+      length: 3
+      meaning: *id016
+      rule_name: or
+      term_expression: or(weak, epistemic)
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id012
+        rule_name: strong
+        term_expression: strong
+      - form: ''
+        length: 1
+        meaning: *id011
+        rule_name: circumstantial
+        term_expression: circumstantial
+      form: ''
+      length: 3
+      meaning: *id018
+      rule_name: or
+      term_expression: or(strong, circumstantial)
+    form: ''
+    length: 7
+    meaning: *id038
+    rule_name: and
+    term_expression: and(or(weak, epistemic), or(strong, circumstantial))
+  form: ''
+  length: 8
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: false
+      *id003: false
+      *id002: true
+      *id001: true
+    universe: *id007
+  rule_name: not
+  term_expression: not(and(or(weak, epistemic), or(strong, circumstantial)))
+- children: !!python/tuple
+  - children: !!python/tuple
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id008
+        rule_name: weak
+        term_expression: weak
+      - form: ''
+        length: 1
+        meaning: *id009
+        rule_name: epistemic
+        term_expression: epistemic
+      form: ''
+      length: 3
+      meaning: *id016
+      rule_name: or
+      term_expression: or(weak, epistemic)
+    - children: !!python/tuple
+      - form: ''
+        length: 1
+        meaning: *id012
+        rule_name: strong
+        term_expression: strong
+      - form: ''
+        length: 1
+        meaning: *id010
+        rule_name: deontic
+        term_expression: deontic
+      form: ''
+      length: 3
+      meaning: *id017
+      rule_name: or
+      term_expression: or(strong, deontic)
+    form: ''
+    length: 7
+    meaning: *id039
+    rule_name: and
+    term_expression: and(or(weak, epistemic), or(strong, deontic))
+  form: ''
+  length: 8
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id006: true
+      *id005: true
+      *id004: false
+      *id003: true
+      *id002: false
+      *id001: true
+    universe: *id007
+  rule_name: not
+  term_expression: not(and(or(weak, epistemic), or(strong, deontic)))

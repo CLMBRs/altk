@@ -1,0 +1,538 @@
+- comm_cost: 0.2365845047820787
+  complexity: 18
+  degree_iff: 1.0
+  expressions:
+  - ebia
+  - "\u025Bw\u0254s\u025B"
+  - gyama
+  - "\u025Bs\u025Bs\u025B"
+  - (be)-tumi
+  - "\u025B-ho-hia"
+  - "a-gye-s\u025B"
+  lot_expressions:
+  - and(weak, epistemic)
+  - and(strong, not(epistemic))
+  - and(weak, epistemic)
+  - strong
+  - weak
+  - and(strong, deontic)
+  - and(strong, epistemic)
+  name: Akan
+  type: natural
+- comm_cost: 0.3380933468130176
+  complexity: 16
+  degree_iff: 0.75
+  expressions:
+  - ahal
+  - liteke
+  - daiteke
+  - behar
+  lot_expressions:
+  - and(or(weak, circumstantial), or(strong, deontic))
+  - and(weak, not(deontic))
+  - and(weak, not(epistemic))
+  - strong
+  name: Basque
+  type: natural
+- comm_cost: 0.16975375505488177
+  complexity: 31
+  degree_iff: 1.0
+  expressions:
+  - Hoji
+  - Honang
+  - bei
+  - Jatding
+  - '... dou'
+  - Jiu
+  - soeijiu
+  - Jinggoi
+  - Dak
+  lot_expressions:
+  - and(weak, not(epistemic))
+  - and(weak, epistemic)
+  - and(weak, deontic)
+  - and(strong, not(circumstantial))
+  - and(weak, circumstantial)
+  - and(strong, not(epistemic))
+  - and(strong, circumstantial)
+  - and(weak, not(deontic))
+  - and(weak, circumstantial)
+  name: Cantonese
+  type: natural
+- comm_cost: 0.19513046408627033
+  complexity: 23
+  degree_iff: 1.0
+  expressions:
+  - zou/zouden ... moeten
+  - mag/mogen
+  - kan/kunnen
+  - misschien
+  - zou/zouden ... kunnen
+  - zal
+  - moet/moeten
+  - 'waarschijnlijk '
+  lot_expressions:
+  - and(strong, deontic)
+  - and(weak, deontic)
+  - and(weak, circumstantial)
+  - and(weak, epistemic)
+  - and(weak, not(deontic))
+  - and(strong, epistemic)
+  - strong
+  - and(weak, epistemic)
+  name: Dutch
+  type: natural
+- comm_cost: 0.2138937030618142
+  complexity: 27
+  degree_iff: 1.0
+  expressions:
+  - momken ast
+  - 'balad ast '
+  - -shav-
+  - lazem ast
+  - emkand ast
+  - ejaze dad/dasht
+  - -tavan-
+  - shayad
+  - bayad
+  lot_expressions:
+  - and(weak, epistemic)
+  - and(weak, circumstantial)
+  - and(weak, not(epistemic))
+  - and(strong, deontic)
+  - and(weak, epistemic)
+  - and(weak, deontic)
+  - and(weak, not(epistemic))
+  - and(weak, epistemic)
+  - strong
+  name: Farsi
+  type: natural
+- comm_cost: 0.20374783362218385
+  complexity: 12
+  degree_iff: 1.0
+  expressions:
+  - gat
+  - sgi
+  - "ima(\u2019a)"
+  - "da\u2019akhlxw"
+  - anook(xw)
+  lot_expressions:
+  - epistemic
+  - and(strong, not(epistemic))
+  - epistemic
+  - and(weak, circumstantial)
+  - and(weak, deontic)
+  name: Gitksan
+  type: natural
+- comm_cost: 0.4310449964696067
+  complexity: 7
+  degree_iff: 0.6666666666666666
+  expressions:
+  - Isos
+  - Mporei
+  - Prepei
+  lot_expressions:
+  - and(weak, epistemic)
+  - weak
+  - or(strong, epistemic)
+  name: Greek
+  type: natural
+- comm_cost: 0.28895869439630295
+  complexity: 12
+  degree_iff: 1.0
+  expressions:
+  - lallai
+  - "wata\u0199ila"
+  - dole
+  - Za ... iya
+  lot_expressions:
+  - and(strong, epistemic)
+  - and(weak, not(circumstantial))
+  - strong
+  - and(weak, not(epistemic))
+  name: Hausa
+  type: natural
+- comm_cost: 0.23635181975736597
+  complexity: 17
+  degree_iff: 1.0
+  expressions:
+  - yitakhen
+  - mesugelet
+  - batuakh
+  - yakhol
+  - khayav
+  - oolay
+  lot_expressions:
+  - and(weak, epistemic)
+  - and(weak, circumstantial)
+  - and(strong, epistemic)
+  - and(weak, not(epistemic))
+  - strong
+  - and(weak, epistemic)
+  name: Hebrew
+  type: natural
+- comm_cost: 0.23548928044162032
+  complexity: 12
+  degree_iff: 1.0
+  expressions:
+  - sakte/sakti/sakta ho
+  - zaroor+hogi/hoga
+  - dative on subject + fut on verb+ clause final hoga/hogi
+  - shayad
+  - sakte/sakti/sakta hai
+  lot_expressions:
+  - weak
+  - and(strong, epistemic)
+  - and(strong, not(epistemic))
+  - and(weak, epistemic)
+  - weak
+  name: Hindi
+  type: natural
+- comm_cost: 0.22940135759676505
+  complexity: 18
+  degree_iff: 1.0
+  expressions:
+  - tud-
+  - kep-
+  - -het-
+  - lehet
+  - kell
+  - "musz\xE1j"
+  lot_expressions:
+  - and(weak, circumstantial)
+  - and(weak, circumstantial)
+  - and(weak, not(circumstantial))
+  - and(weak, epistemic)
+  - strong
+  - and(strong, not(epistemic))
+  name: Hungarian
+  type: natural
+- comm_cost: 0.25649913344887365
+  complexity: 8
+  degree_iff: 1.0
+  expressions:
+  - Nwe-rV ike
+  - ga-v-ni
+  - ga-v-riri
+  - (e)kwesiri
+  lot_expressions:
+  - weak
+  - and(weak, circumstantial)
+  - strong
+  - and(strong, circumstantial)
+  name: Igbo
+  type: natural
+- comm_cost: 0.1559069901790875
+  complexity: 26
+  degree_iff: 0.875
+  expressions:
+  - hazu
+  - ni chigai nai
+  - koto-ga deki
+  - koto-ga dekiru
+  - e
+  - temo ii
+  - kamoshirenai
+  - (a)nakerebanaranai
+  lot_expressions:
+  - or(circumstantial, and(strong, epistemic))
+  - and(strong, epistemic)
+  - and(weak, deontic)
+  - and(weak, circumstantial)
+  - and(weak, circumstantial)
+  - and(weak, deontic)
+  - and(weak, epistemic)
+  - and(strong, deontic)
+  name: Japanese
+  type: natural
+- comm_cost: 0.1429448295782786
+  complexity: 16
+  degree_iff: 1.0
+  expressions:
+  - iso
+  - paleng
+  - kudu1
+  - mesthi
+  - oleh
+  lot_expressions:
+  - and(weak, circumstantial)
+  - and(weak, epistemic)
+  - and(strong, not(epistemic))
+  - and(strong, epistemic)
+  - and(weak, deontic)
+  name: Javanese-Paciran
+  type: natural
+- comm_cost: 0.2678846524167151
+  complexity: 8
+  degree_iff: 1.0
+  expressions:
+  - prohai
+  - chambac
+  - treuv
+  - ac
+  lot_expressions:
+  - and(weak, epistemic)
+  - and(strong, deontic)
+  - strong
+  - weak
+  name: Khmer
+  type: natural
+- comm_cost: 0.21334609089158507
+  complexity: 14
+  degree_iff: 1.0
+  expressions:
+  - 'n''wa +verb '
+  - mwanka
+  - n'wa + ka
+  - perfective aspect
+  - "w\xEEgue"
+  lot_expressions:
+  - and(weak, not(epistemic))
+  - strong
+  - and(weak, deontic)
+  - and(strong, circumstantial)
+  - and(weak, epistemic)
+  name: Kiitharaka
+  type: natural
+- comm_cost: 0.16433781051415386
+  complexity: 23
+  degree_iff: 1.0
+  expressions:
+  - -to + toy-
+  - -napo-
+  - ci(-to) molun-
+  - -keyss-
+  - an -myeon an-toy-
+  - swu(-to) iss-
+  - -ya + ha-
+  lot_expressions:
+  - and(weak, deontic)
+  - and(strong, epistemic)
+  - and(weak, epistemic)
+  - and(strong, epistemic)
+  - and(strong, deontic)
+  - and(weak, not(deontic))
+  - and(strong, not(epistemic))
+  name: Korean
+  type: natural
+- comm_cost: 0.23262083574041992
+  complexity: 9
+  degree_iff: 1.0
+  expressions:
+  - ka
+  - -an'
+  - -ku7
+  - ka-...-a
+  - k'a
+  lot_expressions:
+  - deontic
+  - and(strong, epistemic)
+  - and(strong, epistemic)
+  - circumstantial
+  - epistemic
+  name: Lillooet-Salish
+  type: natural
+- comm_cost: 0.3024584376404136
+  complexity: 8
+  degree_iff: 1.0
+  expressions:
+  - kudoka
+  - fwana
+  - haondi
+  - kunyala
+  lot_expressions:
+  - strong
+  - and(weak, epistemic)
+  - and(weak, epistemic)
+  - weak
+  name: Logoori
+  type: natural
+- comm_cost: 0.18919699595609496
+  complexity: 35
+  degree_iff: 1.0
+  expressions:
+  - yao
+  - keneng
+  - yexu
+  - bixu
+  - juedui
+  - yiding
+  - biran
+  - neng
+  - keyi
+  - dei
+  lot_expressions:
+  - and(strong, not(epistemic))
+  - and(weak, epistemic)
+  - and(weak, epistemic)
+  - and(strong, not(epistemic))
+  - and(strong, epistemic)
+  - and(strong, epistemic)
+  - and(strong, epistemic)
+  - and(weak, not(epistemic))
+  - and(weak, not(epistemic))
+  - and(strong, not(epistemic))
+  name: Mandarin
+  type: natural
+- comm_cost: 0.34747496630078967
+  complexity: 22
+  degree_iff: 1.0
+  expressions:
+  - pepi-_-afu
+  - "m\xFCleyafuy kam"
+  - "m\xFCley [...] V-al"
+  - -pelayafuy
+  - pepi-_-a-
+  - pepi-
+  - "m\xFCleyafuy may"
+  lot_expressions:
+  - and(weak, not(deontic))
+  - and(weak, epistemic)
+  - and(strong, deontic)
+  - and(weak, epistemic)
+  - and(weak, deontic)
+  - and(weak, circumstantial)
+  - and(strong, epistemic)
+  name: Mapudungun
+  type: natural
+- comm_cost: 0.17844534309005722
+  complexity: 24
+  degree_iff: 1.0
+  expressions:
+  - "vozmo\u017Eno"
+  - "mo\u017Eet"
+  - navernoje
+  - "mo\u017Eno"
+  - "dol\u017Eno"
+  - "dol\u017Een"
+  - nado
+  - objazani
+  - "nu\u017Eno"
+  lot_expressions:
+  - and(weak, not(deontic))
+  - weak
+  - and(strong, epistemic)
+  - and(weak, deontic)
+  - and(strong, epistemic)
+  - strong
+  - and(strong, circumstantial)
+  - and(strong, deontic)
+  - and(strong, circumstantial)
+  name: Russian
+  type: natural
+- comm_cost: 0.37107644906605053
+  complexity: 16
+  degree_iff: 1.0
+  expressions:
+  - dapat
+  - maka-
+  - pwede
+  - kaya
+  - siguro
+  - malamang
+  lot_expressions:
+  - and(strong, deontic)
+  - and(weak, circumstantial)
+  - weak
+  - and(weak, circumstantial)
+  - and(weak, epistemic)
+  - and(strong, epistemic)
+  name: Tagalog
+  type: natural
+- comm_cost: 0.37901983439245146
+  complexity: 13
+  degree_iff: 1.0
+  expressions:
+  - V-ccu
+  - v-anakuntaa
+  - v-aali
+  - v-gala
+  - tappakuNdaa
+  lot_expressions:
+  - weak
+  - and(weak, epistemic)
+  - and(strong, deontic)
+  - and(weak, circumstantial)
+  - and(strong, epistemic)
+  name: Telugu
+  type: natural
+- comm_cost: 0.24251997881763954
+  complexity: 21
+  degree_iff: 1.0
+  expressions:
+  - Kong ca
+  - Dong (ca)
+  - Jambpen dong (ca)
+  - saamaat
+  - Aat (ca)
+  - '... dai'
+  - Anuyard
+  - saamaat... dai
+  lot_expressions:
+  - and(weak, epistemic)
+  - strong
+  - strong
+  - and(weak, circumstantial)
+  - and(weak, epistemic)
+  - and(weak, not(epistemic))
+  - and(weak, deontic)
+  - and(weak, circumstantial)
+  name: Thai
+  type: natural
+- comm_cost: 0.4000577700751011
+  complexity: 15
+  degree_iff: 1.0
+  expressions:
+  - "gw\xE1l"
+  - "sh\xE1kd\xE9"
+  - giwe
+  - potential mode
+  - future mode
+  lot_expressions:
+  - and(weak, epistemic)
+  - and(weak, epistemic)
+  - and(weak, epistemic)
+  - and(weak, circumstantial)
+  - and(strong, circumstantial)
+  name: Tlingit
+  type: natural
+- comm_cost: 0.2277705565183903
+  complexity: 21
+  degree_iff: 1.0
+  expressions:
+  - gerek
+  - -ma-
+  - "m\xFCmk\xFCn"
+  - "laz\u0131m"
+  - -abil // -ebil
+  - "-d\u0131r"
+  - "\u015Fart"
+  lot_expressions:
+  - and(strong, not(epistemic))
+  - and(strong, epistemic)
+  - and(weak, epistemic)
+  - and(strong, not(epistemic))
+  - weak
+  - and(strong, epistemic)
+  - and(strong, epistemic)
+  name: Turkish
+  type: natural
+- comm_cost: 0.15376468322742176
+  complexity: 17
+  degree_iff: 1.0
+  expressions:
+  - "th\u1EC3"
+  - "\u0111\u01B0\u1EE3c1"
+  - "ph\u1EA3i"
+  - "c\u1EA7n ph\u1EA3i"
+  - "ch\u1EAFc ch\u1EAFn"
+  - "ch\u1EAFc h\u1EB3n"
+  lot_expressions:
+  - weak
+  - and(weak, deontic)
+  - and(strong, deontic)
+  - and(strong, circumstantial)
+  - and(strong, epistemic)
+  - and(strong, not(deontic))
+  name: Vietnamese
+  type: natural

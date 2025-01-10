@@ -6,7 +6,7 @@ from typing import Any
 
 from ultk.language.semantics import FrozenDict, Universe
 from ultk.language.language import Expression, Meaning, Language
-
+from .meaning import universe as modals_universe
 
 ALLOWED_REFERENCE_TYPES = ["paper-journal", "elicitation"]
 REFERENCE_GRAMMAR = "reference-grammar"
@@ -20,10 +20,9 @@ MODALS_FN = "modals.csv"
 
 API_URL = "https://api.github.com/repos/nathimel/modals-effcomm/contents/data/natural_languages?ref=main"
 
-UNIVERSE = Universe.from_csv("./data/universe.csv")
 
 
-def load_natural_languages(universe: Universe = UNIVERSE) -> list[Language]:
+def load_natural_languages(universe: Universe = modals_universe) -> list[Language]:
     return dataframes_to_languages(get_modals_data(), universe)
 
 
