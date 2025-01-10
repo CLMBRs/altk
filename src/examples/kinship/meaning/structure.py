@@ -275,6 +275,5 @@ kinship_structure = Structure(
 )
 
 if __name__ == "__main__":
-
     # Run a minimal test 'suite'
     test_structure(kinship_structure, domain, parent_child_data, sex_data)

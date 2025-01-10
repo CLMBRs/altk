@@ -25,14 +25,12 @@ if __name__ == "__main__":
     explored_languages = yaml_to_dataframe(
         "quantifiers/outputs/explored_languages.yml", keys
     )
-    all_data = pd.concat(
-        [explored_languages, dominating_languages], ignore_index=True
-    )
+    all_data = pd.concat([explored_languages, dominating_languages], ignore_index=True)
 
     # Measure optimality
     all_data["optimality"] = 1 - pareto_min_distances(
         all_data[["comm_cost", "complexity"]].values,
-        all_data[all_data.type == "dominant"][["comm_cost", "complexity"]].values,        
+        all_data[all_data.type == "dominant"][["comm_cost", "complexity"]].values,
     )
 
     all_data.to_csv("quantifiers/outputs/combined_data.csv", index=False)

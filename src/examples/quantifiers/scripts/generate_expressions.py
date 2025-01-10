@@ -5,21 +5,22 @@ from ultk.language.grammar import GrammaticalExpression
 from ..grammar import quantifiers_grammar
 from ..meaning import universe as quantifiers_universe
 
+
 def remove_class_cruft(input_string):
     return re.sub(r"<class '([^']+)'>", r"\1", input_string)
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     # print(quantifiers_grammar)
     # breakpoint()
 
-    expressions_by_meaning: dict[Meaning, GrammaticalExpression] = (
-        quantifiers_grammar.get_unique_expressions(
-            4, # 8 is too high
-            max_size=2 ** len(quantifiers_universe),
-            unique_key=lambda expr: expr.evaluate(quantifiers_universe),
-            compare_func=lambda e1, e2: len(e1) < len(e2),
-        )
+    expressions_by_meaning: dict[
+        Meaning, GrammaticalExpression
+    ] = quantifiers_grammar.get_unique_expressions(
+        4,  # 8 is too high
+        max_size=2 ** len(quantifiers_universe),
+        unique_key=lambda expr: expr.evaluate(quantifiers_universe),
+        compare_func=lambda e1, e2: len(e1) < len(e2),
     )
 
     print(f"Generated {len(expressions_by_meaning)} unique expressions.")

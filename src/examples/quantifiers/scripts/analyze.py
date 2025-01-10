@@ -9,7 +9,7 @@ if __name__ == "__main__":
         pn.ggplot(pn.aes(x="complexity", y="comm_cost"))
         + pn.geom_point(
             combined_data[combined_data["type"] == "dominant"], color="black", size=3
-        )        
+        )
         + pn.geom_point(combined_data, pn.aes(color="naturalness"))
         + pn.scale_color_continuous("cividis")
         + pn.geom_label(

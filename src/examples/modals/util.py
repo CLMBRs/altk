@@ -21,7 +21,6 @@ MODALS_FN = "modals.csv"
 API_URL = "https://api.github.com/repos/nathimel/modals-effcomm/contents/data/natural_languages?ref=main"
 
 
-
 def load_natural_languages(universe: Universe = modals_universe) -> list[Language]:
     return dataframes_to_languages(get_modals_data(), universe)
 

@@ -5,7 +5,6 @@ from ..measures import comm_cost, complexity, iff
 from ..util import load_natural_languages
 
 
-
 if __name__ == "__main__":
     natural_languages = load_natural_languages()
     _, expressions_by_meaning = read_grammatical_expressions(

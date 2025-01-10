@@ -1,9 +1,15 @@
-
-from ultk.language.language import Language, Expression, Meaning, Referent, aggregate_expression_complexity
+from ultk.language.language import (
+    Language,
+    Expression,
+    Meaning,
+    Referent,
+    aggregate_expression_complexity,
+)
 from ultk.language.grammar import GrammaticalExpression
 from ultk.effcomm.informativity import informativity, build_pairwise_matrix
 
 from .meaning import universe as modals_universe
+
 
 def half_credit_utility(m: Referent, m_: Referent) -> float:
     score = 0.0
@@ -13,12 +19,18 @@ def half_credit_utility(m: Referent, m_: Referent) -> float:
         score += 0.5
     return score
 
+
 half_credit_util_matrix = build_pairwise_matrix(
-    modals_universe, half_credit_utility,
+    modals_universe,
+    half_credit_utility,
 )
 
+
 def comm_cost(language: Language) -> float:
-    return 1 - informativity(language, modals_universe.prior_numpy, half_credit_util_matrix)
+    return 1 - informativity(
+        language, modals_universe.prior_numpy, half_credit_util_matrix
+    )
+
 
 def complexity(
     language: Language, expressions_by_meaning: dict[Meaning, GrammaticalExpression]
@@ -36,6 +48,7 @@ def complexity(
         language, lambda expr: len(expressions_by_meaning[expr.meaning])
     )
 
+
 def iff(e: Expression) -> bool:
     """Whether an expression satisfies the Independence of Force and Flavor Universal.
 
@@ -43,4 +56,6 @@ def iff(e: Expression) -> bool:
     """
     points = {(ref.force, ref.flavor) for ref in e.meaning if e.meaning[ref]}
     forces, flavors = zip(*points)
-    return all((force, flavor) in points for force in set(forces) for flavor in set(flavors))
+    return all(
+        (force, flavor) in points for force in set(forces) for flavor in set(flavors)
+    )
