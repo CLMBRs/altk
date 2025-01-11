@@ -1,0 +1,1039 @@
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: &id013 !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        ? &id001 !!python/object:ultk.language.semantics.Referent
+          _frozen: true
+          name: 1
+        : !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        ? &id002 !!python/object:ultk.language.semantics.Referent
+          _frozen: true
+          name: 2
+        : !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        ? &id003 !!python/object:ultk.language.semantics.Referent
+          _frozen: true
+          name: 3
+        : !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        ? &id004 !!python/object:ultk.language.semantics.Referent
+          _frozen: true
+          name: 4
+        : !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        ? &id005 !!python/object:ultk.language.semantics.Referent
+          _frozen: true
+          name: 5
+        : !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        ? &id006 !!python/object:ultk.language.semantics.Referent
+          _frozen: true
+          name: 6
+        : !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        ? &id007 !!python/object:ultk.language.semantics.Referent
+          _frozen: true
+          name: 7
+        : !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        ? &id008 !!python/object:ultk.language.semantics.Referent
+          _frozen: true
+          name: 8
+        : !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        ? &id009 !!python/object:ultk.language.semantics.Referent
+          _frozen: true
+          name: 9
+        : !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        ? &id010 !!python/object:ultk.language.semantics.Referent
+          _frozen: true
+          name: 10
+        : !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: &id011 !!python/object:ultk.language.semantics.Universe
+        prior: !!python/tuple
+        - 0.1
+        - 0.1
+        - 0.1
+        - 0.1
+        - 0.1
+        - 0.1
+        - 0.1
+        - 0.1
+        - 0.1
+        - 0.1
+        referents: !!python/tuple
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        - *id005
+        - *id006
+        - *id007
+        - *id008
+        - *id009
+        - *id010
+    rule_name: five
+    term_expression: five
+  - form: ''
+    length: 1
+    meaning: &id012 !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/tuple
+        - *id001
+        *id002: !!python/tuple
+        - *id002
+        *id003: !!python/tuple
+        - *id003
+        *id004: !!python/tuple
+        - *id004
+        *id005: !!python/tuple
+        - *id005
+        *id006: !!python/tuple
+        - *id006
+        *id007: !!python/tuple
+        - *id007
+        *id008: !!python/tuple
+        - *id008
+        *id009: !!python/tuple
+        - *id009
+        *id010: !!python/tuple
+        - *id010
+      universe: *id011
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 3
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: false
+      *id002: false
+      *id003: false
+      *id004: false
+      *id005: true
+      *id006: false
+      *id007: false
+      *id008: false
+      *id009: false
+      *id010: false
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(five, .)'
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: &id014 !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: one
+    term_expression: one
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 3
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: true
+      *id002: false
+      *id003: false
+      *id004: false
+      *id005: false
+      *id006: false
+      *id007: false
+      *id008: false
+      *id009: false
+      *id010: false
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(one, .)'
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: &id015 !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: ten
+    term_expression: ten
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 3
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: false
+      *id002: false
+      *id003: false
+      *id004: false
+      *id005: false
+      *id006: false
+      *id007: false
+      *id008: false
+      *id009: false
+      *id010: true
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(ten, .)'
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: &id016 !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: three
+    term_expression: three
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 3
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: false
+      *id002: false
+      *id003: true
+      *id004: false
+      *id005: false
+      *id006: false
+      *id007: false
+      *id008: false
+      *id009: false
+      *id010: false
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(three, .)'
+- children: !!python/tuple
+  - form: ''
+    length: 1
+    meaning: &id017 !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: two
+    term_expression: two
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 3
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: false
+      *id002: true
+      *id003: false
+      *id004: false
+      *id005: false
+      *id006: false
+      *id007: false
+      *id008: false
+      *id009: false
+      *id010: false
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(two, .)'
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id013
+      rule_name: five
+      term_expression: five
+    - form: ''
+      length: 1
+      meaning: *id013
+      rule_name: five
+      term_expression: five
+    form: ''
+    length: 3
+    meaning: !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: plus
+    term_expression: plus(five, five)
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: 0
+      *id002: 0
+      *id003: 0
+      *id004: 0
+      *id005: 2
+      *id006: 0
+      *id007: 0
+      *id008: 0
+      *id009: 0
+      *id010: 0
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(plus(five, five), .)'
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id013
+      rule_name: five
+      term_expression: five
+    - form: ''
+      length: 1
+      meaning: *id014
+      rule_name: one
+      term_expression: one
+    form: ''
+    length: 3
+    meaning: !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: plus
+    term_expression: plus(five, one)
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: 1
+      *id002: 0
+      *id003: 0
+      *id004: 0
+      *id005: 1
+      *id006: 0
+      *id007: 0
+      *id008: 0
+      *id009: 0
+      *id010: 0
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(plus(five, one), .)'
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id013
+      rule_name: five
+      term_expression: five
+    - form: ''
+      length: 1
+      meaning: *id015
+      rule_name: ten
+      term_expression: ten
+    form: ''
+    length: 3
+    meaning: !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: plus
+    term_expression: plus(five, ten)
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: 0
+      *id002: 0
+      *id003: 0
+      *id004: 0
+      *id005: 1
+      *id006: 0
+      *id007: 0
+      *id008: 0
+      *id009: 0
+      *id010: 1
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(plus(five, ten), .)'
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id013
+      rule_name: five
+      term_expression: five
+    - form: ''
+      length: 1
+      meaning: *id016
+      rule_name: three
+      term_expression: three
+    form: ''
+    length: 3
+    meaning: !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: plus
+    term_expression: plus(five, three)
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: 0
+      *id002: 0
+      *id003: 1
+      *id004: 0
+      *id005: 1
+      *id006: 0
+      *id007: 0
+      *id008: 0
+      *id009: 0
+      *id010: 0
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(plus(five, three), .)'
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id013
+      rule_name: five
+      term_expression: five
+    - form: ''
+      length: 1
+      meaning: *id017
+      rule_name: two
+      term_expression: two
+    form: ''
+    length: 3
+    meaning: !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: plus
+    term_expression: plus(five, two)
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: 0
+      *id002: 1
+      *id003: 0
+      *id004: 0
+      *id005: 1
+      *id006: 0
+      *id007: 0
+      *id008: 0
+      *id009: 0
+      *id010: 0
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(plus(five, two), .)'
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id014
+      rule_name: one
+      term_expression: one
+    - form: ''
+      length: 1
+      meaning: *id014
+      rule_name: one
+      term_expression: one
+    form: ''
+    length: 3
+    meaning: !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: plus
+    term_expression: plus(one, one)
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: 2
+      *id002: 0
+      *id003: 0
+      *id004: 0
+      *id005: 0
+      *id006: 0
+      *id007: 0
+      *id008: 0
+      *id009: 0
+      *id010: 0
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(plus(one, one), .)'
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id014
+      rule_name: one
+      term_expression: one
+    - form: ''
+      length: 1
+      meaning: *id015
+      rule_name: ten
+      term_expression: ten
+    form: ''
+    length: 3
+    meaning: !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: plus
+    term_expression: plus(one, ten)
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: 1
+      *id002: 0
+      *id003: 0
+      *id004: 0
+      *id005: 0
+      *id006: 0
+      *id007: 0
+      *id008: 0
+      *id009: 0
+      *id010: 1
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(plus(one, ten), .)'
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id014
+      rule_name: one
+      term_expression: one
+    - form: ''
+      length: 1
+      meaning: *id016
+      rule_name: three
+      term_expression: three
+    form: ''
+    length: 3
+    meaning: !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: plus
+    term_expression: plus(one, three)
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: 1
+      *id002: 0
+      *id003: 1
+      *id004: 0
+      *id005: 0
+      *id006: 0
+      *id007: 0
+      *id008: 0
+      *id009: 0
+      *id010: 0
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(plus(one, three), .)'
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id014
+      rule_name: one
+      term_expression: one
+    - form: ''
+      length: 1
+      meaning: *id017
+      rule_name: two
+      term_expression: two
+    form: ''
+    length: 3
+    meaning: !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: plus
+    term_expression: plus(one, two)
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: 1
+      *id002: 1
+      *id003: 0
+      *id004: 0
+      *id005: 0
+      *id006: 0
+      *id007: 0
+      *id008: 0
+      *id009: 0
+      *id010: 0
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(plus(one, two), .)'
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id015
+      rule_name: ten
+      term_expression: ten
+    - form: ''
+      length: 1
+      meaning: *id015
+      rule_name: ten
+      term_expression: ten
+    form: ''
+    length: 3
+    meaning: !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: plus
+    term_expression: plus(ten, ten)
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: 0
+      *id002: 0
+      *id003: 0
+      *id004: 0
+      *id005: 0
+      *id006: 0
+      *id007: 0
+      *id008: 0
+      *id009: 0
+      *id010: 2
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(plus(ten, ten), .)'
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id015
+      rule_name: ten
+      term_expression: ten
+    - form: ''
+      length: 1
+      meaning: *id016
+      rule_name: three
+      term_expression: three
+    form: ''
+    length: 3
+    meaning: !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: plus
+    term_expression: plus(ten, three)
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: 0
+      *id002: 0
+      *id003: 1
+      *id004: 0
+      *id005: 0
+      *id006: 0
+      *id007: 0
+      *id008: 0
+      *id009: 0
+      *id010: 1
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(plus(ten, three), .)'
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id015
+      rule_name: ten
+      term_expression: ten
+    - form: ''
+      length: 1
+      meaning: *id017
+      rule_name: two
+      term_expression: two
+    form: ''
+    length: 3
+    meaning: !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: plus
+    term_expression: plus(ten, two)
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: 0
+      *id002: 1
+      *id003: 0
+      *id004: 0
+      *id005: 0
+      *id006: 0
+      *id007: 0
+      *id008: 0
+      *id009: 0
+      *id010: 1
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(plus(ten, two), .)'
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id016
+      rule_name: three
+      term_expression: three
+    - form: ''
+      length: 1
+      meaning: *id016
+      rule_name: three
+      term_expression: three
+    form: ''
+    length: 3
+    meaning: !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: plus
+    term_expression: plus(three, three)
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: 0
+      *id002: 0
+      *id003: 2
+      *id004: 0
+      *id005: 0
+      *id006: 0
+      *id007: 0
+      *id008: 0
+      *id009: 0
+      *id010: 0
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(plus(three, three), .)'
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id016
+      rule_name: three
+      term_expression: three
+    - form: ''
+      length: 1
+      meaning: *id017
+      rule_name: two
+      term_expression: two
+    form: ''
+    length: 3
+    meaning: !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: plus
+    term_expression: plus(three, two)
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: 0
+      *id002: 1
+      *id003: 1
+      *id004: 0
+      *id005: 0
+      *id006: 0
+      *id007: 0
+      *id008: 0
+      *id009: 0
+      *id010: 0
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(plus(three, two), .)'
+- children: !!python/tuple
+  - children: !!python/tuple
+    - form: ''
+      length: 1
+      meaning: *id017
+      rule_name: two
+      term_expression: two
+    - form: ''
+      length: 1
+      meaning: *id017
+      rule_name: two
+      term_expression: two
+    form: ''
+    length: 3
+    meaning: !!python/object:ultk.language.semantics.Meaning
+      mapping: !frozendict
+        *id001: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id002: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id003: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id004: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id005: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id006: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id007: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id008: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id009: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+        *id010: !!python/name:numerals.grammar_functions.%3Clambda%3E ''
+      universe: *id011
+    rule_name: plus
+    term_expression: plus(two, two)
+  - form: ''
+    length: 1
+    meaning: *id012
+    rule_name: .
+    term_expression: .
+  form: ''
+  length: 5
+  meaning: !!python/object:ultk.language.semantics.Meaning
+    mapping: !frozendict
+      *id001: 0
+      *id002: 2
+      *id003: 0
+      *id004: 0
+      *id005: 0
+      *id006: 0
+      *id007: 0
+      *id008: 0
+      *id009: 0
+      *id010: 0
+    universe: *id011
+  rule_name: '*'
+  term_expression: '*(plus(two, two), .)'
