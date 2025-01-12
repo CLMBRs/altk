@@ -88,5 +88,5 @@ def _A(model: QuantifierModel, name="A") -> frozenset:
     return model.A
 
 
-def _A(model: QuantifierModel, name="B") -> frozenset:
+def _B(model: QuantifierModel, name="B") -> frozenset:
     return model.B
