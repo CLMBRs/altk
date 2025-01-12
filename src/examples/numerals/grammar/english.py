@@ -1,6 +1,5 @@
 from ultk.language.semantics import Referent
-from .meaning import universe, addition_table, multiplication_table
-from typing import Callable, TypeVar
+from typing import TypeVar
 
 # All ints, as far as i can tell; 
 # but then final meaning is int, i.e. all true-like
@@ -8,7 +7,6 @@ from typing import Callable, TypeVar
 
 Number = TypeVar("Number")
 Digit = Referent
-Multiplier = Referent
 Phrase = TypeVar("Phrase")
 
 
@@ -33,12 +31,12 @@ def bind(*a: Referent, name=".") -> arg:
 
 
 # NUMBER -> PHRASE + NUMBER
-# def add(p: Phrase, n: Number) -> Number:
-#     return p + n
+def add(p: Phrase, n: Number) -> Number:
+    return p + n
 
 # NUMBER -> PHRASE - NUMBER
-def sub(p: Phrase, n: Number) -> Number:
-    return p - n
+# def sub(p: Phrase, n: Number) -> Number:
+#     return p - n
 
 # NUMBER -> PHRASE
 def phrase(p: Phrase, name=" ") -> Number:
@@ -83,6 +81,3 @@ def ten(_: Digit) -> Number:
 # This can be simplified to one multiplication rule per Multiplier
 def multiply_ten(n: Number, name="x10") -> Phrase:
     return n * 10
-
-def multiply_twenty(n: Number, name="x20") -> Phrase:
-    return n * 20
