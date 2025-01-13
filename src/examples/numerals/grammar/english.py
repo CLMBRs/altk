@@ -1,14 +1,10 @@
 from ultk.language.semantics import Referent
-from typing import TypeVar
+
+from .base_grammar import Number, Phrase, Digit, Multiplier
 
 # All ints, as far as i can tell; 
 # but then final meaning is int, i.e. all true-like
 # so we'll need to interpret the meaning in a special way
-
-Number = TypeVar("Number")
-Digit = Referent
-Phrase = TypeVar("Phrase")
-
 
 arg = tuple[Referent]
 start = bool
@@ -78,6 +74,15 @@ def ten(_: Digit) -> Number:
 
 # PHRASE -> NUMBER * Multiplier
 # PHRASE -> Multiplier
-# This can be simplified to one multiplication rule per Multiplier
-def multiply_ten(n: Number, name="x10") -> Phrase:
-    return n * 10
+# This could be simplified to one multiplication rule per Multiplier, 
+# but for bookkeeping we'll separate them out
+# def multiply_ten(n: Number, name="x10") -> Phrase:
+    # return n * 10
+
+# PHRASE -> NUMBER * Multiplier
+def multiply(n: Number, m: Multiplier) -> Phrase:
+    return n * m
+
+# Multiplier -> ' ', because its important Multiplier is not a Referent
+def _ten(_: Referent) -> Multiplier:
+    return 10

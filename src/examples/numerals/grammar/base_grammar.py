@@ -5,6 +5,7 @@ from typing import TypeVar
 Number = TypeVar("Number")
 Digit = Referent
 Phrase = TypeVar("Phrase")
+Multiplier = TypeVar("Multiplier")
 
 arg = tuple[Referent]
 start = bool
@@ -46,6 +47,9 @@ def phrase(p: Phrase, name=" ") -> Number:
 
 # PHRASE -> NUMBER * Multiplier
 # PHRASE -> Multiplier
-# This can be simplified to one multiplication rule per Multiplier
+
+# PHRASE -> NUMBER * Multiplier
+def multiply(n: Number, m: Multiplier) -> Phrase:
+    return n * m
 
 # language-specific multipliers go here

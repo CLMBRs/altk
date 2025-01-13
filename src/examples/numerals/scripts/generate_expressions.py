@@ -2,7 +2,7 @@ from ultk.util.io import write_expressions
 
 from ultk.language.semantics import Meaning
 from ultk.language.grammar import GrammaticalExpression
-from ..grammar import numerals_grammar
+from ..grammar import english_numerals_grammar as numerals_grammar
 from ..meaning import universe as numerals_universe
 from ..util import extract_integers
 
