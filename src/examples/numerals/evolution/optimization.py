@@ -34,5 +34,5 @@ class NumeralsOptimizer(EvolutionaryOptimizer):
         mutation = random.choice(possible_mutations)
         new_language = mutation.mutate(language, self.grammars,)
         self.grammars.add(new_language.grammar)
-        print("Mutation successful")
+        # print("Mutation successful")
         return new_language

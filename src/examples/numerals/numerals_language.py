@@ -25,7 +25,7 @@ class NumeralsLanguage(Language):
     """Wrapper around Language that can be initialized with a grammar."""
 
     @classmethod
-    def from_grammar(cls, grammar: Grammar, depth: int = 4) -> "NumeralsLanguage":
+    def from_grammar(cls, grammar: Grammar, depth: int = 3) -> "NumeralsLanguage":
 
         # print("Searching for expressions for grammar")
         # print(grammar)

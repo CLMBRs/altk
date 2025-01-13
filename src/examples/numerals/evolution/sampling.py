@@ -56,7 +56,8 @@ def sample_numerals_languages(size: int = 2000) -> list[NumeralsLanguage]:
     langs = set()
     pbar = tqdm(total=size, desc="Generating languages", unit="lang")
     while len(langs) < size:
-        new_lang = get_good_lang()
+        # new_lang = get_good_lang()
+        new_lang = generate_numerals_language()
         if new_lang not in langs:
             langs.add(new_lang)
             pbar.update(1)  # Update progress bar
