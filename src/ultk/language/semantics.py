@@ -35,11 +35,11 @@ class Referent:
     At initialization, properties can be specified either by passing a dictionary or by keyword arguments.
     """
 
-    def __init__(self, name: str, properties: dict[str, Any] = {}, **kwargs) -> None:
+    def __init__(self, name: Any, properties: dict[str, Any] = {}, **kwargs) -> None:
         """Initialize a referent.
 
         Args:
-            name: a string representing the name of the referent
+            name: an ID representing the name of the referent
         """
         self.name = name
         self.__dict__.update(properties, **kwargs)
@@ -109,7 +109,8 @@ class Universe:
     def __len__(self) -> int:
         return len(self.referents)
 
-    def pprint(self) -> list[str]:
+    @cached_property
+    def referent_names(self) -> tuple:
         return [ref.name for ref in self.referents]
 
     @classmethod

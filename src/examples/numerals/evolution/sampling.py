@@ -46,6 +46,7 @@ def generate_numerals_language() -> NumeralsLanguage:
     return language
 
 def get_good_lang() -> NumeralsLanguage:
+    # so far this only finds a 1-10 system plus too many multipliers
     while True:
         new_language = generate_numerals_language()
         if len(new_language.get_names()) >= len(universe):

@@ -1,5 +1,5 @@
 - avg_morph_complexity: !!python/object/apply:numpy._core.multiarray.scalar
-  - &id001 !!python/object/apply:numpy.dtype
+  - !!python/object/apply:numpy.dtype
     args:
     - f8
     - false
@@ -14,33 +14,9 @@
     - -1
     - 0
   - !!binary |
-    6xENHiCJcj8=
+    apBHxtezQD8=
   expressions:
-  - '*(_22_D, .)'
-  - '*(_50_D, .)'
-  lexicon_size: 2
+  - '*(_60_D, .)'
+  lexicon_size: 1
   name: dominating-0
-  type: dominant
-- avg_morph_complexity: !!python/object/apply:numpy._core.multiarray.scalar
-  - *id001
-  - !!binary |
-    fKVKsv07Zz8=
-  expressions:
-  - '*(_42_D, .)'
-  - '*(_49_D, .)'
-  - '*(_75_D, .)'
-  - '*(_51_D, .)'
-  lexicon_size: 4
-  name: dominating-1
-  type: dominant
-- avg_morph_complexity: !!python/object/apply:numpy._core.multiarray.scalar
-  - *id001
-  - !!binary |
-    +Ju0EqfZaT8=
-  expressions:
-  - '*(_73_D, .)'
-  - '*(_54_D, .)'
-  - '*(_29_D, .)'
-  lexicon_size: 3
-  name: dominating-2
   type: dominant

@@ -14,10 +14,10 @@ if __name__ == "__main__":
 
     optimizer = NumeralsOptimizer(
         objectives=[avg_morph_complexity, lexicon_size],
-        # sample_size=200,
-        # max_mutations=3,
-        # generations=50,
-        # lang_size=len(universe),
+        sample_size=200,
+        max_mutations=3,
+        generations=50,
+        lang_size=len(universe),
     )
     result = optimizer.fit(seed_languages)
 

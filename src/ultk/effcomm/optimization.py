@@ -25,7 +25,7 @@ class Mutation:
 
     @staticmethod
     @abstractmethod
-    def mutate(language: Language, expressions: list[Expression], **kwargs) -> Language:
+    def mutate(language: Language, *args, **kwargs) -> Language:
         """Mutate the language, possibly using a list of expressions."""
         raise NotImplementedError()
 
@@ -95,6 +95,8 @@ class EvolutionaryOptimizer:
             lang_size:    between 1 and this number of expressions comprise a language.
 
             mutations: (optional) a list of Mutation objects, defaults to add/remove expression
+
+            mutation_args: the args that all of the Mutation objects expect
         """
         self.objectives = objectives
         self.expressions = expressions
@@ -104,8 +106,7 @@ class EvolutionaryOptimizer:
         self.max_mutations = max_mutations
         self.generations = generations
         # set max lang size to # expressions if none provided
-        self.lang_size: int = lang_size or len(expressions)
-
+        self.lang_size: int = lang_size or len(expressions) if expressions is not None else None
         self.dominating_languages = None
         self.explored_languages = None
 
@@ -215,9 +216,6 @@ class EvolutionaryOptimizer:
         Args:
             language: the Language to mutate
 
-            expressions: the list of all possible expressions.
-                Some mutations need access to this list, so it is part of the mutation api.
-
         Returns:
             the mutated Language
 
@@ -230,7 +228,7 @@ class EvolutionaryOptimizer:
             )
         ]
         mutation = random.choice(possible_mutations)
-        return mutation.mutate(language, self.expressions)
+        return mutation.mutate(language, self.expressions) # TODO: generalize
 
 
 def sample_parents(
