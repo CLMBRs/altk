@@ -6,13 +6,13 @@ from ..grammar import connectives_grammar
 from ..meaning import universe as connectives_universe
 
 if __name__ == "__main__":
-    expressions_by_meaning: dict[
-        Meaning, GrammaticalExpression
-    ] = connectives_grammar.get_unique_expressions(
-        6,
-        max_size=2 ** len(connectives_universe),
-        unique_key=lambda expr: expr.evaluate(connectives_universe),
-        compare_func=lambda e1, e2: len(e1) < len(e2),
+    expressions_by_meaning: dict[Meaning, GrammaticalExpression] = (
+        connectives_grammar.get_unique_expressions(
+            6,
+            max_size=2 ** len(connectives_universe),
+            unique_key=lambda expr: expr.evaluate(connectives_universe),
+            compare_func=lambda e1, e2: len(e1) < len(e2),
+        )
     )
 
     print(f"Generated {len(expressions_by_meaning)} unique expressions.")

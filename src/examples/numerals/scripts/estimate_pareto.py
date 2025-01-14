@@ -1,4 +1,3 @@
-
 from ..evolution.optimization import NumeralsOptimizer
 from ..evolution.sampling import sample_numerals_languages
 from ..measures import avg_morph_complexity, lexicon_size
@@ -6,7 +5,6 @@ from ..util import write_languages
 from ..meaning import universe
 
 if __name__ == "__main__":
-
 
     seed_languages = sample_numerals_languages(
         200,

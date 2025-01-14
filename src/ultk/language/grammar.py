@@ -506,12 +506,12 @@ class Grammar:
 
     def __str__(self):
         return "Rules:\n" + "\n".join(f"\t{rule}" for rule in self.get_all_rules())
-    
+
     def __eq__(self, other):
         """Compares two Grammars based on their rules. NOTE: Be careful, since Grammar is mutable."""
         sort = lambda g: sorted(g.get_all_rules(), key=lambda x: x.name)
         return sort(self) == sort(other)
-    
+
     def __hash__(self) -> int:
         return hash(tuple(sorted(self.get_all_rules(), key=lambda x: x.name)))
 

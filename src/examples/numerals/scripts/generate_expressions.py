@@ -34,13 +34,13 @@ def write_data(expressions_by_meaning: dict[Meaning, GrammaticalExpression]) -> 
 
 if __name__ == "__main__":
 
-    expressions_by_meaning: dict[
-        Meaning, GrammaticalExpression
-    ] = numerals_grammar.get_unique_expressions(
-        4,
-        max_size=2 ** len(numerals_universe),
-        unique_key=lambda expr: expr.evaluate(numerals_universe),
-        compare_func=lambda e1, e2: len(e1) < len(e2),
+    expressions_by_meaning: dict[Meaning, GrammaticalExpression] = (
+        numerals_grammar.get_unique_expressions(
+            4,
+            max_size=2 ** len(numerals_universe),
+            unique_key=lambda expr: expr.evaluate(numerals_universe),
+            compare_func=lambda e1, e2: len(e1) < len(e2),
+        )
     )
 
     print(f"Generated {len(expressions_by_meaning)} unique expressions.")

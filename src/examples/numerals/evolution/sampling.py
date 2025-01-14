@@ -9,15 +9,16 @@ from ..meaning import numbers, universe
 
 from functools import partial
 
+
 def generate_numerals_language() -> NumeralsLanguage:
-    # Draw two random samples of numbers between 1 and 99; 
+    # Draw two random samples of numbers between 1 and 99;
     # these stand for morphemes of category D and M, respectively.
 
     # First, randomly sample k
     k = random.choice(numbers)
     digits = random.sample(numbers, k)
 
-    k = random.choice(range(5+1))
+    k = random.choice(range(5 + 1))
     multipliers = random.sample(numbers, k)
 
     grammar = deepcopy(base_numerals_grammar)
@@ -27,23 +28,30 @@ def generate_numerals_language() -> NumeralsLanguage:
         # Use partial to capture the value of digit explicitly
         grammar.add_rule(
             Rule(
-                f"_{digit}_D", Number, None, func=partial(lambda digit_value, _: digit_value, digit),
+                f"_{digit}_D",
+                Number,
+                None,
+                func=partial(lambda digit_value, _: digit_value, digit),
             )
         )
-        
+
     # Add M rules
     for multiplier in multipliers:
         # Use partial to capture the value of multiplier explicitly
         grammar.add_rule(
             Rule(
-                f"_{multiplier}_M", Multiplier, None, func=partial(lambda multiplier_value, _: multiplier_value, multiplier),
+                f"_{multiplier}_M",
+                Multiplier,
+                None,
+                func=partial(lambda multiplier_value, _: multiplier_value, multiplier),
             )
         )
-    
+
     # print(grammar)
-    
+
     language = NumeralsLanguage.from_grammar(grammar)
     return language
+
 
 def get_good_lang() -> NumeralsLanguage:
     # so far this only finds a 1-10 system plus too many multipliers

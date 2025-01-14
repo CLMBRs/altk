@@ -106,7 +106,9 @@ class EvolutionaryOptimizer:
         self.max_mutations = max_mutations
         self.generations = generations
         # set max lang size to # expressions if none provided
-        self.lang_size: int = lang_size or len(expressions) if expressions is not None else None
+        self.lang_size: int = (
+            lang_size or len(expressions) if expressions is not None else None
+        )
         self.dominating_languages = None
         self.explored_languages = None
 
@@ -228,7 +230,7 @@ class EvolutionaryOptimizer:
             )
         ]
         mutation = random.choice(possible_mutations)
-        return mutation.mutate(language, self.expressions) # TODO: generalize
+        return mutation.mutate(language, self.expressions)  # TODO: generalize
 
 
 def sample_parents(

@@ -16,6 +16,7 @@ start = bool
 def apply_et(n: Number, a: arg, name="*") -> bool:
     return n == a[0].name
 
+
 # Bind args for intermediate node
 # arg -> e ...
 def bind(*a: Referent, name=".") -> arg:
@@ -31,9 +32,11 @@ def bind(*a: Referent, name=".") -> arg:
 def add(p: Phrase, n: Number) -> Number:
     return p + n
 
+
 # NUMBER -> PHRASE - NUMBER
 def sub(p: Phrase, n: Number) -> Number:
     return p - n
+
 
 # NUMBER -> PHRASE
 def phrase(p: Phrase, name=" ") -> Number:
@@ -42,14 +45,20 @@ def phrase(p: Phrase, name=" ") -> Number:
 
 # NUMBER -> Digit
 
-# language-specific digit terms go here
+# language-specific digit terms omitted, e.g.,
+# def one(_: Digit) -> Number:
+# return 1
 
 
 # PHRASE -> NUMBER * Multiplier
 # PHRASE -> Multiplier
 
+
 # PHRASE -> NUMBER * Multiplier
 def multiply(n: Number, m: Multiplier) -> Phrase:
     return n * m
 
-# language-specific multipliers go here
+
+# language-specific multipliers omitted, e.g.,
+# def _ten(_: Referent) -> Multiplier:
+# return 10

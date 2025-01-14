@@ -68,7 +68,7 @@ def write_languages(
 
 def extract_integers(file_path):
     integers = []
-    with open(file_path, 'r') as file:
+    with open(file_path, "r") as file:
         for line in file:
             line = line.strip()
             if line.isdigit():

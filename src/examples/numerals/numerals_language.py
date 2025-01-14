@@ -10,11 +10,14 @@ from typing import Callable
 def get_singleton_meaning(expr: GrammaticalExpression) -> int:
     return [m.name for m in expr.meaning if expr.meaning[m]][0]
 
+
 def is_D_rule(rule: Rule) -> bool:
     return rule.lhs == Number and rule.rhs is None
 
+
 def is_M_rule(rule: Rule) -> bool:
     return rule.lhs == Multiplier
+
 
 # This is like aggregate_complexity
 def count_category_rules(grammar: Grammar, func: Callable[[Rule], bool]) -> int:
@@ -31,15 +34,15 @@ class NumeralsLanguage(Language):
         # print(grammar)
         # print()
 
-        expressions_by_meaning: dict[
-            Meaning, GrammaticalExpression
-            ] = grammar.get_unique_expressions(
+        expressions_by_meaning: dict[Meaning, GrammaticalExpression] = (
+            grammar.get_unique_expressions(
                 depth,
                 max_size=2 ** len(numerals_universe),
                 unique_key=lambda expr: expr.evaluate(numerals_universe),
                 compare_func=lambda e1, e2: len(e1) < len(e2),
             )
-        
+        )
+
         # filter out the trivial meaning, results in NaNs
         # iterate over keys, since we need to change the dict itself
         for meaning in list(expressions_by_meaning.keys()):
@@ -55,11 +58,13 @@ class NumeralsLanguage(Language):
             num_M_morphemes=num_M_rules,
             grammar=grammar,
         )
-    
+
     def get_names(self) -> set[int]:
         # make sure we can cover the entire universe. In the exact+recursive system, this amounts to whether the system is perfectly informative.
-        return {m.name for expr in self.expressions for m in expr.meaning if expr.meaning[m]}
-    
+        return {
+            m.name for expr in self.expressions for m in expr.meaning if expr.meaning[m]
+        }
+
 
 if __name__ == "__main__":
     # test

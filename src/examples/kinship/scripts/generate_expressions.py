@@ -31,14 +31,14 @@ def write_data(expressions_by_meaning: dict[Meaning, GrammaticalExpression]) -> 
 
 
 if __name__ == "__main__":
-    expressions_by_meaning: dict[
-        Meaning, GrammaticalExpression
-    ] = kinship_grammar.get_unique_expressions(
-        5,  # I found 6 is too high
-        max_size=2 ** len(kinship_universe),
-        # max_size=100,
-        unique_key=lambda expr: expr.evaluate(kinship_universe),
-        compare_func=lambda e1, e2: len(e1) < len(e2),
+    expressions_by_meaning: dict[Meaning, GrammaticalExpression] = (
+        kinship_grammar.get_unique_expressions(
+            5,  # I found 6 is too high
+            max_size=2 ** len(kinship_universe),
+            # max_size=100,
+            unique_key=lambda expr: expr.evaluate(kinship_universe),
+            compare_func=lambda e1, e2: len(e1) < len(e2),
+        )
     )
 
     # filter out the trivial meaning, results in NaNs
