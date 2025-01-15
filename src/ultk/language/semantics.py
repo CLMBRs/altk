@@ -196,6 +196,7 @@ class Meaning(Generic[T]):
         return bool(self.mapping)  # and bool(self.universe)
 
     def __str__(self):
+        return f"Mapping:\n\t{chr(10).join(f'{ref}: {self.mapping[ref]}' for ref in self.mapping)}"
         return "Mapping:\n\t{0}".format(
             "\n".join(f"{ref}: {self.mapping[ref]}" for ref in self.mapping)
         )  # \ \nDistribution:\n\t{self.dist}\n"
