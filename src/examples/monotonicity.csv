@@ -1,0 +1,792 @@
+"subset_eq(A, A)",1
+"subset_eq(A, difference(A, B))",1.0
+"subset_eq(index(1, intersection(A, B)), difference(A, A))",1.0
+"subset_eq(union(intersection(A, B), index(1, A)), index(cardinality(B), index(1, A)))",0.7775518167491703
+"subset_eq(union(intersection(A, B), index(1, B)), index(cardinality(A), index(1, B)))",0.7775518167491703
+"subset_eq(union(intersection(A, B), index(1, A)), index(cardinality(B), difference(A, B)))",0.729013937930126
+"subset_eq(union(intersection(A, B), index(1, B)), index(cardinality(A), difference(B, A)))",0.729013937930126
+"subset_eq(A, difference(difference(A, B), index(1, A)))",0.6112764187108178
+"subset_eq(B, difference(difference(B, A), index(1, B)))",0.6112764187108178
+"and(not(subset_eq(A, B)), subset_eq(A, difference(A, B)))",0.5784716700018857
+"and(not(subset_eq(B, A)), subset_eq(A, difference(A, B)))",0.5784716700018857
+"or(subset_eq(intersection(A, B), index(1, A)), subset_eq(intersection(A, B), index(1, B)))",0.48895046099897144
+"or(subset_eq(index(1, A), difference(A, A)), subset_eq(index(1, B), difference(A, A)))",0.4765984596835495
+"or(equals(0, cardinality(A)), equals(0, cardinality(B)))",0.4677554137253912
+"subset_eq(difference(intersection(A, B), index(1, A)), index(cardinality(A), B))",0.4595364299886152
+"subset_eq(difference(intersection(A, B), index(1, B)), index(cardinality(B), A))",0.4595364299886152
+"subset_eq(intersection(A, B), intersection(index(1, A), index(1, B)))",0.45180821978455943
+"subset_eq(intersection(A, B), index(1, union(A, B)))",0.43292099516100335
+"or(subset_eq(index(1, A), difference(A, B)), subset_eq(index(1, B), difference(B, A)))",0.42804642196250575
+"or(subset_eq(intersection(A, B), index(1, A)), subset_eq(index(1, A), difference(A, B)))",0.4251633855209296
+"or(subset_eq(intersection(A, B), index(1, B)), subset_eq(index(1, B), difference(B, A)))",0.4251633855209296
+"subset_eq(union(A, index(1, B)), difference(difference(A, B), index(1, A)))",0.4211816501567992
+"or(subset_eq(intersection(A, B), index(1, A)), equals(1, cardinality(A)))",0.4042733420054567
+"or(subset_eq(intersection(A, B), index(1, B)), equals(1, cardinality(B)))",0.4042733420054567
+"and(not(subset_eq(A, B)), equals(1, cardinality(A)))",0.3994500862867688
+"and(not(subset_eq(B, A)), equals(1, cardinality(B)))",0.3994500862867688
+"subset_eq(A, index(cardinality(B), A))",0.3785600751682212
+"subset_eq(B, index(cardinality(A), B))",0.3785600751682212
+"subset_eq(intersection(A, B), union(index(1, A), index(1, B)))",0.3673804834194425
+"subset_eq(intersection(A, B), index(1, A))",0.3662243818322922
+"subset_eq(intersection(A, B), index(1, B))",0.3662243818322922
+"subset_eq(union(intersection(A, B), index(1, A)), index(1, union(A, B)))",0.3662243818322922
+"subset_eq(union(intersection(A, B), index(1, B)), index(1, union(A, B)))",0.3662243818322922
+"and(subset_eq(A, difference(A, B)), greater_than(cardinality(A), cardinality(B)))",0.35837405289290114
+"and(subset_eq(A, difference(A, B)), greater_than(cardinality(B), cardinality(A)))",0.35837405289290114
+"subset_eq(index(1, A), index(cardinality(B), A))",0.3490502903416687
+"subset_eq(index(1, B), index(cardinality(A), B))",0.3490502903416687
+"subset_eq(intersection(A, B), difference(index(1, A), index(1, B)))",0.33012171645919264
+"subset_eq(intersection(A, B), difference(index(1, B), index(1, A)))",0.33012171645919264
+"and(subset_eq(intersection(A, B), index(1, A)), subset_eq(index(1, A), index(1, B)))",0.3220327324250811
+"and(subset_eq(intersection(A, B), index(1, B)), subset_eq(index(1, B), index(1, A)))",0.3220327324250811
+"equals(0, cardinality(A))",0.3195568822631121
+"equals(0, cardinality(B))",0.3195568822631121
+"subset_eq(intersection(A, B), index(cardinality(A), B))",0.31401055788449017
+"subset_eq(intersection(A, B), index(cardinality(B), A))",0.31401055788449017
+"and(subset_eq(index(1, A), difference(A, B)), subset_eq(index(1, B), difference(B, A)))",0.30544604143156806
+"or(subset_eq(intersection(A, B), index(1, A)), equals(1, cardinality(B)))",0.30544604143156806
+"or(subset_eq(intersection(A, B), index(1, B)), equals(1, cardinality(A)))",0.30544604143156806
+"and(not(subset_eq(A, B)), equals(0, cardinality(B)))",0.3006191015796663
+"and(not(subset_eq(B, A)), equals(0, cardinality(A)))",0.3006191015796663
+"and(subset_eq(A, difference(A, B)), equals(cardinality(A), cardinality(B)))",0.3006191015796663
+"greater_than(cardinality(index(1, A)), cardinality(intersection(A, B)))",0.3006191015796663
+"greater_than(cardinality(index(1, B)), cardinality(intersection(A, B)))",0.3006191015796663
+"subset_eq(union(A, index(1, B)), index(cardinality(B), A))",0.3006191015796663
+"subset_eq(difference(intersection(A, B), index(1, A)), index(1, union(A, B)))",0.2984909130723903
+"subset_eq(difference(intersection(A, B), index(1, B)), index(1, union(A, B)))",0.2984909130723903
+"subset_eq(intersection(A, index(1, B)), index(cardinality(A), B))",0.28546029249836036
+"subset_eq(intersection(B, index(1, A)), index(cardinality(B), A))",0.28546029249836036
+"or(subset_eq(A, index(1, B)), subset_eq(index(1, B), difference(A, A)))",0.27011990424602383
+"or(subset_eq(B, index(1, A)), subset_eq(index(1, A), difference(A, A)))",0.27011990424602383
+"subset_eq(index(1, A), index(1, difference(A, B)))",0.27011990424602383
+"subset_eq(index(1, B), index(1, difference(B, A)))",0.27011990424602383
+"and(subset_eq(index(1, A), B), subset_eq(intersection(A, B), index(1, A)))",0.25953052827615375
+"and(subset_eq(index(1, B), A), subset_eq(intersection(A, B), index(1, B)))",0.25953052827615375
+"subset_eq(union(intersection(A, B), index(1, A)), index(cardinality(B), A))",0.25953052827615375
+"subset_eq(union(intersection(A, B), index(1, B)), index(cardinality(A), B))",0.25953052827615375
+"or(subset_eq(A, difference(A, B)), equals(1, cardinality(A)))",0.25485329085425146
+"or(subset_eq(A, difference(A, B)), equals(1, cardinality(B)))",0.25485329085425146
+"or(equals(1, cardinality(A)), equals(1, cardinality(B)))",0.25485329085425146
+"and(not(subset_eq(A, B)), subset_eq(intersection(A, B), index(1, A)))",0.2479240231427039
+"and(not(subset_eq(B, A)), subset_eq(intersection(A, B), index(1, B)))",0.2479240231427039
+"subset_eq(union(intersection(A, B), index(1, A)), index(1, B))",0.2479240231427039
+"subset_eq(union(intersection(A, B), index(1, B)), index(1, A))",0.2479240231427039
+"and(subset_eq(intersection(A, B), index(1, A)), greater_than(cardinality(B), 0))",0.2479240231427039
+"and(subset_eq(intersection(A, B), index(1, B)), greater_than(cardinality(A), 0))",0.2479240231427039
+"subset_eq(union(A, B), index(cardinality(A), B))",0.24304593497819427
+"greater_than(cardinality(index(1, B)), cardinality(A))",0.24304593497819427
+"subset_eq(union(A, B), index(cardinality(B), A))",0.24304593497819427
+"greater_than(cardinality(index(1, A)), cardinality(B))",0.24304593497819427
+"subset_eq(index(1, A), difference(A, index(1, B)))",0.23175241469199614
+"or(subset_eq(intersection(A, B), index(1, A)), subset_eq(index(1, B), difference(B, A)))",0.2299801802662007
+"or(subset_eq(intersection(A, B), index(1, B)), subset_eq(index(1, A), difference(A, B)))",0.2299801802662007
+"subset_eq(union(intersection(A, B), index(1, B)), index(cardinality(B), A))",0.22661277482093034
+"subset_eq(union(intersection(A, B), index(1, A)), index(cardinality(A), B))",0.22661277482093034
+"and(not(subset_eq(A, B)), greater_than(cardinality(B), cardinality(A)))",0.22221693698046474
+"and(not(subset_eq(B, A)), greater_than(cardinality(A), cardinality(B)))",0.22221693698046474
+"and(equals(0, cardinality(A)), equals(1, cardinality(B)))",0.22221693698046474
+"and(equals(0, cardinality(B)), equals(1, cardinality(A)))",0.22221693698046474
+"subset_eq(difference(intersection(A, B), index(1, A)), index(cardinality(B), A))",0.21744547758903165
+"subset_eq(difference(intersection(A, B), index(1, B)), index(cardinality(A), B))",0.21744547758903165
+"or(subset_eq(A, index(1, B)), subset_eq(B, index(1, A)))",0.21679332131314655
+"subset_eq(index(1, B), index(cardinality(A), index(1, B)))",0.2163319776586845
+"subset_eq(index(1, A), index(cardinality(B), index(1, A)))",0.2163319776586845
+"subset_eq(index(1, A), index(cardinality(B), difference(A, B)))",0.2163319776586845
+"subset_eq(index(1, B), index(cardinality(A), difference(B, A)))",0.2163319776586845
+"and(not(subset_eq(A, B)), subset_eq(intersection(A, B), index(1, B)))",0.20746474498041811
+"and(not(subset_eq(B, A)), subset_eq(intersection(A, B), index(1, A)))",0.20746474498041811
+"equals(cardinality(intersection(A, B)), cardinality(index(1, A)))",0.20544896690964398
+"equals(cardinality(intersection(A, B)), cardinality(index(1, B)))",0.20544896690964398
+"subset_eq(index(1, union(A, B)), union(difference(A, B), difference(B, A)))",0.201854190430089
+"and(and(subset_eq(A, B), subset_eq(B, A)), greater_than(cardinality(A), 1))",0.19392860626502173
+"subset_eq(index(1, A), difference(A, B))",0.18996790341699166
+"subset_eq(index(1, B), difference(B, A))",0.18996790341699166
+"or(subset_eq(A, index(1, B)), equals(1, cardinality(B)))",0.1859850233519691
+"or(subset_eq(B, index(1, A)), equals(1, cardinality(A)))",0.1859850233519691
+"or(subset_eq(B, index(1, A)), equals(0, cardinality(A)))",0.18200573419483745
+"or(subset_eq(A, index(1, B)), equals(0, cardinality(B)))",0.18200573419483745
+"subset_eq(index(1, intersection(A, B)), index(cardinality(A), B))",0.17764780672357416
+"subset_eq(index(1, intersection(A, B)), index(cardinality(B), A))",0.17764780672357416
+"not(greater_than(cardinality(A), 1))",0.17724328895614427
+"not(greater_than(cardinality(B), 1))",0.17724328895614427
+"equals(0, cardinality(union(A, B)))",0.16966398008756967
+"and(not(subset_eq(A, B)), subset_eq(index(1, B), difference(B, A)))",0.16907215095051475
+"and(not(subset_eq(B, A)), subset_eq(index(1, A), difference(A, B)))",0.16907215095051475
+"subset_eq(difference(A, index(1, B)), index(1, union(A, B)))",0.16678029370222613
+"subset_eq(difference(B, index(1, A)), index(1, union(A, B)))",0.16678029370222613
+"and(subset_eq(intersection(A, B), index(1, A)), equals(1, cardinality(B)))",0.1595977859425829
+"and(subset_eq(intersection(A, B), index(1, B)), equals(1, cardinality(A)))",0.1595977859425829
+"subset_eq(A, index(1, union(A, B)))",0.1595977859425829
+"subset_eq(B, index(1, union(A, B)))",0.1595977859425829
+"or(equals(0, cardinality(A)), equals(1, cardinality(B)))",0.15422254770768518
+"or(equals(0, cardinality(B)), equals(1, cardinality(A)))",0.15422254770768518
+"subset_eq(union(A, index(1, B)), index(1, union(A, B)))",0.1526645646464858
+"subset_eq(union(B, index(1, A)), index(1, union(A, B)))",0.1526645646464858
+"subset_eq(difference(A, index(1, B)), index(cardinality(B), A))",0.1526645646464858
+"subset_eq(difference(B, index(1, A)), index(cardinality(A), B))",0.1526645646464858
+"subset_eq(union(index(1, A), index(1, B)), difference(B, A))",0.14745077321878208
+"and(subset_eq(index(1, A), difference(A, A)), greater_than(cardinality(B), 0))",0.14745077321878208
+"subset_eq(union(index(1, A), index(1, B)), difference(A, B))",0.14745077321878208
+"and(subset_eq(index(1, B), difference(A, A)), greater_than(cardinality(A), 0))",0.14745077321878208
+"subset_eq(union(index(1, A), index(1, B)), index(cardinality(A), B))",0.14745077321878208
+"subset_eq(union(index(1, A), index(1, B)), index(cardinality(B), A))",0.14745077321878208
+"and(subset_eq(intersection(A, B), index(1, A)), greater_than(cardinality(A), 1))",0.14595383068417245
+"and(subset_eq(intersection(A, B), index(1, A)), greater_than(cardinality(A), cardinality(B)))",0.14595383068417245
+"and(subset_eq(intersection(A, B), index(1, B)), greater_than(cardinality(B), 1))",0.14595383068417245
+"and(subset_eq(intersection(A, B), index(1, B)), greater_than(cardinality(B), cardinality(A)))",0.14595383068417245
+"equals(1, cardinality(intersection(A, B)))",0.14106104578621892
+"subset_eq(difference(B, index(1, A)), difference(index(1, B), A))",0.1394392578674537
+"subset_eq(difference(A, index(1, B)), difference(index(1, A), B))",0.1394392578674537
+"subset_eq(union(difference(A, B), index(1, A)), index(cardinality(B), A))",0.13501890003507977
+"subset_eq(union(difference(B, A), index(1, B)), index(cardinality(A), B))",0.13501890003507977
+"subset_eq(A, index(1, B))",0.1330944065106533
+"subset_eq(B, index(1, A))",0.1330944065106533
+"greater_than(cardinality(difference(A, B)), cardinality(index(1, B)))",0.12929352642994774
+"greater_than(cardinality(difference(B, A)), cardinality(index(1, A)))",0.12929352642994774
+"or(subset_eq(union(A, B), difference(A, A)), equals(1, cardinality(A)))",0.12929352642994774
+"or(subset_eq(union(A, B), difference(A, A)), equals(1, cardinality(B)))",0.12929352642994774
+"and(not(subset_eq(A, B)), subset_eq(B, index(1, A)))",0.12689200014640034
+"and(not(subset_eq(B, A)), subset_eq(A, index(1, B)))",0.12689200014640034
+"equals(1, cardinality(A))",0.1238572568393278
+"equals(1, cardinality(B))",0.1238572568393278
+"subset_eq(union(index(1, A), index(1, B)), index(1, difference(A, B)))",0.1238572568393278
+"subset_eq(union(index(1, A), index(1, B)), index(1, difference(B, A)))",0.1238572568393278
+"and(subset_eq(intersection(A, B), index(1, A)), equals(cardinality(A), cardinality(B)))",0.1208029742182597
+"and(subset_eq(intersection(A, B), index(1, A)), greater_than(cardinality(B), 1))",0.1208029742182597
+"and(subset_eq(intersection(A, B), index(1, B)), equals(cardinality(A), cardinality(B)))",0.1208029742182597
+"and(subset_eq(intersection(A, B), index(1, B)), greater_than(cardinality(A), 1))",0.1208029742182597
+"subset_eq(union(difference(A, B), index(1, A)), index(cardinality(B), difference(A, B)))",0.11868512653017949
+"subset_eq(union(difference(B, A), index(1, B)), index(cardinality(A), difference(B, A)))",0.11868512653017949
+"greater_than(cardinality(difference(A, B)), cardinality(intersection(A, B)))",0.11375449783141711
+"greater_than(cardinality(difference(B, A)), cardinality(intersection(A, B)))",0.11375449783141711
+"and(equals(1, cardinality(A)), greater_than(cardinality(B), 0))",0.10904473333262987
+"and(equals(1, cardinality(B)), greater_than(cardinality(A), 0))",0.10904473333262987
+"subset_eq(union(A, index(1, B)), index(cardinality(A), B))",0.1088312256971955
+"and(subset_eq(A, index(1, B)), greater_than(cardinality(B), 1))",0.1088312256971955
+"subset_eq(union(B, index(1, A)), index(cardinality(B), A))",0.1088312256971955
+"and(subset_eq(B, index(1, A)), greater_than(cardinality(A), 1))",0.1088312256971955
+"subset_eq(A, difference(B, index(1, A)))",0.10453690841485586
+"subset_eq(B, difference(A, index(1, B)))",0.10453690841485586
+"and(subset_eq(index(1, A), B), subset_eq(index(1, B), difference(A, A)))",0.10453690841485586
+"and(subset_eq(index(1, B), A), subset_eq(index(1, A), difference(A, A)))",0.10453690841485586
+"and(subset_eq(index(1, A), difference(A, B)), equals(1, cardinality(B)))",0.10453690841485586
+"and(subset_eq(index(1, B), difference(B, A)), equals(1, cardinality(A)))",0.10453690841485586
+"subset_eq(union(index(1, A), index(1, B)), index(cardinality(A), difference(B, A)))",0.10453690841485586
+"subset_eq(union(index(1, A), index(1, B)), index(cardinality(A), index(1, B)))",0.10453690841485586
+"subset_eq(union(index(1, A), index(1, B)), index(cardinality(B), difference(A, B)))",0.10453690841485586
+"subset_eq(union(index(1, A), index(1, B)), index(cardinality(B), index(1, A)))",0.10453690841485586
+"subset_eq(index(1, union(A, B)), index(cardinality(A), B))",0.10453690841485586
+"subset_eq(index(1, union(A, B)), index(cardinality(B), A))",0.10453690841485586
+"equals(cardinality(intersection(A, B)), cardinality(difference(A, B)))",0.10453690841485586
+"equals(cardinality(intersection(A, B)), cardinality(difference(B, A)))",0.10453690841485586
+"and(subset_eq(A, B), greater_than(cardinality(A), 1))",0.10320880925965858
+"and(subset_eq(B, A), greater_than(cardinality(B), 1))",0.10320880925965858
+"and(and(subset_eq(A, B), subset_eq(B, A)), greater_than(cardinality(A), 0))",0.10320880925965858
+"or(not(subset_eq(A, B)), subset_eq(index(1, A), difference(A, A)))",0.10320880925965858
+"or(not(subset_eq(B, A)), subset_eq(index(1, B), difference(A, A)))",0.10320880925965858
+"and(subset_eq(index(1, A), difference(A, B)), greater_than(cardinality(A), 0))",0.10169974046905605
+"and(subset_eq(index(1, A), difference(A, B)), greater_than(cardinality(B), 0))",0.10169974046905605
+"and(subset_eq(index(1, B), difference(B, A)), greater_than(cardinality(A), 0))",0.10169974046905605
+"and(subset_eq(index(1, B), difference(B, A)), greater_than(cardinality(B), 0))",0.10169974046905605
+"and(subset_eq(index(1, A), difference(A, A)), greater_than(cardinality(B), cardinality(A)))",0.10021355425990874
+"and(subset_eq(index(1, B), difference(A, A)), greater_than(cardinality(A), cardinality(B)))",0.10021355425990874
+"not(or(subset_eq(A, B), subset_eq(B, A)))",0.0960584233133791
+"and(not(subset_eq(A, B)), equals(1, cardinality(B)))",0.0960584233133791
+"and(not(subset_eq(B, A)), equals(1, cardinality(A)))",0.0960584233133791
+"subset_eq(intersection(A, index(1, B)), index(cardinality(B), A))",0.0952405448144299
+"subset_eq(intersection(B, index(1, A)), index(cardinality(A), B))",0.0952405448144299
+"and(subset_eq(A, B), subset_eq(B, A))",0.08861786400390481
+"and(subset_eq(index(1, A), index(1, B)), greater_than(cardinality(A), 1))",0.08861786400390481
+"not(and(subset_eq(A, B), subset_eq(B, A)))",0.08861786400390481
+"and(subset_eq(index(1, A), B), equals(1, cardinality(B)))",0.08819263512563658
+"and(subset_eq(index(1, B), A), equals(1, cardinality(A)))",0.08819263512563658
+"subset_eq(union(index(1, A), index(1, B)), difference(A, A))",0.08819263512563658
+"greater_than(cardinality(index(1, B)), cardinality(index(1, A)))",0.08819263512563658
+"greater_than(cardinality(index(1, A)), cardinality(index(1, B)))",0.08819263512563658
+"subset_eq(union(difference(A, B), index(1, B)), index(cardinality(A), B))",0.08819263512563658
+"subset_eq(union(difference(B, A), index(1, A)), index(cardinality(B), A))",0.08819263512563658
+"subset_eq(index(1, union(A, B)), difference(difference(A, B), index(1, A)))",0.08819263512563658
+"subset_eq(index(1, union(A, B)), difference(difference(B, A), index(1, B)))",0.08819263512563658
+"subset_eq(index(1, union(A, B)), index(1, difference(A, B)))",0.08819263512563658
+"subset_eq(index(1, union(A, B)), index(1, difference(B, A)))",0.08819263512563658
+"equals(cardinality(A), cardinality(index(1, B)))",0.08819263512563658
+"equals(cardinality(B), cardinality(index(1, A)))",0.08819263512563658
+"and(or(subset_eq(A, B), subset_eq(B, A)), equals(1, cardinality(A)))",0.08445363573269404
+"and(or(subset_eq(A, B), subset_eq(B, A)), equals(1, cardinality(B)))",0.08445363573269404
+"and(subset_eq(A, index(1, B)), equals(1, cardinality(A)))",0.0842320501835
+"and(subset_eq(B, index(1, A)), equals(1, cardinality(B)))",0.0842320501835
+"subset_eq(index(1, union(A, B)), index(cardinality(A), index(1, B)))",0.08082573146029703
+"subset_eq(index(1, union(A, B)), index(cardinality(B), index(1, A)))",0.08082573146029703
+"and(subset_eq(index(1, A), difference(A, B)), equals(cardinality(A), cardinality(B)))",0.07729547066652176
+"and(subset_eq(index(1, B), difference(B, A)), equals(cardinality(A), cardinality(B)))",0.07729547066652176
+"subset_eq(union(difference(A, B), index(1, B)), index(cardinality(B), A))",0.07729547066652176
+"subset_eq(union(difference(B, A), index(1, A)), index(cardinality(A), B))",0.07729547066652176
+"equals(cardinality(A), cardinality(difference(B, A)))",0.07729547066652176
+"equals(cardinality(B), cardinality(difference(A, B)))",0.07729547066652176
+"greater_than(cardinality(difference(A, B)), cardinality(B))",0.07729547066652176
+"greater_than(cardinality(difference(B, A)), cardinality(A))",0.07729547066652176
+"and(subset_eq(A, B), equals(1, cardinality(A)))",0.07384918465706913
+"and(subset_eq(B, A), equals(1, cardinality(B)))",0.07384918465706913
+"and(not(subset_eq(A, B)), equals(cardinality(A), cardinality(B)))",0.07384918465706913
+"and(subset_eq(index(1, A), difference(A, A)), equals(1, cardinality(B)))",0.07384918465706913
+"and(subset_eq(index(1, B), difference(A, A)), equals(1, cardinality(A)))",0.07384918465706913
+"and(equals(1, cardinality(A)), greater_than(cardinality(B), 1))",0.07384918465706913
+"and(equals(1, cardinality(B)), greater_than(cardinality(A), 1))",0.07384918465706913
+"subset_eq(union(difference(A, B), index(1, B)), index(1, difference(B, A)))",0.07384918465706913
+"subset_eq(union(difference(B, A), index(1, A)), index(1, difference(A, B)))",0.07384918465706913
+"subset_eq(index(1, union(A, B)), index(cardinality(A), difference(B, A)))",0.07384918465706913
+"subset_eq(index(1, union(A, B)), index(cardinality(B), difference(A, B)))",0.07384918465706913
+"subset_eq(union(A, index(1, B)), difference(intersection(A, B), index(1, A)))",0.07047260197014282
+"subset_eq(union(B, index(1, A)), difference(intersection(A, B), index(1, B)))",0.07047260197014282
+"subset_eq(union(difference(A, B), index(1, B)), index(cardinality(A), index(1, B)))",0.07047260197014282
+"subset_eq(union(difference(B, A), index(1, A)), index(cardinality(B), index(1, A)))",0.07047260197014282
+"and(equals(cardinality(A), cardinality(B)), greater_than(cardinality(A), 1))",0.06850645976570202
+"or(not(subset_eq(A, B)), subset_eq(index(1, B), difference(B, A)))",0.06850645976570202
+"or(not(subset_eq(B, A)), subset_eq(index(1, A), difference(A, B)))",0.06850645976570202
+"or(subset_eq(index(1, A), difference(A, B)), greater_than(cardinality(A), cardinality(B)))",0.06850645976570202
+"or(subset_eq(index(1, B), difference(B, A)), greater_than(cardinality(B), cardinality(A)))",0.06850645976570202
+"greater_than(cardinality(intersection(A, B)), 1)",0.06850645976570202
+"and(subset_eq(index(1, A), B), subset_eq(index(1, B), difference(B, A)))",0.06813156902187922
+"and(subset_eq(index(1, B), A), subset_eq(index(1, A), difference(A, B)))",0.06813156902187922
+"subset_eq(union(difference(A, B), index(1, B)), difference(index(1, A), B))",0.06715033170319218
+"subset_eq(union(difference(B, A), index(1, A)), difference(index(1, B), A))",0.06715033170319218
+"and(subset_eq(index(1, A), difference(A, A)), equals(cardinality(A), cardinality(B)))",0.06715033170319218
+"subset_eq(index(1, union(A, B)), difference(A, A))",0.06715033170319218
+"greater_than(cardinality(difference(A, B)), 1)",0.06715033170319218
+"greater_than(cardinality(difference(B, A)), 1)",0.06715033170319218
+"and(subset_eq(difference(A, B), index(1, A)), equals(1, cardinality(B)))",0.06386513099674629
+"and(subset_eq(difference(B, A), index(1, B)), equals(1, cardinality(A)))",0.06386513099674629
+"and(equals(1, cardinality(A)), equals(1, cardinality(B)))",0.06386513099674629
+"equals(1, cardinality(union(A, B)))",0.06386513099674629
+"and(or(subset_eq(A, B), subset_eq(B, A)), subset_eq(index(1, A), difference(A, B)))",0.06384044420199186
+"and(or(subset_eq(A, B), subset_eq(B, A)), subset_eq(index(1, B), difference(B, A)))",0.06384044420199186
+"and(subset_eq(difference(A, B), index(1, A)), equals(cardinality(A), cardinality(B)))",0.06129606926512077
+"and(subset_eq(difference(B, A), index(1, B)), equals(cardinality(A), cardinality(B)))",0.06129606926512077
+"subset_eq(union(difference(A, B), difference(B, A)), index(cardinality(A), difference(B, A)))",0.06129606926512077
+"subset_eq(union(difference(A, B), difference(B, A)), index(cardinality(B), difference(A, B)))",0.06129606926512077
+"subset_eq(union(difference(A, B), index(1, B)), index(cardinality(A), difference(B, A)))",0.06059680609581897
+"subset_eq(union(difference(B, A), index(1, A)), index(cardinality(B), difference(A, B)))",0.06059680609581897
+"subset_eq(A, union(index(1, A), index(1, B)))",0.05831243298754818
+"subset_eq(B, union(index(1, A), index(1, B)))",0.05831243298754818
+"and(subset_eq(A, B), subset_eq(index(1, B), difference(A, A)))",0.05732046318432227
+"and(subset_eq(B, A), subset_eq(index(1, A), difference(A, A)))",0.05732046318432227
+"and(subset_eq(A, B), subset_eq(difference(B, A), index(1, B)))",0.05533429685066649
+"and(subset_eq(A, B), subset_eq(index(1, B), index(1, A)))",0.05533429685066649
+"and(subset_eq(B, A), subset_eq(difference(A, B), index(1, A)))",0.05533429685066649
+"and(subset_eq(B, A), subset_eq(index(1, A), index(1, B)))",0.05533429685066649
+"and(subset_eq(A, B), equals(1, cardinality(B)))",0.05400353417361925
+"and(subset_eq(B, A), equals(1, cardinality(A)))",0.05400353417361925
+"subset_eq(difference(A, index(1, B)), index(cardinality(A), B))",0.05326180667731295
+"subset_eq(difference(B, index(1, A)), index(cardinality(B), A))",0.05326180667731295
+"or(subset_eq(index(1, A), difference(A, A)), greater_than(cardinality(A), cardinality(B)))",0.050325509414058
+"or(subset_eq(index(1, A), difference(A, B)), greater_than(cardinality(B), cardinality(A)))",0.050325509414058
+"or(subset_eq(index(1, B), difference(A, A)), greater_than(cardinality(B), cardinality(A)))",0.050325509414058
+"or(subset_eq(index(1, B), difference(B, A)), greater_than(cardinality(A), cardinality(B)))",0.050325509414058
+"subset_eq(union(A, B), difference(intersection(A, B), index(1, A)))",0.0470407714262957
+"and(subset_eq(difference(A, B), index(1, A)), greater_than(cardinality(A), 1))",0.04606016080092734
+"and(subset_eq(difference(B, A), index(1, B)), greater_than(cardinality(B), 1))",0.04606016080092734
+"and(not(subset_eq(A, B)), subset_eq(index(1, A), difference(A, B)))",0.0459227705559232
+"and(not(subset_eq(A, B)), subset_eq(index(1, B), index(1, A)))",0.0459227705559232
+"and(not(subset_eq(B, A)), subset_eq(index(1, A), index(1, B)))",0.0459227705559232
+"and(not(subset_eq(B, A)), subset_eq(index(1, B), difference(B, A)))",0.0459227705559232
+"subset_eq(index(1, union(A, B)), difference(A, B))",0.0459227705559232
+"subset_eq(index(1, union(A, B)), difference(B, A))",0.0459227705559232
+"and(and(subset_eq(A, B), subset_eq(B, A)), equals(1, cardinality(A)))",0.043204573772470445
+"subset_eq(union(difference(A, B), index(1, A)), difference(index(1, A), B))",0.04289403914316259
+"subset_eq(union(difference(B, A), index(1, B)), difference(index(1, B), A))",0.04289403914316259
+"subset_eq(index(1, A), difference(intersection(A, B), index(1, B)))",0.042693421570930146
+"subset_eq(index(1, B), difference(intersection(A, B), index(1, A)))",0.042693421570930146
+"subset_eq(union(difference(A, B), index(1, B)), index(1, A))",0.04238564689109481
+"subset_eq(union(difference(B, A), index(1, A)), index(1, B))",0.04238564689109481
+"or(and(subset_eq(A, B), subset_eq(B, A)), equals(0, cardinality(A)))",0.04238564689109481
+"or(and(subset_eq(A, B), subset_eq(B, A)), equals(0, cardinality(B)))",0.04238564689109481
+"or(not(subset_eq(A, B)), subset_eq(A, index(1, B)))",0.04238564689109481
+"or(not(subset_eq(A, B)), equals(1, cardinality(A)))",0.04238564689109481
+"or(not(subset_eq(B, A)), subset_eq(B, index(1, A)))",0.04238564689109481
+"or(not(subset_eq(B, A)), equals(1, cardinality(B)))",0.04238564689109481
+"subset_eq(union(difference(A, B), difference(B, A)), index(cardinality(A), B))",0.04238564689109481
+"subset_eq(union(difference(A, B), difference(B, A)), index(cardinality(B), A))",0.04238564689109481
+"not(subset_eq(index(1, A), difference(A, B)))",0.03918823605864108
+"not(subset_eq(index(1, B), difference(B, A)))",0.03918823605864108
+"and(subset_eq(index(1, A), index(1, B)), equals(cardinality(A), cardinality(B)))",0.03918823605864108
+"and(greater_than(cardinality(A), 1), greater_than(cardinality(B), 1))",0.03918823605864108
+"subset_eq(union(difference(A, B), difference(B, A)), index(1, union(A, B)))",0.03918823605864108
+"subset_eq(index(1, union(A, B)), index(1, intersection(A, B)))",0.03918823605864108
+"and(subset_eq(A, B), subset_eq(index(1, B), A))",0.03638146089234229
+"and(subset_eq(B, A), subset_eq(index(1, A), B))",0.03638146089234229
+"and(subset_eq(index(1, A), B), equals(cardinality(A), cardinality(B)))",0.03638146089234229
+"and(subset_eq(index(1, B), A), equals(cardinality(A), cardinality(B)))",0.03638146089234229
+"and(subset_eq(difference(A, B), index(1, A)), subset_eq(difference(B, A), index(1, B)))",0.033898429475546554
+"or(subset_eq(intersection(A, B), index(1, A)), greater_than(cardinality(B), cardinality(A)))",0.033898429475546554
+"or(subset_eq(intersection(A, B), index(1, B)), greater_than(cardinality(A), cardinality(B)))",0.033898429475546554
+"and(subset_eq(A, B), greater_than(cardinality(A), 0))",0.03168659578919519
+"and(subset_eq(B, A), greater_than(cardinality(B), 0))",0.03168659578919519
+"and(equals(cardinality(A), cardinality(B)), greater_than(cardinality(A), 0))",0.03168659578919519
+"or(and(subset_eq(A, B), subset_eq(B, A)), subset_eq(A, index(1, B)))",0.03168659578919519
+"or(and(subset_eq(A, B), subset_eq(B, A)), subset_eq(B, index(1, A)))",0.03168659578919519
+"or(not(subset_eq(A, B)), equals(0, cardinality(A)))",0.03168659578919519
+"or(not(subset_eq(B, A)), equals(0, cardinality(B)))",0.03168659578919519
+"equals(cardinality(A), cardinality(B))",0.029704118908795207
+"and(subset_eq(A, B), greater_than(cardinality(B), 1))",0.029704118908795207
+"and(subset_eq(B, A), greater_than(cardinality(A), 1))",0.029704118908795207
+"or(not(subset_eq(A, B)), subset_eq(index(1, B), difference(A, A)))",0.029704118908795207
+"or(not(subset_eq(B, A)), subset_eq(index(1, A), difference(A, A)))",0.029704118908795207
+"not(equals(cardinality(A), cardinality(B)))",0.029704118908795207
+"and(subset_eq(difference(A, B), index(1, A)), subset_eq(index(1, B), difference(B, A)))",0.029666873984292907
+"and(subset_eq(difference(B, A), index(1, B)), subset_eq(index(1, A), difference(A, B)))",0.029666873984292907
+"subset_eq(index(1, union(A, B)), difference(index(1, A), B))",0.029666873984292907
+"subset_eq(index(1, union(A, B)), difference(index(1, B), A))",0.029666873984292907
+"not(subset_eq(index(1, A), index(1, B)))",0.028468034039163648
+"not(subset_eq(index(1, B), index(1, A)))",0.028468034039163648
+"or(not(subset_eq(A, B)), equals(1, cardinality(B)))",0.027917275533786534
+"or(not(subset_eq(B, A)), equals(1, cardinality(A)))",0.027917275533786534
+"or(equals(1, cardinality(A)), greater_than(cardinality(A), cardinality(B)))",0.027917275533786534
+"or(equals(1, cardinality(B)), greater_than(cardinality(B), cardinality(A)))",0.027917275533786534
+"and(subset_eq(index(1, A), B), subset_eq(difference(B, A), index(1, B)))",0.026298587020576636
+"and(subset_eq(index(1, B), A), subset_eq(difference(A, B), index(1, A)))",0.026298587020576636
+"or(subset_eq(intersection(A, B), index(1, A)), greater_than(cardinality(A), cardinality(B)))",0.026298587020576636
+"or(subset_eq(intersection(A, B), index(1, B)), greater_than(cardinality(B), cardinality(A)))",0.026298587020576636
+"subset_eq(union(index(1, A), index(1, B)), index(1, intersection(A, B)))",0.026298587020576636
+"subset_eq(index(1, union(A, B)), intersection(A, index(1, B)))",0.026298587020576636
+"subset_eq(index(1, union(A, B)), intersection(B, index(1, A)))",0.026298587020576636
+"greater_than(cardinality(intersection(A, B)), cardinality(difference(A, B)))",0.026298587020576636
+"greater_than(cardinality(intersection(A, B)), cardinality(difference(B, A)))",0.026298587020576636
+"and(subset_eq(index(1, A), difference(A, B)), greater_than(cardinality(B), 1))",0.025062985166463103
+"and(subset_eq(index(1, A), index(1, B)), greater_than(cardinality(B), cardinality(A)))",0.025062985166463103
+"and(subset_eq(index(1, B), difference(B, A)), greater_than(cardinality(A), 1))",0.025062985166463103
+"and(subset_eq(index(1, B), index(1, A)), greater_than(cardinality(A), cardinality(B)))",0.025062985166463103
+"and(or(subset_eq(A, B), subset_eq(B, A)), greater_than(cardinality(A), 1))",0.024825441092229172
+"and(or(subset_eq(A, B), subset_eq(B, A)), greater_than(cardinality(B), 1))",0.024825441092229172
+"and(subset_eq(difference(A, B), index(1, A)), greater_than(cardinality(B), 1))",0.02347906238005948
+"and(subset_eq(difference(B, A), index(1, B)), greater_than(cardinality(A), 1))",0.02347906238005948
+"and(subset_eq(index(1, A), index(1, B)), subset_eq(index(1, B), index(1, A)))",0.02347906238005948
+"and(subset_eq(index(1, A), index(1, B)), greater_than(cardinality(B), 1))",0.02347906238005948
+"and(subset_eq(index(1, B), index(1, A)), greater_than(cardinality(A), 1))",0.02347906238005948
+"and(subset_eq(A, B), subset_eq(index(1, A), index(1, B)))",0.0222437330686992
+"and(subset_eq(B, A), subset_eq(index(1, B), index(1, A)))",0.0222437330686992
+"or(subset_eq(A, difference(A, B)), greater_than(cardinality(A), cardinality(B)))",0.0222437330686992
+"or(subset_eq(A, difference(A, B)), greater_than(cardinality(B), cardinality(A)))",0.0222437330686992
+"and(subset_eq(A, B), greater_than(cardinality(B), 0))",0.021106195581996667
+"and(subset_eq(B, A), greater_than(cardinality(A), 0))",0.021106195581996667
+"and(subset_eq(difference(A, B), index(1, A)), greater_than(cardinality(A), 0))",0.021106195581996667
+"and(subset_eq(difference(B, A), index(1, B)), greater_than(cardinality(B), 0))",0.021106195581996667
+"or(not(subset_eq(A, B)), equals(0, cardinality(B)))",0.021106195581996667
+"or(not(subset_eq(B, A)), equals(0, cardinality(A)))",0.021106195581996667
+"subset_eq(union(difference(A, B), index(1, A)), difference(index(1, A), index(1, B)))",0.020454055545126915
+"subset_eq(union(difference(B, A), index(1, B)), difference(index(1, B), index(1, A)))",0.020454055545126915
+"subset_eq(index(1, A), index(cardinality(A), B))",0.020305388646519207
+"subset_eq(index(1, B), index(cardinality(B), A))",0.020305388646519207
+"subset_eq(index(1, union(A, B)), difference(A, index(1, B)))",0.020305388646519207
+"subset_eq(index(1, union(A, B)), difference(B, index(1, A)))",0.020305388646519207
+"subset_eq(A, B)",0.020055189603353396
+"subset_eq(B, A)",0.020055189603353396
+"not(subset_eq(A, B))",0.020055189603353396
+"not(subset_eq(B, A))",0.020055189603353396
+"or(equals(0, cardinality(A)), equals(cardinality(A), cardinality(B)))",0.020055189603353396
+"or(equals(0, cardinality(B)), equals(cardinality(A), cardinality(B)))",0.020055189603353396
+"subset_eq(union(difference(A, B), index(1, B)), union(difference(B, A), index(1, A)))",0.020055189603353396
+"subset_eq(union(difference(B, A), index(1, A)), union(difference(A, B), index(1, B)))",0.020055189603353396
+"and(subset_eq(index(1, A), B), subset_eq(index(1, B), index(1, A)))",0.019081089481421287
+"and(subset_eq(index(1, A), B), greater_than(cardinality(B), 1))",0.019081089481421287
+"and(subset_eq(index(1, B), A), subset_eq(index(1, A), index(1, B)))",0.019081089481421287
+"and(subset_eq(index(1, B), A), greater_than(cardinality(A), 1))",0.019081089481421287
+"and(greater_than(cardinality(A), 0), greater_than(cardinality(B), 1))",0.019081089481421287
+"and(greater_than(cardinality(A), 1), greater_than(cardinality(B), 0))",0.019081089481421287
+"subset_eq(index(1, union(A, B)), intersection(A, B))",0.019081089481421287
+"subset_eq(A, difference(intersection(A, B), index(1, B)))",0.01867808688877315
+"subset_eq(B, difference(intersection(A, B), index(1, A)))",0.01867808688877315
+"and(or(subset_eq(A, B), subset_eq(B, A)), subset_eq(index(1, A), index(1, B)))",0.018175617523641274
+"and(or(subset_eq(A, B), subset_eq(B, A)), subset_eq(index(1, B), index(1, A)))",0.018175617523641274
+"or(and(subset_eq(A, B), subset_eq(B, A)), equals(1, cardinality(A)))",0.018175617523641274
+"or(and(subset_eq(A, B), subset_eq(B, A)), equals(1, cardinality(B)))",0.018175617523641274
+"or(subset_eq(index(1, A), difference(A, A)), greater_than(cardinality(B), cardinality(A)))",0.018175617523641274
+"or(subset_eq(index(1, B), difference(A, A)), greater_than(cardinality(A), cardinality(B)))",0.018175617523641274
+"equals(cardinality(difference(A, B)), cardinality(index(1, A)))",0.018175617523641274
+"equals(cardinality(difference(B, A)), cardinality(index(1, B)))",0.018175617523641274
+"or(subset_eq(A, B), greater_than(cardinality(B), cardinality(A)))",0.017331615272043077
+"or(subset_eq(B, A), greater_than(cardinality(A), cardinality(B)))",0.017331615272043077
+"or(subset_eq(A, index(1, B)), greater_than(cardinality(A), cardinality(B)))",0.017331615272043077
+"or(subset_eq(B, index(1, A)), greater_than(cardinality(B), cardinality(A)))",0.017331615272043077
+"or(equals(1, cardinality(A)), greater_than(cardinality(B), cardinality(A)))",0.017331615272043077
+"or(equals(1, cardinality(B)), greater_than(cardinality(A), cardinality(B)))",0.017331615272043077
+"not(subset_eq(intersection(A, B), index(1, A)))",0.017331615272043077
+"not(subset_eq(intersection(A, B), index(1, B)))",0.017331615272043077
+"subset_eq(difference(A, B), index(cardinality(B), difference(A, B)))",0.017331615272043077
+"subset_eq(difference(B, A), index(cardinality(A), difference(B, A)))",0.017331615272043077
+"not(subset_eq(index(1, A), B))",0.01666272632283916
+"and(subset_eq(index(1, A), difference(A, B)), greater_than(cardinality(A), cardinality(B)))",0.01666272632283916
+"not(subset_eq(index(1, B), A))",0.01666272632283916
+"and(subset_eq(index(1, B), difference(B, A)), greater_than(cardinality(B), cardinality(A)))",0.01666272632283916
+"subset_eq(index(1, union(A, B)), difference(intersection(A, B), index(1, A)))",0.01666272632283916
+"subset_eq(index(1, union(A, B)), difference(intersection(A, B), index(1, B)))",0.01666272632283916
+"and(or(subset_eq(A, B), subset_eq(B, A)), subset_eq(difference(A, B), index(1, A)))",0.016542859517559405
+"and(or(subset_eq(A, B), subset_eq(B, A)), subset_eq(difference(B, A), index(1, B)))",0.016542859517559405
+"or(subset_eq(A, index(1, B)), equals(cardinality(A), cardinality(B)))",0.016542859517559405
+"or(subset_eq(B, index(1, A)), equals(cardinality(A), cardinality(B)))",0.016542859517559405
+"greater_than(cardinality(A), 1)",0.01580391314841223
+"greater_than(cardinality(B), 1)",0.01580391314841223
+"and(subset_eq(index(1, A), index(1, B)), greater_than(cardinality(A), 0))",0.01580391314841223
+"and(subset_eq(index(1, B), index(1, A)), greater_than(cardinality(B), 0))",0.01580391314841223
+"equals(cardinality(index(1, A)), cardinality(index(1, B)))",0.01580391314841223
+"and(not(subset_eq(A, B)), subset_eq(index(1, B), A))",0.015110003348614232
+"and(not(subset_eq(B, A)), subset_eq(index(1, A), B))",0.015110003348614232
+"and(subset_eq(difference(A, B), index(1, A)), greater_than(cardinality(B), 0))",0.015110003348614232
+"and(subset_eq(difference(B, A), index(1, B)), greater_than(cardinality(A), 0))",0.015110003348614232
+"or(subset_eq(union(A, B), difference(A, A)), greater_than(cardinality(A), 1))",0.015110003348614232
+"or(subset_eq(union(A, B), difference(A, A)), greater_than(cardinality(B), 1))",0.015110003348614232
+"subset_eq(union(difference(A, B), index(1, B)), index(1, union(A, B)))",0.015110003348614232
+"subset_eq(union(difference(B, A), index(1, A)), index(1, union(A, B)))",0.015110003348614232
+"and(not(subset_eq(A, B)), subset_eq(index(1, A), index(1, B)))",0.014695450317855907
+"and(not(subset_eq(B, A)), subset_eq(index(1, B), index(1, A)))",0.014695450317855907
+"subset_eq(difference(A, B), index(1, A))",0.014456921436397208
+"subset_eq(difference(B, A), index(1, B))",0.014456921436397208
+"and(not(subset_eq(A, B)), greater_than(cardinality(B), 0))",0.014456921436397208
+"and(not(subset_eq(B, A)), greater_than(cardinality(A), 0))",0.014456921436397208
+"and(subset_eq(index(1, A), B), subset_eq(index(1, B), A))",0.014456921436397208
+"or(subset_eq(A, B), equals(0, cardinality(B)))",0.014456921436397208
+"or(subset_eq(B, A), equals(0, cardinality(A)))",0.014456921436397208
+"or(and(subset_eq(A, B), subset_eq(B, A)), subset_eq(A, difference(A, B)))",0.014456921436397208
+"or(equals(0, cardinality(A)), greater_than(cardinality(A), cardinality(B)))",0.014456921436397208
+"or(equals(0, cardinality(B)), greater_than(cardinality(B), cardinality(A)))",0.014456921436397208
+"subset_eq(difference(A, B), index(cardinality(B), A))",0.014456921436397208
+"subset_eq(difference(B, A), index(cardinality(A), B))",0.014456921436397208
+"subset_eq(index(1, union(A, B)), index(1, A))",0.014456921436397208
+"subset_eq(index(1, union(A, B)), index(1, B))",0.014456921436397208
+"subset_eq(union(difference(A, B), index(1, A)), index(1, union(A, B)))",0.014456921436397208
+"subset_eq(union(difference(B, A), index(1, B)), index(1, union(A, B)))",0.014456921436397208
+"not(subset_eq(difference(A, B), index(1, A)))",0.014365320400997361
+"not(subset_eq(difference(B, A), index(1, B)))",0.014365320400997361
+"or(equals(1, cardinality(A)), equals(cardinality(A), cardinality(B)))",0.013840939945414354
+"or(equals(1, cardinality(B)), equals(cardinality(A), cardinality(B)))",0.013840939945414354
+"or(greater_than(cardinality(A), 1), greater_than(cardinality(A), cardinality(B)))",0.013840939945414354
+"or(greater_than(cardinality(B), 1), greater_than(cardinality(B), cardinality(A)))",0.013840939945414354
+"subset_eq(difference(difference(A, B), index(1, A)), index(1, difference(A, B)))",0.013840939945414354
+"subset_eq(difference(difference(B, A), index(1, B)), index(1, difference(B, A)))",0.013840939945414354
+"and(or(subset_eq(A, B), subset_eq(B, A)), subset_eq(index(1, A), B))",0.013258743532515882
+"and(or(subset_eq(A, B), subset_eq(B, A)), subset_eq(index(1, B), A))",0.013258743532515882
+"and(subset_eq(index(1, A), index(1, B)), greater_than(cardinality(B), 0))",0.013258743532515882
+"and(subset_eq(index(1, B), index(1, A)), greater_than(cardinality(A), 0))",0.013258743532515882
+"or(and(subset_eq(A, B), subset_eq(B, A)), subset_eq(index(1, A), difference(A, A)))",0.013258743532515882
+"or(and(subset_eq(A, B), subset_eq(B, A)), subset_eq(index(1, B), difference(A, A)))",0.013258743532515882
+"or(and(subset_eq(A, B), subset_eq(B, A)), greater_than(cardinality(A), 1))",0.013258743532515882
+"or(and(subset_eq(A, B), subset_eq(B, A)), greater_than(cardinality(B), 1))",0.013258743532515882
+"or(equals(0, cardinality(A)), greater_than(cardinality(B), 1))",0.013258743532515882
+"or(equals(0, cardinality(B)), greater_than(cardinality(A), 1))",0.013258743532515882
+"or(subset_eq(difference(A, B), index(1, A)), greater_than(cardinality(B), cardinality(A)))",0.01270737103487174
+"or(subset_eq(difference(B, A), index(1, B)), greater_than(cardinality(A), cardinality(B)))",0.01270737103487174
+"not(subset_eq(A, difference(A, B)))",0.01270737103487174
+"subset_eq(difference(A, B), index(1, union(A, B)))",0.01270737103487174
+"subset_eq(difference(B, A), index(1, union(A, B)))",0.01270737103487174
+"equals(1, cardinality(difference(A, B)))",0.01270737103487174
+"equals(1, cardinality(difference(B, A)))",0.01270737103487174
+"and(or(subset_eq(A, B), subset_eq(B, A)), greater_than(cardinality(A), 0))",0.012184166559918386
+"and(or(subset_eq(A, B), subset_eq(B, A)), greater_than(cardinality(B), 0))",0.012184166559918386
+"or(subset_eq(A, B), subset_eq(B, index(1, A)))",0.012184166559918386
+"or(subset_eq(B, A), subset_eq(A, index(1, B)))",0.012184166559918386
+"greater_than(cardinality(A), cardinality(difference(B, A)))",0.012184166559918386
+"greater_than(cardinality(B), cardinality(difference(A, B)))",0.012184166559918386
+"subset_eq(index(1, union(A, B)), difference(index(1, A), index(1, B)))",0.01190164052473941
+"subset_eq(index(1, union(A, B)), difference(index(1, B), index(1, A)))",0.01190164052473941
+"and(not(subset_eq(A, B)), greater_than(cardinality(A), 1))",0.011686737919466395
+"and(not(subset_eq(B, A)), greater_than(cardinality(B), 1))",0.011686737919466395
+"or(subset_eq(A, B), equals(1, cardinality(A)))",0.011686737919466395
+"or(subset_eq(A, B), equals(cardinality(A), cardinality(B)))",0.011686737919466395
+"or(subset_eq(A, B), greater_than(cardinality(B), 1))",0.011686737919466395
+"or(subset_eq(B, A), equals(1, cardinality(B)))",0.011686737919466395
+"or(subset_eq(B, A), equals(cardinality(A), cardinality(B)))",0.011686737919466395
+"or(subset_eq(B, A), greater_than(cardinality(A), 1))",0.011686737919466395
+"subset_eq(index(1, A), index(1, B))",0.01121292104698024
+"subset_eq(index(1, B), index(1, A))",0.01121292104698024
+"and(subset_eq(index(1, A), B), greater_than(cardinality(A), 0))",0.01121292104698024
+"and(subset_eq(index(1, B), A), greater_than(cardinality(B), 0))",0.01121292104698024
+"not(equals(1, cardinality(A)))",0.01121292104698024
+"or(subset_eq(A, difference(A, B)), equals(cardinality(A), cardinality(B)))",0.01121292104698024
+"not(equals(1, cardinality(B)))",0.01121292104698024
+"subset_eq(index(1, A), index(1, intersection(A, B)))",0.01121292104698024
+"subset_eq(index(1, B), index(1, intersection(A, B)))",0.01121292104698024
+"subset_eq(difference(difference(A, B), index(1, A)), index(1, union(A, B)))",0.01121292104698024
+"subset_eq(difference(difference(B, A), index(1, B)), index(1, union(A, B)))",0.01121292104698024
+"subset_eq(index(1, union(A, B)), union(intersection(A, B), index(1, A)))",0.01121292104698024
+"subset_eq(index(1, union(A, B)), union(intersection(A, B), index(1, B)))",0.01121292104698024
+"subset_eq(index(1, union(A, B)), union(difference(A, B), index(1, A)))",0.01121292104698024
+"subset_eq(index(1, union(A, B)), union(difference(B, A), index(1, B)))",0.01121292104698024
+"or(and(subset_eq(A, B), subset_eq(B, A)), subset_eq(intersection(A, B), index(1, A)))",0.010760749288016513
+"or(and(subset_eq(A, B), subset_eq(B, A)), subset_eq(intersection(A, B), index(1, B)))",0.010760749288016513
+"or(subset_eq(difference(B, A), index(1, B)), equals(0, cardinality(A)))",0.010760749288016513
+"or(equals(0, cardinality(A)), greater_than(cardinality(B), cardinality(A)))",0.010760749288016513
+"or(subset_eq(difference(A, B), index(1, A)), equals(0, cardinality(B)))",0.010760749288016513
+"or(equals(0, cardinality(B)), greater_than(cardinality(A), cardinality(B)))",0.010760749288016513
+"subset_eq(difference(difference(A, B), index(1, A)), index(cardinality(B), A))",0.010760749288016513
+"subset_eq(difference(difference(A, B), index(1, A)), index(cardinality(B), difference(A, B)))",0.010760749288016513
+"subset_eq(difference(difference(B, A), index(1, B)), index(cardinality(A), B))",0.010760749288016513
+"subset_eq(difference(difference(B, A), index(1, B)), index(cardinality(A), difference(B, A)))",0.010760749288016513
+"greater_than(cardinality(A), cardinality(B))",0.01032842664493272
+"greater_than(cardinality(B), cardinality(A))",0.01032842664493272
+"and(not(subset_eq(A, B)), subset_eq(difference(B, A), index(1, B)))",0.01032842664493272
+"and(not(subset_eq(B, A)), subset_eq(difference(A, B), index(1, A)))",0.01032842664493272
+"or(subset_eq(A, B), subset_eq(index(1, A), index(1, B)))",0.01032842664493272
+"or(subset_eq(B, A), subset_eq(index(1, B), index(1, A)))",0.01032842664493272
+"or(subset_eq(difference(A, B), index(1, A)), greater_than(cardinality(B), 1))",0.01032842664493272
+"or(subset_eq(difference(B, A), index(1, B)), greater_than(cardinality(A), 1))",0.01032842664493272
+"or(subset_eq(index(1, A), difference(A, A)), equals(cardinality(A), cardinality(B)))",0.01032842664493272
+"or(subset_eq(index(1, B), difference(A, A)), equals(cardinality(A), cardinality(B)))",0.01032842664493272
+"or(equals(cardinality(A), cardinality(B)), greater_than(cardinality(A), 1))",0.01032842664493272
+"or(equals(cardinality(A), cardinality(B)), greater_than(cardinality(B), 1))",0.01032842664493272
+"not(greater_than(cardinality(B), cardinality(A)))",0.01032842664493272
+"not(greater_than(cardinality(A), cardinality(B)))",0.01032842664493272
+"or(subset_eq(difference(A, B), index(1, A)), equals(cardinality(A), cardinality(B)))",0.009914304200015489
+"or(subset_eq(difference(B, A), index(1, B)), equals(cardinality(A), cardinality(B)))",0.009914304200015489
+"and(subset_eq(index(1, A), B), greater_than(cardinality(B), 0))",0.00951685904403754
+"and(subset_eq(index(1, B), A), greater_than(cardinality(A), 0))",0.00951685904403754
+"or(not(subset_eq(A, B)), greater_than(cardinality(A), 1))",0.00951685904403754
+"or(not(subset_eq(B, A)), greater_than(cardinality(B), 1))",0.00951685904403754
+"or(subset_eq(index(1, B), index(1, A)), equals(0, cardinality(A)))",0.00951685904403754
+"or(subset_eq(A, index(1, B)), greater_than(cardinality(A), 1))",0.00951685904403754
+"or(subset_eq(index(1, A), index(1, B)), equals(0, cardinality(B)))",0.00951685904403754
+"or(subset_eq(B, index(1, A)), greater_than(cardinality(B), 1))",0.00951685904403754
+"or(subset_eq(intersection(A, B), index(1, A)), equals(cardinality(A), cardinality(B)))",0.00951685904403754
+"or(subset_eq(intersection(A, B), index(1, B)), equals(cardinality(A), cardinality(B)))",0.00951685904403754
+"or(subset_eq(index(1, A), index(1, B)), equals(cardinality(A), cardinality(B)))",0.00951685904403754
+"or(subset_eq(index(1, B), index(1, A)), equals(cardinality(A), cardinality(B)))",0.00951685904403754
+"or(equals(1, cardinality(A)), greater_than(cardinality(B), 1))",0.00951685904403754
+"or(equals(1, cardinality(B)), greater_than(cardinality(A), 1))",0.00951685904403754
+"subset_eq(index(cardinality(A), B), index(1, A))",0.00951685904403754
+"subset_eq(index(cardinality(B), A), index(1, B))",0.00951685904403754
+"subset_eq(difference(index(1, A), index(1, B)), index(cardinality(B), difference(A, B)))",0.00951685904403754
+"subset_eq(difference(index(1, B), index(1, A)), index(cardinality(A), difference(B, A)))",0.00951685904403754
+"greater_than(cardinality(A), cardinality(index(1, B)))",0.00951685904403754
+"greater_than(cardinality(B), cardinality(index(1, A)))",0.00951685904403754
+"and(subset_eq(A, B), not(subset_eq(B, A)))",0.009134675104202405
+"and(subset_eq(B, A), not(subset_eq(A, B)))",0.009134675104202405
+"and(greater_than(cardinality(A), 1), greater_than(cardinality(A), cardinality(B)))",0.009134675104202405
+"and(greater_than(cardinality(B), 1), greater_than(cardinality(B), cardinality(A)))",0.009134675104202405
+"or(subset_eq(A, B), not(subset_eq(B, A)))",0.009134675104202405
+"or(subset_eq(A, B), equals(1, cardinality(B)))",0.009134675104202405
+"or(subset_eq(B, A), not(subset_eq(A, B)))",0.009134675104202405
+"or(subset_eq(B, A), equals(1, cardinality(A)))",0.009134675104202405
+"or(subset_eq(A, index(1, B)), subset_eq(difference(B, A), index(1, B)))",0.009134675104202405
+"or(subset_eq(B, index(1, A)), subset_eq(difference(A, B), index(1, A)))",0.009134675104202405
+"equals(cardinality(difference(A, B)), cardinality(index(1, B)))",0.009134675104202405
+"equals(cardinality(difference(B, A)), cardinality(index(1, A)))",0.009134675104202405
+"subset_eq(union(difference(A, B), index(1, B)), difference(intersection(A, B), index(1, A)))",0.009058683121089817
+"subset_eq(union(difference(B, A), index(1, A)), difference(intersection(A, B), index(1, B)))",0.009058683121089817
+"or(subset_eq(A, B), subset_eq(B, A))",0.008766425297511038
+"or(subset_eq(A, B), subset_eq(A, difference(A, B)))",0.008766425297511038
+"or(subset_eq(B, A), subset_eq(A, difference(A, B)))",0.008766425297511038
+"or(subset_eq(difference(A, B), index(1, A)), equals(1, cardinality(A)))",0.008766425297511038
+"or(subset_eq(difference(B, A), index(1, B)), equals(1, cardinality(B)))",0.008766425297511038
+"subset_eq(index(1, union(A, B)), A)",0.008766425297511038
+"subset_eq(index(1, union(A, B)), B)",0.008766425297511038
+"subset_eq(index(cardinality(A), B), intersection(A, index(1, B)))",0.008766425297511038
+"subset_eq(index(cardinality(A), B), index(1, difference(B, A)))",0.008766425297511038
+"subset_eq(index(cardinality(B), A), intersection(B, index(1, A)))",0.008766425297511038
+"subset_eq(index(cardinality(B), A), index(1, difference(A, B)))",0.008766425297511038
+"or(subset_eq(A, difference(A, B)), subset_eq(index(1, A), index(1, B)))",0.00841085442972922
+"or(subset_eq(A, difference(A, B)), subset_eq(index(1, B), index(1, A)))",0.00841085442972922
+"subset_eq(index(1, A), B)",0.00806676220812752
+"subset_eq(index(1, B), A)",0.00806676220812752
+"or(subset_eq(A, index(1, B)), subset_eq(index(1, B), index(1, A)))",0.00806676220812752
+"or(subset_eq(B, index(1, A)), subset_eq(index(1, A), index(1, B)))",0.00806676220812752
+"or(subset_eq(intersection(A, B), index(1, A)), subset_eq(index(1, B), index(1, A)))",0.00806676220812752
+"or(subset_eq(intersection(A, B), index(1, B)), subset_eq(index(1, A), index(1, B)))",0.00806676220812752
+"or(subset_eq(index(1, A), difference(A, A)), greater_than(cardinality(B), 1))",0.00806676220812752
+"or(subset_eq(index(1, B), difference(A, A)), greater_than(cardinality(A), 1))",0.00806676220812752
+"or(greater_than(cardinality(A), 1), greater_than(cardinality(B), 1))",0.00806676220812752
+"subset_eq(index(cardinality(A), B), A)",0.00806676220812752
+"subset_eq(index(cardinality(B), A), B)",0.00806676220812752
+"subset_eq(difference(index(1, A), index(1, B)), index(1, difference(A, B)))",0.00806676220812752
+"subset_eq(difference(index(1, B), index(1, A)), index(1, difference(B, A)))",0.00806676220812752
+"and(greater_than(cardinality(A), 0), greater_than(cardinality(B), 0))",0.007732985621643151
+"and(greater_than(cardinality(A), 0), greater_than(cardinality(B), cardinality(A)))",0.007732985621643151
+"and(greater_than(cardinality(B), 0), greater_than(cardinality(A), cardinality(B)))",0.007732985621643151
+"or(subset_eq(A, B), subset_eq(intersection(A, B), index(1, B)))",0.007732985621643151
+"or(subset_eq(A, B), subset_eq(difference(B, A), index(1, B)))",0.007732985621643151
+"or(subset_eq(A, B), greater_than(cardinality(A), cardinality(B)))",0.007732985621643151
+"or(subset_eq(B, A), subset_eq(intersection(A, B), index(1, A)))",0.007732985621643151
+"or(subset_eq(B, A), subset_eq(difference(A, B), index(1, A)))",0.007732985621643151
+"or(subset_eq(B, A), greater_than(cardinality(B), cardinality(A)))",0.007732985621643151
+"or(not(subset_eq(A, B)), subset_eq(difference(B, A), index(1, B)))",0.007732985621643151
+"or(not(subset_eq(A, B)), subset_eq(index(1, B), index(1, A)))",0.007732985621643151
+"or(not(subset_eq(B, A)), subset_eq(difference(A, B), index(1, A)))",0.007732985621643151
+"or(not(subset_eq(B, A)), subset_eq(index(1, A), index(1, B)))",0.007732985621643151
+"or(subset_eq(difference(A, B), index(1, A)), subset_eq(index(1, A), index(1, B)))",0.007732985621643151
+"or(subset_eq(difference(A, B), index(1, A)), equals(1, cardinality(B)))",0.007732985621643151
+"or(subset_eq(difference(B, A), index(1, B)), subset_eq(index(1, B), index(1, A)))",0.007732985621643151
+"or(subset_eq(difference(B, A), index(1, B)), equals(1, cardinality(A)))",0.007732985621643151
+"or(subset_eq(difference(A, B), index(1, A)), subset_eq(difference(B, A), index(1, B)))",0.0074083797356728764
+"subset_eq(union(index(1, A), index(1, B)), index(1, union(A, B)))",0.0074083797356728764
+"subset_eq(index(cardinality(A), B), difference(index(1, B), A))",0.0074083797356728764
+"subset_eq(index(cardinality(A), B), difference(difference(B, A), index(1, B)))",0.0074083797356728764
+"subset_eq(index(cardinality(B), A), difference(index(1, A), B))",0.0074083797356728764
+"subset_eq(index(cardinality(B), A), difference(difference(A, B), index(1, A)))",0.0074083797356728764
+"or(subset_eq(index(1, A), B), equals(cardinality(A), cardinality(B)))",0.007091795597814365
+"or(subset_eq(index(1, B), A), equals(cardinality(A), cardinality(B)))",0.007091795597814365
+"or(greater_than(cardinality(A), 1), greater_than(cardinality(B), cardinality(A)))",0.007091795597814365
+"or(greater_than(cardinality(B), 1), greater_than(cardinality(A), cardinality(B)))",0.007091795597814365
+"subset_eq(index(cardinality(A), difference(B, A)), A)",0.007091795597814365
+"subset_eq(index(cardinality(B), difference(A, B)), B)",0.007091795597814365
+"and(not(subset_eq(A, B)), greater_than(cardinality(B), 1))",0.006782053360880336
+"and(not(subset_eq(B, A)), greater_than(cardinality(A), 1))",0.006782053360880336
+"or(subset_eq(A, B), subset_eq(index(1, B), difference(A, A)))",0.006782053360880336
+"or(subset_eq(A, B), greater_than(cardinality(A), 1))",0.006782053360880336
+"or(subset_eq(B, A), subset_eq(index(1, A), difference(A, A)))",0.006782053360880336
+"or(subset_eq(B, A), greater_than(cardinality(B), 1))",0.006782053360880336
+"or(and(subset_eq(A, B), subset_eq(B, A)), subset_eq(index(1, A), difference(A, B)))",0.006782053360880336
+"or(and(subset_eq(A, B), subset_eq(B, A)), subset_eq(index(1, B), difference(B, A)))",0.006782053360880336
+"or(subset_eq(index(1, B), A), equals(0, cardinality(A)))",0.006782053360880336
+"or(subset_eq(A, difference(A, B)), greater_than(cardinality(A), 1))",0.006782053360880336
+"or(subset_eq(A, difference(A, B)), greater_than(cardinality(B), 1))",0.006782053360880336
+"or(subset_eq(index(1, A), B), equals(0, cardinality(B)))",0.006782053360880336
+"or(subset_eq(index(1, A), B), greater_than(cardinality(B), 1))",0.006782053360880336
+"or(subset_eq(index(1, B), A), greater_than(cardinality(A), 1))",0.006782053360880336
+"or(subset_eq(intersection(A, B), index(1, A)), subset_eq(index(1, A), index(1, B)))",0.006782053360880336
+"or(subset_eq(intersection(A, B), index(1, B)), subset_eq(index(1, B), index(1, A)))",0.006782053360880336
+"or(subset_eq(difference(A, B), index(1, A)), greater_than(cardinality(A), cardinality(B)))",0.006782053360880336
+"or(subset_eq(difference(B, A), index(1, B)), greater_than(cardinality(B), cardinality(A)))",0.006782053360880336
+"or(subset_eq(index(1, A), index(1, B)), equals(1, cardinality(B)))",0.006782053360880336
+"or(subset_eq(index(1, B), index(1, A)), equals(1, cardinality(A)))",0.006782053360880336
+"not(subset_eq(A, index(1, B)))",0.006782053360880336
+"not(subset_eq(B, index(1, A)))",0.006782053360880336
+"subset_eq(difference(index(1, A), B), index(cardinality(B), difference(A, B)))",0.006782053360880336
+"subset_eq(difference(index(1, B), A), index(cardinality(A), difference(B, A)))",0.006782053360880336
+"subset_eq(index(1, union(A, B)), union(difference(A, B), index(1, B)))",0.006782053360880336
+"subset_eq(index(1, union(A, B)), union(difference(B, A), index(1, A)))",0.006782053360880336
+"subset_eq(index(1, union(A, B)), union(index(1, A), index(1, B)))",0.006782053360880336
+"subset_eq(index(cardinality(A), B), index(1, union(A, B)))",0.006782053360880336
+"subset_eq(index(cardinality(B), A), index(1, union(A, B)))",0.006782053360880336
+"or(subset_eq(A, B), subset_eq(intersection(A, B), index(1, A)))",0.006477907724674048
+"or(subset_eq(B, A), subset_eq(intersection(A, B), index(1, B)))",0.006477907724674048
+"or(subset_eq(A, difference(A, B)), subset_eq(difference(A, B), index(1, A)))",0.006477907724674048
+"or(subset_eq(A, difference(A, B)), subset_eq(difference(B, A), index(1, B)))",0.006477907724674048
+"subset_eq(index(cardinality(A), B), index(cardinality(A), difference(B, A)))",0.006477907724674048
+"subset_eq(index(cardinality(B), A), index(cardinality(B), difference(A, B)))",0.006477907724674048
+"subset_eq(index(cardinality(A), difference(B, A)), index(1, union(A, B)))",0.006477907724674048
+"subset_eq(index(cardinality(B), difference(A, B)), index(1, union(A, B)))",0.006477907724674048
+"or(not(subset_eq(A, B)), subset_eq(index(1, B), A))",0.00617800103959909
+"or(not(subset_eq(B, A)), subset_eq(index(1, A), B))",0.00617800103959909
+"subset_eq(index(1, difference(A, B)), B)",0.00617800103959909
+"subset_eq(index(1, difference(B, A)), A)",0.00617800103959909
+"subset_eq(index(cardinality(A), B), index(1, B))",0.00617800103959909
+"subset_eq(index(cardinality(B), A), index(1, A))",0.00617800103959909
+"greater_than(cardinality(union(A, B)), 1)",0.00617800103959909
+"subset_eq(union(difference(A, B), index(1, A)), index(cardinality(A), B))",0.00596075952294306
+"subset_eq(union(difference(B, A), index(1, B)), index(cardinality(B), A))",0.00596075952294306
+"or(subset_eq(A, B), subset_eq(index(1, A), difference(A, B)))",0.005880796218089235
+"or(subset_eq(A, B), subset_eq(index(1, B), index(1, A)))",0.005880796218089235
+"or(subset_eq(B, A), subset_eq(index(1, A), index(1, B)))",0.005880796218089235
+"or(subset_eq(B, A), subset_eq(index(1, B), difference(B, A)))",0.005880796218089235
+"or(or(subset_eq(A, B), subset_eq(B, A)), equals(1, cardinality(A)))",0.005880796218089235
+"or(or(subset_eq(A, B), subset_eq(B, A)), equals(1, cardinality(B)))",0.005880796218089235
+"or(or(subset_eq(A, B), subset_eq(B, A)), greater_than(cardinality(A), 1))",0.005880796218089235
+"or(or(subset_eq(A, B), subset_eq(B, A)), greater_than(cardinality(B), 1))",0.005880796218089235
+"or(subset_eq(A, difference(A, B)), subset_eq(index(1, A), B))",0.005880796218089235
+"or(subset_eq(A, difference(A, B)), subset_eq(index(1, B), A))",0.005880796218089235
+"or(subset_eq(index(1, A), B), subset_eq(difference(A, B), index(1, A)))",0.005880796218089235
+"or(subset_eq(index(1, B), A), subset_eq(difference(B, A), index(1, B)))",0.005880796218089235
+"or(subset_eq(intersection(A, B), index(1, A)), subset_eq(difference(B, A), index(1, B)))",0.005880796218089235
+"or(subset_eq(intersection(A, B), index(1, B)), subset_eq(difference(A, B), index(1, A)))",0.005880796218089235
+"or(subset_eq(index(1, A), difference(A, B)), equals(cardinality(A), cardinality(B)))",0.005880796218089235
+"or(subset_eq(index(1, B), difference(B, A)), equals(cardinality(A), cardinality(B)))",0.005880796218089235
+"subset_eq(index(cardinality(A), difference(B, A)), index(1, B))",0.005880796218089235
+"subset_eq(index(cardinality(B), difference(A, B)), index(1, A))",0.005880796218089235
+"greater_than(cardinality(A), 0)",0.005584475497978469
+"greater_than(cardinality(B), 0)",0.005584475497978469
+"or(subset_eq(index(1, A), B), subset_eq(intersection(A, B), index(1, B)))",0.005584475497978469
+"or(subset_eq(index(1, A), B), equals(1, cardinality(B)))",0.005584475497978469
+"or(subset_eq(index(1, B), A), subset_eq(intersection(A, B), index(1, A)))",0.005584475497978469
+"or(subset_eq(index(1, B), A), equals(1, cardinality(A)))",0.005584475497978469
+"or(subset_eq(intersection(A, B), index(1, A)), greater_than(cardinality(B), 1))",0.005584475497978469
+"or(subset_eq(intersection(A, B), index(1, B)), greater_than(cardinality(A), 1))",0.005584475497978469
+"or(subset_eq(difference(A, B), index(1, A)), subset_eq(index(1, B), difference(A, A)))",0.005584475497978469
+"or(subset_eq(difference(B, A), index(1, B)), subset_eq(index(1, A), difference(A, A)))",0.005584475497978469
+"or(subset_eq(index(1, A), difference(A, A)), subset_eq(index(1, B), index(1, A)))",0.005584475497978469
+"subset_eq(intersection(B, index(1, A)), index(1, B))",0.005584475497978469
+"subset_eq(intersection(A, index(1, B)), index(1, A))",0.005584475497978469
+"subset_eq(index(1, A), index(1, union(A, B)))",0.005584475497978469
+"subset_eq(index(1, B), index(1, union(A, B)))",0.005584475497978469
+"subset_eq(intersection(A, index(1, B)), index(1, intersection(A, B)))",0.005584475497978469
+"subset_eq(intersection(B, index(1, A)), index(1, intersection(A, B)))",0.005584475497978469
+"subset_eq(difference(index(1, A), B), index(1, difference(A, B)))",0.005584475497978469
+"subset_eq(difference(index(1, B), A), index(1, difference(B, A)))",0.005584475497978469
+"subset_eq(index(1, difference(A, B)), difference(difference(A, B), index(1, A)))",0.005584475497978469
+"subset_eq(index(1, difference(B, A)), difference(difference(B, A), index(1, B)))",0.005584475497978469
+"subset_eq(index(cardinality(A), B), union(A, index(1, B)))",0.005584475497978469
+"subset_eq(index(cardinality(B), A), union(B, index(1, A)))",0.005584475497978469
+"and(subset_eq(index(1, A), index(1, B)), greater_than(cardinality(A), cardinality(B)))",0.005464065915187222
+"and(subset_eq(index(1, B), index(1, A)), greater_than(cardinality(B), cardinality(A)))",0.005464065915187222
+"or(subset_eq(A, B), greater_than(cardinality(B), 0))",0.00528677873446326
+"or(subset_eq(B, A), greater_than(cardinality(A), 0))",0.00528677873446326
+"or(or(subset_eq(A, B), subset_eq(B, A)), subset_eq(index(1, A), index(1, B)))",0.00528677873446326
+"or(or(subset_eq(A, B), subset_eq(B, A)), subset_eq(index(1, B), index(1, A)))",0.00528677873446326
+"or(not(subset_eq(A, B)), greater_than(cardinality(B), 1))",0.00528677873446326
+"or(not(subset_eq(B, A)), greater_than(cardinality(A), 1))",0.00528677873446326
+"and(not(subset_eq(A, B)), subset_eq(index(1, A), B))",0.005145233495945978
+"and(not(subset_eq(B, A)), subset_eq(index(1, B), A))",0.005145233495945978
+"or(subset_eq(A, B), subset_eq(index(1, B), A))",0.0049847278902501735
+"or(subset_eq(A, B), subset_eq(index(1, B), difference(B, A)))",0.0049847278902501735
+"or(subset_eq(B, A), subset_eq(index(1, A), B))",0.0049847278902501735
+"or(subset_eq(B, A), subset_eq(index(1, A), difference(A, B)))",0.0049847278902501735
+"or(or(subset_eq(A, B), subset_eq(B, A)), subset_eq(A, difference(A, B)))",0.0049847278902501735
+"or(or(subset_eq(A, B), subset_eq(B, A)), equals(cardinality(A), cardinality(B)))",0.0049847278902501735
+"or(subset_eq(index(1, A), index(1, B)), greater_than(cardinality(A), cardinality(B)))",0.0049847278902501735
+"or(subset_eq(index(1, B), index(1, A)), greater_than(cardinality(B), cardinality(A)))",0.0049847278902501735
+"subset_eq(index(cardinality(A), B), difference(B, A))",0.0049847278902501735
+"subset_eq(index(cardinality(B), A), difference(A, B))",0.0049847278902501735
+"subset_eq(difference(index(1, A), index(1, B)), index(1, union(A, B)))",0.0049847278902501735
+"subset_eq(difference(index(1, B), index(1, A)), index(1, union(A, B)))",0.0049847278902501735
+"subset_eq(index(1, union(A, B)), union(A, index(1, B)))",0.0049847278902501735
+"subset_eq(index(1, union(A, B)), union(B, index(1, A)))",0.0049847278902501735
+"subset_eq(index(1, difference(A, B)), index(cardinality(B), A))",0.0049847278902501735
+"subset_eq(index(1, difference(A, B)), index(cardinality(B), index(1, A)))",0.0049847278902501735
+"subset_eq(index(1, difference(B, A)), index(cardinality(A), B))",0.0049847278902501735
+"subset_eq(index(1, difference(B, A)), index(cardinality(A), index(1, B)))",0.0049847278902501735
+"or(subset_eq(difference(A, B), index(1, A)), subset_eq(index(1, B), index(1, A)))",0.004674119587321779
+"or(subset_eq(difference(B, A), index(1, B)), subset_eq(index(1, A), index(1, B)))",0.004674119587321779
+"or(equals(1, cardinality(A)), greater_than(cardinality(B), 0))",0.004674119587321779
+"or(equals(1, cardinality(B)), greater_than(cardinality(A), 0))",0.004674119587321779
+"or(subset_eq(index(1, A), B), subset_eq(difference(B, A), index(1, B)))",0.0043484916912670535
+"or(subset_eq(index(1, A), B), subset_eq(index(1, B), difference(A, A)))",0.0043484916912670535
+"subset_eq(index(cardinality(B), index(1, A)), B)",0.0043484916912670535
+"or(subset_eq(index(1, B), A), subset_eq(difference(A, B), index(1, A)))",0.0043484916912670535
+"or(subset_eq(index(1, B), A), subset_eq(index(1, A), difference(A, A)))",0.0043484916912670535
+"subset_eq(index(cardinality(A), index(1, B)), A)",0.0043484916912670535
+"or(subset_eq(intersection(A, B), index(1, A)), subset_eq(difference(A, B), index(1, A)))",0.0043484916912670535
+"or(subset_eq(intersection(A, B), index(1, B)), subset_eq(difference(B, A), index(1, B)))",0.0043484916912670535
+"or(subset_eq(difference(A, B), index(1, A)), subset_eq(index(1, B), difference(B, A)))",0.0043484916912670535
+"or(subset_eq(difference(B, A), index(1, B)), subset_eq(index(1, A), difference(A, B)))",0.0043484916912670535
+"or(subset_eq(index(1, A), difference(A, B)), subset_eq(index(1, B), index(1, A)))",0.0043484916912670535
+"or(subset_eq(index(1, A), difference(A, B)), greater_than(cardinality(B), 1))",0.0043484916912670535
+"or(subset_eq(index(1, A), index(1, B)), subset_eq(index(1, B), difference(B, A)))",0.0043484916912670535
+"or(subset_eq(index(1, B), difference(B, A)), greater_than(cardinality(A), 1))",0.0043484916912670535
+"or(greater_than(cardinality(A), 0), greater_than(cardinality(B), 1))",0.0043484916912670535
+"or(greater_than(cardinality(A), 1), greater_than(cardinality(B), 0))",0.0043484916912670535
+"subset_eq(intersection(A, index(1, B)), index(1, union(A, B)))",0.0043484916912670535
+"subset_eq(intersection(B, index(1, A)), index(1, union(A, B)))",0.0043484916912670535
+"subset_eq(difference(index(1, A), B), index(1, union(A, B)))",0.0043484916912670535
+"subset_eq(difference(index(1, B), A), index(1, union(A, B)))",0.0043484916912670535
+"subset_eq(index(1, intersection(A, B)), index(1, union(A, B)))",0.0043484916912670535
+"subset_eq(index(1, difference(A, B)), index(1, union(A, B)))",0.0043484916912670535
+"subset_eq(index(1, difference(B, A)), index(1, union(A, B)))",0.0043484916912670535
+"subset_eq(index(cardinality(A), difference(B, A)), difference(difference(B, A), index(1, B)))",0.0043484916912670535
+"subset_eq(index(cardinality(B), difference(A, B)), difference(difference(A, B), index(1, A)))",0.0043484916912670535
+"and(greater_than(cardinality(A), 1), greater_than(cardinality(B), cardinality(A)))",0.003996704378872562
+"and(greater_than(cardinality(B), 1), greater_than(cardinality(A), cardinality(B)))",0.003996704378872562
+"or(subset_eq(index(1, A), B), greater_than(cardinality(A), cardinality(B)))",0.003996704378872562
+"or(subset_eq(index(1, B), A), greater_than(cardinality(B), cardinality(A)))",0.003996704378872562
+"or(or(subset_eq(A, B), subset_eq(B, A)), subset_eq(index(1, A), difference(A, B)))",0.003996704378872562
+"or(or(subset_eq(A, B), subset_eq(B, A)), subset_eq(index(1, B), difference(B, A)))",0.003996704378872562
+"subset_eq(index(1, intersection(A, B)), index(1, B))",0.003595933227180881
+"subset_eq(index(1, intersection(A, B)), index(1, A))",0.003595933227180881
+"or(subset_eq(index(1, A), B), subset_eq(index(1, B), A))",0.003595933227180881
+"or(subset_eq(index(1, A), B), subset_eq(index(1, B), difference(B, A)))",0.003595933227180881
+"or(subset_eq(index(1, B), A), subset_eq(index(1, A), difference(A, B)))",0.003595933227180881
+"subset_eq(index(1, difference(A, B)), index(1, A))",0.003595933227180881
+"subset_eq(index(1, difference(B, A)), index(1, B))",0.003595933227180881
+"subset_eq(intersection(index(1, A), index(1, B)), index(1, union(A, B)))",0.003595933227180881
+"greater_than(cardinality(union(A, B)), 0)",0.003081652368441601
+"and(subset_eq(difference(A, B), index(1, A)), greater_than(cardinality(A), cardinality(B)))",0.001508038584309035
+"and(subset_eq(difference(B, A), index(1, B)), greater_than(cardinality(B), cardinality(A)))",0.001508038584309035
+"and(not(subset_eq(A, B)), subset_eq(difference(A, B), index(1, A)))",0.0011175716072293618
+"and(not(subset_eq(B, A)), subset_eq(difference(B, A), index(1, B)))",0.0011175716072293618
+"and(subset_eq(index(1, A), B), greater_than(cardinality(A), cardinality(B)))",0.00032456129831570646
+"and(subset_eq(index(1, B), A), greater_than(cardinality(B), cardinality(A)))",0.00032456129831570646

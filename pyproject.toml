@@ -28,6 +28,8 @@ dependencies = [
     "plotnine",
     "pathos",
     "pytest",
+    "mypy",
+    "rdot",
 ]
 
 [project.urls]

@@ -1,0 +1,120 @@
+start: bool
+rules:
+# boolean / propositional logic rules
+- lhs: bool
+  rhs:
+    - bool
+    - bool
+  name: "and"
+  func: |
+    lambda p1, p2 : p1 and p2
+  weight: 1.0
+- lhs: bool
+  rhs:
+    - bool
+    - bool
+  name: "or"
+  func: |
+    lambda p1, p2 : p1 or p2
+  weight: 1.0
+- lhs: bool
+  rhs:
+    - bool
+  name: "not"
+  func: |
+    lambda p : not p
+  weight: 1.0
+# set logic rules
+- lhs: frozenset
+  rhs:
+    - frozenset
+    - frozenset
+  name: "union"
+  func: |
+    lambda s1, s2 : s1 | s2
+  weight: 1.0
+- lhs: frozenset
+  rhs:
+    - frozenset
+    - frozenset
+  name: "intersection"
+  func: |
+    lambda s1, s2 : s1 & s2
+  weight: 1.0
+- lhs: frozenset
+  rhs:
+    - frozenset
+    - frozenset
+  name: "difference"
+  func: |
+    lambda s1, s2 : s1 - s2
+  weight: 1.0
+- lhs: frozenset
+  rhs:
+    - frozenset
+    - frozenset
+  name: "difference_sw"
+  func: |
+    lambda s1, s2 : s2 - s1
+  weight: 1.0
+- lhs: frozenset
+  rhs:
+    - int
+    - frozenset
+  name: "index" # can't tell if switching the order of the arguments will make a difference for monotonicity
+  func: |
+    lambda i, s: frozenset([sorted(s)[i]]) if i < len(s) else frozenset()
+  weight: 1.0
+- lhs: int
+  rhs:
+    - frozenset
+  name: "cardinality"
+  func: |
+    lambda s: len(s)
+  weight: 1.0
+- lhs: bool
+  rhs:
+    - frozenset
+    - frozenset
+  name: "subset_eq"
+  func: |
+    lambda s1, s2: s1 <= s2
+  weight: 1.0
+- lhs: bool
+  rhs:
+    - frozenset
+    - frozenset
+  name: "subset_eq_sw"
+  func: |
+    lambda s1, s2: s2 <= s1
+  weight: 1.0
+# integer logical rules
+- lhs: bool
+  rhs:
+    - int
+    - int
+  name: "equals"
+  func: |
+    lambda i1, i2: i1 == i2
+  weight: 1.0
+- lhs: bool
+  rhs:
+    - int
+    - int
+  name: "greater_than"
+  func: |
+    lambda i1, i2: i1 > i2
+  weight: 1.0
+# primitive
+- lhs: frozenset
+  rhs: 
+  name: "A"
+  func: |
+    lambda q: q.A
+  weight: 10.0
+- lhs: frozenset
+  rhs: 
+  name: "B"
+  func: |
+    lambda q: q.B
+  weight: 10.0

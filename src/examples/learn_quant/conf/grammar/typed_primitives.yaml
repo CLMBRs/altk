@@ -1,0 +1,7 @@
+defaults:
+  - _self_
+  - typed_rules: set_primitives
+path: "learn_quant/grammar_xprimitives.yml"
+weight: 2.0
+depth: 3
+indices: true

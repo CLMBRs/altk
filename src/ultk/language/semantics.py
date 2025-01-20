@@ -84,7 +84,7 @@ class Universe:
 
     @cached_property
     def _referents_by_name(self):
-        return {referent.name: referent for referent in self.referents}
+        return {referent.xsname: referent for referent in self.referents}
 
     @cached_property
     def size(self):
@@ -108,6 +108,14 @@ class Universe:
 
     def __len__(self) -> int:
         return len(self.referents)
+
+    @classmethod
+    def _calculate_prior(cls, referents: tuple[Referent]):
+        default_prob = 1 / len(referents)
+        prior = tuple(
+            getattr(referent, "probability", default_prob) for referent in referents
+        )
+        return prior
 
     @classmethod
     def from_dataframe(cls, df: pd.DataFrame):
@@ -184,6 +192,9 @@ class Meaning(Generic[T]):
     def is_uniformly_false(self) -> bool:
         """Return True if all referents in the meaning are mapped to False (or coercible to False).In the case where the meaning type is boolean, this corresponds to the characteristic function of the empty set."""
         return all(not value for value in self.mapping.values())
+
+    def get_binarized_meaning(self):
+        return np.array(list(self.mapping.values())).astype(int)
 
     def __getitem__(self, key: Referent) -> T:
         return self.mapping[key]

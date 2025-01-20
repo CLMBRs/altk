@@ -1,0 +1,91 @@
+defaults:
+  - _self_
+  - model: ???
+  - override hydra/launcher: hyak_swarm
+
+experiment_name: repeated_runs
+notes: |
+  This run is to evaluate the neural learning quantifiers and logging in MLFlow.
+
+expression_indices: 2000
+
+tracking:
+  max_retries: 8
+  backoff_factor: 60
+  host: g3116
+  port: 5000
+
+grammar:
+  path: learn_quant/grammar.yml
+  indices: false
+  index_weight: 2.0
+
+universe:
+  x_size: 4
+  m_size: 4
+
+expressions:
+  n_limit: 8
+  depth: 5
+  output_dir: learn_quant/outputs/
+  representation: one_hot
+  downsampling: true
+  generation_args:
+    batch_size: 1000
+    n_limit: 5000 # Minimum number of sample rows in dataset for a single class. Full dataset length is 2 * n_limit.
+    M_size: 12
+    X_size: 16
+    entropy_threshold: 0.01
+    inclusive: False
+  batch_size: 64
+  split: 0.8
+
+training:
+  strategy: multirun
+  k_splits: 5
+  n_runs: 1
+  lightning: true
+  device: cpu
+  epochs: 50
+  conditions: false
+  early_stopping:
+    threshold: 0.05
+    monitor: val_loss
+    min_delta: 0.001
+    patience: 20
+    mode: min
+    check_on_train_epoch_end: false
+
+optimizer:
+  _partial_: true
+  _target_: torch.optim.Adam
+  lr: 1e-3
+
+criterion:
+  _target_: torch.nn.BCEWithLogitsLoss
+
+measures:
+  target: "M${universe.m_size}/X${universe.x_size}/d${expressions.depth}"
+  monotonicity:
+    debug: false
+    direction:
+      - all
+    universe_filter:
+      - 3
+      - 4
+
+hydra:
+  launcher:
+    partition: gpu-l40                   # The partition/queue to submit jobs
+    account: clmbr         # Your account (if required by your cluster)
+    time: 2880                        # Time in minutes (48 hours)
+    cpus_per_task: 1
+    mem_gb: 8
+    # gpus_per_node: 0
+    # mem_per_gpu: 32GB
+    # If you want to requeue on timeout:
+    max_num_timeout: 10               # number of times to re-queue job after timeout
+    array_parallelism: 120           # number of jobs to launch in parallel
+  sweeper:
+    params:
+      +expressions.index: range(0, ${expression_indices})

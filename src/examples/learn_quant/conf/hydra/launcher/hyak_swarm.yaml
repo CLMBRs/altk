@@ -1,0 +1,7 @@
+submitit_folder: ${hydra.sweep.dir}/.submitit/%j
+timeout_min: 1440
+_target_: hydra_plugins.hydra_submitit_launcher.submitit_launcher.SlurmLauncher
+partition: ckpt
+cpus_per_task: 4
+mem_gb: 8
+additional_parameters: {"gpus": "0", "time": "1-00"}

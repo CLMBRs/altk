@@ -1,0 +1,29 @@
+# @package _global_
+defaults:
+  - /grammar/base@grammar
+  - /universe/base@universe
+  - _self_
+
+name: base
+
+grammar: 
+  depth: 5
+  indices: false
+  weight: 2.0
+
+universe:
+  m_size: 4
+  x_size: 4
+  inclusive_universes: ${universe.inclusive_universes}
+
+measures:
+  expressions:
+    - subset_eq(A, B)
+  monotonicity:
+    debug: false
+    universe_filter:
+      - 3
+      - 4
+    direction:
+      - all
+
